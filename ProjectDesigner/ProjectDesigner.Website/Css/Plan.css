@@ -1,0 +1,17 @@
+﻿body
+{
+    background-image: url(text.txt); /* for IE6 */
+    background-attachment: fixed;
+}
+
+.BottomMessage
+{
+    z-index: 999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    _position: absolute; /* for IE6 */
+    _top: expression(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight); /* for IE6 */
+    overflow: visible;
+}

@@ -1,0 +1,27 @@
+﻿body
+{
+	margin: 0px;
+}
+a
+{
+	cursor: pointer;
+}
+
+.SubMenu
+{
+	border-left: #cccccc 1px solid;
+	border-right: #cccccc 1px solid;
+	border-top: #cccccc 1px solid;
+	border-bottom: #cccccc 1px solid;
+}
+
+.ChildMenu
+{
+	padding-left: 10px;
+	padding-top: 4px;
+	font-size: 9pt;
+	background: #EFF7FF;
+	cursor: hand;
+	position: relative;
+	height: 20px;
+}

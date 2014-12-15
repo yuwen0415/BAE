@@ -1,0 +1,271 @@
+﻿body
+{
+	margin: 0px;
+	padding: 0px 10px 0px 10px;
+	font-family: Verdana, 宋体;
+	font-size: 9pt;
+	background-color: #4d7bb9;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+.TableM
+{
+	width: 100%;
+	border-collapse: collapse;
+}
+.TableE
+{
+	width: 100%;
+	background-color: #4d7bb9;
+	border-collapse: collapse;
+}
+TD
+{
+	font-size: 12px;
+	color: #000000;
+}
+A
+{
+	color: #B76000;
+	text-decoration: none;
+}
+A:link
+{
+	color: #333333;
+	text-decoration: none;
+}
+A:visited
+{
+	color: #333333;
+	text-decoration: none;
+}
+A:hover
+{
+	color: #333333;
+	text-decoration: none;
+}
+A:active
+{
+	text-decoration: none;
+}
+A.blue
+{
+	color: #003399;
+	text-decoration: none;
+}
+A.blue:link
+{
+	color: #355FB0;
+	text-decoration: none;
+}
+A.blue:visited
+{
+	color: #003399;
+	text-decoration: none;
+}
+A.blue:hover
+{
+	color: #FF0000;
+	text-decoration: none;
+}
+A.blue:active
+{
+	text-decoration: none;
+}
+SELECT
+{
+	border: 1px solid #000000;
+	font-family: Verdana, 宋体;
+	font-size: 9pt;
+	color: #000000;
+	background-color: #f4f4f4;
+	width: 154px;
+}
+.NavigateBar
+{
+	border-right: #000000 1px solid;
+	border-top: #000000 1px solid;
+	border-left: #ff7300 5px solid;
+	border-bottom: #000000 1px solid;
+	background-color: #f1f3f5;
+	height: 25px;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+.TopMenuCss
+{
+	background-image: url(../Img/bg_TopMenu.jpg);
+	height: 30px;
+	padding-left: 20px;
+	font-weight: bold;
+	font-size: 9pt;
+	font-family: 宋体;
+	padding-right: 10px;
+}
+.Button
+{
+	background-image: url(../Img/bg_Button.jpg);
+	cursor: hand;
+	border-right: #999999 1px solid;
+	border-top: #999999 1px solid;
+	border-left: #999999 1px solid;
+	border-bottom: #999999 1px solid;
+	height: 24px;
+}
+.TableLabel
+{
+	font-size: 9pt;
+	vertical-align: middle;
+	color: #000000;
+	font-family: Verdana, 宋体;
+	text-align: right;
+	background-color: #99ccff;
+}
+.TableLabel1
+{
+	font-size: 9pt;
+	vertical-align: middle;
+	color: #000000;
+	font-family: Verdana, 宋体;
+	text-align: left;
+	padding-left: 10px;
+}
+.TableLabel2
+{
+	font-size: 9pt;
+	vertical-align: middle;
+	color: #000000;
+	font-family: Verdana, 宋体;
+	text-align: center;
+	background-color: #99ccff;
+}
+.TextBox
+{
+	font-family: Verdana, "宋体";
+	font-size: 9pt;
+	background-color: #f8efe0;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	border: 1px solid #999999;
+}
+.InputIn
+{
+	padding: 2px 3px 2px 3px;
+	font-family: "宋体" , Verdana;
+	font-size: 9pt;
+	background-color: #f8efe0;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	border: 1px solid #999999;
+	vertical-align: middle;
+}
+.InputOut
+{
+	padding: 2px 3px 2px 3px;
+	font-family: "宋体" , Verdana;
+	font-size: 9pt;
+	background-color: #F9F9F9;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	border: 1px solid #999999;
+	vertical-align: middle;
+}
+.style1
+{
+	width: 99%;
+	font-size: 12px;
+	overflow: auto;
+	border: 1px solid #000000;
+}
+.Title1
+{
+	padding-right: 15px;
+	padding-left: 15px;
+	font-weight: bold;
+	font-size: 9pt;
+	background: #6699ff;
+	color: #ffff00;
+	height: 25px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+.DivPage
+{
+	width: 95%;
+	background-color: #4d7bb9;
+	height: 120px;
+}
+.ChoiceButton
+{
+	background-image: url(../Img/bg_Button.jpg);
+	width: 20px;
+	cursor: hand;
+	border-right: #999999 1px solid;
+	border-top: #999999 1px solid;
+	border-left: #999999 1px solid;
+	border-bottom: #999999 1px solid;
+	height: 18px;
+	font-size: 9pt;
+	color: #000000;
+	font-family: Verdana, 宋体;
+}
+.DropDownListIn
+{
+	padding: 2px 3px 2px 3px;
+	font-family: "宋体" , Verdana;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	background-color: #f8efe0;
+	border: 1px solid #999999;
+	background-position: right center;
+	background-image: url(../Img/DropDown.gif);
+	background-repeat: no-repeat;
+	padding-right: 25px;
+}
+.DropDownListOut
+{
+	padding: 2px 3px 2px 3px;
+	font-family: "宋体" , Verdana;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	background-color: #F9F9F9;
+	border: 1px solid #999999;
+	background-position: right center;
+	background-image: url(../Img/DropDown.gif);
+	background-repeat: no-repeat;
+	padding-right: 25px;
+}
+.Button_MouseOut
+{
+	font-size: 9pt;
+	color: #000066;
+	height: 25px;
+	cursor: hand;
+	border-right: #000099 1px solid;
+	border-top: #000099 1px solid;
+	border-left: #000099 1px solid;
+	border-bottom: #000099 1px solid;
+	background-image: url(../Img/bg_Button.jpg);
+}
+.Button_MouseOver
+{
+	font-size: 9pt;
+	color: #000000;
+	height: 25px;
+	cursor: hand;
+	border-right: #000099 1px solid;
+	border-top: #000099 1px solid;
+	border-left: #000099 1px solid;
+	border-bottom: #000099 1px solid;
+	background-image: url(../Img/ft_Button.jpg);
+}

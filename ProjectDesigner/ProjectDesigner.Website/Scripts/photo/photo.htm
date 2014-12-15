@@ -1,0 +1,410 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html><head>
+<meta charset="utf-8">
+<title>查看照片弹出框 V2</title>  
+    <link href="photo.css" rel="stylesheet" type="text/css" />
+<style type="text/css" media="screen">
+<!--
+/*当层浮出的时候需要加入的样式*/
+body { _height:100%; }
+html, body { overflow:hidden; }
+/*当层浮出的时候需要加入的样式*/
+-->
+</style>
+</head>
+<body>
+<img id="tweenImg" src="about:blank" style="z-index:2000;display:none;position:absolute;opacity:0.2;" onclick="QZFL.event.cancelBubble()"/>
+<div id="center" class="pop_iv_photo" style="left:43%;top:50%;" onclick="QZFL.event.cancelBubble()">
+	<p class="loadbox" style="padding:0px 0;"><img src="loading_comment.gif" alt="loading"/>正在获取信息，请稍候...</p>
+</div>
+
+<div class="mod_imageview_op mod_imageview_single" onclick="QZFL.event.cancelBubble()" id="imgViewPanel">
+	<div class="mod_imageview_op_wrap">
+		<div class="mod_imageview_op_inner">
+			<div class="ft">
+				<a class="ico_original" href="javascript:void(0);" onclick="controller.change(null,1,true); return false;">1:1</a> <a class="ico_fullscreen" href="javascript:void(0);" onclick="controller.resize(); return false">最佳比例</a> <a class="ico_reduce" href="javascript:void(0);" onclick="controller.change(-0.1); return false;" onmousedown="controller.small();">缩小</a> <a class="ico_enlarge" href="javascript:void(0);" onclick="controller.change(0.1); return false;" onmousedown="controller.big();">放大</a> <a class="ico_counterclockwise" href="javascript:void(0);" onclick="controller.revolving(-1); return false;">逆时针</a> <a class="ico_clockwise" href="javascript:void(0);" onclick="controller.revolving(1); return false;">顺时针</a> <a class="ico_iv_close" href="javascript:void(0);" onclick="controller.close(); return false;">关闭</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!--S 遮罩层-->
+<div class="shadow_box">
+	<iframe class="shadow_box_iframe"></iframe>
+	<div class="shadow_box_cont">&nbsp;</div>
+</div>
+<!--E 遮罩层-->
+</body>
+    <script src="qzfl_2.1.1.5.js" type="text/javascript"></script>
+    <script src="appclientlib.js" type="text/javascript"></script>  
+<script type="text/javascript"> 
+    var controller = {
+        init: function () {
+            QZFL.pageEvents.initHttpParams(); //初始化http参数
+            t.url = t.getHttpParams("url");
+            if (t.url && t.url.search(/^http:\/\/[a-z][0-9]+.photo.store.qq.com\//) == 0) {
+                if (t.url.search("/[a-z]/") != -1) {
+                    t.url = t.url.replace(/\/[a-z]\//, "/b/").replace(/^http:\/\/[a-z]/, "http://b");
+                }
+            }
+
+            t.point = {
+                top: parseInt(t.getHttpParams("top")),
+                left: parseInt(t.getHttpParams("left")),
+                width: parseInt(t.getHttpParams("width")),
+                height: parseInt(t.getHttpParams("height"))
+            };
+            if (isNaN(t.point.top) || isNaN(t.point.left) || isNaN(t.point.width) || isNaN(t.point.height)) {
+                t.point = null;
+            }
+            t.load();
+            QZFL.event.addEvent(window, "resize", t.resize);
+            QZFL.event.addEvent(document.body, "mousewheel", t.scroll);
+            QZFL.event.addEvent(document.body, "DOMMouseScroll", t.scroll);
+            QZFL.event.addEvent(document.body, "click", t.close);
+            QZFL.event.addEvent(document.body, "keydown", function (e) {
+                if (e.keyCode == QZFL.event.KEYS.ESC) {
+                    t.close();
+                }
+            });
+            try {
+                $e(".fullscreen").elements[0].focus();
+            } catch (e) { }
+            setTimeout(t.pv, 1000);
+        },
+        pv: function () {
+            var domain = t.getHttpParams("pvdomain");
+            var page = t.getHttpParams("pvpage");
+            if (domain) {
+                var tc = QZONE.FP.getStatPackage();
+                tc.pv(domain, page || location.pathname);
+            }
+        },
+        valueStat: function (code, time) {
+            var id = t.getHttpParams("valueStatId");
+            if (id) {
+                var p = QZONE.FP.getStatPackage();
+                if (code == 0) {//成功
+                    p.valueStat(id, 1, 99, { reportRate: 1, duration: time });
+                } else {//失败
+                    p.valueStat(id, 2, 100, { reportRate: 1, duration: time });
+                }
+            }
+        },
+        load: function () {
+            var img = new Image();
+            var st = new Date();
+            img.onload = function () {
+                t.loadSuc(img.width || 100, img.height || 100);
+                img.onload = img.onerror = null;
+                img = null;
+                var et = new Date();
+                t.valueStat(0, et - st);
+            }
+            img.onerror = function () {
+                t.loadErr();
+                img.onload = img.onerror = null;
+                img = null;
+                var et = new Date();
+                t.valueStat(-1, et - st);
+            }
+            img.src = t.url;
+        },
+        loadSuc: function (width, height) {
+            t.width = width;
+            t.height = height;
+            t.initParcent();
+            var w = t.width * t.percent;
+            var h = t.height * t.percent;
+            var x = (t.cw - w - 12) / 2;
+            var y = (t.ch - h - 12) / 2 - 20;
+            QZFL.dom.setXY($("center"), x, y);
+            $("center").innerHTML = [
+		'<div class="pop_iv_inne">',
+			'<div class="cont">',
+				'<p class="photo"><img id="imgView" src="', t.url, '" style="width:', w, 'px; height:', h, 'px;" alt="" /></p>',
+			'</div>',
+			'<p class="close"><a href="javascript:void(0);" onclick="controller.close();return false;" title="关闭" class="pop_iv_bg">关闭</a></p>',
+		'</div>'
+		].join("");
+            t.fadeIn(function () {
+                t.show("center");
+                t.hide("tweenImg");
+                var p = QZFL.dom.getPosition($("center"));
+                t.setSize.p = {
+                    x: (p.left + p.width / 2),
+                    y: (p.top + p.height / 2)
+                };
+            });
+
+            QZFL.dragdrop.registerDragdropHandler($("center"), $("center")).onEndDrag = function () {
+                var p = QZFL.dom.getPosition($("center"));
+                t.setSize.p = {
+                    x: (p.left + p.width / 2),
+                    y: (p.top + p.height / 2)
+                };
+            };
+        },
+        loadErr: function () {
+            $e(".loadbox").setHtml("照片加载失败");
+        },
+        fadeIn: function (cb) {
+            if (ua.ie) {
+//                $e('#imgViewPanel').setStyle('width', QZFL.dom.getClientWidth() + 'px');
+//                $e('.shadow_box').setStyle('width', QZFL.dom.getClientWidth() + 'px');
+            }
+            try {
+                if (!t.point) {
+                    (cb || QZFL.emptyFn)();
+                    return;
+                }
+                var p1 = t.point;
+                var p2 = QZFL.dom.getPosition($("imgView"));
+                var o = $("tweenImg");
+                QZFL.dom.setPosition(o, p1);
+                QZFL.dom.setStyle(o, "opacity", 0.2);
+                o.src = t.url;
+                t.hide("center");
+                t.show("tweenImg");
+                var tw = new QZFL.Tween(o, "opacity", null, 0.8, 1, 0.3);
+                tw.onMotionChange = function () {
+                    var per = tw.getPercent() / 100 || 0;
+                    var po = {
+                        top: (p1.top + (p2.top - p1.top) * per),
+                        left: (p1.left + (p2.left - p1.left) * per),
+                        width: (p1.width + (p2.width - p1.width) * per),
+                        height: (p1.height + (p2.height - p1.height) * per)
+                    };
+                    QZFL.dom.setPosition(o, po);
+                };
+                tw.onMotionStop = cb || QZFL.emptyFn;
+                setTimeout(function () {
+                    tw.start(false);
+                }, 10);
+            } catch (e) {
+                (cb || QZFL.emptyFn)();
+            }
+        },
+        fadeOut: function (cb) {
+            try {
+                if (!t.point) {
+                    (cb || QZFL.emptyFn)();
+                    return;
+                }
+                var p1 = QZFL.dom.getPosition($("imgView") || $("center"));
+                var p2 = t.point;
+                var o = $("tweenImg");
+                QZFL.dom.setPosition(o, p1);
+                o.src = t.url;
+                t.hide("center");
+                t.show("tweenImg");
+                var tw = new QZFL.Tween(o, "opacity", null, 1, 0.1, 0.3);
+                tw.onMotionChange = function () {
+                    var per = 0;
+                    if (t.twGetPercent) {
+                        per = tw.getPercent() / 100 || 0;
+                    }
+                    t.twGetPercent = true;
+                    var po = {
+                        top: (p1.top + (p2.top - p1.top) * per),
+                        left: (p1.left + (p2.left - p1.left) * per),
+                        width: (p1.width + (p2.width - p1.width) * per),
+                        height: (p1.height + (p2.height - p1.height) * per)
+                    };
+                    QZFL.dom.setPosition(o, po);
+                };
+                tw.onMotionStop = cb || QZFL.emptyFn;
+                tw.start(false);
+            } catch (e) {
+                (cb || QZFL.emptyFn)();
+            }
+        },
+        initParcent: function () {
+            t.cw = QZFL.dom.getClientWidth();
+            t.ch = QZFL.dom.getClientHeight();
+            var cw = t.cw;
+            var ch = t.ch - 100;
+            t.percent = 1;
+            if (t.height > ch || t.width > cw) {
+                if (t.height * cw > t.width * ch) {
+                    t.percent = ch / t.height;
+                } else {
+                    t.percent = cw / t.width;
+                }
+            }
+        },
+        scroll: function (e) {
+            e = QZFL.event.getEvent(e);
+            var v = e.wheelDelta || e.detail;
+            v = v / Math.abs(v) * 0.2;
+            t.change(v);
+        },
+        resize: function () {
+            t.initParcent();
+            t.setSize(true);
+        },
+        setSize: function (isAuto, fixTop) {
+            var w = t.width * t.percent;
+            var h = t.height * t.percent;
+            var o = $("imgView");
+            if (o) {
+                QZFL.dom.setSize(o, w, h);
+                if (ua.ie >= 8 && typeof t.revolving.r == "number") {
+                    if (t.revolving.r % 2) {
+                        QZFL.dom.setSize($("imgView").parentNode, h, w);
+                    } else {
+                        QZFL.dom.setSize($("imgView").parentNode, w, h);
+                    }
+                }
+            } else if (t.revolving._img) {
+                t.revolving(0);
+            } else {
+                return;
+            }
+            o = $("center");
+            isAuto = isAuto || !t.setSize.p;
+            if (isAuto) {
+                var s = QZFL.dom.getSize(o);
+                var x = (t.cw - s[0] - 12) / 2;
+                var y = (t.ch - s[1] - 12) / 2 - 20;
+            } else {
+                var p = QZFL.dom.getPosition(o);
+                var x = p.left + t.setSize.p.x - (p.left + p.width / 2) + 2;
+                var y = p.top + t.setSize.p.y - (p.top + p.height / 2) + 2;
+            }
+            QZFL.dom.setXY(o, x, y);
+            if (isAuto) {
+                setTimeout(function () {
+                    var p = QZFL.dom.getPosition(o);
+                    t.setSize.p = {
+                        x: (p.left + p.width / 2),
+                        y: (p.top + p.height / 2)
+                    };
+                }, 0)
+            }
+        },
+        change: function (scale, setValue, isAuto) {
+            if (setValue) {
+                t.percent = setValue;
+            } else {
+                t.percent += t.percent * scale;
+            }
+            t.percent = Math.min(5, t.percent);
+            t.percent = Math.max(0.1, t.percent);
+            t.setSize(isAuto);
+        },
+        big: function () {
+            clearTimeout(t.big.timer);
+            t.big.timer = setTimeout(function () {
+                t.change(0.02);
+                t.big();
+            }, 10);
+            QZFL.event.addEvent(document.body, 'mouseup', t.stop);
+        },
+        small: function (isStop) {
+            clearTimeout(t.small.timer);
+            t.small.timer = setTimeout(function () {
+                t.change(-0.02);
+                t.small();
+            }, 10);
+            QZFL.event.addEvent(document.body, 'mouseup', t.stop);
+        },
+        stop: function () {
+            clearTimeout(t.big.timer);
+            clearTimeout(t.small.timer);
+            QZFL.event.removeEvent(document.body, 'mouseup', t.stop);
+        },
+        revolving: function (v) {
+            var self = t.revolving;
+            var r = self.r || 0;
+            r = (r + v + 4) % 4;
+            if (ua.ie) {
+                $("imgView").style.filter = 'progid:DXImageTransform.Microsoft.BasicImage(Rotation=' + r + ')';
+                if (ua.ie >= 8) {
+                    var w = t.width * t.percent;
+                    var h = t.height * t.percent;
+                    if (r % 2) {
+                        QZFL.dom.setSize($("imgView").parentNode, h, w);
+                    } else {
+                        QZFL.dom.setSize($("imgView").parentNode, w, h);
+                    }
+                }
+            } else {
+                var w = t.width * t.percent;
+                var h = t.height * t.percent;
+                if (!self._img) {
+                    self._img = $("imgView");
+                    var canvas = document.createElement('CANVAS');
+                    self._ghost = self._img;
+                    self._img.parentNode.replaceChild(canvas, self._img);
+                    self._img = canvas;
+                }
+                var ctx = self._img.getContext('2d');
+                if (r == 0) {
+                    self._img.parentNode.replaceChild(self._ghost, self._img);
+                    self._img = null;
+                } else if (r == 1) {
+                    self._img.setAttribute('width', h);
+                    self._img.setAttribute('height', w);
+                    ctx.rotate(90 * Math.PI / 180);
+                    ctx.drawImage(self._ghost, 0, -h, w, h);
+                } else if (r == 2) {
+                    self._img.setAttribute('width', w);
+                    self._img.setAttribute('height', h);
+                    ctx.rotate(180 * Math.PI / 180);
+                    ctx.drawImage(self._ghost, -w, -h, w, h);
+                } else if (r == 3) {
+                    self._img.setAttribute('width', h);
+                    self._img.setAttribute('height', w);
+                    ctx.rotate(270 * Math.PI / 180);
+                    ctx.drawImage(self._ghost, -w, 0, w, h);
+                }
+            }
+            //定位
+            var o = $("center");
+            var p = QZFL.dom.getPosition(o);
+            var x = p.left + t.setSize.p.x - (p.left + p.width / 2) + 2;
+            var y = p.top + t.setSize.p.y - (p.top + p.height / 2) + 2;
+            QZFL.dom.setXY(o, x, y);
+
+            self.r = r;
+        },
+        close: function () {
+            if (t.isCloseing) {
+                return;
+            }
+            t.isCloseing = 1;
+            QZONE.event.removeEvent(window, "resize", t.resize);
+            t.fadeOut(function () {
+                //异步关闭，否则在ie8下有问题
+                setTimeout(function () {
+                    QZFL.closeFullScreenDialog();
+                }, 100);
+            });
+        }
+    };
+    QZFL.closeFullScreenDialog = function () {
+        window.parent.closeFullScreenDialog();
+    };
+    QZFL.object.extend(controller, {
+        getHttpParams: function (key) {
+            var v = ENV.get('queryString')[key] || ENV.get('queryHash')[key];
+            v = v ? decodeURIComponent(v) : "";
+            return v;
+        },
+        show: function (el) {
+            try {
+                $(el).style.display = "";
+            } catch (e) { }
+        },
+        hide: function (el) {
+            try {
+                $(el).style.display = "none";
+            } catch (e) { }
+        }
+    });
+    var t = controller;
+    controller.init();
+</script>
+</html>
+<!--[if !IE]>|xGv00|00c2a6fd115e6b31eca87bd368339609<![endif]-->

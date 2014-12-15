@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b1c318f6f89f4ca79246aeadfc8c5e0b" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjectDesigner.Data.BizModules" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Navigator" Width="1.5" PointX="3.375" PointY="0.75" IsExpanded="false" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_Navigators_Navigators" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Foundation" Width="1.5" PointX="7" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.LEDModule" Width="1.5" PointX="11" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Pillar" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.VMS" Width="1.5" PointX="9" PointY="0.75" IsExpanded="false" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_Foundation" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_LEDModule" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_Pillar" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Files" Width="1.5" PointX="1.5" PointY="1.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Project" Width="1.5" PointX="3.375" PointY="1.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.ProjectEquipment" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="false" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_ProjectEquipment_Project" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

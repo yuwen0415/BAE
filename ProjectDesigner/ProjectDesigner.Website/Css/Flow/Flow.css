@@ -1,0 +1,133 @@
+﻿@import '../Common.css';
+
+/* 最终需删除本小节* /
+#buttons{
+  float:left;
+}
+/**/
+
+#outer {
+  text-align: center;
+  background-color: #fff;
+}
+
+#inner {
+  text-align: left;
+  width: 1024px;
+  background-color: #fff;
+  /*当使用背景图片时参考本段* /
+  background-image: url('../images/计划系统总流程图.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 668px;
+  /**/
+}
+
+#flowLeftSpace{
+  width:200px;
+  height:600px; 
+  float:left;
+}
+
+#flowAreaBlock{
+  width:171px;
+  float:left;
+}
+
+.flowSingle{
+  width:171px;
+  height:56px;
+  text-align:center;
+}
+
+.flowArrow{
+  width:171px;
+  height:29px; 
+  text-align:center;
+}
+
+/* 上下空白 */
+#flowAreaTopSpaceBlock, #flowAreaBottomSpaceBlock{
+  height:25px;
+}
+
+
+/**/
+#flowAreaStart{
+  height:59px;  
+}
+
+#flowAreaFirstUp{
+  height:55px;  
+}
+
+#flowAreaAfterFirstDown{
+  left:1px;
+  position:relative;
+}
+/**/
+
+
+#flowCommentLinesBlock{
+  width:188px; 
+  float:left;
+}
+
+.flowCommentLines{
+  width:188px; 
+  height:5px;
+  text-align:left;
+}
+
+#flowCommentLinesBeforeAllocate, #flowCommentLinesBeforeFirstUp
+, #flowCommentLinesBeforeFirstDown, #flowCommentLinesBeforeSecondUp
+, #flowCommentLinesBeforeSecondDown{
+  width:188px;
+}
+
+#flowCommentLinesBeforeAllocate{
+  height:128px;
+}
+
+#flowCommentLinesBeforeFirstUp{
+  height:70px;
+}
+#flowCommentLinesBeforeFirstDown{
+  height:70px;
+}
+#flowCommentLinesBeforeSecondUp{
+  height:72px;
+}
+#flowCommentLinesBeforeSecondDown{
+  height:68px;
+}
+
+/* 注释段 */
+#flowCommentsBeforeAllocate, #flowCommentsBeforeFirstUp
+, #flowCommentsBeforeFirstDown, #flowCommentsBeforeSecondUp
+, #flowCommentsBeforeSecondDown{
+  width:443px;
+}
+
+#flowCommentsBeforeAllocate{
+  height:113px;
+  text-align:right;
+}
+
+#flowCommentsBeforeFirstUp{
+  height:9px;
+}
+#flowCommentsBeforeFirstDown{
+  height:9px;
+}
+#flowCommentsBeforeSecondUp{
+  height:16px;
+}
+#flowCommentsBeforeSecondDown{
+  height:25px;
+}
+
+.legend{
+  width:100px;
+  display:inline;
+}

@@ -1,0 +1,262 @@
+﻿/* 先设置所有元素默认margin、padding、border为0 */
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+body{
+  text-align: center;  
+}
+
+#defaultPrincipal {
+  text-align: left;
+  width: 1024px;
+  height: 88%; /*   border-color: Blue;   border-width: 1px;   border-style: dotted; */
+  border-color: white;
+  padding-top:30px;
+}
+#leftSpaceOfPanel_00_00{
+  width:50px;
+}
+
+#compareChart {
+  text-align: center;
+  left: auto;
+  right: auto; /*   border-color: Red;   border-width: 1px;   border-style: dotted;*/
+}
+
+.compareChart {
+  width: 90%;
+  text-align: center;
+  border-color: Green;
+  border-width: 1px;
+  border-style: dotted;
+}
+
+#compareFlowContainer {
+  width:100%;
+  height: auto;
+  text-align: center;
+  border-top:solid 0px black;
+  border-bottom:solid 0px #000;
+  border-left:solid 0px black;
+  border-right:solid 0px black;
+  padding-bottom:2px;
+  display:block;
+}
+
+#compareFlowTableTitle {
+  font-size: 18px;
+  font-weight: bolder;
+  background-color: #c9e4ff;
+  height:25px;
+  padding-top:5px;	
+}
+
+#compareFlowLabels {
+  width: 10%;
+  display: inline;
+  float: left;
+  font-size: 14px;
+  font-weight:bold;
+  height:32px;
+  /*font-style: oblique;*/
+}
+.compareFlowLabel a
+{ color:White;
+
+}
+.compareFlowLabel a:link
+{ color:White;
+
+}
+.compareFlowLabel 
+{
+  font-size:16px;
+  display: block;
+  float: none;
+  height:25px;
+  padding-top:10px;
+  background-color: #3e96c6;
+  border-top:solid 0px #a9bbc7;
+  border-bottom:solid 1px #a9bbc7;
+  border-left:solid 0px #a9bbc7;
+  border-right:solid 1px #a9bbc7;
+  color: white; /*font-weight:bold;*/
+}
+
+.compareFlowValue {
+  display: block;
+  float: none;
+  font-size: 14px;
+  height:23px;
+  padding-top:12px;
+  border-top:solid 0px #a9bbc7;
+  border-bottom:solid 1px #a9bbc7;
+  border-left:solid 0px #a9bbc7;
+  border-right:solid 1px #a9bbc7;
+}
+.compareFlowValue a{ color:#003cc7}
+.compareFlowValue a:link{ color:#003cc7}
+.compareFlow {
+  width: 9.96%;
+  display: inline;
+  float: left;
+  font-size: 14px;
+}
+
+.leftAutoWidth {
+  width: 50%;
+  display: inline;
+  float: left;
+}
+
+.verticalSeperatorLine {
+  float: left;
+  display: inline;
+  width: 1.9px;
+  height: 99%; /* 曾经使用background的方式设置，但右侧元素离分割线太近，不好看，因此改用border方式*/ /* width: 0.9px; background-color:Black;   background-position:center; */
+  border-left-style: solid;
+  border-color: white;
+  border-left-color: Black;
+  border-width: 0.05px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.horizontalSeperatorLine {
+  clear: both;
+  float: none;
+  display: block; /**/
+  width: 100%;
+  height: 1.9px;
+  border-style: solid;
+  border-color: White;
+  border-bottom-color: Black;
+  border-width: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+#ProvincesDefaultTest {
+  text-align: center; /*display:none;*/
+  border-width:0px;
+}
+
+.hide {
+  display: none;
+}
+
+.checkbox {
+  vertical-align: middle;
+  font-size: 12pt;
+  background-color:#fff;
+}
+
+.leftFloat {
+  float: left;
+}
+
+.inlineDiv {
+  display: inline;
+}
+
+.centerInlineDiv {
+  display: inline;
+}
+
+div[class=centerInlineDiv] {
+  float: left;
+  display: inline;
+}
+
+.horizontalCenterAlign {
+  text-align: center;
+}
+
+#panelLabels {
+  text-align: center;
+  float: left;
+  margin-top: 8px;
+  display:block;
+}
+
+#panel_00, #panel_01, #panel_02{
+  clear:both;
+  display:block;
+  border:solid 1px;
+}
+
+#panel_00_00{
+  clear:both;
+  text-align: left;
+  display:block;
+}
+
+#panel_00_01{
+  clear:both;
+  display:block;
+}
+
+.panelLabel {
+  clear:both;
+  /*float:left;*/
+  display:inline;
+  background-color: #00F;
+  border-color: #11F;
+  border-style: solid;
+  border-width: 0px; /*margin:1px;   padding:1px;*/
+  color: White;
+}
+
+.panelDisactivateLabel {
+  background-color: #333;
+  border-color: #11F;
+  border-style: solid;
+  border-width: 0px; /*margin:1px;   padding:1px;*/
+  color: White;
+}
+
+.panelActivateLabel {
+  background-color: #00F;
+  border-color: #11F;
+  border-style: solid;
+  border-width: 4px; /*margin:1px;   padding:1px;*/
+  border-bottom-width: 0px;
+  color: White;
+}
+
+.panelSeparator {
+  width: 10px;
+}
+
+/*/*
+.panel {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+.panel *{
+  border-width: 0px;
+}
+/**/
+
+/*
+.rightAutoWidth {
+  width: auto;
+  display: inline;
+  float: left;
+}
+*/
+#topBar{
+  text-align:left;
+}
+
+#rightSpaceOfTopBar{
+  width:400px;
+}
+
+.drpYearNo{
+  width:60px;
+}

@@ -1,0 +1,75 @@
+﻿.TabStrip
+{
+	font-family: Verdana, 宋体;
+	cursor: hand;
+	height: 28px;
+	margin-right: -15px;
+	float: left;
+	position: relative;
+}
+.TabStrip_Left
+{
+	font-family: Verdana, 宋体;
+	width: 7px;
+	background: transparent url(../Img/TabStripe/1.gif) 0px 0px no-repeat;
+}
+.TabStrip_Inner
+{
+	font-family: 微软雅黑;
+	text-align: center;
+	background: transparent url(../Img/TabStripe/3.gif) 0px 0px repeat-x;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 2px;
+	color: #3a8ed4;
+}
+.TabStrip_Right
+{
+	font-family: Verdana, 宋体;
+	width: 24px;
+	background: transparent url(../Img/TabStripe/2.gif) no-repeat  0px 0px;
+}
+.TabStripSelect_Left
+{
+	font-family: Verdana, 宋体;
+	width: 7px;
+	background: transparent url(../Img/TabStripe/4.gif) 0px 0px no-repeat;
+}
+.TabStripSelect_Inner
+{
+	font-family: 微软雅黑;
+	color: #fff;
+	text-align: center;
+	background: transparent url(../Img/TabStripe/5.gif) 0px 0px repeat-x;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 2px;
+}
+.TabStripSelect_Right
+{
+	font-family: Verdana, 宋体;
+	width: 24px;
+	background: transparent url(../Img/TabStripe/6.gif) no-repeat 0px 0px;
+}
+.ButtonDown
+{
+	font-family: Verdana, 宋体;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	background-color: #6699ff;
+	height: 20px;
+	text-align: center;
+}
+.ButtonUp
+{
+	font-family: Verdana, 宋体;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	background-color: #B9DDFE;
+	height: 20px;
+	text-align: center;
+}

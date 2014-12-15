@@ -1,0 +1,484 @@
+/* 自动生效类*/
+BODY {
+	FONT-SIZE: 9pt;
+	FONT-FAMILY: Verdana;
+	MARGIN: 0px 0px 0px 0px;
+	background-color: #FFFFFF;	
+}
+TABLE
+{
+    font-family: verdana;
+	font-size: 9pt;
+	cursor: default;
+	border-collapse: collapse;
+}
+TH {
+	FONT-SIZE: 9pt;
+	COLOR: #555555;
+	font-family: "宋体";
+}
+TR {
+	FONT-SIZE: 9pt; COLOR: #555555; 
+}
+TD {
+	FONT-SIZE: 9pt;
+	COLOR: #555555;
+	font-family: "宋体";
+}
+
+IMG {
+	BORDER-RIGHT: medium none;
+	BORDER-TOP: medium none;
+	BORDER-LEFT: medium none;
+	BORDER-BOTTOM: medium none;
+}
+SELECT {
+	FONT-SIZE: 9pt; COLOR: #888888; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+TEXTAREA {
+	BORDER-RIGHT: gray 1px solid;
+	PADDING-RIGHT: 7px;
+	BORDER-TOP: gray 1px solid;
+	OVERFLOW-Y: scroll;
+	PADDING-LEFT: 7px;
+	SCROLLBAR-FACE-COLOR: #ffffff;
+	FONT-SIZE: 9pt;
+	PADDING-BOTTOM: 7px;
+	SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
+	BORDER-LEFT: gray 1px solid;
+	SCROLLBAR-SHADOW-COLOR: #b7b7b7;
+	COLOR: #888888;
+	SCROLLBAR-3DLIGHT-COLOR: #b7b7b7;
+	LINE-HEIGHT: 1.5;
+	SCROLLBAR-ARROW-COLOR: #999999;
+	PADDING-TOP: 7px;
+	SCROLLBAR-TRACK-COLOR: #f6f6f6;
+	BORDER-BOTTOM: gray 1px solid;
+	FONT-FAMILY:  宋体,Verdana,Arial;
+	SCROLLBAR-DARKSHADOW-COLOR: #ffffff;
+	background-color: #FFFFFF;
+}
+/*段落格式*/
+P {
+	BACKGROUND-POSITION: 2em 50%; TEXT-INDENT: 24px
+}
+/* 超级链节 */
+
+A:link {
+	COLOR: #555555; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #555555; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #666666; FONT-SIZE: 9pt; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #adbac9; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A.nav:link {
+	COLOR: #ffffff; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A.nav:visited {
+	COLOR: #ffffff; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A.nav:hover {
+	COLOR: #CCCCCC; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A.nav:active {
+	COLOR: #CCCCCC; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A.red:link {
+	COLOR: #FF0000; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A.red:visited {
+	COLOR: #FF0000; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A.red:hover {
+	COLOR: #0099CC; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A.red:active {
+	COLOR: #0099CC; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+
+A.blue:link {
+	COLOR: #2f547e; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A.blue:visited {
+	COLOR: #2f547e; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A.blue:hover {
+	COLOR: #5a8cc2; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A.blue:active {
+	COLOR: #a7c1de; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+
+
+/* 登陆---系统名称*/
+.td_title_login {
+	FONT-WEIGHT: bolder;
+	FONT-FAMILY: "黑体";
+	FONT-SIZE: 38px;
+	COLOR: #000066;
+	FONT-STYLE: normal;
+}
+
+/* 表格 */
+table.datatable
+{
+	cursor: default;
+	border-collapse: collapse;
+}
+
+/* 表格的页眉 */
+table.datatable thead
+{
+	background-color: white;
+}
+
+/* 表格体 */
+table.datatable tbody
+{
+	background-color: window;
+}
+
+/* 表格的页脚 */
+table.datatable tfoot
+{
+	background-color: white;
+
+}
+
+/* 表格的奇数行 */
+table.datatable tr.row_odd
+{
+
+}
+
+/* 表格的偶数行 */
+table.datatable tr.row_even
+{
+
+}
+
+/* 表格的选中行 */
+table.datatable tr.row_selected
+{
+	background-color: #e0e0e0;
+}
+
+/* 当前激活表格的选中行 */
+table.datatable tr.row_active
+{
+	background-color: #8989bc;
+	color: white;
+}
+
+/* 表格的指示器 */
+table.datatable td.indicate
+{
+	background-color: #f0f0f0;
+}
+
+/* 下拉表格 */
+table.dropdowntable
+{
+	border: gray 1px solid;
+	cursor: default;
+	border-collapse: collapse
+}
+
+/* 下拉表格的页眉 */
+table.dropdowntable thead
+{
+	font-size: 9pt;
+	text-align: center
+}
+
+/* 下拉表格体 */
+table.dropdowntable tbody
+{
+	font-size: 9pt;
+	background-color: whitesmoke;
+}
+
+/* 下拉表格的页脚 */
+table.dropdowntable tfoot
+{
+	font-size: 9pt;
+	background-color: #f0f0f0;
+}
+
+/* 下拉表格的奇数行 */
+table.dropdowntable tr.row_odd
+{
+
+}
+
+/* 下拉表格的偶数行 */
+table.dropdowntable tr.row_even
+{
+
+}
+
+/* 下拉表格的选中行 */
+table.dropdowntable tr.row_selected
+{
+	background-color: #8989bc;
+	color: white;
+}
+
+
+/*标题---黑体*/
+.title
+{
+	font-decoration:none;
+	font-family:Verdana;
+	font-size:9pt;
+	font-weight:bold;
+	color:#666666;
+}
+
+/*大红黑体*/
+.bnew
+{
+	font-decoration:none;
+	font-family:Verdana;
+	font-size:9pt;
+	font-weight:bold;
+	color:#990000;
+}
+/*大号交易码*/
+.elem
+{
+	font-decoration:none;
+	font-family:宋体;
+	font-size:13px;
+	font-weight:bold;
+	color:#555555;
+	background-color: #FFFFFF;
+}
+/* 文本字体 */
+.text {
+	FONT-SIZE: 9pt; font-family:Verdana; LINE-HEIGHT: 20px;
+}
+/* 文本字体---红色 */
+.text_red {
+	FONT-SIZE: 9pt;
+	LINE-HEIGHT: 20px;
+	color: #FF0000;
+}
+/* 文本字体---页脚部分 */
+.text_footer {
+	FONT-SIZE: 9pt;
+	LINE-HEIGHT: 20px;
+	color: #CCCCCC;
+}
+/* 注释*/
+.text_note {
+	FONT-SIZE: 9pt;
+	LINE-HEIGHT: 20px;
+	color: #ffffff;
+}
+/*表格体内容排形式*/
+.padding_content {
+	PADDING-BOTTOM: 50px; PADDING-LEFT: 70px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+
+/*背景排列形式*/
+.bg_left_topx {
+	BACKGROUND-POSITION: left top; BACKGROUND-REPEAT: repeat-x
+}
+.bg_left_botx {
+	BACKGROUND-POSITION: left bottom; BACKGROUND-REPEAT: repeat-x
+}
+/* 文本输入框格式 */
+.input {
+	BORDER-RIGHT: dimgray 1px solid;
+	BORDER-TOP: dimgray 1px solid;
+	FONT-SIZE: 9pt;
+	HEIGHT: 20px;
+	BORDER-LEFT: dimgray 1px solid;
+	BORDER-BOTTOM: dimgray 1px solid;
+	FONT-FAMILY: verdana;
+	BACKGROUND-COLOR: window;
+}
+.input_50 {
+	BORDER-RIGHT: dimgray 1px solid;
+	BORDER-TOP: dimgray 1px solid;
+	FONT-SIZE: 9pt;
+	HEIGHT: 20px;
+	BORDER-LEFT: dimgray 1px solid;
+	BORDER-BOTTOM: dimgray 1px solid;
+	FONT-FAMILY: verdana;
+	BACKGROUND-COLOR: window;
+	width: 50px;
+}
+.input_100 {
+	BORDER-RIGHT: dimgray 1px solid;
+	BORDER-TOP: dimgray 1px solid;
+	FONT-SIZE: 9pt;
+	HEIGHT: 20px;
+	BORDER-LEFT: dimgray 1px solid;
+	BORDER-BOTTOM: dimgray 1px solid;
+	FONT-FAMILY: verdana;
+	BACKGROUND-COLOR: window;
+	width: 100px;
+}
+     /*输入含有背影色*/
+.input_109 {
+	BORDER-RIGHT: dimgray 1px solid;
+	BORDER-TOP: dimgray 1px solid;
+	FONT-SIZE: 9pt;
+	HEIGHT: 20px;
+	BORDER-LEFT: dimgray 1px solid;
+	BORDER-BOTTOM: dimgray 1px solid;
+	FONT-FAMILY: verdana;
+	BACKGROUND-COLOR: #f3f3f3;
+	width: 100px;
+}
+/*三列输入*/
+.input_160 {
+	BORDER-RIGHT: gray 1px solid;
+	BORDER-TOP: gray 1px solid;
+	FONT-SIZE: 9pt;
+	BORDER-LEFT: gray 1px solid;
+	BORDER-BOTTOM: gray 1px solid;
+	FONT-FAMILY: verdana;
+	BACKGROUND-COLOR: window;
+	width:160;
+}
+/*三列输入含有背影色*/
+.input_169 {
+	BORDER-RIGHT: gray 1px solid;
+	BORDER-TOP: gray 1px solid;
+	FONT-SIZE: 9pt;
+	BORDER-LEFT: gray 1px solid;
+	BORDER-BOTTOM: gray 1px solid;
+	FONT-FAMILY: verdana;
+	BACKGROUND-COLOR: #f3f3f3;
+	width:160;
+}
+/*两列输入*/
+.input_240 {
+	BORDER-RIGHT: gray 1px solid;
+	BORDER-TOP: gray 1px solid;
+	FONT-SIZE: 9pt;
+	BORDER-LEFT: gray 1px solid;
+	BORDER-BOTTOM: gray 1px solid;
+	FONT-FAMILY: verdana;
+	BACKGROUND-COLOR: window;
+	width: 240px;
+}
+
+/* 按纽格式*/
+.button {
+	BORDER-RIGHT: darkgray 1px solid;
+	BORDER-TOP: darkgray 1px solid;
+	FONT-SIZE: 9pt;
+	FONT-FAMILY: Verdana,Arial,宋体;
+	BACKGROUND: url(images/button.gif);
+	BORDER-LEFT: darkgray 1px solid;
+	BORDER-BOTTOM: darkgray 1px solid;
+	cursor: hand;
+	HEIGHT: 23px;
+	background-image: url(../images/bottom.gif);
+}
+.button_dateset {
+	BORDER-RIGHT: darkgray 1px solid;
+	BORDER-TOP: darkgray 1px solid;
+	FONT-SIZE: 9pt;
+	BACKGROUND: url(images/button.gif);
+	BORDER-LEFT: darkgray 1px solid;
+	BORDER-BOTTOM: darkgray 1px solid;
+	FONT-FAMILY: Webdings;
+	cursor: hand;
+	HEIGHT: 23px;
+	background-image: url(../images/bottom.gif);
+}
+.button_height20 {
+	BORDER-RIGHT: darkgray 1px solid;
+	BORDER-TOP: darkgray 1px solid;
+	FONT-SIZE: 9pt;
+	BACKGROUND: url(images/button.gif);
+	BORDER-LEFT: darkgray 1px solid;
+	BORDER-BOTTOM: darkgray 1px solid;
+	FONT-FAMILY: verdana;
+	cursor: hand;
+	HEIGHT: 20px;
+	background-image: url(../images/bottom.gif);
+}
+
+.editor {
+	BORDER-RIGHT: dimgray 1px solid;
+	BORDER-TOP: dimgray 1px solid;
+	FONT-SIZE: 9pt;
+	BORDER-LEFT: dimgray 1px solid;
+	BORDER-BOTTOM: dimgray 1px solid;
+	FONT-FAMILY: verdana;
+	BACKGROUND-COLOR: window;
+}
+
+.input_redfont {
+	BORDER-RIGHT: dimgray 1px solid;
+	BORDER-TOP: dimgray 1px solid;
+	FONT-SIZE: 9pt;
+	BORDER-LEFT: dimgray 1px solid;
+	BORDER-BOTTOM: dimgray 1px solid;
+	FONT-FAMILY: verdana;
+	BACKGROUND-COLOR: window;
+	color: #FF0000;
+	HEIGHT: 20px;
+}
+/* 按纽&文本两种形式展*/
+.input_no_border{
+	BORDER-RIGHT:  #CCCCCC ０px solid;
+	BORDER-TOP:  #CCCCCC ０px solid;
+	BORDER-LEFT: #CCCCCC ０px solid;
+	BORDER-BOTTOM: #CCCCCC ０px solid;
+	COLOR: #666666;
+	BACKGROUND-COLOR: window;
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif";
+	FONT-SIZE: 9pt;
+	HEIGHT: 20px;
+}
+
+.input_underline{
+	BORDER-RIGHT:  #CCCCCC 0px solid;
+	BORDER-TOP:  #CCCCCC 0px solid;
+	BORDER-LEFT: #CCCCCC 0px solid;
+	BORDER-BOTTOM: #000000 1px solid;
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif";
+	FONT-SIZE: 9pt;
+	HEIGHT: 20px;
+	BACKGROUND-COLOR: window;
+}
+.input_redcolor{
+	BORDER-RIGHT:  #CCCCCC 0px solid;
+	BORDER-TOP:  #CCCCCC 0px solid;
+	BORDER-LEFT: #CCCCCC 0px solid;
+	BORDER-BOTTOM: #ff0000 1px solid;
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif";
+	FONT-SIZE: 9pt;
+	HEIGHT: 20px;
+	COLOR: #FF0000;
+	BACKGROUND-COLOR: window;
+}
+
+/* 表格CSS文档r-右，l-左，t-项部, b-底*/
+.table_t{border-top: 1px solid #666666}
+.table_l{border-left:1px solid #666666}
+.table_r{border-right:1px solid #666666}
+.table_b{border-bottom:1px solid #666666}
+.table_rb{border-right:1px solid #666666;border-bottom:1px solid #666666}
+.table_rbt{border-right:1px solid #666666;border-bottom:1px solid #666666;border-top:1px solid #666666}
+.table_rt{border-right:1px solid #666666;border-top:1px solid #666666}
+.table_rl{border-right:1px solid #666666;border-left:1px solid #666666}
+.table_rlb{border-right:1px solid #666666;border-left:1px solid #666666;border-bottom:1px solid #666666}
+.table_rlt{border-right:1px solid #666666;border-left:1px solid #666666;border-top:1px solid #666666}
+.table_lb{border-left:1px solid #666666;border-bottom:1px solid #666666}
+.table_lt{border-left:1px solid #666666;border-top:1px solid #666666}
+.table_bt{border-bottom:1px solid #666666;border-top:1px solid #666666}
+.table_ltb{	border-left:1px solid #666666;	border-top:1px solid #666666;border-bottom-width: 1px;border-bottom-style:solid;border-bottom-color: #666666;}
+.table_rlbt{border: 1px solid #666666;}

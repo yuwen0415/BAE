@@ -1,0 +1,95 @@
+﻿BODY
+{
+	font-family: 微软雅黑;
+	font-size: 9pt;
+	text-align: left;
+}
+.Dot
+{
+	font-size: 12px;
+	color: #CC0000;
+	line-height: 25px;
+	letter-spacing: 2px;
+}
+.LeftMenuEmptyLine
+{
+	height: 0px;
+}
+.LeftMenuL1On
+{
+	font-family: 微软雅黑;
+	text-align: left;
+	vertical-align: middle;
+	font-weight: normal;
+	font-size: 10pt;
+	color: #005393;
+	letter-spacing: 2px;
+	cursor: hand;
+	height: 36px;
+	background: transparent url(../Img/LeftMenu/bg_level_1_On.gif) 0px 0px repeat-x;
+	padding-left: 6px;
+}
+.LeftMenuL1Off
+{
+	font-family: 微软雅黑;
+	text-align: left;
+	vertical-align: middle;
+	font-weight: normal;
+	font-size: 10pt;
+	color: #005393;
+	letter-spacing: 2px;
+	cursor: hand;
+	height: 36px;
+	background: transparent url(../Img/LeftMenu/bg_level_1_Off.gif) 0px 0px repeat-x;
+	padding-left: 6px;
+}
+.LeftMenuL2On
+{
+	font-family: 微软雅黑;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 9pt;
+	color: #000000;
+	letter-spacing: 2px;
+	cursor: hand;
+	height: 25px;
+	padding-left: 20px;
+	background-color: #d7def8;
+	list-style-type: disc;
+	list-style-position: outside;
+}
+.LeftMenuL2Out
+{
+	font-family: 微软雅黑;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 9pt;
+	color: #808080;
+	letter-spacing: 2px;
+	cursor: hand;
+	height: 25px;
+	padding-left: 20px;
+	background-color: #fff;
+	list-style-type: disc;
+	list-style-position: outside;
+}
+.LeftMenuL2Over
+{
+	font-family: 微软雅黑;
+	color:#808080;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 9pt;
+	border:1px solid #ffbd69;
+	letter-spacing: 2px;
+	cursor: hand;
+	height: 25px;
+	padding-left: 20px;
+	background-color:#ffe7a2;
+    /*background: url(../Img/ToolButton/mover.gif) 0px 0px repeat-x;*/
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+.tdLeft_form{width: 213px; vertical-align: top; border-left: solid 1px #aacae6; border-right: solid 1px #aacae6;border-top: solid 1px #aacae6; border-bottom:solid 1px #aacae6}
+#tdSwitch{width: 10px; border-left: solid 1px #aacae6; border-right: solid 1px #aacae6}

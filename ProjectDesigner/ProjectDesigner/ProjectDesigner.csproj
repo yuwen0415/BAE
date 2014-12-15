@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BD11B49-1827-4CA0-B516-5DCA3A54CA7F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectDesigner</RootNamespace>
+    <AssemblyName>ProjectDesigner</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EBA">
+      <HintPath>..\lib\EBA.dll</HintPath>
+    </Reference>
+    <Reference Include="EBA.Modules">
+      <HintPath>..\lib\EBA.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EquipmentType.cs" />
+    <Compile Include="Foundation\Size.cs" />
+    <Compile Include="IDataContext.cs" />
+    <Compile Include="IEquipment.cs" />
+    <Compile Include="Navigation\INavigationProvider.cs" />
+    <Compile Include="Navigation\INavigator.cs" />
+    <Compile Include="Navigation\NavigationTargets.cs" />
+    <Compile Include="Navigation\NavigatorNode.cs" />
+    <Compile Include="Pillar\PillarType.cs" />
+    <Compile Include="Project\IProject.cs" />
+    <Compile Include="Project\IProjectEquipment.cs" />
+    <Compile Include="Project\Location.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Storages\IFile.cs" />
+    <Compile Include="Storages\IStorageProvider.cs" />
+    <Compile Include="Storages\StorageConfigurationSection.cs" />
+    <Compile Include="VMS\Connection.cs" />
+    <Compile Include="Foundation\IFoundation.cs" />
+    <Compile Include="VMS\ILEDModule.cs" />
+    <Compile Include="Pillar\IPillar.cs" />
+    <Compile Include="VMS\IVMS.cs" />
+    <Compile Include="VMS\LedStandard.cs" />
+    <Compile Include="VMS\ModuleSize.cs" />
+    <Compile Include="VMS\VMSType.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

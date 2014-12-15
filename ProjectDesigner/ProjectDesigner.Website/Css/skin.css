@@ -1,0 +1,411 @@
+/*@charset "utf-8";
+ CSS Document 
+
+ 导航------------------------------------------------------------- 
+
+.banner {
+	background:url(../images/Banner/banner_bg.gif) repeat-x;
+}
+.banner_left {
+	background:url(../images/Banner/banner_title.gif) no-repeat;
+}
+.banner_right {
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#FFF;
+	background:url(../images/Banner/banner_right.gif) no-repeat;
+}
+.right_top {
+	background:url(../images/Banner/menu_top.gif) no-repeat;
+}
+.right_top a:link, a:visited {
+	color:#FFF;
+}
+.right_top a:hover, a:active {
+	color:#FFF000;
+}
+.right_bottom_menu {
+	color:#207fbc;
+	background:url(../images/Banner/button.gif) no-repeat;
+}
+.right_bottom a:link, a:visited {
+	color:#0f77b9;
+}
+.right_bottom a:hover, a:active {
+	color:#e17009;
+}
+
+ 状态栏-------------------------------------------------------------- 
+.foot {
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	background-color:#1472c4;
+}
+.foot_left {
+	color:#e9f5ff;
+}
+.foot_right {
+	background:url(../images/Bottom/copyright.gif) no-repeat;
+}
+
+ 菜单------------------------------------------------------------------- 
+.title_menu {
+	font-family:"微软雅黑";
+	font-size:14px;
+	font-weight:bold;
+	color:#FFF;
+	background:url(../images/LeftMenu/title_menu_bg.gif) no-repeat;
+}
+.title_menu a {
+	color:#FFF;
+}
+.left_switch {
+}
+子模块菜单
+.dot {
+	font-size: 12px;
+	color: #CC0000;
+}
+.left_menu1_on {
+	font-weight:bold;
+	font-size: 14px;
+	color: #0f77b9;
+	border-top:#c5dbec 1px solid;
+	border-bottom:#c5dbec 1px solid;
+	background: transparent url(../images/LeftMenu/bg_level_1_On.gif) no-repeat;
+}
+.left_menu1_off {
+	font-weight:bold;
+	font-size: 14px;
+	color: #0f77b9;
+	border-top:#c5dbec 1px solid;
+	border-bottom:#c5dbec 1px solid;
+	background: transparent url(../images/LeftMenu/bg_level_1_Off.gif) no-repeat;
+}
+.left_menu2 a {
+	color:#000;
+}
+.left_menu2_on {
+	font-size: 12px;
+	color: #000000;
+}
+.left_menu2_out {
+	font-size: 12px;
+	color: #000;
+}
+.left_menu2_over {
+	color:#000;
+	font-size: 12px;
+	border:1px solid #ffbd69;
+}
+ end---------------------------------------------------------------------------
+
+ 选项卡 ---------------------------------------------------------
+.tabs_items {
+	border-bottom:#c5dbec 1px solid;
+}
+.tabs_items li {
+	font-size:14px;
+	font-weight:bold;
+	font-family:"微软雅黑";
+	color:#0f77b9;
+	border-left:#c5dbec 1px solid;
+	border-top:#c5dbec 1px solid;
+	border-right:#c5dbec 1px solid;
+	background:url(../images/Default/nav_not_selected.gif) repeat-x;
+}
+.tabs_items li a {
+	float:left;
+	color:#0f77b9;
+	text-decoration:none;
+}
+ 选中样式 
+.tabs_items .selected {
+	font-size:14px;
+	font-weight:bold;
+	font-family:"微软雅黑";
+	color:#e87008;
+	background:url(../images/Default/nav_selected.gif) repeat-x;
+}
+.tabs_items .selected a {
+	float:left;
+	color:#e87008;
+	text-decoration:none;
+}
+.tabs_items .close {
+	background:url(../images/Default/close1.gif) no-repeat;
+}
+.tabs_items .close_selected {
+	background:url(../images/Default/close2.gif) no-repeat;
+}
+.pre_item {
+	background:url(../images/Default/pre_icon.gif) no-repeat;
+}
+.next_item {
+	background:url(../images/Default/next_icon.gif) no-repeat;
+}
+ -----------------------------------------------------------------end 
+
+ 查询条件--------------------------------------------------------------
+.search_panel .top_left {
+	background: url(../images/SearchPanel/SearchPanel_Left1.gif) no-repeat;
+}
+.search_panel .top_center {
+	background: url(../images/SearchPanel/SearchPanel_Inner1.gif) repeat-x;
+}
+.search_panel .top_right {
+	background: url(../images/SearchPanel/SearchPanel_Right1.gif) no-repeat;
+}
+.search_panel .middle_left {
+	background: url(../images/SearchPanel/SearchPanel_Left2.gif) repeat-y;
+}
+.search_panel .middle_right {
+	background: url(../images/SearchPanel/SearchPanel_Right2.gif) repeat-y;
+}
+.search_panel .bottom_left {
+	background: url(../images/SearchPanel/SearchPanel_Left3.gif) no-repeat;
+}
+.search_panel .bottom_center {
+	background: url(../images/SearchPanel/SearchPanel_Inner3.gif) repeat-x;
+}
+.search_panel .bottom_right {
+	background: url(../images/SearchPanel/SearchPanel_Right3.gif) no-repeat;
+}
+ ------------------------------------------------------------------end 
+
+ 表格样式 --------------------------------------------------------------
+.gridview {该样式为表格的整体样
+	background-color:#c5dbec;
+}
+.gridview th {表头样式
+	font-size: 9pt;
+	font-weight:normal;
+	color:#005f8f;
+	background: url(../images/Table/GridViewTitle.gif) repeat-x;
+	background-color:#ebf5fd;
+}
+.gridview th a {表头链接样式
+	color:#005f8f;
+}
+.gridview th:hover {表头鼠标移过样式
+	background: url(../images/Table/GridViewTitle_hover.gif) repeat-x;
+	background-color:#ebf5fd;
+}
+.gridview th a.asc {表头字段选中升序样式
+	background:url(../images/Table/icon_asc.gif) no-repeat right;
+}
+.gridview th a.desc {表头字段选中降序样式
+	background:url(../images/Table/icon_desc.gif) no-repeat right;
+}
+.gridview .odd {
+	background-color:#f9f9f9;
+}
+.gridview tbody tr>th:first-child {序号样式
+	color:#0C0;
+	background:#FFF;
+	font-weight:normal;
+}
+.gridview tbody tr>th.first-child {竖型表头样式
+	color:#005f8f;
+	background: url(../images/Table/GridViewTitle.gif) repeat-x;
+	background-color:#ebf5fd;
+}
+.gridview tbody td {单元格样
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:9pt;
+}
+.gridview tbody .hover {
+	background-color:#E9EDF9;
+}
+.gridview tbody .selected {
+	border: 1px solid #fad42e;
+	background: #fbec88 url(../Scripts/jqueryUI/images/ui-bg_flat_55_fbec88_40x100.png) 50% 50% repeat-x;
+	color: #363636;
+}
+.gridview tbody tr.selected td {
+	background-color:#fbec88;
+}
+.gridview tfoot td {页脚单元格样
+	background: url(../images/Table/GridViewTitle.gif) repeat-x;
+	background-color:#ebf5fd;
+}
+.gridview tfoot div {表格div样式
+	font-family:Arial, Helvetica, sans-serif;
+	color:#005f8f;
+}
+.gridview tfoot div a {表格div的链接样
+	color:#005f8f;
+}
+.gridview tfoot div a:hover, .gridview div a.selected {该样式用于页脚的链接*.gridview div a.select表示链接选中后的样式
+	color:#005f8f;
+	background-color:#FFF;
+	border:#c5dbec 1px solid;
+}
+ -----------------------------------------------------------------end 
+
+ 通用按钮样式------------------------------------------------------------- 
+.button_out {
+	font-size: 12px;
+	color: #0b69ab;
+	border: #c5dbec 1px solid;
+	background: url(../Images/ToolButton/mout.gif) 0px 0px repeat-x;
+}
+.button_over {
+	font-size: 12px;
+	color:#0b69ab;
+	border: #f1c17a 1px solid;
+	background: url(../Images/ToolButton/mover.gif) 0px 0px repeat-x;
+}
+ --------------------------------------------------------------------end 
+
+ 编辑*------------------------------------------------------------------- 
+.edit_box {
+	border:#6ea7cf 1px solid;
+}
+.edit_box2 {
+	border:#6ea7cf 1px solid;
+}
+.edit_title {
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#FFF;
+	background:url(../images/EditPage/title_bg.gif) repeat-x;
+}
+.edit_content th, .txt_bg {
+	font-weight:normal;
+	background-color:#e7f0f7;
+}
+.edit_content td span {
+	color:#F00;
+}
+.edit_box .tab1 {
+	font-family:"微软雅黑";
+	font-size:14px;
+	font-weight:bold;
+	color:#3d7dae;
+	border-right:#d0d0d0 1px solid;
+	background-color:#FFF;
+}
+.edit_box .tab2 {
+	font-family:"微软雅黑";
+	font-size:14px;
+	font-weight:bold;
+	color:#888;
+	background-color:#FFF;
+}
+ --------------------------------------------------------------------end 
+
+ 地图------------------------------------------------------------------- 
+.map_tool {
+	background-color:#FFF;
+	border-bottom:#c5dbec 1px solid;
+}
+.map_tool a {
+	color:#666;
+}
+.map_tool a:hover {
+	color:#06F;
+}
+.map_senior_tool ul li {
+	color:#287eb4;
+	font-size:12px;
+	border-bottom:#c5dbec 1px solid;
+	border-right:#c5dbec 1px solid;
+	background:url(../images/Map/maptoolbg.gif) repeat-y;
+}
+.map_tool_tab ul li {
+	color:#287eb4;
+	font-size:14px;
+	font-weight:bold;
+	background:url(../images/Map/maptoolbar_tab.gif) repeat-x;
+	border-top:#c5dbec 1px solid;
+	border-right:#c5dbec 1px solid;
+}
+.map_tool_tab a {
+	color:#287eb4;
+}
+.map_tool_tab a:hover {
+	color:#fe7800;
+}
+.map_tool_tab a.selected {
+	color:#fe7800;
+}
+.map_popup {
+	border:#c5dbec 1px solid;
+	background-color:#FFF;
+}
+ --------------------------------------------------------------------end 
+
+ 输入错误提示框---------------------------------------------------------------- 
+.field-validation-error {
+	background:#ffe1e1;
+	color:#C00;
+	border:#ec4b84 1px solid
+}
+.field-validation-summary-errors .content {
+	border:#c7c7c7 1px solid;
+	background-color:#ed2020;
+}
+.field-validation-summary-errors .content ul li {
+	font-size:12px;
+	color:#fff;
+}
+.field-validation-summary-errors .triangle {
+	background:url(../images/Error/error_triangle.gif) no-repeat;
+}
+---dayi---
+.hover {
+	background-color:#ebf5fd;
+	cursor:pointer;
+}
+ 首页样式表 
+.frame_l {
+	background:url(../images/Home/frame_l.gif) no-repeat;
+}
+.frame_c {
+	background:url(../images/Home/frame_c.gif) repeat-x;
+}
+.frame_c_notice {
+	font-family:"微软雅黑";
+	font-size:14px;
+	font-weight:bold;
+	color:#007fa8;
+	background:url(../images/Home/notice.gif) no-repeat left;
+}
+.frame_c_announce {
+	font-family:"微软雅黑";
+	font-size:14px;
+	font-weight:bold;
+	color:#007fa8;
+	background:url(../images/Home/announce.gif) no-repeat left;
+}
+.frame_c_todo {
+	font-family:"微软雅黑";
+	font-size:14px;
+	font-weight:bold;
+	color:#007fa8;
+	background:url(../images/Home/todo.gif) no-repeat left;
+}
+.frame_c_mes {
+	font-family:"微软雅黑";
+	font-size:14px;
+	font-weight:bold;
+	color:#007fa8;
+	background:url(../images/Home/mes_board.gif) no-repeat left;
+}
+.frame_c_more {
+	font-size:11px;
+	font-family:"微软雅黑";
+	color:#007fa8;
+}
+.frame_c_more a {
+	color:#007fa8;
+}
+.frame_c_line {
+	background:url(../images/Home/line.gif) repeat-x;
+}
+.frame_r {
+	background:url(../images/Home/frame_r.gif) no-repeat;
+}
+
+*/

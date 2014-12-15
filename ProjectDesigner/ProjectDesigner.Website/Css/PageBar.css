@@ -1,0 +1,154 @@
+﻿.PageBar_Panel
+{
+	font-family: Verdana, 宋体;
+	vertical-align: middle;
+	width: 100%;
+	height: 32px;
+	text-align: left;
+	border-collapse: collapse;
+	border-right: #c5daeb 1px solid;
+	border-left: #c5daeb 1px solid;
+	border-bottom: #c5daeb 1px solid;
+	background-image: url(../Img/PageBar/pagebar_bg.gif);
+}
+
+.PageBar_Label
+{
+	font-family: Verdana, 宋体;
+	color: #355FB0;
+	font-size: 9pt;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.PageBar_Button_MouseOut
+{
+	font-family: Verdana, 宋体;
+	font-size: 9pt;
+	color: #ffff00;
+	padding-top: 1px;
+	height: 24px;
+	width: 45px;
+	border: 0;
+	cursor: hand;
+	background-color: #0099cc;
+}
+
+.PageBar_Button_MouseOver
+{
+	font-family: Verdana, 宋体;
+	font-size: 9pt;
+	color: #000000;
+	padding-top: 1px;
+	height: 24px;
+	width: 45px;
+	border: 0;
+	cursor: hand;
+	background-color: #ffcccc;
+}
+
+.GridView_Title
+{
+	/*font-family: Verdana, 宋体;*/
+	font-size: 9pt;
+	font-weight:bold;
+	color:#2e6e9e;
+	height: 25px;
+	line-height: 18px;
+	vertical-align: middle;
+	text-align: center;
+	padding-right: 1px;
+	padding-left: 1px;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	background-image: url(../Img/GridViewTitle.gif); 
+	border-top-style: none;
+}
+
+.GridView_Title1
+{
+	/*font-family: Verdana, 宋体;*/
+	font-size: 9pt;
+	color:#2f6eed;
+	height: 25px;
+	line-height: 18px;
+	vertical-align: middle;
+	text-align: center;
+	padding-right: 1px;
+	padding-left: 1px;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	font-weight: lighter;
+    background-color: #4d7bb9;
+	border-top-style: none;
+}
+.GridView_Title td
+{   
+     padding-left:5px !important;
+	 padding-right:5px !important;
+}
+.GridView_Cell
+{
+	font-family: Verdana, 宋体;
+	font-size: 9pt;
+	height: 20px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background:#ffffff;
+	border:0px;
+}
+.GridView_Cell td
+{
+	 padding-left:5px !important;
+	 padding-right:5px !important;
+}
+.GridView_Row_MouseOut
+{
+	font-family: Verdana, 宋体;
+	height: 20px;
+	background-color: #FFFFFF;
+}
+.GridView_Row_MouseOut td
+{
+	 padding-left:5px !important;
+	 padding-right:5px !important;
+}
+
+.GridView_Row_MouseOver
+{
+	font-family: Verdana, 宋体;
+	height: 20px;
+	background-color: #E9EDF9;
+}
+.GridView_Row_MouseOver td
+{
+	 padding-left:5px !important;
+	 padding-right:5px !important;
+}
+.GridView_Row_Sno
+{
+	font-family: Verdana, 宋体;
+	font-size: 9pt;
+	color: #00cc00;
+	text-align: center;
+}
+/*#d7def8*/
+.GridView_Row_SelectRow
+{
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    background-color:#ffcc33;
+    height: 20px;
+}
+
+
+.SearchPanel
+{
+    padding-left: 20px;
+    padding-right: 15px;
+    border-left: #ff7300 5px solid;
+    background-color: #ccffff;
+    height: 40px;
+}
