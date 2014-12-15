@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITSViewer", "ITSViewer\ITSViewer.csproj", "{66F5C3A5-EF39-4C3C-946D-84BCAAEF235C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITSViewer.Domain", "ITSViewer.Domain\ITSViewer.Domain.csproj", "{B181626E-6206-4CA7-AE57-7AA4A9894541}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITSViewer.Views", "ITSViewer.Views\ITSViewer.Views.csproj", "{D901D438-81D8-421E-A904-6D560D8B48C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66F5C3A5-EF39-4C3C-946D-84BCAAEF235C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{66F5C3A5-EF39-4C3C-946D-84BCAAEF235C}.Debug|Any CPU.Build.0 = Debug|x86
+		{66F5C3A5-EF39-4C3C-946D-84BCAAEF235C}.Release|Any CPU.ActiveCfg = Release|x86
+		{66F5C3A5-EF39-4C3C-946D-84BCAAEF235C}.Release|Any CPU.Build.0 = Release|x86
+		{B181626E-6206-4CA7-AE57-7AA4A9894541}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B181626E-6206-4CA7-AE57-7AA4A9894541}.Debug|Any CPU.Build.0 = Debug|x86
+		{B181626E-6206-4CA7-AE57-7AA4A9894541}.Release|Any CPU.ActiveCfg = Release|x86
+		{B181626E-6206-4CA7-AE57-7AA4A9894541}.Release|Any CPU.Build.0 = Release|x86
+		{D901D438-81D8-421E-A904-6D560D8B48C1}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D901D438-81D8-421E-A904-6D560D8B48C1}.Debug|Any CPU.Build.0 = Debug|x86
+		{D901D438-81D8-421E-A904-6D560D8B48C1}.Release|Any CPU.ActiveCfg = Release|x86
+		{D901D438-81D8-421E-A904-6D560D8B48C1}.Release|Any CPU.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{445ACEB5-D249-49C2-8D5A-80CBFD601C46}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EXLibrary</RootNamespace>
+    <AssemblyName>EXLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\lib\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=2.0.1.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.2.0.1.2\lib\net40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Algorithm\ARMAAlgorithm.cs" />
+    <Compile Include="Algorithm\BPAlgorithm.cs" />
+    <Compile Include="Algorithm\ESAlgorithm.cs" />
+    <Compile Include="Algorithm\IAlgorithm.cs" />
+    <Compile Include="Algorithm\Matrix.cs" />
+    <Compile Include="AppRuntime.cs" />
+    <Compile Include="DataHelper\CRC_Modbus.cs" />
+    <Compile Include="DataHelper\Datahandler.cs" />
+    <Compile Include="DateTimeEx\DataTimeEx.cs" />
+    <Compile Include="Exceptions\NotFindWindowsServiceException.cs" />
+    <Compile Include="File\FileBase.cs" />
+    <Compile Include="File\FilesHandler.cs" />
+    <Compile Include="File\IDocumentFile.cs" />
+    <Compile Include="File\IFileManagement.cs" />
+    <Compile Include="File\IOfficeFile.cs" />
+    <Compile Include="File\SharedDirectory.cs" />
+    <Compile Include="File\IFile.cs" />
+    <Compile Include="IP\IPHelper.cs" />
+    <Compile Include="Json\DataContractJsonSerializerWrapper.cs" />
+    <Compile Include="Json\IJsonSerializer.cs" />
+    <Compile Include="Json\JsonConverter.cs" />
+    <Compile Include="Log\ILog.cs" />
+    <Compile Include="MQ\IDataDistribution.cs" />
+    <Compile Include="MQ\IDataRequest.cs" />
+    <Compile Include="MQ\Payload.cs" />
+    <Compile Include="Parallel\EventHandler.cs" />
+    <Compile Include="Parallel\IParallel.cs" />
+    <Compile Include="Parallel\ParallelMicrosoft.cs" />
+    <Compile Include="Printing\PrinterStatus.cs" />
+    <Compile Include="Printing\PrintingHelper.cs" />
+    <Compile Include="Printing\Win32.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\ISerializer.cs" />
+    <Compile Include="Serialization\JsonSerializer.cs" />
+    <Compile Include="SettingManager.cs" />
+    <Compile Include="SpeechRecognition\TTS.cs" />
+    <Compile Include="Win32.cs" />
+    <Compile Include="WindowsService\ServerManager.cs" />
+    <Compile Include="LoggerInstance.cs" />
+    <Compile Include="WindowsService\SQLRoutine.cs" />
+    <Compile Include="WindowsService\WindowsServiceHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
