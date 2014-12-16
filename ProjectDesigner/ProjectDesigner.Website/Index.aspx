@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="ProjectDesigner.Website.Index" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="ProjectDesigner.Website.Index" %>
 
 <%@ Register Src="ClientResources.ascx" TagName="ClientResources" TagPrefix="uc1" %>
 
@@ -33,22 +33,24 @@
             word-wrap: break-word;
         }
     </style>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.4&services=true"></script>
+    <%--<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.4&services=true"></script>--%>
+
     <title></title>
 </head>
-<body>
-    <form id="form1" runat="server">
-        <!--百度地图容器-->
-        <div style="border: #ccc solid 1px;" id="dituContent"></div>
-
-    </form>
+<body onload="initMap();">
+    <!--地图容器-->
+    <div id="dituContent" style="border: #ccc solid 1px;"></div>
 </body>
-
+<script src="http://172.5.1.61:8080/EzServerClient/js/EzMapAPI.js" type="text/javascript" charset="GB2312"></script>
 <script type="text/javascript">
+    $(document).ready(function () {
+        initMap();//创建和初始化地图
+    });
 
     $(window).resize(function () {
-        initMapContainer();
+        //initMapContainer();
     });
+
 
     function initMapContainer() {
         $('#dituContent').width(document.documentElement.clientWidth - 5);
@@ -57,10 +59,24 @@
 
     //创建和初始化地图函数：
     function initMap() {
-        initMapContainer();
-        createMap();//创建地图
-        setMapEvent();//设置地图事件
-        addMapControl();//向地图添加控件
+        //百度地图
+        //initMapContainer();
+        //createMap();//创建地图
+        //setMapEvent();//设置地图事件
+        //addMapControl();//向地图添加控件
+
+        //1） ********构造地图控件对象，用于装载地图
+        var uEzMap = new EzMap(document.getElementById("dituContent"));
+        //2）********初始化地图，并显示地图
+        uEzMap.initialize();
+        //3）********以下为其它一些附属功能
+        // 显示左侧导航工具条
+        uEzMap.showMapControl();
+        // 显示地图坐标
+        //uEzMap.addMapEventListener(EzEvent.MAP_MOUSEMOVE, function (e) {
+        //    document.getElementById("coordiate").innerHTML = "X:"
+        //        + e.mapPoint.x + "  Y:" + e.mapPoint.y;
+        //});
     }
 
     //创建地图函数：
@@ -70,7 +86,6 @@
         map.centerAndZoom(point, 12);//设定地图的中心点和坐标并将地图显示在地图容器中
         window.map = map;//将map变量存储在全局
     }
-
 
     //地图事件设置函数：
     function setMapEvent() {
@@ -93,8 +108,5 @@
         map.addControl(ctrl_sca);
     }
 
-
-    initMap();//创建和初始化地图
 </script>
-
 </html>
