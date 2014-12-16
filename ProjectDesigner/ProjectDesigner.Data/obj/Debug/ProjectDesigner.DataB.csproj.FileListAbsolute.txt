@@ -1,0 +1,8 @@
+D:\PrivateSpace\program\BAE\ProjectDesigner\ProjectDesigner.DataB\bin\Debug\ProjectDesigner.DataB.dll.config
+D:\PrivateSpace\program\BAE\ProjectDesigner\ProjectDesigner.DataB\bin\Debug\ProjectDesigner.DataB.dll
+D:\PrivateSpace\program\BAE\ProjectDesigner\ProjectDesigner.DataB\bin\Debug\ProjectDesigner.DataB.pdb
+D:\PrivateSpace\program\BAE\ProjectDesigner\ProjectDesigner.DataB\bin\Debug\EntityFramework.dll
+D:\PrivateSpace\program\BAE\ProjectDesigner\ProjectDesigner.DataB\bin\Debug\EntityFramework.xml
+D:\PrivateSpace\program\BAE\ProjectDesigner\ProjectDesigner.DataB\obj\Debug\ProjectDesigner.DataB.csprojResolveAssemblyReference.cache
+D:\PrivateSpace\program\BAE\ProjectDesigner\ProjectDesigner.DataB\obj\Debug\ProjectDesigner.DataB.dll
+D:\PrivateSpace\program\BAE\ProjectDesigner\ProjectDesigner.DataB\obj\Debug\ProjectDesigner.DataB.pdb

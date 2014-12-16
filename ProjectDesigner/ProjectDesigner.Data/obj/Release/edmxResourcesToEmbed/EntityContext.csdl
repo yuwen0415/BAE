@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectDesigner.Data" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="EntityContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BizModules" EntityType="ProjectDesigner.Data.BizModules" />
+    <EntitySet Name="Navigators" EntityType="ProjectDesigner.Data.Navigator" />
+    <AssociationSet Name="FK_Navigators_Navigators" Association="ProjectDesigner.Data.FK_Navigators_Navigators">
+      <End Role="Navigators" EntitySet="Navigators" />
+      <End Role="Navigators1" EntitySet="Navigators" />
+    </AssociationSet>
+    <EntitySet Name="Foundation" EntityType="ProjectDesigner.Data.Foundation" />
+    <EntitySet Name="LEDModule" EntityType="ProjectDesigner.Data.LEDModule" />
+    <EntitySet Name="Pillar" EntityType="ProjectDesigner.Data.Pillar" />
+    <EntitySet Name="VMS" EntityType="ProjectDesigner.Data.VMS" />
+    <AssociationSet Name="FK_VMS_Foundation" Association="ProjectDesigner.Data.FK_VMS_Foundation">
+      <End Role="Foundation" EntitySet="Foundation" />
+      <End Role="VMS" EntitySet="VMS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VMS_LEDModule" Association="ProjectDesigner.Data.FK_VMS_LEDModule">
+      <End Role="LEDModule" EntitySet="LEDModule" />
+      <End Role="VMS" EntitySet="VMS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VMS_Pillar" Association="ProjectDesigner.Data.FK_VMS_Pillar">
+      <End Role="Pillar" EntitySet="Pillar" />
+      <End Role="VMS" EntitySet="VMS" />
+    </AssociationSet>
+    <EntitySet Name="Files" EntityType="ProjectDesigner.Data.Files" />
+  </EntityContainer>
+  <EntityType Name="BizModules">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsProtected" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Navigator">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Parent_Id" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LayoutName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WebLink" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WinLink" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WapLink" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Parameters" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortIndex" Nullable="false" />
+    <Property Type="String" Name="IconFile" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ChildNavigators" Relationship="ProjectDesigner.Data.FK_Navigators_Navigators" FromRole="Navigators" ToRole="Navigators1" />
+    <NavigationProperty Name="Parent" Relationship="ProjectDesigner.Data.FK_Navigators_Navigators" FromRole="Navigators1" ToRole="Navigators" />
+  </EntityType>
+  <Association Name="FK_Navigators_Navigators">
+    <End Type="ProjectDesigner.Data.Navigator" Role="Navigators" Multiplicity="0..1" />
+    <End Type="ProjectDesigner.Data.Navigator" Role="Navigators1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Navigators">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Navigators1">
+        <PropertyRef Name="Parent_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Foundation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Price" Precision="18" Scale="0" />
+    <Property Type="String" Name="Size" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_Foundation" FromRole="Foundation" ToRole="VMS" />
+  </EntityType>
+  <EntityType Name="LEDModule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Price" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="Standard" />
+    <Property Type="String" Name="Brand" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Size" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_LEDModule" FromRole="LEDModule" ToRole="VMS" />
+  </EntityType>
+  <EntityType Name="Pillar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Price" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="Type" />
+    <Property Type="Double" Name="Height" />
+    <Property Type="Double" Name="Diameter" />
+    <Property Type="Double" Name="Length" />
+    <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_Pillar" FromRole="Pillar" ToRole="VMS" />
+  </EntityType>
+  <EntityType Name="VMS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Price" Precision="18" Scale="0" />
+    <Property Type="String" Name="Brand" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Type" />
+    <Property Type="Int32" Name="Connection" />
+    <Property Type="String" Name="Size" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Type="Double" Name="Weight" />
+    <Property Type="Int32" Name="ModuleCount" />
+    <Property Type="String" Name="IconPath" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LEDModuleId" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PillarId" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FoundationId" MaxLength="64" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Foundation" Relationship="ProjectDesigner.Data.FK_VMS_Foundation" FromRole="VMS" ToRole="Foundation" />
+    <NavigationProperty Name="LEDModule" Relationship="ProjectDesigner.Data.FK_VMS_LEDModule" FromRole="VMS" ToRole="LEDModule" />
+    <NavigationProperty Name="Pillar" Relationship="ProjectDesigner.Data.FK_VMS_Pillar" FromRole="VMS" ToRole="Pillar" />
+  </EntityType>
+  <Association Name="FK_VMS_Foundation">
+    <End Type="ProjectDesigner.Data.Foundation" Role="Foundation" Multiplicity="0..1" />
+    <End Type="ProjectDesigner.Data.VMS" Role="VMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Foundation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VMS">
+        <PropertyRef Name="FoundationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VMS_LEDModule">
+    <End Type="ProjectDesigner.Data.LEDModule" Role="LEDModule" Multiplicity="0..1" />
+    <End Type="ProjectDesigner.Data.VMS" Role="VMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LEDModule">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VMS">
+        <PropertyRef Name="LEDModuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VMS_Pillar">
+    <End Type="ProjectDesigner.Data.Pillar" Role="Pillar" Multiplicity="0..1" />
+    <End Type="ProjectDesigner.Data.VMS" Role="VMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pillar">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VMS">
+        <PropertyRef Name="PillarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Extension" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FileName" Nullable="false" MaxLength="170" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Tags" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="UploadedTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

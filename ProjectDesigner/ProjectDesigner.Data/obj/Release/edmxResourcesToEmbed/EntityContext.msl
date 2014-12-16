@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjectDesignerDataStoreContainer" CdmEntityContainer="EntityContext">
+    <EntitySetMapping Name="BizModules">
+      <EntityTypeMapping TypeName="ProjectDesigner.Data.BizModules">
+        <MappingFragment StoreEntitySet="BizModules">
+          <ScalarProperty Name="IsProtected" ColumnName="IsProtected" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Navigators">
+      <EntityTypeMapping TypeName="ProjectDesigner.Data.Navigator">
+        <MappingFragment StoreEntitySet="Navigators">
+          <ScalarProperty Name="IconFile" ColumnName="IconFile" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+          <ScalarProperty Name="Parameters" ColumnName="Parameters" />
+          <ScalarProperty Name="WapLink" ColumnName="WapLink" />
+          <ScalarProperty Name="WinLink" ColumnName="WinLink" />
+          <ScalarProperty Name="WebLink" ColumnName="WebLink" />
+          <ScalarProperty Name="LayoutName" ColumnName="LayoutName" />
+          <ScalarProperty Name="Parent_Id" ColumnName="Parent_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Foundation">
+      <EntityTypeMapping TypeName="ProjectDesigner.Data.Foundation">
+        <MappingFragment StoreEntitySet="Foundation">
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LEDModule">
+      <EntityTypeMapping TypeName="ProjectDesigner.Data.LEDModule">
+        <MappingFragment StoreEntitySet="LEDModule">
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Standard" ColumnName="Standard" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pillar">
+      <EntityTypeMapping TypeName="ProjectDesigner.Data.Pillar">
+        <MappingFragment StoreEntitySet="Pillar">
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Diameter" ColumnName="Diameter" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VMS">
+      <EntityTypeMapping TypeName="ProjectDesigner.Data.VMS">
+        <MappingFragment StoreEntitySet="VMS">
+          <ScalarProperty Name="FoundationId" ColumnName="FoundationId" />
+          <ScalarProperty Name="PillarId" ColumnName="PillarId" />
+          <ScalarProperty Name="LEDModuleId" ColumnName="LEDModuleId" />
+          <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+          <ScalarProperty Name="ModuleCount" ColumnName="ModuleCount" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Connection" ColumnName="Connection" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Files">
+      <EntityTypeMapping TypeName="ProjectDesigner.Data.Files">
+        <MappingFragment StoreEntitySet="Files">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="UploadedTime" ColumnName="UploadedTime" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

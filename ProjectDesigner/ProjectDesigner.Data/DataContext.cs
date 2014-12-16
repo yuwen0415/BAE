@@ -1,4 +1,4 @@
-﻿using EBA.Data;
+using EBA.Data;
 using EXLibrary.Serialization;
 using ProjectDesigner.Foundation;
 using ProjectDesigner.Pillar;
