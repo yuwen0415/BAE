@@ -18,11 +18,11 @@ namespace ProjectDesigner
         /// <summary>
         /// 父导航
         /// </summary>
-        //INavigator Parent { get; set; }
+        INavigator Parent { get; set; }
         /// <summary>
         /// 子导航集合
         /// </summary>
-        //ICollection<INavigator> ChildNavigators { get; }
+        ICollection<INavigator> ChildNavigators { get; }
 
 
         /// <summary>
