@@ -43,13 +43,24 @@
                 </div>
                 <div>
                     <label>
-                        设备类型</label><asp:TextBox runat="server" ID="txtEquipmentType" ClientIDMode="Static" Width="325px"></asp:TextBox>
+                        设备类型</label><asp:DropDownList runat="server" ID="DropEquipmentType" ClientIDMode="Static" Width="325px">
+                            <asp:ListItem Value="0">未知</asp:ListItem>
+                            <asp:ListItem Value="1">交通诱导屏</asp:ListItem>
+                            <asp:ListItem Value="2">模组</asp:ListItem>
+                            <asp:ListItem Value="3">杆件</asp:ListItem>
+                            <asp:ListItem Value="4">基础</asp:ListItem>
+                        </asp:DropDownList>
                 </div>
             </div>
             <div class="row">
                 <div>
                     <label>
                         设备位置</label><asp:TextBox runat="server" ID="txtLocation" ClientIDMode="Static" Width="325px"></asp:TextBox>
+                </div>
+
+                <div>
+                    <label>
+                        设备价格</label><asp:TextBox runat="server" ID="txtPrice" ClientIDMode="Static" Width="325px"></asp:TextBox>
                 </div>
             </div>
         </div>

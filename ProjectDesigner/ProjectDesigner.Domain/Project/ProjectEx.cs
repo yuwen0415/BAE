@@ -10,13 +10,21 @@ namespace ProjectDesigner.Domain.Project
 {
     public static class ProjectEx
     {
-        public static IHitable<IProject> SearchProject(this IDataContext dataContext)
+        public static IHitable<IProject> SearchProjects(this IDataContext dataContext)
         {
             return dataContext.Projects
                 .AsQuerybale
                 .OrderBy(i => i.Name)
                 .AsHitable();
         }
+
+        public static IHitable<IProjectEquipment> SearchProjectEquipments(this IDataContext dataContext)
+        {
+            return dataContext.ProjectEquipments
+                              .AsQuerybale
+                              .OrderBy(i => i.Id).AsQueryable().AsHitable();
+        }
+
 
         public static IHitable<IProjectEquipment> SearchProjectEquipments(this IDataContext dataContext, string projectId)
         {
@@ -93,6 +101,15 @@ namespace ProjectDesigner.Domain.Project
             }
             dataContext.ProjectEquipments.Add(equipment);
             dataContext.SubmitChanges();
+        }
+
+        public static void DeleteProjectEquipment(this IDataContext dataContext, string id)
+        {
+            var equip = dataContext.SearchProjectEquipment(id);
+            if (equip != null)
+            {
+                dataContext.ProjectEquipments.Delete(equip);
+            }
         }
     }
 }

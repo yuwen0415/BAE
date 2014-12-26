@@ -93,18 +93,18 @@
                     </table>
                 </div>
                 <div class="tool_button">
-                    <asp:Button CssClass="button_out" runat="server" ID="btnAdd" data-dialog-width="642" URL="ProjectEquipmentEdit.aspx"
-                        ClientIDMode="Static" data-dialog-height="500" Text="添 加" />
+                    <asp:Button CssClass="button_out  add-link" runat="server" ID="btnAdd" URL="ProjectEquipmentEdit.aspx"
+                        ClientIDMode="Static" data-dialog-width="974" data-dialog-height="663" Text="添 加" />
                 </div>
                 <div class="tool_button" id="Edit">
-                    <asp:Button CssClass="button_out" runat="server" ID="btnEditor" ClientIDMode="Static"
+                    <asp:Button CssClass="button_out  edit-link" runat="server" ID="btnEditor" URL="ProjectEquipmentEdit.aspx" ClientIDMode="Static" data-dialog-width="974" data-dialog-height="663"
                         Text="修 改" />
                 </div>
                 <div class="tool_button" id="delete">
-                    <asp:Button CssClass="button_out" runat="server" ID="btnDelete" Text="删 除" ClientIDMode="Static" />
+                    <asp:Button CssClass="button_out delete-link" runat="server" ID="btnDelete" Text="删 除" />
                 </div>
                 <div class="tool_button" id="View">
-                    <asp:Button CssClass="button_out" runat="server" ID="btnView" Text="详 情" ClientIDMode="Static" />
+                    <asp:Button CssClass="button_out  view-link" runat="server" ID="btnView" URL="ProjectEquipmentEdit.aspx" Text="详 情" ClientIDMode="Static" data-dialog-width="974" data-dialog-height="663" />
                 </div>
                 <table border="0" cellpadding="0" cellspacing="1" class="gridview" data-multiselect="true"
                     data-key="Id" data-autoload="true">

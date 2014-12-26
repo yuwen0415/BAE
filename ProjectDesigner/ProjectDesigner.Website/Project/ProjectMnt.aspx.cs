@@ -33,7 +33,7 @@ namespace ProjectDesigner.Website.Project
         /// <returns></returns>
         protected override System.Collections.IEnumerable FetchData(string tableName, string[] orderby = null)
         {
-            var list = this.EntityContext.Value.SearchProject();
+            var list = this.EntityContext.Value.SearchProjects();
             if (this.txtName.Text.HasValue())
             {
                 list.Where(i => i.Name.Contains(this.txtName.Text.Trim()));

@@ -79,7 +79,9 @@ namespace ProjectDesigner.Website.Project
                 this.EditModel = this.EntityContext.Value.ProjectEquipments.NewEntity();
                 this.EditModel.Id = Guid.NewGuid().ToString("N");
             }
-            this.EditModel.EquipmentType = (EquipmentType)(int.Parse(this.txtEquipmentType.Text));
+            this.EditModel.EquipmentType = (EquipmentType)(int.Parse(this.DropEquipmentType.Text));
+            this.EditModel.Name = this.txtName.Text;
+            this.EditModel.Price = this.txtPrice.Text == null ? 0.0 : double.Parse(this.txtPrice.Text);
             var location = this.txtLocation.Text.Split(',');
             this.EditModel.Location = new Location { Longitude = float.Parse(location[0]), Latitude = float.Parse(location[1]) };
         }
@@ -105,12 +107,15 @@ namespace ProjectDesigner.Website.Project
                 this.FillData();
                 this.SaveObject<IProjectEquipment>();
                 this.EntityContext.Value.CommitTransaction();
-                var equipment = this.EntityContext.Value.SearchProjectEquipment(this.EditModel.EquipmentId, this.EditModel.EquipmentType);
+                //var equipment = this.EntityContext.Value.SearchProjectEquipment(this.EditModel.EquipmentId, this.EditModel.EquipmentType);
                 return new
                 {
                     Id = this.EditModel.Id,
-                    Name = equipment == null ? "" : equipment.Name,
-                    Location = this.EditModel.Location.Longitude + "," + this.EditModel.Location.Latitude
+                    //Name = equipment == null ? string.Empty : equipment.Name,
+                    Name = this.EditModel.Name,
+                    EquipmentType = this.EditModel.EquipmentType,
+                    Location = this.EditModel.Location.Longitude + "," + this.EditModel.Location.Latitude,
+                    // Price = this.EditModel.
                 };
             }
             catch

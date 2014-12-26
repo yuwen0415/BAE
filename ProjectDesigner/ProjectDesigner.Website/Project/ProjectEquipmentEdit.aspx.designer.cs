@@ -22,13 +22,13 @@ namespace ProjectDesigner.Website.Project {
         protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
-        /// txtEquipmentType control.
+        /// DropEquipmentType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEquipmentType;
+        protected global::System.Web.UI.WebControls.DropDownList DropEquipmentType;
         
         /// <summary>
         /// txtLocation control.
@@ -38,6 +38,15 @@ namespace ProjectDesigner.Website.Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLocation;
+        
+        /// <summary>
+        /// txtPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPrice;
         
         /// <summary>
         /// btnSave control.

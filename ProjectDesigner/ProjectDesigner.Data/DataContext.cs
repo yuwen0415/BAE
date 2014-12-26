@@ -24,17 +24,17 @@ namespace ProjectDesigner.Data
 
             this.VMSs = new EntityRepository<VMS, IVMS>(this.EntityContext.VMS);
 
-            this.LEDModules = new EntityRepository<LEDModule, ILEDModule>(this.EntityContext.LEDModule);
+            this.LEDModules = new EntityRepository<LEDModule, ILEDModule>(this.EntityContext.LEDModules);
 
-            this.Foundations = new EntityRepository<Foundation, IFoundation>(this.EntityContext.Foundation);
+            this.Foundations = new EntityRepository<Foundation, IFoundation>(this.EntityContext.Foundations);
 
-            this.Pillars = new EntityRepository<Pillar, IPillar>(this.EntityContext.Pillar);
+            this.Pillars = new EntityRepository<Pillar, IPillar>(this.EntityContext.Pillars);
 
-            this.Files = new EntityRepository<Files, IFile>(this.EntityContext.Files);
+            this.Files = new EntityRepository<File, IFile>(this.EntityContext.Files);
 
-            this.Projects = new EntityRepository<Project, IProject>(this.EntityContext.Project);
+            this.Projects = new EntityRepository<Project, IProject>(this.EntityContext.Projects);
 
-            this.ProjectEquipments = new EntityRepository<ProjectEquipment, IProjectEquipment>(this.EntityContext.ProjectEquipment);
+            this.ProjectEquipments = new EntityRepository<ProjectEquipment, IProjectEquipment>(this.EntityContext.ProjectEquipments);
         }
 
         public IRepository<INavigator> Navigators
@@ -450,7 +450,7 @@ namespace ProjectDesigner.Data
         }
     }
 
-    partial class Files : IFile
+    partial class File : IFile
     {
 
     }
@@ -492,8 +492,8 @@ namespace ProjectDesigner.Data
             }
             set
             {
-                if (this.Location == null)
-                    this.Location = null;
+                if (value == null)
+                    this.Location = string.Empty;
                 else
                     this.Location = value.Longitude + "," + value.Latitude;
             }
@@ -522,6 +522,23 @@ namespace ProjectDesigner.Data
             set
             {
                 this.Project = value as Project;
+            }
+        }
+
+
+        double? IProjectEquipment.Price
+        {
+            get
+            {
+                if (this.Price == null)
+                {
+                    return 0.0;
+                }
+                return this.Price;
+            }
+            set
+            {
+                this.Price = value;
             }
         }
     }

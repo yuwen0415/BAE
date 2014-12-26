@@ -82,7 +82,6 @@ namespace ProjectDesigner.Website.Project
             this.EditModel.Name = this.txtName.Text;
             this.EditModel.Price = string.IsNullOrEmpty(this.txtPrice.Text) ? 0.0 : double.Parse(this.txtPrice.Text);
             this.EditModel.Equipments = null;
-
         }
 
 
@@ -98,10 +97,12 @@ namespace ProjectDesigner.Website.Project
             return this.EditModel;
         }
 
+
         protected override System.Collections.IEnumerable FetchData(string tableName, string[] orderby = null)
         {
             this.FillData();
             var query = this.EntityContext.Value.SearchProjectEquipments(this.EditModel.Id);
+
             return query.OrderBy(i => i.Id).OrderBy(orderby).Fetch(this.PageIndex, this.PageSize)
                         .Select(i => new
                         {
@@ -138,6 +139,16 @@ namespace ProjectDesigner.Website.Project
             {
                 this.EntityContext.Value.EndTransaction();
             }
+        }
+
+        public override bool DeleteRows()
+        {
+            foreach (var id in this.GetSelectedItems())
+            {
+                this.EntityContext.Value.DeleteProjectEquipment(id);
+            }
+            this.EntityContext.Value.SubmitChanges();
+            return true;
         }
     }
 }
