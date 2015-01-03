@@ -43,7 +43,7 @@ namespace ProjectDesigner.Website.Project
                 {
                     i.Id,
                     i.Name,
-                    Equipments = i.Equipments == null ? "" : i.Equipments.Count.ToString(),
+                   // Equipments = i.Equipments == null ? "" : i.Equipments.Count.ToString(),
                     i.Price,
                 });
         }

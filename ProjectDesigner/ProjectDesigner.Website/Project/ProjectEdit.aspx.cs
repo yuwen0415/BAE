@@ -36,6 +36,9 @@ namespace ProjectDesigner.Website.Project
             if (!IsPostBack)
             {
                 this.EditModel = this.EntityContext.Value.Projects.NewEntity();
+                var id = Guid.NewGuid().ToString("N");
+                this.btnAdd.Attributes["data-params"] = "&projectId=" + id;
+                this.btnEditor.Attributes["data-params"] = "&projectId=" + id;
             }
         }
 
@@ -44,6 +47,8 @@ namespace ProjectDesigner.Website.Project
             if (!IsPostBack)
             {
                 this.EditModel = this.EntityContext.Value.SearchProject(this.SelectedId);
+                //this.btnAdd.Attributes["data-params"] = "&projectId=" + this.EditModel.Id;
+                //this.btnEditor.Attributes["data-params"] = "&projectId=" + this.EditModel.Id;
             }
         }
 
@@ -76,12 +81,13 @@ namespace ProjectDesigner.Website.Project
             }
             else
             {
+                var id =
                 this.EditModel = this.EntityContext.Value.Projects.NewEntity();
-                this.EditModel.Id = Guid.NewGuid().ToString("N");
+                this.EditModel.Id = this.btnAdd.Attributes["data-params"].Replace("&projectId=", "");
             }
             this.EditModel.Name = this.txtName.Text;
             this.EditModel.Price = string.IsNullOrEmpty(this.txtPrice.Text) ? 0.0 : double.Parse(this.txtPrice.Text);
-            this.EditModel.Equipments = null;
+            // this.EditModel.Equipments = this.EntityContext.Value.SearchProjectEquipments(this.EditModel.Id).ToList();
         }
 
 
@@ -106,10 +112,10 @@ namespace ProjectDesigner.Website.Project
             return query.OrderBy(i => i.Id).OrderBy(orderby).Fetch(this.PageIndex, this.PageSize)
                         .Select(i => new
                         {
-                            Name = this.EntityContext.Value.SearchProjectEquipment(i.EquipmentId, i.EquipmentType).Name,
+                            Name = i.Name,
                             i.EquipmentType,
                             Location = i.Location.Longitude + "," + i.Location.Latitude,
-                            Price = this.EntityContext.Value.SearchProjectEquipment(i.EquipmentId, i.EquipmentType).Price
+                            Price = i.Price
                         });
 
         }
@@ -122,12 +128,21 @@ namespace ProjectDesigner.Website.Project
                 this.FillData();
                 this.SaveObject<IProject>();
                 this.EntityContext.Value.CommitTransaction();
+                var equipments = this.EntityContext.Value.SearchProjectEquipments(this.EditModel.Id).ToList();
+                double? price = 0.0;
+                var equipmentsName = "";
+                foreach (var equipment in equipments)
+                {
+                    price += equipment.Price;
+                    equipmentsName += equipment.Name;
+                }
+                this.EditModel.Price = price;
                 return new
                 {
                     Id = this.EditModel.Id,
                     Name = this.EditModel.Name,
                     Price = this.EditModel.Price,
-                    Equipments = this.EditModel.Equipments == null ? "" : this.EditModel.Equipments.Count.ToString()
+                    Equipments = equipmentsName
                 };
             }
             catch
@@ -150,5 +165,6 @@ namespace ProjectDesigner.Website.Project
             this.EntityContext.Value.SubmitChanges();
             return true;
         }
+
     }
 }

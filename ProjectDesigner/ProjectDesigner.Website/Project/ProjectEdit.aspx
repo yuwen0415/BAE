@@ -1,4 +1,4 @@
-﻿<%@ Page Title="工程检测" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true"
+﻿<%@ Page Title="方案查看" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true"
     CodeBehind="ProjectEdit.aspx.cs" Inherits=" ProjectDesigner.Website.Project.ProjectEdit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">

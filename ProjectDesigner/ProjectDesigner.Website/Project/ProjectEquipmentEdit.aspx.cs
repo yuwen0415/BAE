@@ -62,8 +62,8 @@ namespace ProjectDesigner.Website.Project
             if (IsEditMode || IsViewMode)
             {
                 this.EditModel = this.EntityContext.Value.SearchProjectEquipment(this.SelectedId);
-                var equipment = this.EntityContext.Value.SearchProjectEquipment(this.EditModel.EquipmentId, this.EditModel.EquipmentType);
-                this.txtName.Text = equipment == null ? "" : equipment.Name;
+
+                this.txtName.Text = this.EditModel == null ? "" : this.EditModel.Name;
                 this.txtLocation.Text = this.EditModel.Location.Longitude + "," + this.EditModel.Location.Latitude;
             }
         }
@@ -84,6 +84,7 @@ namespace ProjectDesigner.Website.Project
             this.EditModel.Price = this.txtPrice.Text == null ? 0.0 : double.Parse(this.txtPrice.Text);
             var location = this.txtLocation.Text.Split(',');
             this.EditModel.Location = new Location { Longitude = float.Parse(location[0]), Latitude = float.Parse(location[1]) };
+            this.EditModel.ProjectId = this.Request["projectId"];
         }
 
 
