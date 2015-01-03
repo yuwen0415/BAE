@@ -19,11 +19,10 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_Foundation", "Foundation", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Foundation), "VMS", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule", "LEDModule", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.LEDModule), "VMS", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_Navigators_Navigators", "Navigators", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Navigator), "Navigators1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.Navigator), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_Pillar", "Pillar", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Pillar), "VMS", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_ProjectEquipment_ProjectEquipment", "Project", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Project), "ProjectEquipment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.ProjectEquipment), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_Foundation", "Foundation", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Foundation), "VM", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule", "LEDModule", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.LEDModule), "VM", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_Navigators_Navigators", "Navigator", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Navigator), "Navigator1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.Navigator), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_Pillar", "Pillar", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Pillar), "VM", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
 
 #endregion
 
@@ -174,6 +173,22 @@ namespace ProjectDesigner.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<VMS> VMS
+        {
+            get
+            {
+                if ((_VMS == null))
+                {
+                    _VMS = base.CreateObjectSet<VMS>("VMS");
+                }
+                return _VMS;
+            }
+        }
+        private ObjectSet<VMS> _VMS;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<Project> Projects
         {
             get
@@ -202,22 +217,6 @@ namespace ProjectDesigner.Data
             }
         }
         private ObjectSet<ProjectEquipment> _ProjectEquipments;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<VMS> VMS
-        {
-            get
-            {
-                if ((_VMS == null))
-                {
-                    _VMS = base.CreateObjectSet<VMS>("VMS");
-                }
-                return _VMS;
-            }
-        }
-        private ObjectSet<VMS> _VMS;
 
         #endregion
 
@@ -272,6 +271,14 @@ namespace ProjectDesigner.Data
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the VMS EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToVMS(VMS vMS)
+        {
+            base.AddObject("VMS", vMS);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the Projects EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToProjects(Project project)
@@ -285,14 +292,6 @@ namespace ProjectDesigner.Data
         public void AddToProjectEquipments(ProjectEquipment projectEquipment)
         {
             base.AddObject("ProjectEquipments", projectEquipment);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the VMS EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToVMS(VMS vMS)
-        {
-            base.AddObject("VMS", vMS);
         }
 
         #endregion
@@ -802,18 +801,18 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Foundation", "VMS")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Foundation", "VM")]
         public EntityCollection<VMS> VMS
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Foundation", "VMS");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Foundation", "VM");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Foundation", "VMS", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Foundation", "VM", value);
                 }
             }
         }
@@ -1029,18 +1028,18 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule", "VMS")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule", "VM")]
         public EntityCollection<VMS> VMS
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_LEDModule", "VMS");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_LEDModule", "VM");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_LEDModule", "VMS", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_LEDModule", "VM", value);
                 }
             }
         }
@@ -1330,18 +1329,18 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_Navigators_Navigators", "Navigators1")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_Navigators_Navigators", "Navigator1")]
         public EntityCollection<Navigator> ChildNavigators
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigators1");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigator1");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigators1", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigator1", value);
                 }
             }
         }
@@ -1352,16 +1351,16 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_Navigators_Navigators", "Navigators")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_Navigators_Navigators", "Navigator")]
         public Navigator Parent
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigators").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigator").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigators").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigator").Value = value;
             }
         }
         /// <summary>
@@ -1373,13 +1372,13 @@ namespace ProjectDesigner.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigators");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigator");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigators", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigator", value);
                 }
             }
         }
@@ -1619,18 +1618,18 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Pillar", "VMS")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Pillar", "VM")]
         public EntityCollection<VMS> VMS
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Pillar", "VMS");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Pillar", "VM");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Pillar", "VMS", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Pillar", "VM", value);
                 }
             }
         }
@@ -1720,30 +1719,6 @@ namespace ProjectDesigner.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String Equipments
-        {
-            get
-            {
-                return _Equipments;
-            }
-            set
-            {
-                OnEquipmentsChanging(value);
-                ReportPropertyChanging("Equipments");
-                _Equipments = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Equipments");
-                OnEquipmentsChanged();
-            }
-        }
-        private global::System.String _Equipments;
-        partial void OnEquipmentsChanging(global::System.String value);
-        partial void OnEquipmentsChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
         public Nullable<global::System.Double> Price
         {
             get
@@ -1766,32 +1741,6 @@ namespace ProjectDesigner.Data
         #endregion
 
     
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_ProjectEquipment_ProjectEquipment", "ProjectEquipment")]
-        public EntityCollection<ProjectEquipment> ProjectEquipments
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ProjectEquipment>("ProjectDesigner.Data.FK_ProjectEquipment_ProjectEquipment", "ProjectEquipment");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ProjectEquipment>("ProjectDesigner.Data.FK_ProjectEquipment_ProjectEquipment", "ProjectEquipment", value);
-                }
-            }
-        }
-
-        #endregion
-
     }
     
     /// <summary>
@@ -1847,30 +1796,6 @@ namespace ProjectDesigner.Data
         private global::System.String _Id;
         partial void OnIdChanging(global::System.String value);
         partial void OnIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String EquipmentId
-        {
-            get
-            {
-                return _EquipmentId;
-            }
-            set
-            {
-                OnEquipmentIdChanging(value);
-                ReportPropertyChanging("EquipmentId");
-                _EquipmentId = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("EquipmentId");
-                OnEquipmentIdChanged();
-            }
-        }
-        private global::System.String _EquipmentId;
-        partial void OnEquipmentIdChanging(global::System.String value);
-        partial void OnEquipmentIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1995,48 +1920,6 @@ namespace ProjectDesigner.Data
         #endregion
 
     
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_ProjectEquipment_ProjectEquipment", "Project")]
-        public Project Project
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Project>("ProjectDesigner.Data.FK_ProjectEquipment_ProjectEquipment", "Project").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Project>("ProjectDesigner.Data.FK_ProjectEquipment_ProjectEquipment", "Project").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Project> ProjectReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Project>("ProjectDesigner.Data.FK_ProjectEquipment_ProjectEquipment", "Project");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Project>("ProjectDesigner.Data.FK_ProjectEquipment_ProjectEquipment", "Project", value);
-                }
-            }
-        }
-
-        #endregion
-
     }
     
     /// <summary>

@@ -457,23 +457,23 @@ namespace ProjectDesigner.Data
 
     partial class Project : IProject
     {
-        private ISerializer Serializer = new JsonSerializer();
+       // private ISerializer Serializer = new JsonSerializer();
 
-        List<IProjectEquipment> IProject.Equipments
-        {
-            get
-            {
-                if (this.Equipments != null)
-                {
-                    return Serializer.Deserialize<List<IProjectEquipment>>(this.Equipments);
-                }
-                return null;
-            }
-            set
-            {
-                this.Equipments = Serializer.Serialize<List<IProjectEquipment>>(value);
-            }
-        }
+        //List<IProjectEquipment> IProject.Equipments
+        //{
+        //    get
+        //    {
+        //        if (this.Equipments != null)
+        //        {
+        //            return Serializer.Deserialize<List<IProjectEquipment>>(this.Equipments);
+        //        }
+        //        return null;
+        //    }
+        //    set
+        //    {
+        //        this.Equipments = Serializer.Serialize<List<IProjectEquipment>>(value);
+        //    }
+        //}
     }
 
     partial class ProjectEquipment : IProjectEquipment
@@ -512,18 +512,6 @@ namespace ProjectDesigner.Data
             }
         }
 
-
-        IProject IProjectEquipment.Project
-        {
-            get
-            {
-                return this.Project;
-            }
-            set
-            {
-                this.Project = value as Project;
-            }
-        }
 
 
         double? IProjectEquipment.Price
