@@ -5,20 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b7c47b3ab6364c9b92cbc3058260c76f" Name="Diagram1">
-        <EntityTypeShape EntityType="ProjectDesigner.Data.BizModule" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.File" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.Foundation" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.LEDModule" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.Navigator" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.Pillar" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.Project" Width="1.5" PointX="5.75" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.ProjectEquipment" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.VMS" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_Foundation" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_LEDModule" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_Navigators_Navigators" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_Pillar" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_ProjectEquipment_ProjectEquipment" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.BizModule" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.File" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Foundation" Width="1.5" PointX="0.75" PointY="10.125" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.LEDModule" Width="1.5" PointX="0.75" PointY="1.875" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Navigator" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Pillar" Width="1.5" PointX="0.75" PointY="6.625" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.VMS" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_Foundation" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_LEDModule" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_Navigators_Navigators" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_Pillar" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Project" Width="1.5" PointX="5.375" PointY="5.75" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.ProjectEquipment" Width="1.5" PointX="7.375" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

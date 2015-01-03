@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ProjectDesigner.Data.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityType Name="BizModules">
           <Key>
             <PropertyRef Name="Id" />
@@ -82,7 +82,6 @@
           </Key>
           <Property Name="Id" Type="nvarchar" MaxLength="64" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="150" />
-          <Property Name="Equipments" Type="nvarchar" MaxLength="150" />
           <Property Name="Price" Type="float" />
         </EntityType>
         <EntityType Name="ProjectEquipment">
@@ -90,7 +89,6 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="nvarchar" MaxLength="64" Nullable="false" />
-          <Property Name="EquipmentId" Type="nvarchar" MaxLength="64" />
           <Property Name="Location" Type="nvarchar" MaxLength="64" />
           <Property Name="EquipmentType" Type="int" />
           <Property Name="ProjectId" Type="nvarchar" MaxLength="64" />
@@ -128,18 +126,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ProjectEquipment_ProjectEquipment">
-          <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
-          <End Role="ProjectEquipment" Type="Self.ProjectEquipment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Project">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ProjectEquipment">
-              <PropertyRef Name="ProjectId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_VMS_Foundation">
           <End Role="Foundation" Type="Self.Foundation" Multiplicity="0..1" />
           <End Role="VMS" Type="Self.VMS" Multiplicity="*" />
@@ -176,7 +162,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ProjectDesignerDataStoreContainer">
+        <EntityContainer Name="StoreContainer">
           <EntitySet Name="BizModules" EntityType="Self.BizModules" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Foundation" EntityType="Self.Foundation" Schema="dbo" store:Type="Tables" />
@@ -189,10 +175,6 @@
           <AssociationSet Name="FK_Navigators_Navigators" Association="Self.FK_Navigators_Navigators">
             <End Role="Navigators" EntitySet="Navigators" />
             <End Role="Navigators1" EntitySet="Navigators" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProjectEquipment_ProjectEquipment" Association="Self.FK_ProjectEquipment_ProjectEquipment">
-            <End Role="Project" EntitySet="Project" />
-            <End Role="ProjectEquipment" EntitySet="ProjectEquipment" />
           </AssociationSet>
           <AssociationSet Name="FK_VMS_Foundation" Association="Self.FK_VMS_Foundation">
             <End Role="Foundation" EntitySet="Foundation" />
@@ -211,12 +193,39 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProjectDesigner.Data" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="EntityContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BizModules" EntityType="ProjectDesigner.Data.BizModule" />
+          <EntitySet Name="Files" EntityType="ProjectDesigner.Data.File" />
+          <EntitySet Name="Foundations" EntityType="ProjectDesigner.Data.Foundation" />
+          <EntitySet Name="LEDModules" EntityType="ProjectDesigner.Data.LEDModule" />
+          <EntitySet Name="Navigators" EntityType="ProjectDesigner.Data.Navigator" />
+          <EntitySet Name="Pillars" EntityType="ProjectDesigner.Data.Pillar" />
+          <EntitySet Name="VMS" EntityType="ProjectDesigner.Data.VMS" />
+          <AssociationSet Name="FK_VMS_Foundation" Association="ProjectDesigner.Data.FK_VMS_Foundation">
+            <End Role="Foundation" EntitySet="Foundations" />
+            <End Role="VM" EntitySet="VMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VMS_LEDModule" Association="ProjectDesigner.Data.FK_VMS_LEDModule">
+            <End Role="LEDModule" EntitySet="LEDModules" />
+            <End Role="VM" EntitySet="VMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Navigators_Navigators" Association="ProjectDesigner.Data.FK_Navigators_Navigators">
+            <End Role="Navigator" EntitySet="Navigators" />
+            <End Role="Navigator1" EntitySet="Navigators" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VMS_Pillar" Association="ProjectDesigner.Data.FK_VMS_Pillar">
+            <End Role="Pillar" EntitySet="Pillars" />
+            <End Role="VM" EntitySet="VMS" />
+          </AssociationSet>
+          <EntitySet Name="Projects" EntityType="ProjectDesigner.Data.Project" />
+          <EntitySet Name="ProjectEquipments" EntityType="ProjectDesigner.Data.ProjectEquipment" />
+        </EntityContainer>
         <EntityType Name="BizModule">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="IsProtected" Type="Boolean" Nullable="false" />
         </EntityType>
@@ -224,10 +233,10 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Extension" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="FileName" Type="String" MaxLength="170" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="170" FixedLength="false" Unicode="true" />
           <Property Name="Tags" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="UploadedTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
@@ -236,31 +245,31 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EquipmentType" Type="Int32" />
-          <NavigationProperty Name="VMS" Relationship="Self.FK_VMS_Foundation" FromRole="Foundation" ToRole="VMS" />
+          <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_Foundation" FromRole="Foundation" ToRole="VM" />
         </EntityType>
         <EntityType Name="LEDModule">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Standard" Type="Int32" />
           <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EquipmentType" Type="Int32" />
-          <NavigationProperty Name="VMS" Relationship="Self.FK_VMS_LEDModule" FromRole="LEDModule" ToRole="VMS" />
+          <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_LEDModule" FromRole="LEDModule" ToRole="VM" />
         </EntityType>
         <EntityType Name="Navigator">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Parent_Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="LayoutName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -270,14 +279,14 @@
           <Property Name="Parameters" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="SortIndex" Type="Int32" Nullable="false" />
           <Property Name="IconFile" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ChildNavigators" Relationship="Self.FK_Navigators_Navigators" FromRole="Navigators" ToRole="Navigators1" />
-          <NavigationProperty Name="Parent" Relationship="Self.FK_Navigators_Navigators" FromRole="Navigators1" ToRole="Navigators" />
+          <NavigationProperty Name="ChildNavigators" Relationship="ProjectDesigner.Data.FK_Navigators_Navigators" FromRole="Navigator" ToRole="Navigator1" />
+          <NavigationProperty Name="Parent" Relationship="ProjectDesigner.Data.FK_Navigators_Navigators" FromRole="Navigator1" ToRole="Navigator" />
         </EntityType>
         <EntityType Name="Pillar">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Type" Type="Int32" />
@@ -285,36 +294,13 @@
           <Property Name="Diameter" Type="Double" />
           <Property Name="Length" Type="Double" />
           <Property Name="EquipmentType" Type="Int32" />
-          <NavigationProperty Name="VMS" Relationship="Self.FK_VMS_Pillar" FromRole="Pillar" ToRole="VMS" />
-        </EntityType>
-        <EntityType Name="Project">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Equipments" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Double" />
-          <NavigationProperty Name="ProjectEquipments" Relationship="Self.FK_ProjectEquipment_ProjectEquipment" FromRole="Project" ToRole="ProjectEquipment" />
-        </EntityType>
-        <EntityType Name="ProjectEquipment">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EquipmentId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Location" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="EquipmentType" Type="Int32" />
-          <Property Name="ProjectId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Project" Relationship="Self.FK_ProjectEquipment_ProjectEquipment" FromRole="ProjectEquipment" ToRole="Project" />
-          <Property Name="Price" Type="Double" />
+          <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_Pillar" FromRole="Pillar" ToRole="VM" />
         </EntityType>
         <EntityType Name="VMS">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
@@ -328,191 +314,186 @@
           <Property Name="PillarId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="FoundationId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="EquipmentType" Type="Int32" />
-          <NavigationProperty Name="Foundation" Relationship="Self.FK_VMS_Foundation" FromRole="VMS" ToRole="Foundation" />
-          <NavigationProperty Name="LEDModule" Relationship="Self.FK_VMS_LEDModule" FromRole="VMS" ToRole="LEDModule" />
-          <NavigationProperty Name="Pillar" Relationship="Self.FK_VMS_Pillar" FromRole="VMS" ToRole="Pillar" />
+          <NavigationProperty Name="Foundation" Relationship="ProjectDesigner.Data.FK_VMS_Foundation" FromRole="VM" ToRole="Foundation" />
+          <NavigationProperty Name="LEDModule" Relationship="ProjectDesigner.Data.FK_VMS_LEDModule" FromRole="VM" ToRole="LEDModule" />
+          <NavigationProperty Name="Pillar" Relationship="ProjectDesigner.Data.FK_VMS_Pillar" FromRole="VM" ToRole="Pillar" />
         </EntityType>
         <Association Name="FK_VMS_Foundation">
-          <End Role="Foundation" Type="Self.Foundation" Multiplicity="0..1" />
-          <End Role="VMS" Type="ProjectDesigner.Data.VMS" Multiplicity="*" />
+          <End Type="ProjectDesigner.Data.Foundation" Role="Foundation" Multiplicity="0..1" />
+          <End Type="ProjectDesigner.Data.VMS" Role="VM" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Foundation">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="VMS">
+            <Dependent Role="VM">
               <PropertyRef Name="FoundationId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_VMS_LEDModule">
-          <End Role="LEDModule" Type="Self.LEDModule" Multiplicity="0..1" />
-          <End Role="VMS" Type="ProjectDesigner.Data.VMS" Multiplicity="*" />
+          <End Type="ProjectDesigner.Data.LEDModule" Role="LEDModule" Multiplicity="0..1" />
+          <End Type="ProjectDesigner.Data.VMS" Role="VM" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="LEDModule">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="VMS">
+            <Dependent Role="VM">
               <PropertyRef Name="LEDModuleId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Navigators_Navigators">
-          <End Role="Navigators" Type="Self.Navigator" Multiplicity="0..1" />
-          <End Role="Navigators1" Type="Self.Navigator" Multiplicity="*" />
+          <End Type="ProjectDesigner.Data.Navigator" Role="Navigator" Multiplicity="0..1" />
+          <End Type="ProjectDesigner.Data.Navigator" Role="Navigator1" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Navigators">
+            <Principal Role="Navigator">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Navigators1">
+            <Dependent Role="Navigator1">
               <PropertyRef Name="Parent_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_VMS_Pillar">
-          <End Role="Pillar" Type="Self.Pillar" Multiplicity="0..1" />
-          <End Role="VMS" Type="ProjectDesigner.Data.VMS" Multiplicity="*" />
+          <End Type="ProjectDesigner.Data.Pillar" Role="Pillar" Multiplicity="0..1" />
+          <End Type="ProjectDesigner.Data.VMS" Role="VM" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Pillar">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="VMS">
+            <Dependent Role="VM">
               <PropertyRef Name="PillarId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ProjectEquipment_ProjectEquipment">
-          <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
-          <End Role="ProjectEquipment" Type="Self.ProjectEquipment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Project">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ProjectEquipment">
-              <PropertyRef Name="ProjectId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="EntityContext" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="BizModules" EntityType="Self.BizModule" />
-          <EntitySet Name="Files" EntityType="Self.File" />
-          <EntitySet Name="Foundations" EntityType="Self.Foundation" />
-          <EntitySet Name="LEDModules" EntityType="Self.LEDModule" />
-          <EntitySet Name="Navigators" EntityType="Self.Navigator" />
-          <EntitySet Name="Pillars" EntityType="Self.Pillar" />
-          <EntitySet Name="Projects" EntityType="Self.Project" />
-          <EntitySet Name="ProjectEquipments" EntityType="Self.ProjectEquipment" />
-          <EntitySet Name="VMS" EntityType="ProjectDesigner.Data.VMS" />
-          <AssociationSet Name="FK_VMS_Foundation" Association="Self.FK_VMS_Foundation">
-            <End Role="Foundation" EntitySet="Foundations" />
-            <End Role="VMS" EntitySet="VMS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VMS_LEDModule" Association="Self.FK_VMS_LEDModule">
-            <End Role="LEDModule" EntitySet="LEDModules" />
-            <End Role="VMS" EntitySet="VMS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Navigators_Navigators" Association="Self.FK_Navigators_Navigators">
-            <End Role="Navigators" EntitySet="Navigators" />
-            <End Role="Navigators1" EntitySet="Navigators" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VMS_Pillar" Association="Self.FK_VMS_Pillar">
-            <End Role="Pillar" EntitySet="Pillars" />
-            <End Role="VMS" EntitySet="VMS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProjectEquipment_ProjectEquipment" Association="Self.FK_ProjectEquipment_ProjectEquipment">
-            <End Role="Project" EntitySet="Projects" />
-            <End Role="ProjectEquipment" EntitySet="ProjectEquipments" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Double" />
+        </EntityType>
+        <EntityType Name="ProjectEquipment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="EquipmentType" Type="Int32" />
+          <Property Name="ProjectId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Double" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ProjectDesignerDataStoreContainer" CdmEntityContainer="EntityContext">
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StoreContainer" CdmEntityContainer="EntityContext" >
           <EntitySetMapping Name="BizModules">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.BizModule">
               <MappingFragment StoreEntitySet="BizModules">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="IsProtected" ColumnName="IsProtected" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Files">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.File">
               <MappingFragment StoreEntitySet="Files">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Extension" ColumnName="Extension" />
-                <ScalarProperty Name="FileName" ColumnName="FileName" />
-                <ScalarProperty Name="Tags" ColumnName="Tags" />
-                <ScalarProperty Name="UploadedTime" ColumnName="UploadedTime" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="UploadedTime" ColumnName="UploadedTime" />
+                <ScalarProperty Name="Tags" ColumnName="Tags" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Foundations">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.Foundation">
               <MappingFragment StoreEntitySet="Foundation">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LEDModules">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.LEDModule">
               <MappingFragment StoreEntitySet="LEDModule">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Standard" ColumnName="Standard" />
-                <ScalarProperty Name="Brand" ColumnName="Brand" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Standard" ColumnName="Standard" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Navigators">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.Navigator">
               <MappingFragment StoreEntitySet="Navigators">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Parent_Id" ColumnName="Parent_Id" />
-                <ScalarProperty Name="LayoutName" ColumnName="LayoutName" />
-                <ScalarProperty Name="WebLink" ColumnName="WebLink" />
-                <ScalarProperty Name="WinLink" ColumnName="WinLink" />
-                <ScalarProperty Name="WapLink" ColumnName="WapLink" />
-                <ScalarProperty Name="Parameters" ColumnName="Parameters" />
-                <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
                 <ScalarProperty Name="IconFile" ColumnName="IconFile" />
+                <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+                <ScalarProperty Name="Parameters" ColumnName="Parameters" />
+                <ScalarProperty Name="WapLink" ColumnName="WapLink" />
+                <ScalarProperty Name="WinLink" ColumnName="WinLink" />
+                <ScalarProperty Name="WebLink" ColumnName="WebLink" />
+                <ScalarProperty Name="LayoutName" ColumnName="LayoutName" />
+                <ScalarProperty Name="Parent_Id" ColumnName="Parent_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pillars">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.Pillar">
               <MappingFragment StoreEntitySet="Pillar">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Height" ColumnName="Height" />
-                <ScalarProperty Name="Diameter" ColumnName="Diameter" />
-                <ScalarProperty Name="Length" ColumnName="Length" />
                 <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Diameter" ColumnName="Diameter" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VMS">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.VMS">
+              <MappingFragment StoreEntitySet="VMS">
+                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="FoundationId" ColumnName="FoundationId" />
+                <ScalarProperty Name="PillarId" ColumnName="PillarId" />
+                <ScalarProperty Name="LEDModuleId" ColumnName="LEDModuleId" />
+                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+                <ScalarProperty Name="ModuleCount" ColumnName="ModuleCount" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Connection" ColumnName="Connection" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Projects">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.Project">
               <MappingFragment StoreEntitySet="Project">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Equipments" ColumnName="Equipments" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -520,38 +501,16 @@
             <EntityTypeMapping TypeName="ProjectDesigner.Data.ProjectEquipment">
               <MappingFragment StoreEntitySet="ProjectEquipment">
                 <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="EquipmentId" ColumnName="EquipmentId" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="VMS">
-            <EntityTypeMapping TypeName="ProjectDesigner.Data.VMS">
-              <MappingFragment StoreEntitySet="VMS">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Brand" ColumnName="Brand" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Connection" ColumnName="Connection" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="Weight" ColumnName="Weight" />
-                <ScalarProperty Name="ModuleCount" ColumnName="ModuleCount" />
-                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
-                <ScalarProperty Name="LEDModuleId" ColumnName="LEDModuleId" />
-                <ScalarProperty Name="PillarId" ColumnName="PillarId" />
-                <ScalarProperty Name="FoundationId" ColumnName="FoundationId" />
                 <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
         </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
@@ -565,7 +524,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
       </DesignerInfoPropertySet>
     </Options>

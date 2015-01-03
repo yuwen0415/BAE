@@ -68,7 +68,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EntityContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="EntityContext.edmx.diagram">
       <DependentUpon>EntityContext.edmx</DependentUpon>
     </None>
@@ -82,6 +84,9 @@
       <Project>{3bd11b49-1827-4ca0-b516-5dca3a54ca7f}</Project>
       <Name>ProjectDesigner</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EntityContext.edmx.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

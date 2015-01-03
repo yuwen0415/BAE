@@ -29,7 +29,7 @@ namespace ProjectDesigner.Domain.Project
         public static IHitable<IProjectEquipment> SearchProjectEquipments(this IDataContext dataContext, string projectId)
         {
             return dataContext.ProjectEquipments.AsQuerybale
-                              .Where(i => i.Project.Id == projectId)
+                              .Where(i => i.ProjectId == projectId)
                               .AsHitable();
         }
 
@@ -67,10 +67,15 @@ namespace ProjectDesigner.Domain.Project
 
         public static void DeleteProject(this IDataContext dataContext, string id)
         {
-            var vms = dataContext.SearchProject(id);
-            if (vms != null)
+            var equipments = dataContext.SearchProjectEquipments(id).ToList();
+            if (equipments.Count > 0)
             {
-                dataContext.Projects.Delete(vms);
+                dataContext.ProjectEquipments.DeleteAll(equipments);
+            }
+            var project = dataContext.SearchProject(id);
+            if (project != null)
+            {
+                dataContext.Projects.Delete(project);
             }
         }
 
