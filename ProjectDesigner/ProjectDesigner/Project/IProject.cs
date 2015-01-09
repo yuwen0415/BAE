@@ -10,6 +10,6 @@ namespace ProjectDesigner.Project
         string Id { get; set; }
         string Name { get; set; }
         //List<IProjectEquipment> Equipments { get; set; }
-        double? Price { get; set; }
+        decimal? Price { get; set; }
     }
 }

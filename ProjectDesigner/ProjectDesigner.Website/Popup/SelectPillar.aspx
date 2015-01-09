@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="合作单位" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true"
-    CodeBehind="SelectPillar.aspx.cs" Inherits="TCMS.Website.Popup.SelectPillar" %>
+    CodeBehind="SelectPillar.aspx.cs" Inherits="ProjectDesigner.Website.Popup.SelectPillar" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>

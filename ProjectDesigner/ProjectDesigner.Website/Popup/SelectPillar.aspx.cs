@@ -11,7 +11,7 @@ using ProjectDesigner.Website;
 using ProjectDesigner.Domain.Equipment;
 
 
-namespace TCMS.Website.Popup
+namespace ProjectDesigner.Website.Popup
 {
     public partial class SelectPillar : TPageBase
     {

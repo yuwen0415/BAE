@@ -10,7 +10,7 @@ namespace ProjectDesigner.Domain.Equipment
 {
     public static class LEDModuleEx
     {
-        public static IHitable<ILEDModule> SearchLEDModule(this IDataContext dataContext)
+        public static IHitable<ILEDModule> SearchLEDModules(this IDataContext dataContext)
         {
             return dataContext.LEDModules
                 .AsQuerybale

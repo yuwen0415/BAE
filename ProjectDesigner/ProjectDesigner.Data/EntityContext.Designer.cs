@@ -19,10 +19,10 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_Foundation", "Foundation", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Foundation), "VM", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule", "LEDModule", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.LEDModule), "VM", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
 [assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_Navigators_Navigators", "Navigator", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Navigator), "Navigator1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.Navigator), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_Pillar", "Pillar", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Pillar), "VM", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_Foundation1", "Foundation1", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Foundation), "VMS", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule1", "LEDModule1", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.LEDModule), "VMS", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_Pillar1", "Pillar1", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Pillar), "VMS", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
 
 #endregion
 
@@ -109,38 +109,6 @@ namespace ProjectDesigner.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Foundation> Foundations
-        {
-            get
-            {
-                if ((_Foundations == null))
-                {
-                    _Foundations = base.CreateObjectSet<Foundation>("Foundations");
-                }
-                return _Foundations;
-            }
-        }
-        private ObjectSet<Foundation> _Foundations;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<LEDModule> LEDModules
-        {
-            get
-            {
-                if ((_LEDModules == null))
-                {
-                    _LEDModules = base.CreateObjectSet<LEDModule>("LEDModules");
-                }
-                return _LEDModules;
-            }
-        }
-        private ObjectSet<LEDModule> _LEDModules;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<Navigator> Navigators
         {
             get
@@ -153,22 +121,6 @@ namespace ProjectDesigner.Data
             }
         }
         private ObjectSet<Navigator> _Navigators;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<Pillar> Pillars
-        {
-            get
-            {
-                if ((_Pillars == null))
-                {
-                    _Pillars = base.CreateObjectSet<Pillar>("Pillars");
-                }
-                return _Pillars;
-            }
-        }
-        private ObjectSet<Pillar> _Pillars;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -201,6 +153,54 @@ namespace ProjectDesigner.Data
             }
         }
         private ObjectSet<Project> _Projects;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Foundation> Foundations
+        {
+            get
+            {
+                if ((_Foundations == null))
+                {
+                    _Foundations = base.CreateObjectSet<Foundation>("Foundations");
+                }
+                return _Foundations;
+            }
+        }
+        private ObjectSet<Foundation> _Foundations;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<LEDModule> LEDModules
+        {
+            get
+            {
+                if ((_LEDModules == null))
+                {
+                    _LEDModules = base.CreateObjectSet<LEDModule>("LEDModules");
+                }
+                return _LEDModules;
+            }
+        }
+        private ObjectSet<LEDModule> _LEDModules;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Pillar> Pillars
+        {
+            get
+            {
+                if ((_Pillars == null))
+                {
+                    _Pillars = base.CreateObjectSet<Pillar>("Pillars");
+                }
+                return _Pillars;
+            }
+        }
+        private ObjectSet<Pillar> _Pillars;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -239,35 +239,11 @@ namespace ProjectDesigner.Data
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the Foundations EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToFoundations(Foundation foundation)
-        {
-            base.AddObject("Foundations", foundation);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the LEDModules EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToLEDModules(LEDModule lEDModule)
-        {
-            base.AddObject("LEDModules", lEDModule);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the Navigators EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToNavigators(Navigator navigator)
         {
             base.AddObject("Navigators", navigator);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Pillars EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToPillars(Pillar pillar)
-        {
-            base.AddObject("Pillars", pillar);
         }
     
         /// <summary>
@@ -284,6 +260,30 @@ namespace ProjectDesigner.Data
         public void AddToProjects(Project project)
         {
             base.AddObject("Projects", project);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Foundations EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToFoundations(Foundation foundation)
+        {
+            base.AddObject("Foundations", foundation);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the LEDModules EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToLEDModules(LEDModule lEDModule)
+        {
+            base.AddObject("LEDModules", lEDModule);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Pillars EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPillars(Pillar pillar)
+        {
+            base.AddObject("Pillars", pillar);
         }
     
         /// <summary>
@@ -801,18 +801,18 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Foundation", "VM")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Foundation1", "VMS")]
         public EntityCollection<VMS> VMS
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Foundation", "VM");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Foundation1", "VMS");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Foundation", "VM", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Foundation1", "VMS", value);
                 }
             }
         }
@@ -1028,18 +1028,18 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule", "VM")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule1", "VMS")]
         public EntityCollection<VMS> VMS
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_LEDModule", "VM");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_LEDModule1", "VMS");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_LEDModule", "VM", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_LEDModule1", "VMS", value);
                 }
             }
         }
@@ -1618,18 +1618,18 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Pillar", "VM")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Pillar1", "VMS")]
         public EntityCollection<VMS> VMS
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Pillar", "VM");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Pillar1", "VMS");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Pillar", "VM", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Pillar1", "VMS", value);
                 }
             }
         }
@@ -1719,7 +1719,7 @@ namespace ProjectDesigner.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Double> Price
+        public Nullable<global::System.Decimal> Price
         {
             get
             {
@@ -1734,8 +1734,8 @@ namespace ProjectDesigner.Data
                 OnPriceChanged();
             }
         }
-        private Nullable<global::System.Double> _Price;
-        partial void OnPriceChanging(Nullable<global::System.Double> value);
+        private Nullable<global::System.Decimal> _Price;
+        partial void OnPriceChanging(Nullable<global::System.Decimal> value);
         partial void OnPriceChanged();
 
         #endregion
@@ -1898,7 +1898,7 @@ namespace ProjectDesigner.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Double> Price
+        public Nullable<global::System.Decimal> Price
         {
             get
             {
@@ -1913,9 +1913,33 @@ namespace ProjectDesigner.Data
                 OnPriceChanged();
             }
         }
-        private Nullable<global::System.Double> _Price;
-        partial void OnPriceChanging(Nullable<global::System.Double> value);
+        private Nullable<global::System.Decimal> _Price;
+        partial void OnPriceChanging(Nullable<global::System.Decimal> value);
         partial void OnPriceChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Brand
+        {
+            get
+            {
+                return _Brand;
+            }
+            set
+            {
+                OnBrandChanging(value);
+                ReportPropertyChanging("Brand");
+                _Brand = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Brand");
+                OnBrandChanged();
+            }
+        }
+        private global::System.String _Brand;
+        partial void OnBrandChanging(global::System.String value);
+        partial void OnBrandChanged();
 
         #endregion
 
@@ -2297,16 +2321,16 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Foundation", "Foundation")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Foundation1", "Foundation1")]
         public Foundation Foundation
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation", "Foundation").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation1", "Foundation1").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation", "Foundation").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation1", "Foundation1").Value = value;
             }
         }
         /// <summary>
@@ -2318,13 +2342,13 @@ namespace ProjectDesigner.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation", "Foundation");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation1", "Foundation1");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation", "Foundation", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation1", "Foundation1", value);
                 }
             }
         }
@@ -2335,16 +2359,16 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule", "LEDModule")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule1", "LEDModule1")]
         public LEDModule LEDModule
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule", "LEDModule").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule1", "LEDModule1").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule", "LEDModule").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule1", "LEDModule1").Value = value;
             }
         }
         /// <summary>
@@ -2356,13 +2380,13 @@ namespace ProjectDesigner.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule", "LEDModule");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule1", "LEDModule1");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule", "LEDModule", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule1", "LEDModule1", value);
                 }
             }
         }
@@ -2373,16 +2397,16 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Pillar", "Pillar")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Pillar1", "Pillar1")]
         public Pillar Pillar
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar", "Pillar").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar1", "Pillar1").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar", "Pillar").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar1", "Pillar1").Value = value;
             }
         }
         /// <summary>
@@ -2394,13 +2418,13 @@ namespace ProjectDesigner.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar", "Pillar");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar1", "Pillar1");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar", "Pillar", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar1", "Pillar1", value);
                 }
             }
         }

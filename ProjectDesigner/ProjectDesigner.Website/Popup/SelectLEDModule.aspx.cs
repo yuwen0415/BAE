@@ -11,7 +11,7 @@ using ProjectDesigner.Website;
 using ProjectDesigner.Domain.Equipment;
 
 
-namespace TCMS.Website.Popup
+namespace ProjectDesigner.Website.Popup
 {
     public partial class SelectLEDModule : TPageBase
     {
@@ -25,7 +25,7 @@ namespace TCMS.Website.Popup
 
         protected override System.Collections.IEnumerable FetchData(string tableName, string[] orderby = null)
         {
-            var list = this.EntityContext.Value.SearchLEDModule();
+            var list = this.EntityContext.Value.SearchLEDModules();
             if (this.txtName.Text.HasValue())
             {
                 list = list.Where(i => i.Name.Contains(this.txtName.Text.Trim()));

@@ -43,9 +43,9 @@
 </body>
 <script src="http://172.5.1.61:8080/EzServerClient/js/EzMapAPI.js" type="text/javascript" charset="GB2312"></script>
 <script type="text/javascript">
-    $(document).ready(function () {
-        initMap();//创建和初始化地图
-    });
+    //$(document).ready(function () {
+    //    initMap();//创建和初始化地图
+    //});
 
     $(window).resize(function () {
         //initMapContainer();

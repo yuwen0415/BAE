@@ -5,7 +5,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>C:\Users\yw\Desktop\ProjectDesigner</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\Police-yuwen\Desktop\ProjectDesigner</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/EBA.dll">
@@ -30,22 +30,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/17/2014 08:00:44</publishTime>
     </File>
     <File Include="bin/ProjectDesigner.Data.dll">
-      <publishTime>12/17/2014 11:00:39</publishTime>
+      <publishTime>01/09/2015 19:26:25</publishTime>
     </File>
     <File Include="bin/ProjectDesigner.dll">
-      <publishTime>12/17/2014 11:00:39</publishTime>
+      <publishTime>01/09/2015 19:26:23</publishTime>
     </File>
     <File Include="bin/ProjectDesigner.Domain.dll">
-      <publishTime>12/17/2014 11:00:39</publishTime>
+      <publishTime>01/09/2015 19:26:25</publishTime>
     </File>
     <File Include="bin/ProjectDesigner.Website.dll">
-      <publishTime>12/17/2014 11:00:41</publishTime>
+      <publishTime>01/09/2015 19:26:25</publishTime>
     </File>
     <File Include="bin/WebActivator.dll">
       <publishTime>12/17/2014 08:00:44</publishTime>
     </File>
     <File Include="ClientResources.ascx">
-      <publishTime>12/17/2014 08:00:05</publishTime>
+      <publishTime>01/09/2015 19:26:00</publishTime>
     </File>
     <File Include="Css/Flow/Flow.css">
       <publishTime>12/17/2014 08:00:05</publishTime>
@@ -912,28 +912,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/17/2014 08:00:42</publishTime>
     </File>
     <File Include="Index.aspx">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>01/09/2015 16:27:09</publishTime>
     </File>
     <File Include="Main.Master">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>01/09/2015 18:29:42</publishTime>
     </File>
     <File Include="Map/XiamenMap.aspx">
       <publishTime>12/17/2014 08:00:06</publishTime>
     </File>
+    <File Include="Popup/SelectEquipment.aspx">
+      <publishTime>01/05/2015 18:21:39</publishTime>
+    </File>
     <File Include="Popup/SelectFoundation.aspx">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>01/04/2015 15:04:39</publishTime>
     </File>
     <File Include="Popup/SelectLEDModule.aspx">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>01/04/2015 15:01:22</publishTime>
     </File>
     <File Include="Popup/SelectPillar.aspx">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>01/04/2015 15:01:27</publishTime>
     </File>
     <File Include="Project/ProjectEdit.aspx">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>01/04/2015 11:37:30</publishTime>
     </File>
     <File Include="Project/ProjectEquipmentEdit.aspx">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>01/09/2015 19:26:06</publishTime>
     </File>
     <File Include="Project/ProjectMnt.aspx">
       <publishTime>12/17/2014 08:00:06</publishTime>
@@ -2640,7 +2643,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/17/2014 08:00:24</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/17/2014 11:08:18</publishTime>
+      <publishTime>01/09/2015 19:27:57</publishTime>
     </File>
   </ItemGroup>
 </Project>

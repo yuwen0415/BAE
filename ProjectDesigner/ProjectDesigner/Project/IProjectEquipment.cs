@@ -5,14 +5,13 @@ using System.Text;
 
 namespace ProjectDesigner.Project
 {
-    public interface IProjectEquipment
+    public interface IProjectEquipment : IEquipment
     {
-        string Id { get; set; }
 
-        string Name { get; set; }
         Location Location { get; set; }
         EquipmentType EquipmentType { get; set; }
         string ProjectId { get; set; }
-        double? Price { get; set; }
+
+
     }
 }

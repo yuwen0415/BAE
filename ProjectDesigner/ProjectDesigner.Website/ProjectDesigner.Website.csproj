@@ -371,6 +371,7 @@
     <Content Include="Index.aspx" />
     <Content Include="Map\XiamenMap.aspx" />
     <Content Include="Popup\SelectFoundation.aspx" />
+    <Content Include="Popup\SelectEquipment.aspx" />
     <Content Include="Popup\SelectPillar.aspx" />
     <Content Include="Popup\SelectLEDModule.aspx" />
     <Content Include="Project\ProjectEquipmentEdit.aspx" />
@@ -1048,6 +1049,13 @@
     </Compile>
     <Compile Include="Popup\SelectFoundation.aspx.designer.cs">
       <DependentUpon>SelectFoundation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\SelectEquipment.aspx.cs">
+      <DependentUpon>SelectEquipment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Popup\SelectEquipment.aspx.designer.cs">
+      <DependentUpon>SelectEquipment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Popup\SelectPillar.aspx.cs">
       <DependentUpon>SelectPillar.aspx</DependentUpon>

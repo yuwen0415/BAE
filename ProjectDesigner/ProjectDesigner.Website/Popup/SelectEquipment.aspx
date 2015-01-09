@@ -1,5 +1,5 @@
-﻿<%@ Page Title="合作单位" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true"
-    CodeBehind="SelectLEDModule.aspx.cs" Inherits="ProjectDesigner.Website.Popup.SelectLEDModule" %>
+﻿<%@ Page Title="选择设备" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true"
+    CodeBehind="SelectEquipment.aspx.cs" Inherits="ProjectDesigner.Website.Popup.SelectEquipment" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
@@ -24,6 +24,16 @@
                         </li>
                     </ul>
                     <span>
+                        <label for="txtCType">
+                            设备类型</label>
+                        <asp:DropDownList runat="server" ID="DropEquipmentType" ClientIDMode="Static" Width="152px">
+                                                <asp:ListItem Value="1">交通诱导屏</asp:ListItem>
+                                                <asp:ListItem Value="2">模组</asp:ListItem>
+                                                <asp:ListItem Value="3">杆件</asp:ListItem>
+                                                <asp:ListItem Value="4">基础</asp:ListItem>
+                                            </asp:DropDownList>
+                    </span>
+                    <span>
                         <asp:Button runat="server" ID="btnSearch" CssClass="button_out search-link" Text="查询" /></span>
                 </td>
                 <td class="middle_right"></td>
@@ -45,17 +55,11 @@
                 <th class="word-auto" data-field="Name" data-sorting="fixed">
                     <a href="#">设备名称</a>
                 </th>
-                <th class="word-4" data-field="Size" data-sorting="fixed">
-                    <a href="#">尺寸</a>
-                </th>
                 <th class="word-4" data-field="Price" data-sorting="fixed">
                     <a href="#">价格</a>
                 </th>
                 <th class="word-auto" data-field="Brand" data-sorting="fixed">
                     <a href="#">品牌</a>
-                </th>
-                <th class="word-4" data-field="Standard" data-sorting="fixed">
-                    <a href="#">显示模组类型</a>
                 </th>
             </tr>
         </thead>

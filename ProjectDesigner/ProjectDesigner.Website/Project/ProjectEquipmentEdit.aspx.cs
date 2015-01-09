@@ -65,6 +65,7 @@ namespace ProjectDesigner.Website.Project
 
                 this.txtName.Text = this.EditModel == null ? "" : this.EditModel.Name;
                 this.txtLocation.Text = this.EditModel.Location.Longitude + "," + this.EditModel.Location.Latitude;
+                this.txtPrice.Text = this.EditModel.Price == null ? "" : this.EditModel.Price.ToString();
             }
         }
 
@@ -78,13 +79,13 @@ namespace ProjectDesigner.Website.Project
             {
                 this.EditModel = this.EntityContext.Value.ProjectEquipments.NewEntity();
                 this.EditModel.Id = Guid.NewGuid().ToString("N");
+                this.EditModel.ProjectId = this.Request["projectId"];
             }
             this.EditModel.EquipmentType = (EquipmentType)(int.Parse(this.DropEquipmentType.Text));
             this.EditModel.Name = this.txtName.Text;
-            this.EditModel.Price = this.txtPrice.Text == null ? 0.0 : double.Parse(this.txtPrice.Text);
+            this.EditModel.Price = this.txtPrice.Text == null ? 0.0m : decimal.Parse(this.txtPrice.Text);
             var location = this.txtLocation.Text.Split(',');
             this.EditModel.Location = new Location { Longitude = float.Parse(location[0]), Latitude = float.Parse(location[1]) };
-            this.EditModel.ProjectId = this.Request["projectId"];
         }
 
 
@@ -127,6 +128,46 @@ namespace ProjectDesigner.Website.Project
             finally
             {
                 this.EntityContext.Value.EndTransaction();
+            }
+        }
+
+
+        protected override System.Collections.IEnumerable FetchData(string tableName, string[] orderby = null)
+        {
+            var list = this.EntityContext.Value.SearchEquipments((EquipmentType)int.Parse(this.DropSEquipmentType.Text));
+            if (list == null)
+                return null;
+            if (this.txtSName.Text.HasValue())
+            {
+                list = list.Where(i => i.Name.Contains(this.txtName.Text.Trim()));
+            }
+            return list.Fetch(this.PageIndex, this.PageSize)
+                .Select(i => new
+                {
+                    Id = i.Id,
+                    Name = i.Name,
+                    Price = i.Price,
+                    Brand = i.Brand
+                });
+        }
+
+        public object EuipmentSelected()
+        {
+            var equipment = this.EntityContext.Value.SearchEquipment(this.Request.Form["EquipmentId"], (EquipmentType)int.Parse(this.DropSEquipmentType.Text));
+            if (equipment != null)
+            {
+                return new
+                    {
+                        Id = equipment.Id,
+                        //Name = equipment == null ? string.Empty : equipment.Name,
+                        Name = equipment.Name,
+                        EquipmentType = this.DropSEquipmentType.Text,
+                        Price = equipment.Price
+                    };
+            }
+            else
+            {
+                return null;
             }
         }
     }

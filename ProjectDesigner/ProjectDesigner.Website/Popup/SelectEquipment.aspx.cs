@@ -8,12 +8,12 @@ using EBA.Linq;
 using EBA.Modules.BizPackets;
 using EBA.Helpers;
 using ProjectDesigner.Website;
-using ProjectDesigner.Domain.Equipment;
+using ProjectDesigner.Domain.Project;
 
 
 namespace ProjectDesigner.Website.Popup
 {
-    public partial class SelectFoundation : TPageBase
+    public partial class SelectEquipment : TPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +25,7 @@ namespace ProjectDesigner.Website.Popup
 
         protected override System.Collections.IEnumerable FetchData(string tableName, string[] orderby = null)
         {
-            var list = this.EntityContext.Value.SearchFoundation();
+            var list = this.EntityContext.Value.SearchEquipments((EquipmentType)int.Parse(this.DropEquipmentType.Text));
             if (this.txtName.Text.HasValue())
             {
                 list = list.Where(i => i.Name.Contains(this.txtName.Text.Trim()));
@@ -36,8 +36,10 @@ namespace ProjectDesigner.Website.Popup
                     i.Id,
                     i.Name,
                     i.Price,
-                    Size = i.Size.X + "x" + i.Size.Y + "x" + i.Size.Z
+                    i.Brand
                 });
         }
+
+
     }
 }

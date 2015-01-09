@@ -10,7 +10,7 @@
 namespace ProjectDesigner.Website.Popup {
     
     
-    public partial class SelectPillar {
+    public partial class SelectEquipment {
         
         /// <summary>
         /// txtName control.
@@ -20,6 +20,15 @@ namespace ProjectDesigner.Website.Popup {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtName;
+        
+        /// <summary>
+        /// DropEquipmentType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropEquipmentType;
         
         /// <summary>
         /// btnSearch control.

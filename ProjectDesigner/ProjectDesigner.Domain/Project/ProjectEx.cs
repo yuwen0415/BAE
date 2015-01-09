@@ -18,6 +18,64 @@ namespace ProjectDesigner.Domain.Project
                 .AsHitable();
         }
 
+        public static IHitable<IEquipment> SearchEquipments(this IDataContext datacontext, EquipmentType type)
+        {
+            switch (type)
+            {
+                case EquipmentType.VMS:
+                    return datacontext.VMSs
+                                      .AsQuerybale
+                                      .OrderBy(i => i.Name)
+                                      .AsHitable<IEquipment>();
+                case EquipmentType.LEDModule:
+                    return datacontext.LEDModules
+                                      .AsQuerybale
+                                      .OrderBy(i => i.Name)
+                                      .AsHitable<IEquipment>();
+                case EquipmentType.Pillar:
+                    return datacontext.Pillars
+                                      .AsQuerybale
+                                      .OrderBy(i => i.Name)
+                                      .AsHitable<IEquipment>();
+                case EquipmentType.Foundation:
+                    return datacontext.Foundations
+                                      .AsQuerybale
+                                      .OrderBy(i => i.Name)
+                                      .AsHitable<IEquipment>();
+                default:
+                    return null;
+            }
+        }
+
+        public static IEquipment SearchEquipment(this IDataContext datacontext, string equipmentId,EquipmentType type)
+        {
+            switch (type)
+            {
+                case EquipmentType.VMS:
+                    return datacontext.VMSs
+                                      .AsQuerybale
+                                      .Where(i=>i.Id == equipmentId)
+                                      .FirstOrDefault();
+                case EquipmentType.LEDModule:
+                    return datacontext.LEDModules
+                                      .AsQuerybale
+                                      .Where(i => i.Id == equipmentId)
+                                      .FirstOrDefault();
+                case EquipmentType.Pillar:
+                    return datacontext.Pillars
+                                      .AsQuerybale
+                                      .Where(i => i.Id == equipmentId)
+                                      .FirstOrDefault();
+                case EquipmentType.Foundation:
+                    return datacontext.Foundations
+                                      .AsQuerybale
+                                      .Where(i => i.Id == equipmentId)
+                                      .FirstOrDefault();
+                default:
+                    return null;
+            }
+        }
+
         public static IHitable<IProjectEquipment> SearchProjectEquipments(this IDataContext dataContext)
         {
             return dataContext.ProjectEquipments

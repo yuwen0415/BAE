@@ -67,17 +67,20 @@
                                     <li>
                                         <label>
                                             设备名称</label>
-                                        <asp:TextBox Width="152px" ID="EquipmentName" DataTextField="Name" DataValueField="Code"
+                                        <asp:TextBox Width="152px" ID="txtEquipmentName" DataTextField="Name" DataValueField="Code"
                                             runat="server" ClientIDMode="Static">
                                         </asp:TextBox>
                                     </li>
 
                                     <li>
                                         <label>
-                                            设备类型</label>
-                                        <asp:TextBox Width="152px" ID="EquipmentType" DataTextField="Name" DataValueField="Code"
-                                            runat="server" ClientIDMode="Static">
-                                        </asp:TextBox>
+                                            设备类型</label><asp:DropDownList runat="server" ID="DropEquipmentType" ClientIDMode="Static" Width="152px">
+                                                <asp:ListItem Value="0">全部</asp:ListItem>
+                                                <asp:ListItem Value="1">交通诱导屏</asp:ListItem>
+                                                <asp:ListItem Value="2">模组</asp:ListItem>
+                                                <asp:ListItem Value="3">杆件</asp:ListItem>
+                                                <asp:ListItem Value="4">基础</asp:ListItem>
+                                            </asp:DropDownList>
                                     </li>
                                 </ul>
                                 <span>
@@ -96,14 +99,14 @@
                     <asp:Button CssClass="button_out  add-link" runat="server" ID="btnAdd" URL="ProjectEquipmentEdit.aspx"
                         ClientIDMode="Static" data-dialog-width="974" data-dialog-height="663" Text="添 加" />
                 </div>
-                <div class="tool_button" id="Edit">
-                    <asp:Button CssClass="button_out  edit-link" runat="server" ID="btnEditor" URL="ProjectEquipmentEdit.aspx" ClientIDMode="Static" data-dialog-width="974" data-dialog-height="663"
-                        Text="修 改" />
+                <div class="tool_button">
+                    <asp:Button CssClass="button_out  edit-link" runat="server" ID="btnUpdate" URL="ProjectEquipmentEdit.aspx"
+                        ClientIDMode="Static" data-dialog-width="974" data-dialog-height="663" Text="修 改" />
                 </div>
-                <div class="tool_button" id="delete">
+                <div class="tool_button">
                     <asp:Button CssClass="button_out delete-link" runat="server" ID="btnDelete" Text="删 除" />
                 </div>
-                <div class="tool_button" id="View">
+                <div class="tool_button">
                     <asp:Button CssClass="button_out  view-link" runat="server" ID="btnView" URL="ProjectEquipmentEdit.aspx" Text="详 情" ClientIDMode="Static" data-dialog-width="974" data-dialog-height="663" />
                 </div>
                 <table border="0" cellpadding="0" cellspacing="1" class="gridview" data-multiselect="true"

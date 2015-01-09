@@ -38,7 +38,7 @@ namespace ProjectDesigner.Website.Project
                 this.EditModel = this.EntityContext.Value.Projects.NewEntity();
                 var id = Guid.NewGuid().ToString("N");
                 this.btnAdd.Attributes["data-params"] = "&projectId=" + id;
-                this.btnEditor.Attributes["data-params"] = "&projectId=" + id;
+                //this.btnUpdate.Attributes["data-params"] = "&projectId=" + id;
             }
         }
 
@@ -47,8 +47,8 @@ namespace ProjectDesigner.Website.Project
             if (!IsPostBack)
             {
                 this.EditModel = this.EntityContext.Value.SearchProject(this.SelectedId);
-                //this.btnAdd.Attributes["data-params"] = "&projectId=" + this.EditModel.Id;
-                //this.btnEditor.Attributes["data-params"] = "&projectId=" + this.EditModel.Id;
+                this.btnAdd.Attributes["data-params"] = "&projectId=" + this.SelectedId;
+                //this.btnUpdate.Attributes["data-params"] = "&projectId=" + this.SelectedId;
             }
         }
 
@@ -59,6 +59,8 @@ namespace ProjectDesigner.Website.Project
                 base.OnView();
                 this.DisableUI();
                 this.btnSave.Visible = false;
+                this.btnAdd.Attributes["data-params"] = "&projectId=" + this.SelectedId;
+                //this.btnUpdate.Attributes["data-params"] = "&projectId=" + this.SelectedId;
             }
         }
 
@@ -86,7 +88,7 @@ namespace ProjectDesigner.Website.Project
                 this.EditModel.Id = this.btnAdd.Attributes["data-params"].Replace("&projectId=", "");
             }
             this.EditModel.Name = this.txtName.Text;
-            this.EditModel.Price = string.IsNullOrEmpty(this.txtPrice.Text) ? 0.0 : double.Parse(this.txtPrice.Text);
+            this.EditModel.Price = string.IsNullOrEmpty(this.txtPrice.Text) ? 0.0m : decimal.Parse(this.txtPrice.Text);
             // this.EditModel.Equipments = this.EntityContext.Value.SearchProjectEquipments(this.EditModel.Id).ToList();
         }
 
@@ -109,27 +111,39 @@ namespace ProjectDesigner.Website.Project
             this.FillData();
             var query = this.EntityContext.Value.SearchProjectEquipments(this.EditModel.Id);
 
+            if (this.txtEquipmentName.Text.HasValue())
+            {
+                query.Where(i => i.Name.Contains(this.txtEquipmentName.Text.Trim()));
+            }
+            if (this.DropEquipmentType.Text != "0")
+            {
+                var type = (EquipmentType)(int.Parse(this.DropEquipmentType.Text));
+                query.Where(i => i.EquipmentType == type);
+            }
             return query.OrderBy(i => i.Id).OrderBy(orderby).Fetch(this.PageIndex, this.PageSize)
-                        .Select(i => new
-                        {
-                            Name = i.Name,
-                            i.EquipmentType,
-                            Location = i.Location.Longitude + "," + i.Location.Latitude,
-                            Price = i.Price
-                        });
+            .Select(i => new
+            {
+                Id = i.Id,
+                Name = i.Name,
+                EquipmentType = i.EquipmentType.ToString(),
+                Location = i.Location.Longitude + "," + i.Location.Latitude,
+                Price = i.Price
+            });
 
         }
+
+
 
         public object Save()
         {
             try
             {
                 this.EntityContext.Value.BeginTransaction();
+
                 this.FillData();
-                this.SaveObject<IProject>();
-                this.EntityContext.Value.CommitTransaction();
+
                 var equipments = this.EntityContext.Value.SearchProjectEquipments(this.EditModel.Id).ToList();
-                double? price = 0.0;
+                decimal? price = 0.0m;
                 var equipmentsName = "";
                 foreach (var equipment in equipments)
                 {
@@ -137,6 +151,9 @@ namespace ProjectDesigner.Website.Project
                     equipmentsName += equipment.Name;
                 }
                 this.EditModel.Price = price;
+                this.SaveObject<IProject>();
+                this.EntityContext.Value.CommitTransaction();
+
                 return new
                 {
                     Id = this.EditModel.Id,

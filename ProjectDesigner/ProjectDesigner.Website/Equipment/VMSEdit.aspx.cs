@@ -173,7 +173,7 @@ namespace ProjectDesigner.Website.Equipment
 
         public object FindLEDModule()
         {
-            var query = this.EntityContext.Value.SearchLEDModule();
+            var query = this.EntityContext.Value.SearchLEDModules();
             if (this.txtModule.Text.HasValue())
             {
                 query = query
@@ -188,7 +188,6 @@ namespace ProjectDesigner.Website.Equipment
                    Standard = i.Standard.ToString(),
                    i.Price,
                    i.Brand
-
                });
         }
 

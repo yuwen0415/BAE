@@ -230,6 +230,19 @@ namespace ProjectDesigner.Data
                 this.EquipmentType = (int)value;
             }
         }
+
+
+        public string Brand
+        {
+            get
+            {
+                return "";
+            }
+            set
+            {
+                this.Brand = value;
+            }
+        }
     }
 
     partial class Pillar : IPillar
@@ -265,6 +278,19 @@ namespace ProjectDesigner.Data
             set
             {
                 this.EquipmentType = (int)value;
+            }
+        }
+
+
+        public string Brand
+        {
+            get
+            {
+                return "";
+            }
+            set
+            {
+                this.Brand = value;
             }
         }
     }
@@ -457,7 +483,7 @@ namespace ProjectDesigner.Data
 
     partial class Project : IProject
     {
-       // private ISerializer Serializer = new JsonSerializer();
+        // private ISerializer Serializer = new JsonSerializer();
 
         //List<IProjectEquipment> IProject.Equipments
         //{
@@ -474,6 +500,7 @@ namespace ProjectDesigner.Data
         //        this.Equipments = Serializer.Serialize<List<IProjectEquipment>>(value);
         //    }
         //}
+
     }
 
     partial class ProjectEquipment : IProjectEquipment
@@ -514,19 +541,32 @@ namespace ProjectDesigner.Data
 
 
 
-        double? IProjectEquipment.Price
+        //decimal? IProjectEquipment.Price
+        //{
+        //    get
+        //    {
+        //        if (this.Price == null)
+        //        {
+        //            return 0.0m;
+        //        }
+        //        return this.Price;
+        //    }
+        //    set
+        //    {
+        //        this.Price = value;
+        //    }
+        //}
+
+
+        EquipmentType IEquipment.EquipmentType
         {
             get
             {
-                if (this.Price == null)
-                {
-                    return 0.0;
-                }
-                return this.Price;
+                throw new NotImplementedException();
             }
             set
             {
-                this.Price = value;
+                throw new NotImplementedException();
             }
         }
     }

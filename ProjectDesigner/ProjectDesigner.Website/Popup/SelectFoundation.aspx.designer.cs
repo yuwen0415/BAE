@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TCMS.Website.Popup {
+namespace ProjectDesigner.Website.Popup {
     
     
     public partial class SelectFoundation {

@@ -11,5 +11,7 @@ namespace ProjectDesigner
         string Name { get; set; }
         decimal? Price { get; set; }
         EquipmentType EquipmentType { get; set; }
+
+        string Brand { get; set; }
     }
 }
