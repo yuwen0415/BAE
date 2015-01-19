@@ -30,16 +30,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/17/2014 08:00:44</publishTime>
     </File>
     <File Include="bin/ProjectDesigner.Data.dll">
-      <publishTime>01/09/2015 19:26:25</publishTime>
+      <publishTime>01/11/2015 17:54:43</publishTime>
     </File>
     <File Include="bin/ProjectDesigner.dll">
       <publishTime>01/09/2015 19:26:23</publishTime>
     </File>
     <File Include="bin/ProjectDesigner.Domain.dll">
-      <publishTime>01/09/2015 19:26:25</publishTime>
+      <publishTime>01/11/2015 17:54:43</publishTime>
     </File>
     <File Include="bin/ProjectDesigner.Website.dll">
-      <publishTime>01/09/2015 19:26:25</publishTime>
+      <publishTime>01/11/2015 17:54:44</publishTime>
     </File>
     <File Include="bin/WebActivator.dll">
       <publishTime>12/17/2014 08:00:44</publishTime>
@@ -936,7 +936,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/04/2015 11:37:30</publishTime>
     </File>
     <File Include="Project/ProjectEquipmentEdit.aspx">
-      <publishTime>01/09/2015 19:26:06</publishTime>
+      <publishTime>01/11/2015 17:34:21</publishTime>
     </File>
     <File Include="Project/ProjectMnt.aspx">
       <publishTime>12/17/2014 08:00:06</publishTime>

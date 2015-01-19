@@ -1,15 +1,17 @@
-﻿<%@ Page Title="工程检测" Language="C#" AutoEventWireup="true"
-    CodeBehind="ProjectEquipmentEdit.aspx.cs" Inherits=" ProjectDesigner.Website.Project.ProjectEquipmentEdit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProjectEquipmentEdit.aspx.cs" Inherits=" ProjectDesigner.Website.Project.ProjectEquipmentEdit" %>
 
 <%@ Register Src="../ClientResources.ascx" TagName="ClientResources" TagPrefix="uc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<uc1:ClientResources ID="ClientResources1" runat="server" />
 <head id="Head1" runat="server">
-    <script type="text/javascript">
+    <%--    <script type="text/javascript">
         var settings_combobox = { boxStyle: 'list' };
-    </script>
-    <uc1:ClientResources ID="ClientResources1" runat="server" />
+    </script>--%>
+    <script src="http://172.5.1.61:8080/EzServerClient/js/EzMapAPI.js" type="text/javascript" charset="GB2312"></script>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style type="text/css">
         input[type="text"] {
             width: 160px;
@@ -39,14 +41,14 @@
                     width: 100px;
                 }
     </style>
-    <title></title>
+    <title>工程检测</title>
 </head>
 <body onload="initMap();">
+    
     <form id="form1" runat="server">
 
         <div class="edit_new">
             <div>
-
                 <h2>项目设备信息</h2>
                 <div class="row">
                     <div>
@@ -158,17 +160,17 @@
                     value="关 闭" />
             </div>
 
-
+            <div id="dituContent" style="border: #ccc solid 1px; width: 800px; height: 300px"></div>
         </div>
-        <%--    <div class="map">
-        <div id="dituContent" style="border: #ccc solid 1px; width: 800px; height: 300px"></div>
-    </div>--%>
-        <!--地图容器-->
-        <div id="dituContent" style="border: #ccc solid 1px;"></div>
 
     </form>
+    <%--    <div class="map">
+        <div id="dituContent" style="border: #ccc solid 1px; width: 800px; height: 300px"></div>
+    </div>--%>
+    <!--地图容器-->
+
 </body>
-<script src="http://172.5.1.61:8080/EzServerClient/js/EzMapAPI.js" type="text/javascript" charset="GB2312"></script>
+<%----%>
 <script type="text/javascript">
     //$(function () {
     //    initMap();
