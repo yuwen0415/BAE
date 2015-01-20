@@ -4,12 +4,11 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <uc1:ClientResources ID="ClientResources1" runat="server" />
+
 <head id="Head1" runat="server">
-    <%--    <script type="text/javascript">
-        var settings_combobox = { boxStyle: 'list' };
-    </script>--%>
-    <script src="http://172.5.1.61:8080/EzServerClient/js/EzMapAPI.js" type="text/javascript" charset="GB2312"></script>
+    <%--<script src="http://172.5.1.61:8080/EzServerClient/js/EzMapAPI.js" type="text/javascript" charset="GB2312"></script>--%>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style type="text/css">
@@ -43,8 +42,8 @@
     </style>
     <title>工程检测</title>
 </head>
-<body onload="initMap();">
-    
+<body>
+    <%--onload="initMap();"--%>
     <form id="form1" runat="server">
 
         <div class="edit_new">
@@ -79,7 +78,8 @@
 
                     <div>
                         <label>
-                            设备位置</label><asp:TextBox runat="server" ID="txtLocation" ClientIDMode="Static" Width="325px"></asp:TextBox>
+                            设备位置</label><asp:TextBox runat="server" ID="txtLocation" ClientIDMode="Static" Width="275px"></asp:TextBox>
+                            <%--<input id="btnSelectPoint" name="" type="button" class="button_out" style="width: 40px;" runat="server" clientidmode="Static" value="获 取" />--%>
                     </div>
                 </div>
                 <div>
@@ -160,7 +160,10 @@
                     value="关 闭" />
             </div>
 
-            <div id="dituContent" style="border: #ccc solid 1px; width: 800px; height: 300px"></div>
+            <div id="dituContent">
+
+                <iframe id="ifrPage" name="ifrPage" src="map.html" style="border: #ccc solid 1px; width: 900px; height: 325px"></iframe>
+            </div>
         </div>
 
     </form>
@@ -170,11 +173,17 @@
     <!--地图容器-->
 
 </body>
-<%----%>
 <script type="text/javascript">
-    //$(function () {
-    //    initMap();
-    //});
+    $(function () {
+        //$.ajax({
+        //    type: "POST",
+        //    url: "test.html",
+        //    sucess: function (msg) { $("#dituContent").append(msg);}
+        //});
+
+
+        //initMap();
+    });
 
     $('#btnSelected').click(function () {
         var ids = $.fn.grid.getInstance().getSelected().attr('data-itemid');
@@ -194,7 +203,35 @@
         }
     });
 
+    //$('#btnSelectPoint').click(function () {
+    //    var test = $(window.frames["ifrPage"].document)._MapApp;
+    //});
+
     function initMap() {
+
+        //$('.gridview').grid();
+        //$('.gridview').find('tbody td').live('mousemove', function (e) {
+        //    var $this = $(this);
+        //    if (!$this.parent().is('.notdata') && $this.parents('[data-tips="false"]').length == 0) {
+        //        /**
+        //         * @change log 
+        //         *  17/05/2013 Jianbo Hou 
+        //         *      change $(this).text() ->$(this).html()
+        //         *      add a judgement to fix a bug : tips may show input:checkbox
+        //         */
+        //        if ($this.find('input').size() == 0) {
+        //            $this.showTips($this.html(), { mouse: e, target: $this });
+        //        }
+
+        //    }
+        //}).live('mouseout', function () {
+        //    if (!$(this).parent().is('.notdata') && $(this).parents('[data-tips="false"]').length == 0) {
+        //        $(this).hideTips();
+        //    }
+        //})
+
+        //initialAll();
+
         //百度地图
         //initMapContainer();
         //createMap();//创建地图

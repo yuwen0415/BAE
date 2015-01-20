@@ -1,0 +1,41 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="Generator" content="EditPlus®" />
+    <meta name="Author" content="" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <script src="http://172.5.1.61:8080/EzServerClient/js/EzMapAPI.js" type="text/javascript" charset="GB2312"></script>
+    <script type="text/javascript">
+        var _MapApp = null;
+        function load() {
+            _MapApp = new EzMap(document.getElementById("div"));
+            //2）********初始化地图，并显示地图
+            _MapApp.initialize();
+            _MapApp.showMapControl();
+        }
+        function drawCircle() {
+            _MapApp.changeDragMode("drawPoint", inputX, inputY, viewPoint);
+        }
+
+        function viewPoint(points) {
+            var zbAry = points.split(",");
+            $(window.parent.document).getElementById("txtLocation").value = zbAry[0].toString() + "," + zbAry[1].toString();
+            //
+        }
+
+    </script>
+    <title>Document</title>
+</head>
+<body onload="load();">
+    <div id='div' style="width: 890px; height: 300px">
+
+    </div>
+    <input type="block" name="inputX" id="inputX" /></input>
+    <input type="block" name="inputY" id="inputY" /></input>
+    <input type="button" value="获取经纬度" onclick="drawCircle();" />
+</body>
+
+</html>

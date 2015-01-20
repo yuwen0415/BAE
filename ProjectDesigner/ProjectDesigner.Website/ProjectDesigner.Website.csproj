@@ -377,6 +377,7 @@
     <Content Include="Project\ProjectEquipmentEdit.aspx" />
     <Content Include="Project\ProjectMnt.aspx" />
     <Content Include="Project\ProjectEdit.aspx" />
+    <Content Include="Project\map.html" />
     <Content Include="Scripts\ckeditor\build-config.js" />
     <Content Include="Scripts\ckeditor\ckeditor.js" />
     <Content Include="Scripts\ckeditor\config.js" />
