@@ -10,20 +10,28 @@
     <script src="http://172.5.1.61:8080/EzServerClient/js/EzMapAPI.js" type="text/javascript" charset="GB2312"></script>
     <script type="text/javascript">
         var _MapApp = null;
+        var uHTMLOverLay1 = new HTMLElementOverLay("device", new Point(0, 0), '<img src="../images/DeviceState/交调设备/正常.gif">');
+        var isAdded = false;
         function load() {
             _MapApp = new EzMap(document.getElementById("div"));
             //2）********初始化地图，并显示地图
             _MapApp.initialize();
             _MapApp.showMapControl();
         }
-        function drawCircle() {
+        function drawEquipment() {
+            if (isAdded) {
+                _MapApp.removeOverlay(uHTMLOverLay1);
+                isAdded = false;
+            }
             _MapApp.changeDragMode("drawPoint", inputX, inputY, viewPoint);
         }
 
         function viewPoint(points) {
             var zbAry = points.split(",");
+            uHTMLOverLay1 = new HTMLElementOverLay("device", new Point(zbAry[0], zbAry[1]), '<img src="../images/DeviceState/交调设备/正常.gif">');
             $(window.parent.document).getElementById("txtLocation").value = zbAry[0].toString() + "," + zbAry[1].toString();
-            //
+            _MapApp.addOverlay(uHTMLOverLay1);
+            isAdded = true;
         }
 
     </script>
@@ -35,7 +43,7 @@
     </div>
     <input type="block" name="inputX" id="inputX" /></input>
     <input type="block" name="inputY" id="inputY" /></input>
-    <input type="button" value="获取经纬度" onclick="drawCircle();" />
+    <input type="button" value="获取经纬度" onclick="drawEquipment();" />
 </body>
 
 </html>

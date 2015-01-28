@@ -66,6 +66,7 @@ namespace ProjectDesigner.Website.Project
                 this.txtName.Text = this.EditModel == null ? "" : this.EditModel.Name;
                 this.txtLocation.Text = this.EditModel.Location.Longitude + "," + this.EditModel.Location.Latitude;
                 this.txtPrice.Text = this.EditModel.Price == null ? "" : this.EditModel.Price.ToString();
+                this.DropEquipmentType.SelectedIndex = (int)this.EditModel.EquipmentType;
             }
         }
 

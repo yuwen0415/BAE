@@ -47,14 +47,14 @@ namespace ProjectDesigner.Domain.Project
             }
         }
 
-        public static IEquipment SearchEquipment(this IDataContext datacontext, string equipmentId,EquipmentType type)
+        public static IEquipment SearchEquipment(this IDataContext datacontext, string equipmentId, EquipmentType type)
         {
             switch (type)
             {
                 case EquipmentType.VMS:
                     return datacontext.VMSs
                                       .AsQuerybale
-                                      .Where(i=>i.Id == equipmentId)
+                                      .Where(i => i.Id == equipmentId)
                                       .FirstOrDefault();
                 case EquipmentType.LEDModule:
                     return datacontext.LEDModules
@@ -173,6 +173,24 @@ namespace ProjectDesigner.Domain.Project
             {
                 dataContext.ProjectEquipments.Delete(equip);
             }
+        }
+
+        public static string GetEquipmentsName(this IDataContext dataContext, string projectId)
+        {
+            var equipments = dataContext.ProjectEquipments
+                                        .AsQuerybale
+                                        .Where(i => i.ProjectId == projectId)
+                                        .ToList();
+            if (equipments.Count > 0)
+            {
+                var name = "";
+                foreach (var equipment in equipments)
+                {
+                    name += equipment.Name + ",";
+                }
+                return name;
+            }
+            return "";
         }
     }
 }

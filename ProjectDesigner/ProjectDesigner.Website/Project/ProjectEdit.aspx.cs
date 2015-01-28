@@ -120,7 +120,7 @@ namespace ProjectDesigner.Website.Project
                 var type = (EquipmentType)(int.Parse(this.DropEquipmentType.Text));
                 query.Where(i => i.EquipmentType == type);
             }
-            return query.OrderBy(i => i.Id).OrderBy(orderby).Fetch(this.PageIndex, this.PageSize)
+            return query.OrderBy(i => i.Name).OrderBy(orderby).Fetch(this.PageIndex, this.PageSize)
             .Select(i => new
             {
                 Id = i.Id,
@@ -148,7 +148,7 @@ namespace ProjectDesigner.Website.Project
                 foreach (var equipment in equipments)
                 {
                     price += equipment.Price;
-                    equipmentsName += equipment.Name;
+                    equipmentsName += equipment.Name + ",";
                 }
                 this.EditModel.Price = price;
                 this.SaveObject<IProject>();

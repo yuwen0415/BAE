@@ -70,7 +70,7 @@
                         <a href="#">项目造价</a>
                     </th>
                     <th class="word-auto" data-field="Equipments " data-sorting="fixed">
-                        <a href="#">设备总数</a>
+                        <a href="#">所属设备</a>
                     </th>
                 </tr>
             </thead>

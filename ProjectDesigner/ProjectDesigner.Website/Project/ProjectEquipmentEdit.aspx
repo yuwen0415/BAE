@@ -52,7 +52,7 @@
                 <div class="row">
                     <div>
                         <label>
-                            设备名称</label><asp:TextBox runat="server" ID="txtName" ClientIDMode="Static" Width="325px"></asp:TextBox>
+                            设备名称</label><asp:TextBox runat="server" ID="txtName" ClientIDMode="Static" Width="325px">请输入设备名称</asp:TextBox>
                         <%--                    <label>
                         设备名称</label><asp:TextBox ID="txtName" CssClass="combobox" data-dialog-url="../Popup/SelectLEDModule.aspx"
                             data-callback-fields='{"Name":"#txtName"}' data-search-method="FindLEDModule"
@@ -78,7 +78,7 @@
 
                     <div>
                         <label>
-                            设备位置</label><asp:TextBox runat="server" ID="txtLocation" ClientIDMode="Static" Width="275px"></asp:TextBox>
+                            设备位置</label><asp:TextBox runat="server" ID="txtLocation" ClientIDMode="Static" Width="325px"></asp:TextBox>
                             <%--<input id="btnSelectPoint" name="" type="button" class="button_out" style="width: 40px;" runat="server" clientidmode="Static" value="获 取" />--%>
                     </div>
                 </div>
