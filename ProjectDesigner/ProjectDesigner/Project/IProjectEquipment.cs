@@ -9,9 +9,6 @@ namespace ProjectDesigner.Project
     {
 
         Location Location { get; set; }
-        EquipmentType EquipmentType { get; set; }
         string ProjectId { get; set; }
-
-
     }
 }

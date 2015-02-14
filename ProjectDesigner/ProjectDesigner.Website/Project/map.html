@@ -16,7 +16,18 @@
             _MapApp = new EzMap(document.getElementById("div"));
             //2）********初始化地图，并显示地图
             _MapApp.initialize();
+
+            var point = $(window.parent.document).getElementById("txtLocation").value;
+            if (point != "") {
+                viewPoint(point);
+                var points = point.split(",");
+                _MapApp.centerAtPoint(new Point(points[0], points[1]));
+            }
+
+
             _MapApp.showMapControl();
+
+
         }
         function drawEquipment() {
             if (isAdded) {
@@ -34,6 +45,18 @@
             isAdded = true;
         }
 
+        //function (pPoint,iZoom){
+        //    try{
+        //        if(!EzServerClient.GlobeFunction.isTypeRight(pPoint,"Point"))
+        //        {throw EzErrorFactory.createError("EzMap::centerAndZoom方法中arguments[0]类型不正确")}
+        //        iZoom=parseInt(iZoom);
+        //        if(this.map.bIsMercatorMap)
+        //        {var point=this.map.latlon2Meters(pPoint);
+        //        this.map.centerAndZoom(point,iZoom)}
+        //        else{this.map.centerAndZoom(pPoint,iZoom)}
+        //    }catch(e){
+        //        throw EzErrorFactory.createError("EzMap::centerAndZoom方法执行不正确",e)}}
+
     </script>
     <title>Document</title>
 </head>
@@ -47,3 +70,6 @@
 </body>
 
 </html>
+
+
+

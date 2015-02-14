@@ -54,7 +54,7 @@
             <asp:Button CssClass="button_out delete-link" runat="server" ID="btnDelete" Text="删 除" />
         </div>
         <div class="tool_button">
-            <asp:Button CssClass="button_out" runat="server" ID="btnExport" Text="导出设备档案" />
+            <asp:Button CssClass="button_out" runat="server" ID="btnExport" Text="导出Excel" ClientIDMode="Static" />
         </div>
         <table border="0" cellpadding="0" cellspacing="1" class="gridview" data-name="" data-multiselect="true"
             data-key="Id" data-autoload="true">
@@ -76,4 +76,28 @@
             </thead>
         </table>
     </div>
+    <script type="text/javascript">
+
+        $(function () {
+            $('#btnExport').click(function (e) {
+                e.preventDefault();
+                var selected = grid.getSelected();
+
+                var ids = [];
+                selected.each(function () {
+                    var id = $(this).attr('data-itemid');
+                    if (id) {
+                        ids.push(id);
+                    }
+                });
+
+                var params = $.extend({ '__SelectedItems': ids }, "");
+                $(this).ajaxPost({
+                    method: 'Export', params: params, callback: function (data) {
+                    }
+                });
+
+            });
+        });
+    </script>
 </asp:Content>

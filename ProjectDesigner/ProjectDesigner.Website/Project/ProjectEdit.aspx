@@ -139,11 +139,6 @@
                 value="关 闭" />
         </div>
     </div>
-
-
-    <script type="text/javascript">
-
-    </script>
 </asp:Content>
 
 

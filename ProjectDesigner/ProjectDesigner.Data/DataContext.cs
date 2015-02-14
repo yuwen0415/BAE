@@ -230,19 +230,6 @@ namespace ProjectDesigner.Data
                 this.EquipmentType = (int)value;
             }
         }
-
-
-        public string Brand
-        {
-            get
-            {
-                return "";
-            }
-            set
-            {
-                this.Brand = value;
-            }
-        }
     }
 
     partial class Pillar : IPillar
@@ -281,18 +268,6 @@ namespace ProjectDesigner.Data
             }
         }
 
-
-        public string Brand
-        {
-            get
-            {
-                return "";
-            }
-            set
-            {
-                this.Brand = value;
-            }
-        }
     }
 
     partial class LEDModule : ILEDModule
@@ -527,7 +502,7 @@ namespace ProjectDesigner.Data
         }
 
 
-        EquipmentType IProjectEquipment.EquipmentType
+        EquipmentType IEquipment.EquipmentType
         {
             get
             {
@@ -539,35 +514,5 @@ namespace ProjectDesigner.Data
             }
         }
 
-
-
-        //decimal? IProjectEquipment.Price
-        //{
-        //    get
-        //    {
-        //        if (this.Price == null)
-        //        {
-        //            return 0.0m;
-        //        }
-        //        return this.Price;
-        //    }
-        //    set
-        //    {
-        //        this.Price = value;
-        //    }
-        //}
-
-
-        EquipmentType IEquipment.EquipmentType
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
     }
 }

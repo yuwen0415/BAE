@@ -35,6 +35,10 @@
           <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
           <Property Name="Size" Type="nvarchar" MaxLength="50" />
           <Property Name="EquipmentType" Type="int" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TechnicalParameters" Type="nvarchar" MaxLength="150" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="LEDModule">
           <Key>
@@ -47,6 +51,9 @@
           <Property Name="Brand" Type="nvarchar" MaxLength="50" />
           <Property Name="Size" Type="nvarchar" MaxLength="50" />
           <Property Name="EquipmentType" Type="int" />
+          <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TechnicalParameters" Type="nvarchar" MaxLength="150" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Navigators">
           <Key>
@@ -75,6 +82,10 @@
           <Property Name="Diameter" Type="float" />
           <Property Name="Length" Type="float" />
           <Property Name="EquipmentType" Type="int" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TechnicalParameters" Type="nvarchar" MaxLength="150" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Project">
           <Key>
@@ -90,11 +101,14 @@
           </Key>
           <Property Name="Id" Type="nvarchar" MaxLength="64" Nullable="false" />
           <Property Name="Location" Type="nvarchar" MaxLength="64" />
-          <Property Name="EquipmentType" Type="int" />
+          <Property Name="EquipmentType" Type="int" Nullable="false" />
           <Property Name="ProjectId" Type="nvarchar" MaxLength="64" />
           <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="28" Scale="0" />
           <Property Name="Brand" Type="nvarchar" MaxLength="150" />
+          <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TechnicalParameters" Type="nvarchar" MaxLength="150" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="VMS">
           <Key>
@@ -114,6 +128,9 @@
           <Property Name="PillarId" Type="nvarchar" MaxLength="64" />
           <Property Name="FoundationId" Type="nvarchar" MaxLength="64" />
           <Property Name="EquipmentType" Type="int" />
+          <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TechnicalParameters" Type="nvarchar" MaxLength="150" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Navigators_Navigators">
           <End Role="Navigators" Type="Self.Navigators" Multiplicity="0..1" />
@@ -280,6 +297,9 @@
           <NavigationProperty Name="Foundation" Relationship="ProjectDesigner.Data.FK_VMS_Foundation1" FromRole="VMS" ToRole="Foundation1" />
           <NavigationProperty Name="LEDModule" Relationship="ProjectDesigner.Data.FK_VMS_LEDModule1" FromRole="VMS" ToRole="LEDModule1" />
           <NavigationProperty Name="Pillar" Relationship="ProjectDesigner.Data.FK_VMS_Pillar1" FromRole="VMS" ToRole="Pillar1" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Navigators_Navigators">
           <End Type="ProjectDesigner.Data.Navigator" Role="Navigator" Multiplicity="0..1" />
@@ -311,6 +331,10 @@
           <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EquipmentType" Type="Int32" />
           <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_Foundation1" FromRole="Foundation1" ToRole="VMS" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="LEDModule">
           <Key>
@@ -324,6 +348,9 @@
           <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EquipmentType" Type="Int32" />
           <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_LEDModule1" FromRole="LEDModule1" ToRole="VMS" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Pillar">
           <Key>
@@ -338,6 +365,10 @@
           <Property Name="Length" Type="Double" />
           <Property Name="EquipmentType" Type="Int32" />
           <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_Pillar1" FromRole="Pillar1" ToRole="VMS" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
         </EntityType>
         <EntityType Name="ProjectEquipment">
           <Key>
@@ -345,11 +376,14 @@
           </Key>
           <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="Location" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="EquipmentType" Type="Int32" />
+          <Property Name="EquipmentType" Type="Int32" Nullable="false" />
           <Property Name="ProjectId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Precision="28" Scale="0" />
           <Property Name="Brand" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_VMS_Foundation1">
           <End Type="ProjectDesigner.Data.Foundation" Role="Foundation1" Multiplicity="0..1" />
@@ -435,7 +469,10 @@
     <EntitySetMapping Name="VMS">
       <EntityTypeMapping TypeName="IsTypeOf(ProjectDesigner.Data.VMS)">
         <MappingFragment StoreEntitySet="VMS">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Brand" ColumnName="Brand" />
@@ -464,6 +501,10 @@
           <EntitySetMapping Name="Foundations">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.Foundation">
               <MappingFragment StoreEntitySet="Foundation">
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
                 <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
                 <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
@@ -475,6 +516,9 @@
           <EntitySetMapping Name="LEDModules">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.LEDModule">
               <MappingFragment StoreEntitySet="LEDModule">
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
                 <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
                 <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="Brand" ColumnName="Brand" />
@@ -488,6 +532,10 @@
           <EntitySetMapping Name="Pillars">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.Pillar">
               <MappingFragment StoreEntitySet="Pillar">
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
                 <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
                 <ScalarProperty Name="Length" ColumnName="Length" />
                 <ScalarProperty Name="Diameter" ColumnName="Diameter" />
@@ -502,6 +550,9 @@
           <EntitySetMapping Name="ProjectEquipments">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.ProjectEquipment">
               <MappingFragment StoreEntitySet="ProjectEquipment">
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
                 <ScalarProperty Name="Brand" ColumnName="Brand" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

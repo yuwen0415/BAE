@@ -174,16 +174,6 @@
 
 </body>
 <script type="text/javascript">
-    $(function () {
-        //$.ajax({
-        //    type: "POST",
-        //    url: "test.html",
-        //    sucess: function (msg) { $("#dituContent").append(msg);}
-        //});
-
-
-        //initMap();
-    });
 
     $('#btnSelected').click(function () {
         var ids = $.fn.grid.getInstance().getSelected().attr('data-itemid');
@@ -203,49 +193,6 @@
         }
     });
 
-    //$('#btnSelectPoint').click(function () {
-    //    var test = $(window.frames["ifrPage"].document)._MapApp;
-    //});
-
-    function initMap() {
-
-        //$('.gridview').grid();
-        //$('.gridview').find('tbody td').live('mousemove', function (e) {
-        //    var $this = $(this);
-        //    if (!$this.parent().is('.notdata') && $this.parents('[data-tips="false"]').length == 0) {
-        //        /**
-        //         * @change log 
-        //         *  17/05/2013 Jianbo Hou 
-        //         *      change $(this).text() ->$(this).html()
-        //         *      add a judgement to fix a bug : tips may show input:checkbox
-        //         */
-        //        if ($this.find('input').size() == 0) {
-        //            $this.showTips($this.html(), { mouse: e, target: $this });
-        //        }
-
-        //    }
-        //}).live('mouseout', function () {
-        //    if (!$(this).parent().is('.notdata') && $(this).parents('[data-tips="false"]').length == 0) {
-        //        $(this).hideTips();
-        //    }
-        //})
-
-        //initialAll();
-
-        //百度地图
-        //initMapContainer();
-        //createMap();//创建地图
-        //setMapEvent();//设置地图事件
-        //addMapControl();//向地图添加控件
-
-        //1） ********构造地图控件对象，用于装载地图
-        var uEzMap = new EzMap(document.getElementById("dituContent"));
-        //2）********初始化地图，并显示地图
-        uEzMap.initialize();
-        //3）********以下为其它一些附属功能
-        // 显示左侧导航工具条
-        uEzMap.showMapControl();
-    }
 </script>
 </html>
 

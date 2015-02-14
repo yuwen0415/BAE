@@ -41,6 +41,9 @@
     <Reference Include="EBA">
       <HintPath>..\lib\EBA.dll</HintPath>
     </Reference>
+    <Reference Include="EBA.BI">
+      <HintPath>..\lib\EBA.BI.dll</HintPath>
+    </Reference>
     <Reference Include="EBA.Json.NewtonsoftJson">
       <HintPath>..\lib\EBA.Json.NewtonsoftJson.dll</HintPath>
     </Reference>
@@ -1119,6 +1122,9 @@
     <Compile Include="Storages\ISortageHandler.cs" />
     <Compile Include="Storages\StorageBootstrap.cs" />
     <Compile Include="Storages\StorageHttpModule.cs" />
+    <Compile Include="TempFileDownHanlder.ashx.cs">
+      <DependentUpon>TempFileDownHanlder.ashx</DependentUpon>
+    </Compile>
     <Compile Include="TPageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -1137,6 +1143,8 @@
     <Content Include="Scripts\ckeditor\skins\moono\readme.md" />
     <Content Include="Main.Master" />
     <None Include="Properties\PublishProfiles\ProjectDesigner.pubxml" />
+    <Content Include="report_templates\project_template.xlsx" />
+    <Content Include="TempFileDownHanlder.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

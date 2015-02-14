@@ -789,6 +789,102 @@ namespace ProjectDesigner.Data
         private Nullable<global::System.Int32> _EquipmentType;
         partial void OnEquipmentTypeChanging(Nullable<global::System.Int32> value);
         partial void OnEquipmentTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Brand
+        {
+            get
+            {
+                return _Brand;
+            }
+            set
+            {
+                OnBrandChanging(value);
+                ReportPropertyChanging("Brand");
+                _Brand = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Brand");
+                OnBrandChanged();
+            }
+        }
+        private global::System.String _Brand;
+        partial void OnBrandChanging(global::System.String value);
+        partial void OnBrandChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ProductType
+        {
+            get
+            {
+                return _ProductType;
+            }
+            set
+            {
+                OnProductTypeChanging(value);
+                ReportPropertyChanging("ProductType");
+                _ProductType = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ProductType");
+                OnProductTypeChanged();
+            }
+        }
+        private global::System.String _ProductType;
+        partial void OnProductTypeChanging(global::System.String value);
+        partial void OnProductTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TechnicalParameters
+        {
+            get
+            {
+                return _TechnicalParameters;
+            }
+            set
+            {
+                OnTechnicalParametersChanging(value);
+                ReportPropertyChanging("TechnicalParameters");
+                _TechnicalParameters = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TechnicalParameters");
+                OnTechnicalParametersChanged();
+            }
+        }
+        private global::System.String _TechnicalParameters;
+        partial void OnTechnicalParametersChanging(global::System.String value);
+        partial void OnTechnicalParametersChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Unit
+        {
+            get
+            {
+                return _Unit;
+            }
+            set
+            {
+                OnUnitChanging(value);
+                ReportPropertyChanging("Unit");
+                _Unit = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Unit");
+                OnUnitChanged();
+            }
+        }
+        private global::System.String _Unit;
+        partial void OnUnitChanging(global::System.String value);
+        partial void OnUnitChanged();
 
         #endregion
 
@@ -1016,6 +1112,78 @@ namespace ProjectDesigner.Data
         private Nullable<global::System.Int32> _EquipmentType;
         partial void OnEquipmentTypeChanging(Nullable<global::System.Int32> value);
         partial void OnEquipmentTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ProductType
+        {
+            get
+            {
+                return _ProductType;
+            }
+            set
+            {
+                OnProductTypeChanging(value);
+                ReportPropertyChanging("ProductType");
+                _ProductType = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ProductType");
+                OnProductTypeChanged();
+            }
+        }
+        private global::System.String _ProductType;
+        partial void OnProductTypeChanging(global::System.String value);
+        partial void OnProductTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TechnicalParameters
+        {
+            get
+            {
+                return _TechnicalParameters;
+            }
+            set
+            {
+                OnTechnicalParametersChanging(value);
+                ReportPropertyChanging("TechnicalParameters");
+                _TechnicalParameters = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TechnicalParameters");
+                OnTechnicalParametersChanged();
+            }
+        }
+        private global::System.String _TechnicalParameters;
+        partial void OnTechnicalParametersChanging(global::System.String value);
+        partial void OnTechnicalParametersChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Unit
+        {
+            get
+            {
+                return _Unit;
+            }
+            set
+            {
+                OnUnitChanging(value);
+                ReportPropertyChanging("Unit");
+                _Unit = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Unit");
+                OnUnitChanged();
+            }
+        }
+        private global::System.String _Unit;
+        partial void OnUnitChanging(global::System.String value);
+        partial void OnUnitChanged();
 
         #endregion
 
@@ -1606,6 +1774,102 @@ namespace ProjectDesigner.Data
         private Nullable<global::System.Int32> _EquipmentType;
         partial void OnEquipmentTypeChanging(Nullable<global::System.Int32> value);
         partial void OnEquipmentTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Brand
+        {
+            get
+            {
+                return _Brand;
+            }
+            set
+            {
+                OnBrandChanging(value);
+                ReportPropertyChanging("Brand");
+                _Brand = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Brand");
+                OnBrandChanged();
+            }
+        }
+        private global::System.String _Brand;
+        partial void OnBrandChanging(global::System.String value);
+        partial void OnBrandChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ProductType
+        {
+            get
+            {
+                return _ProductType;
+            }
+            set
+            {
+                OnProductTypeChanging(value);
+                ReportPropertyChanging("ProductType");
+                _ProductType = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ProductType");
+                OnProductTypeChanged();
+            }
+        }
+        private global::System.String _ProductType;
+        partial void OnProductTypeChanging(global::System.String value);
+        partial void OnProductTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TechnicalParameters
+        {
+            get
+            {
+                return _TechnicalParameters;
+            }
+            set
+            {
+                OnTechnicalParametersChanging(value);
+                ReportPropertyChanging("TechnicalParameters");
+                _TechnicalParameters = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TechnicalParameters");
+                OnTechnicalParametersChanged();
+            }
+        }
+        private global::System.String _TechnicalParameters;
+        partial void OnTechnicalParametersChanging(global::System.String value);
+        partial void OnTechnicalParametersChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Unit
+        {
+            get
+            {
+                return _Unit;
+            }
+            set
+            {
+                OnUnitChanging(value);
+                ReportPropertyChanging("Unit");
+                _Unit = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Unit");
+                OnUnitChanged();
+            }
+        }
+        private global::System.String _Unit;
+        partial void OnUnitChanging(global::System.String value);
+        partial void OnUnitChanged();
 
         #endregion
 
@@ -1757,11 +2021,13 @@ namespace ProjectDesigner.Data
         /// Create a new ProjectEquipment object.
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="equipmentType">Initial value of the EquipmentType property.</param>
         /// <param name="name">Initial value of the Name property.</param>
-        public static ProjectEquipment CreateProjectEquipment(global::System.String id, global::System.String name)
+        public static ProjectEquipment CreateProjectEquipment(global::System.String id, global::System.Int32 equipmentType, global::System.String name)
         {
             ProjectEquipment projectEquipment = new ProjectEquipment();
             projectEquipment.Id = id;
+            projectEquipment.EquipmentType = equipmentType;
             projectEquipment.Name = name;
             return projectEquipment;
         }
@@ -1824,9 +2090,9 @@ namespace ProjectDesigner.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> EquipmentType
+        public global::System.Int32 EquipmentType
         {
             get
             {
@@ -1841,8 +2107,8 @@ namespace ProjectDesigner.Data
                 OnEquipmentTypeChanged();
             }
         }
-        private Nullable<global::System.Int32> _EquipmentType;
-        partial void OnEquipmentTypeChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _EquipmentType;
+        partial void OnEquipmentTypeChanging(global::System.Int32 value);
         partial void OnEquipmentTypeChanged();
     
         /// <summary>
@@ -1940,6 +2206,78 @@ namespace ProjectDesigner.Data
         private global::System.String _Brand;
         partial void OnBrandChanging(global::System.String value);
         partial void OnBrandChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ProductType
+        {
+            get
+            {
+                return _ProductType;
+            }
+            set
+            {
+                OnProductTypeChanging(value);
+                ReportPropertyChanging("ProductType");
+                _ProductType = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ProductType");
+                OnProductTypeChanged();
+            }
+        }
+        private global::System.String _ProductType;
+        partial void OnProductTypeChanging(global::System.String value);
+        partial void OnProductTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TechnicalParameters
+        {
+            get
+            {
+                return _TechnicalParameters;
+            }
+            set
+            {
+                OnTechnicalParametersChanging(value);
+                ReportPropertyChanging("TechnicalParameters");
+                _TechnicalParameters = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TechnicalParameters");
+                OnTechnicalParametersChanged();
+            }
+        }
+        private global::System.String _TechnicalParameters;
+        partial void OnTechnicalParametersChanging(global::System.String value);
+        partial void OnTechnicalParametersChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Unit
+        {
+            get
+            {
+                return _Unit;
+            }
+            set
+            {
+                OnUnitChanging(value);
+                ReportPropertyChanging("Unit");
+                _Unit = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Unit");
+                OnUnitChanged();
+            }
+        }
+        private global::System.String _Unit;
+        partial void OnUnitChanging(global::System.String value);
+        partial void OnUnitChanged();
 
         #endregion
 
@@ -2309,6 +2647,78 @@ namespace ProjectDesigner.Data
         private Nullable<global::System.Int32> _EquipmentType;
         partial void OnEquipmentTypeChanging(Nullable<global::System.Int32> value);
         partial void OnEquipmentTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ProductType
+        {
+            get
+            {
+                return _ProductType;
+            }
+            set
+            {
+                OnProductTypeChanging(value);
+                ReportPropertyChanging("ProductType");
+                _ProductType = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ProductType");
+                OnProductTypeChanged();
+            }
+        }
+        private global::System.String _ProductType;
+        partial void OnProductTypeChanging(global::System.String value);
+        partial void OnProductTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TechnicalParameters
+        {
+            get
+            {
+                return _TechnicalParameters;
+            }
+            set
+            {
+                OnTechnicalParametersChanging(value);
+                ReportPropertyChanging("TechnicalParameters");
+                _TechnicalParameters = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TechnicalParameters");
+                OnTechnicalParametersChanged();
+            }
+        }
+        private global::System.String _TechnicalParameters;
+        partial void OnTechnicalParametersChanging(global::System.String value);
+        partial void OnTechnicalParametersChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Unit
+        {
+            get
+            {
+                return _Unit;
+            }
+            set
+            {
+                OnUnitChanging(value);
+                ReportPropertyChanging("Unit");
+                _Unit = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Unit");
+                OnUnitChanged();
+            }
+        }
+        private global::System.String _Unit;
+        partial void OnUnitChanging(global::System.String value);
+        partial void OnUnitChanged();
 
         #endregion
 

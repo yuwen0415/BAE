@@ -12,7 +12,7 @@
         <AssociationConnector Association="ProjectDesigner.Data.FK_Navigators_Navigators" />
         <EntityTypeShape EntityType="ProjectDesigner.Data.Project" Width="1.5" PointX="5.375" PointY="6.75" />
         <EntityTypeShape EntityType="ProjectDesigner.Data.Foundation" Width="1.5" PointX="0.75" PointY="13.75" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.LEDModule" Width="1.5" PointX="0.75" PointY="16.625" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.LEDModule" Width="1.5" PointX="3.5" PointY="13.875" />
         <EntityTypeShape EntityType="ProjectDesigner.Data.Pillar" Width="1.5" PointX="3.375" PointY="10" />
         <EntityTypeShape EntityType="ProjectDesigner.Data.ProjectEquipment" Width="1.5" PointX="9.375" PointY="4.75" />
         <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_Foundation1" />
