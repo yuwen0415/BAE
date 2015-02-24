@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" Title="交通诱导系统" AutoEventWireup="true" CodeBehind="VMSMnt.aspx.cs" Inherits="ProjectDesigner.Website.Equipment.VMSMnt"
-    MasterPageFile="~/Main.Master" %>
+﻿<%@ Page Title="视频监控" Language="C#" AutoEventWireup="true" CodeBehind="TrafficVideoSurveillanceMnt.aspx.cs"
+    Inherits="ProjectDesigner.Website.Equipment.TrafficVideoSurveillanceMnt" MasterPageFile="~/Main.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
@@ -39,15 +39,15 @@
             </table>
         </div>
         <div class="tool_button">
-            <asp:Button CssClass="button_out add-link" runat="server" ID="btnAdd" URL="VMSEdit.aspx"
+            <asp:Button CssClass="button_out add-link" runat="server" ID="btnAdd" URL="TrafficVideoSurveillanceEdit.aspx"
                 data-dialog-width="974" data-dialog-height="663" Text="新 增" />
         </div>
         <div class="tool_button">
-            <asp:Button CssClass="button_out edit-link" runat="server" ID="btnUpdate" URL="VMSEdit.aspx"
+            <asp:Button CssClass="button_out edit-link" runat="server" ID="btnUpdate" URL="TrafficVideoSurveillanceEdit.aspx"
                 data-dialog-width="974" data-dialog-height="663" Text="修 改" />
         </div>
         <div class="tool_button">
-            <asp:Button CssClass="button_out view-link" runat="server" ID="btnView" URL="VMSEdit.aspx"
+            <asp:Button CssClass="button_out view-link" runat="server" ID="btnView" URL="TrafficVideoSurveillanceEdit.aspx"
                 data-dialog-width="974" data-dialog-height="663" Text="详 情" />
         </div>
         <div class="tool_button">
@@ -66,17 +66,20 @@
                     <th class="word-auto" data-field="Name" data-sorting="fixed">
                         <a href="#">设备名称</a>
                     </th>
-                    <th class="word-4" data-field="Size" data-sorting="fixed">
-                        <a href="#">尺寸</a>
+                    <th class="word-4" data-field="ProductType" data-sorting="fixed">
+                        <a href="#">型号</a>
                     </th>
-                    <th class="word-4" data-field="Price" data-sorting="fixed">
-                        <a href="#">价格</a>
+                    <th class="word-auto" data-field="TechnicalParameters " data-sorting="fixed">
+                        <a href="#">主要技术参数</a>
                     </th>
                     <th class="word-4" data-field="Brand" data-sorting="fixed">
                         <a href="#">品牌</a>
                     </th>
+                    <th class="word-4" data-field="Price" data-sorting="fixed">
+                        <a href="#">价格</a>
+                    </th>
                     <th class="word-4" data-field="Type" data-sorting="fixed">
-                        <a href="#">诱导屏类型</a>
+                        <a href="#">类型</a>
                     </th>
                     <th class="word-4" data-field="Connection" data-sorting="fixed">
                         <a href="#">连接方式</a>
@@ -86,9 +89,6 @@
                     </th>
                     <th class="word-4" data-field="Pillar " data-sorting="fixed">
                         <a href="#">立杆</a>
-                    </th>
-                    <th class="word-auto" data-field="LEDModule " data-sorting="fixed">
-                        <a href="#">显示模组</a>
                     </th>
                 </tr>
             </thead>

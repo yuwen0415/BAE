@@ -10,10 +10,8 @@ using EBA.Linq;
 
 namespace ProjectDesigner.Website.Equipment
 {
-    public partial class VMSMnt : TPageBase
+    public partial class TrafficVideoSurveillanceMnt : TPageBase
     {
-        //[Export(typeof(IModule))]
-        //[ModuleMetadata(ID = "BaseEquipmentManagement", CName = "设备管理", Url = "Equipment/BaseEquipmentManagement.aspx")]
         protected void Page_Load(object sender, EventArgs e)
         {
         }
@@ -33,7 +31,7 @@ namespace ProjectDesigner.Website.Equipment
         /// <returns></returns>
         protected override System.Collections.IEnumerable FetchData(string tableName, string[] orderby = null)
         {
-            var list = this.EntityContext.Value.SearchVMS();
+            var list = this.EntityContext.Value.SearchTrafficVideoSurveillances();
             if (this.txtName.Text.HasValue())
             {
                 list.Where(i => i.Name.Contains(this.txtName.Text.Trim()));
@@ -43,14 +41,12 @@ namespace ProjectDesigner.Website.Equipment
                 {
                     i.Id,
                     i.Name,
-                    i.Size,
                     i.Price,
                     i.Brand,
                     Type = i.Type.ToString(),
                     Connection = i.Connection.ToString(),
                     Foundation = i.Foundation == null ? "" : i.Foundation.Name,
                     Pillar = i.Pillar == null ? "" : i.Pillar.Name,
-                    LEDModule = i.LEDModule == null ? "" : i.LEDModule.Name,
                     ProductType = i.ProductType,
                     TechnicalParameters = i.TechnicalParameters
                 });
@@ -64,7 +60,7 @@ namespace ProjectDesigner.Website.Equipment
         {
             foreach (var id in this.GetSelectedItems())
             {
-                this.EntityContext.Value.DeleteVMS(id);
+                this.EntityContext.Value.DeleteTrafficVideoSurveillance(id);
             }
             this.EntityContext.Value.SubmitChanges();
             return true;

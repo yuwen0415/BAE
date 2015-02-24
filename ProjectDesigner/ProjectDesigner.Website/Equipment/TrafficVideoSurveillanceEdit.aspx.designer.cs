@@ -10,7 +10,7 @@
 namespace ProjectDesigner.Website.Equipment {
     
     
-    public partial class VMSEdit {
+    public partial class TrafficVideoSurveillanceEdit {
         
         /// <summary>
         /// txtName control.
@@ -47,51 +47,6 @@ namespace ProjectDesigner.Website.Equipment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownListConnection;
-        
-        /// <summary>
-        /// txtSizeWidth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSizeWidth;
-        
-        /// <summary>
-        /// txtSizeHeight control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSizeHeight;
-        
-        /// <summary>
-        /// txtWeight control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtWeight;
-        
-        /// <summary>
-        /// txtModule control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtModule;
-        
-        /// <summary>
-        /// txtModuleCount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtModuleCount;
         
         /// <summary>
         /// txtPillar control.

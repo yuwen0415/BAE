@@ -11,6 +11,7 @@ namespace ProjectDesigner
         VMS = 1,
         LEDModule = 2,
         Pillar = 3,
-        Foundation = 4
+        Foundation = 4,
+        TrafficVideoSurveillance = 5
     }
 }

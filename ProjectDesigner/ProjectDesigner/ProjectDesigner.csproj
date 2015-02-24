@@ -63,7 +63,9 @@
     <Compile Include="Storages\IFile.cs" />
     <Compile Include="Storages\IStorageProvider.cs" />
     <Compile Include="Storages\StorageConfigurationSection.cs" />
-    <Compile Include="VMS\Connection.cs" />
+    <Compile Include="TrafficVideoSurveillance\ITrafficVideoSurveillance.cs" />
+    <Compile Include="TrafficVideoSurveillance\TrafficVideoSurveillanceType.cs" />
+    <Compile Include="Connection.cs" />
     <Compile Include="Foundation\IFoundation.cs" />
     <Compile Include="VMS\ILEDModule.cs" />
     <Compile Include="Pillar\IPillar.cs" />

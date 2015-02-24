@@ -5,21 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ProjectDesigner.VMS
+namespace ProjectDesigner.TrafficVideoSurveillance
 {
-    public interface IVMS : IEquipment
+    public interface ITrafficVideoSurveillance : IEquipment
     {
-        VMSType? Type { get; set; }
+        TrafficVideoSurveillanceType Type { get; set; }
+
         /// <summary>
         /// 连接方式
         /// </summary>
-        Connection? Connection { get; set; }
-        ModuleSize Size { get; set; }
-        double? Weight { get; set; }
+        Connection Connection { get; set; }
+
         IFoundation Foundation { get; set; }
         IPillar Pillar { get; set; }
-        ILEDModule LEDModule { get; set; }
-        int? ModuleCount { get; set; }
         string IconPath { get; set; }
     }
 }

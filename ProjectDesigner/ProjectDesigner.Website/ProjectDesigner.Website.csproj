@@ -109,6 +109,8 @@
     <Content Include="Equipment\PillarMnt.aspx" />
     <Content Include="Equipment\LEDModuleEdit.aspx" />
     <Content Include="Equipment\LEDModuleMnt.aspx" />
+    <Content Include="Equipment\TrafficVideoSurveillanceEdit.aspx" />
+    <Content Include="Equipment\TrafficVideoSurveillanceMnt.aspx" />
     <Content Include="Equipment\VMSEdit.aspx" />
     <Content Include="Equipment\VMSMnt.aspx" />
     <Content Include="FileRun.aspx" />
@@ -1019,6 +1021,20 @@
     </Compile>
     <Compile Include="Equipment\LEDModuleMnt.aspx.designer.cs">
       <DependentUpon>LEDModuleMnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\TrafficVideoSurveillanceEdit.aspx.cs">
+      <DependentUpon>TrafficVideoSurveillanceEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\TrafficVideoSurveillanceEdit.aspx.designer.cs">
+      <DependentUpon>TrafficVideoSurveillanceEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\TrafficVideoSurveillanceMnt.aspx.cs">
+      <DependentUpon>TrafficVideoSurveillanceMnt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\TrafficVideoSurveillanceMnt.aspx.designer.cs">
+      <DependentUpon>TrafficVideoSurveillanceMnt.aspx</DependentUpon>
     </Compile>
     <Compile Include="Equipment\VMSEdit.aspx.cs">
       <DependentUpon>VMSEdit.aspx</DependentUpon>

@@ -3,6 +3,7 @@ using EXLibrary.Serialization;
 using ProjectDesigner.Foundation;
 using ProjectDesigner.Pillar;
 using ProjectDesigner.Project;
+using ProjectDesigner.TrafficVideoSurveillance;
 using ProjectDesigner.VMS;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,8 @@ namespace ProjectDesigner.Data
             this.Projects = new EntityRepository<Project, IProject>(this.EntityContext.Projects);
 
             this.ProjectEquipments = new EntityRepository<ProjectEquipment, IProjectEquipment>(this.EntityContext.ProjectEquipments);
+
+            this.TrafficVideoSurveillances = new EntityRepository<TrafficVideoSurveillance, ITrafficVideoSurveillance>(this.EntityContext.TrafficVideoSurveillances);
         }
 
         public IRepository<INavigator> Navigators
@@ -141,7 +144,7 @@ namespace ProjectDesigner.Data
         }
 
 
-        public IRepository<ProjectDesigner.Project.IProject> Projects
+        public IRepository<IProject> Projects
         {
             get;
             set;
@@ -149,6 +152,13 @@ namespace ProjectDesigner.Data
 
 
         public IRepository<IProjectEquipment> ProjectEquipments
+        {
+            get;
+            set;
+        }
+
+
+        public IRepository<ITrafficVideoSurveillance> TrafficVideoSurveillances
         {
             get;
             set;
@@ -475,7 +485,6 @@ namespace ProjectDesigner.Data
         //        this.Equipments = Serializer.Serialize<List<IProjectEquipment>>(value);
         //    }
         //}
-
     }
 
     partial class ProjectEquipment : IProjectEquipment
@@ -513,6 +522,72 @@ namespace ProjectDesigner.Data
                 this.EquipmentType = (int)value;
             }
         }
+
+    }
+
+    partial class TrafficVideoSurveillance : ITrafficVideoSurveillance
+    {
+        Connection ITrafficVideoSurveillance.Connection
+        {
+            get
+            {
+                return (Connection)this.Connection;
+            }
+            set
+            {
+                this.Connection = (int)value;
+            }
+        }
+
+        IFoundation ITrafficVideoSurveillance.Foundation
+        {
+            get
+            {
+                return this.Foundation;
+            }
+            set
+            {
+                this.Foundation = value as Foundation;
+            }
+        }
+
+        IPillar ITrafficVideoSurveillance.Pillar
+        {
+            get
+            {
+                return this.Pillar;
+            }
+            set
+            {
+                this.Pillar = value as Pillar;
+            }
+        }
+
+        TrafficVideoSurveillanceType ITrafficVideoSurveillance.Type
+        {
+            get
+            {
+                return (TrafficVideoSurveillanceType)this.Type;
+            }
+            set
+            {
+                this.Type = (int)value;
+            }
+        }
+
+        EquipmentType _EquipmentType = EquipmentType.TrafficVideoSurveillance;
+        public EquipmentType EquipmentType
+        {
+            get
+            {
+                return _EquipmentType;
+            }
+            set
+            {
+                _EquipmentType = value;
+            }
+        }
+
 
     }
 }

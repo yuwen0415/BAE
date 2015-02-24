@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Equipment\TrafficVideoSurveillanceEx.cs" />
     <Compile Include="Equipment\FoundationEx.cs" />
     <Compile Include="Equipment\PillarEx.cs" />
     <Compile Include="Equipment\LEDModuleEx.cs" />

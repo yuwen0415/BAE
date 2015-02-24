@@ -32,5 +32,6 @@ namespace ProjectDesigner
         /// 单位
         /// </summary>
         string Unit { get; set; }
+
     }
 }

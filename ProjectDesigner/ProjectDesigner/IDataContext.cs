@@ -2,6 +2,7 @@
 using ProjectDesigner.Foundation;
 using ProjectDesigner.Pillar;
 using ProjectDesigner.Project;
+using ProjectDesigner.TrafficVideoSurveillance;
 using ProjectDesigner.VMS;
 using System;
 using System.Collections.Generic;
@@ -18,5 +19,6 @@ namespace ProjectDesigner
         IRepository<IPillar> Pillars { get; }
         IRepository<IProject> Projects { get; }
         IRepository<IProjectEquipment> ProjectEquipments { get; }
+        IRepository<ITrafficVideoSurveillance> TrafficVideoSurveillances { get; }
     }
 }

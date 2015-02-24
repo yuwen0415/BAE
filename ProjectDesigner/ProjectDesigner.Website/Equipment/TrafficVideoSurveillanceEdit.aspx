@@ -1,5 +1,5 @@
-﻿<%@ Page Title="诱导屏编辑" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true"
-    CodeBehind="VMSEdit.aspx.cs" Inherits=" ProjectDesigner.Website.Equipment.VMSEdit" %>
+﻿<%@ Page Title="视频监控编辑" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true"
+    CodeBehind="TrafficVideoSurveillanceEdit.aspx.cs" Inherits=" ProjectDesigner.Website.Equipment.TrafficVideoSurveillanceEdit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
@@ -35,7 +35,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="edit_new">
         <div>
-            <h2>诱导屏信息</h2>
+            <h2>视频监控信息</h2>
             <div class="row">
                 <div>
                     <label>
@@ -50,9 +50,8 @@
                 <div>
                     <label>
                         类型</label><asp:DropDownList runat="server" ID="DropDownListType" ClientIDMode="Static" Width="325px">
-                            <asp:ListItem Value="0">光带</asp:ListItem>
-                            <asp:ListItem Value="1">光带+文字</asp:ListItem>
-                            <asp:ListItem Value="2">点阵屏</asp:ListItem>
+                            <asp:ListItem Value="0">球机</asp:ListItem>
+                            <asp:ListItem Value="1">枪机</asp:ListItem>
                         </asp:DropDownList>
                 </div>
                 <div>
@@ -61,30 +60,6 @@
                             <asp:ListItem Value="0">无线</asp:ListItem>
                             <asp:ListItem Value="1">光纤</asp:ListItem>
                         </asp:DropDownList>
-                </div>
-            </div>
-            <div class="row">
-                <div>
-                    <label>尺寸</label><asp:TextBox runat="server" ID="txtSizeWidth" ClientIDMode="Static" Width="153"></asp:TextBox>
-                    x
-                    <asp:TextBox runat="server" ID="txtSizeHeight" ClientIDMode="Static" Width="153" />
-                </div>
-                <div>
-                    <label>重量</label><asp:TextBox runat="server" ID="txtWeight" ClientIDMode="Static" Width="310"></asp:TextBox>kg
-                </div>
-            </div>
-            <div class="row">
-                <div>
-                    <label>
-                        显示模组</label><asp:TextBox ID="txtModule" CssClass="combobox" data-dialog-url="../Popup/SelectLEDModule.aspx"
-                            data-callback-fields='{"Name":"#txtModule"}' data-search-method="FindLEDModule"
-                            data-dialog-height='550' data-dialog-width='680' ClientIDMode="Static" data-columns='{"Name": "名称" }'
-                            runat="server" Width="325px"></asp:TextBox>
-
-                </div>
-                <div>
-                    <label>
-                        模组数量</label><asp:TextBox ID="txtModuleCount" ClientIDMode="Static" runat="server" Width="310px"></asp:TextBox>个
                 </div>
             </div>
             <div class="row">
