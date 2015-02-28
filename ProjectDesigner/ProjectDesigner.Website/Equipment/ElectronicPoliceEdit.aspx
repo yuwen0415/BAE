@@ -1,5 +1,5 @@
-﻿<%@ Page Title="视频监控编辑" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true"
-    CodeBehind="TrafficVideoSurveillanceEdit.aspx.cs" Inherits=" ProjectDesigner.Website.Equipment.TrafficVideoSurveillanceEdit" %>
+﻿<%@ Page Title="电子警察编辑" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true"
+    CodeBehind="ElectronicPoliceEdit.aspx.cs" Inherits=" ProjectDesigner.Website.Equipment.ElectronicPoliceEdit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
@@ -50,8 +50,9 @@
                 <div>
                     <label>
                         类型</label><asp:DropDownList runat="server" ID="DropDownListType" ClientIDMode="Static" Width="325px">
-                            <asp:ListItem Value="0">路面监控</asp:ListItem>
-                            <asp:ListItem Value="1">高空监控</asp:ListItem>
+                            <asp:ListItem Value="0">跨实线抓拍</asp:ListItem>
+                            <asp:ListItem Value="1">闯红灯抓拍</asp:ListItem>
+                            <asp:ListItem Value="2">违法停车抓拍</asp:ListItem>
                         </asp:DropDownList>
                 </div>
                 <div>
@@ -88,7 +89,31 @@
                 </div>
                 <div>
                     <label>
+                        视频监控个数</label><asp:DropDownList runat="server" ID="DropDownListVideoSurveillanceNum" ClientIDMode="Static" Width="325px">
+                            <asp:ListItem Value="0">0</asp:ListItem>
+                            <asp:ListItem Value="1">1</asp:ListItem>
+                            <asp:ListItem Value="2">2</asp:ListItem>
+                            <asp:ListItem Value="3">3</asp:ListItem>
+                            <asp:ListItem Value="4">4</asp:ListItem>
+                            <asp:ListItem Value="5">5</asp:ListItem>
+                        </asp:DropDownList>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label>
                         价格</label><asp:TextBox ID="txtPrice" ClientIDMode="Static" runat="server" Width="325px"></asp:TextBox>
+                </div>
+                <div>
+                    <label>
+                        型号</label><asp:TextBox ID="txtProductType" ClientIDMode="Static" runat="server" Width="325px"></asp:TextBox>
+                </div>
+            </div>
+            <div class="row span-2">
+                <div>
+                    <label class="span-2">
+                        主要技术参数</label><asp:TextBox ID="txtTechnicalParameters" TextMode="MultiLine" Rows="2" Columns="50"
+                            runat="server" Style="margin-right: 0px" Width="770px" Height="45px"></asp:TextBox>
                 </div>
             </div>
             <div class="row span-2">

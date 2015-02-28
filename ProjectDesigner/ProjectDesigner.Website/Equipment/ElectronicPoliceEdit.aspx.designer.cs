@@ -10,7 +10,7 @@
 namespace ProjectDesigner.Website.Equipment {
     
     
-    public partial class TrafficVideoSurveillanceEdit {
+    public partial class ElectronicPoliceEdit {
         
         /// <summary>
         /// txtName control.
@@ -76,6 +76,15 @@ namespace ProjectDesigner.Website.Equipment {
         protected global::System.Web.UI.WebControls.TextBox txtVideoSurveillance;
         
         /// <summary>
+        /// DropDownListVideoSurveillanceNum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListVideoSurveillanceNum;
+        
+        /// <summary>
         /// txtPrice control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,24 @@ namespace ProjectDesigner.Website.Equipment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPrice;
+        
+        /// <summary>
+        /// txtProductType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtProductType;
+        
+        /// <summary>
+        /// txtTechnicalParameters control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTechnicalParameters;
         
         /// <summary>
         /// listAttachments control.

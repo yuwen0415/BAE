@@ -10,7 +10,7 @@
 namespace ProjectDesigner.Website.Equipment {
     
     
-    public partial class TrafficVideoSurveillanceEdit {
+    public partial class VideoSurveillanceEdit {
         
         /// <summary>
         /// txtName control.
@@ -31,49 +31,22 @@ namespace ProjectDesigner.Website.Equipment {
         protected global::System.Web.UI.WebControls.TextBox txtBrand;
         
         /// <summary>
-        /// DropDownListType control.
+        /// DropDownListVideoSurveillanceType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListType;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListVideoSurveillanceType;
         
         /// <summary>
-        /// DropDownListConnection control.
+        /// txtProductType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListConnection;
-        
-        /// <summary>
-        /// txtPillar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPillar;
-        
-        /// <summary>
-        /// txtFoundation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFoundation;
-        
-        /// <summary>
-        /// txtVideoSurveillance control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVideoSurveillance;
+        protected global::System.Web.UI.WebControls.TextBox txtProductType;
         
         /// <summary>
         /// txtPrice control.
@@ -85,13 +58,13 @@ namespace ProjectDesigner.Website.Equipment {
         protected global::System.Web.UI.WebControls.TextBox txtPrice;
         
         /// <summary>
-        /// listAttachments control.
+        /// txtTechnicalParameters control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl listAttachments;
+        protected global::System.Web.UI.WebControls.TextBox txtTechnicalParameters;
         
         /// <summary>
         /// btnSave control.

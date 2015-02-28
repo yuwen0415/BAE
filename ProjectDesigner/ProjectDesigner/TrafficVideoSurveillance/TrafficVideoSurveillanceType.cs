@@ -7,7 +7,9 @@ namespace ProjectDesigner.TrafficVideoSurveillance
 {
     public enum TrafficVideoSurveillanceType
     {
-        BALL = 0,
-        GUN = 1
+        //路面视频
+        PAVEMENT = 0,
+        //高空视频
+        AERIAL = 1
     }
 }

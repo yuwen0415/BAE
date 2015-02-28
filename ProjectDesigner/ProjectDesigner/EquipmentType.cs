@@ -12,6 +12,8 @@ namespace ProjectDesigner
         LEDModule = 2,
         Pillar = 3,
         Foundation = 4,
-        TrafficVideoSurveillance = 5
+        TrafficVideoSurveillance = 5,
+        ElectronicPolice = 6,
+        TrafficAndEventCollection = 7
     }
 }

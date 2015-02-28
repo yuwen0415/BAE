@@ -10,7 +10,7 @@ using EBA.Linq;
 
 namespace ProjectDesigner.Website.Equipment
 {
-    public partial class TrafficVideoSurveillanceMnt : TPageBase
+    public partial class TrafficAndEventCollectionMnt : TPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +31,7 @@ namespace ProjectDesigner.Website.Equipment
         /// <returns></returns>
         protected override System.Collections.IEnumerable FetchData(string tableName, string[] orderby = null)
         {
-            var list = this.EntityContext.Value.SearchTrafficVideoSurveillances();
+            var list = this.EntityContext.Value.SearchTrafficAndEventCollections();
             if (this.txtName.Text.HasValue())
             {
                 list.Where(i => i.Name.Contains(this.txtName.Text.Trim()));
@@ -49,7 +49,8 @@ namespace ProjectDesigner.Website.Equipment
                     Pillar = i.Pillar == null ? "" : i.Pillar.Name,
                     ProductType = i.ProductType,
                     TechnicalParameters = i.TechnicalParameters,
-                    VideoSurveillance = i.VideoSurveillance.Name
+                    TrafficAndEventCollectionEquipment = i.TrafficAndEventCollectionEquipment.Name,
+                    i.TrafficAndEventCollectionEquipmentNum
                 });
         }
 
@@ -61,7 +62,7 @@ namespace ProjectDesigner.Website.Equipment
         {
             foreach (var id in this.GetSelectedItems())
             {
-                this.EntityContext.Value.DeleteTrafficVideoSurveillance(id);
+                this.EntityContext.Value.DeleteElectronicPolice(id);
             }
             this.EntityContext.Value.SubmitChanges();
             return true;

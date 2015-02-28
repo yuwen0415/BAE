@@ -6,18 +6,18 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ProjectDesigner.Domain.Equipment;
 using EBA.Helpers;
-using ProjectDesigner.TrafficVideoSurveillance;
+using ProjectDesigner.ElectronicPolice;
 
 namespace ProjectDesigner.Website.Equipment
 {
-    public partial class TrafficVideoSurveillanceEdit : TPageBase
+    public partial class ElectronicPoliceEdit : TPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        ITrafficVideoSurveillance EditModel
+        IElectronicPolice EditModel
         {
             get;
             set;
@@ -28,13 +28,14 @@ namespace ProjectDesigner.Website.Equipment
             base.InitControls();
             //this.txtCode.AddValidator<RequiredValidator>("代码必须填写！");
             this.txtName.AddValidator<RequiredValidator>("名称必须填写！");
+            this.txtVideoSurveillance.AddValidator<RequiredValidator>("必须选择视频监控设备");
             //this.ShowOrder.AddValidator<RequiredValidator>("显示顺序必须填写！");
         }
         protected override void OnAdd()
         {
             if (!IsPostBack)
             {
-                this.EditModel = this.EntityContext.Value.TrafficVideoSurveillances.NewEntity();
+                this.EditModel = this.EntityContext.Value.ElectronicPolices.NewEntity();
             }
         }
 
@@ -42,7 +43,7 @@ namespace ProjectDesigner.Website.Equipment
         {
             if (!IsPostBack)
             {
-                this.EditModel = this.EntityContext.Value.SearchTrafficVideoSurveillance(this.SelectedId);
+                this.EditModel = this.EntityContext.Value.SearchElectronicPolice(this.SelectedId);
             }
         }
 
@@ -60,15 +61,18 @@ namespace ProjectDesigner.Website.Equipment
         {
             if (IsEditMode || IsViewMode)
             {
-                this.EditModel = this.EntityContext.Value.SearchTrafficVideoSurveillance(this.SelectedId);
+                this.EditModel = this.EntityContext.Value.SearchElectronicPolice(this.SelectedId);
                 this.txtName.Text = this.EditModel.Name;
                 this.txtBrand.Text = this.EditModel.Brand;
                 this.txtPrice.Text = this.EditModel.Price.ToString();
                 this.txtPillar.Text = this.EditModel.Pillar == null ? "" : this.EditModel.Pillar.Name;
                 this.txtFoundation.Text = this.EditModel.Foundation == null ? "" : this.EditModel.Foundation.Name;
-                this.txtVideoSurveillance.Text = this.EditModel.VideoSurveillance == null ? "" : this.EditModel.VideoSurveillance.Name;
                 this.DropDownListType.SelectedValue = this.EditModel.Type.ToString();
                 this.DropDownListConnection.SelectedValue = this.EditModel.Connection.ToString();
+                this.txtProductType.Text = this.EditModel.ProductType;
+                this.txtTechnicalParameters.Text = this.EditModel.TechnicalParameters;
+                this.txtVideoSurveillance.Text = this.EditModel.VideoSurveillance.Name;
+                this.DropDownListVideoSurveillanceNum.Text = this.EditModel.VideoSurveillanceNum.ToString();
                 if (!string.IsNullOrEmpty(this.EditModel.IconPath))
                 {
                     this.listAttachments.FilesBind(this.EditModel.IconPath);
@@ -80,11 +84,11 @@ namespace ProjectDesigner.Website.Equipment
         {
             if (this.IsEditMode)
             {
-                this.EditModel = this.EntityContext.Value.SearchTrafficVideoSurveillance(this.SelectedId);
+                this.EditModel = this.EntityContext.Value.SearchElectronicPolice(this.SelectedId);
             }
             else
             {
-                this.EditModel = this.EntityContext.Value.TrafficVideoSurveillances.NewEntity();
+                this.EditModel = this.EntityContext.Value.ElectronicPolices.NewEntity();
                 this.EditModel.Id = Guid.NewGuid().ToString("N");
             }
             this.EditModel.Name = this.txtName.Text;
@@ -99,19 +103,18 @@ namespace ProjectDesigner.Website.Equipment
                                        this.EntityContext.Value.Foundations.AsQuerybale
                                                                            .Where(i => i.Name == this.txtFoundation.Text)
                                                                            .FirstOrDefault();
-
-            this.EditModel.VideoSurveillance = string.IsNullOrEmpty(this.txtVideoSurveillance.Text) ? null :
-                                                  this.EntityContext.Value.VideoSurveillances.AsQuerybale
-                                                                                             .Where(i => i.Name == this.txtVideoSurveillance.Text)
-                                                                                             .FirstOrDefault();
-
-            this.EditModel.Type = (TrafficVideoSurveillanceType)this.DropDownListType.SelectedIndex;
+            this.EditModel.VideoSurveillance = this.EntityContext.Value.VideoSurveillances
+                                                                       .AsQuerybale
+                                                                       .Where(i => i.Name == this.txtVideoSurveillance.Text)
+                                                                       .FirstOrDefault();
+            this.EditModel.VideoSurveillanceNum = int.Parse(this.DropDownListVideoSurveillanceNum.Text);
+            this.EditModel.Type = (ElectronicPoliceType)this.DropDownListType.SelectedIndex;
 
             this.EditModel.Connection = (Connection)this.DropDownListConnection.SelectedIndex;
 
-            this.EditModel.ProductType = this.EditModel.VideoSurveillance.ProductType;
+            this.EditModel.ProductType = this.txtProductType.Text;
 
-            this.EditModel.TechnicalParameters = this.EditModel.VideoSurveillance.TechnicalParameters;
+            this.EditModel.TechnicalParameters = this.txtTechnicalParameters.Text;
 
             this.EditModel.Unit = "套";
 
@@ -121,13 +124,13 @@ namespace ProjectDesigner.Website.Equipment
 
         protected override object UpdateObject()
         {
-            this.EntityContext.Value.UpdateTrafficVideoSurveillance(this.EditModel);
+            this.EntityContext.Value.UpdateElectronicPolice(this.EditModel);
             return this.EditModel;
         }
 
         protected override object AddObject()
         {
-            this.EntityContext.Value.AddTrafficVideoSurveillance(this.EditModel);
+            this.EntityContext.Value.AddElectronicPolice(this.EditModel);
             return this.EditModel;
         }
 
@@ -137,7 +140,7 @@ namespace ProjectDesigner.Website.Equipment
             {
                 this.EntityContext.Value.BeginTransaction();
                 this.FillData();
-                this.SaveObject<ITrafficVideoSurveillance>();
+                this.SaveObject<IElectronicPolice>();
                 this.EntityContext.Value.CommitTransaction();
                 return new
                 {
@@ -145,13 +148,14 @@ namespace ProjectDesigner.Website.Equipment
                     Name = this.EditModel.Name,
                     Price = this.EditModel.Price,
                     Brand = this.EditModel.Brand,
-                    Type =  this.EditModel.Type.ToString(),
+                    Type = this.EditModel.Type.ToString(),
                     Connection = this.EditModel.Connection.ToString(),
                     Foundation = this.EditModel.Foundation == null ? "" : this.EditModel.Foundation.Name,
                     Pillar = this.EditModel.Pillar == null ? "" : this.EditModel.Pillar.Name,
+                    VideoSurveillance = this.EditModel.VideoSurveillance.Name,
+                    VideoSurveillanceNum = this.EditModel.VideoSurveillanceNum,
                     ProductType = this.EditModel.ProductType,
-                    TechnicalParameters = this.EditModel.TechnicalParameters,
-                    VideoSurveillance = this.EditModel.VideoSurveillance.Name
+                    TechnicalParameters = this.EditModel.TechnicalParameters
                 };
             }
             catch
@@ -209,19 +213,17 @@ namespace ProjectDesigner.Website.Equipment
             var query = this.EntityContext.Value.SearchVideoSurveillances();
             if (this.txtVideoSurveillance.Text.HasValue())
             {
-                query = query
-                    .Where(i => i.Name.Contains(this.txtVideoSurveillance.Text));
+                query = query.Where(i => i.Name.Contains(this.txtVideoSurveillance.Text));
             }
-            return query.Fetch(1, 10)
-               .Select(i => new
-               {
-                   i.Id,
-                   i.Name,
-                   i.Price,
-                   i.Brand,
-                   i.Type,
-                   i.TechnicalParameters
-               });
+            return query.Fetch(1, 10).Select(i => new
+            {
+                i.Id,
+                i.Name,
+                i.Price,
+                i.Brand,
+                i.Type,
+                i.TechnicalParameters
+            });
         }
     }
 }

@@ -1,8 +1,10 @@
 using EBA.Data;
 using EXLibrary.Serialization;
+using ProjectDesigner.ElectronicPolice;
 using ProjectDesigner.Foundation;
 using ProjectDesigner.Pillar;
 using ProjectDesigner.Project;
+using ProjectDesigner.TrafficAndEventCollection;
 using ProjectDesigner.TrafficVideoSurveillance;
 using ProjectDesigner.VMS;
 using System;
@@ -37,7 +39,21 @@ namespace ProjectDesigner.Data
 
             this.ProjectEquipments = new EntityRepository<ProjectEquipment, IProjectEquipment>(this.EntityContext.ProjectEquipments);
 
+            this.VideoSurveillances = new EntityRepository<VideoSurveillance, IVideoSurveillance>(this.EntityContext.VideoSurveillances);
+
             this.TrafficVideoSurveillances = new EntityRepository<TrafficVideoSurveillance, ITrafficVideoSurveillance>(this.EntityContext.TrafficVideoSurveillances);
+
+            this.ElectronicPolices = new EntityRepository<ElectronicPolice, IElectronicPolice>(this.EntityContext.ElectronicPolice);
+
+            this.TrafficAndEventCollections = new EntityRepository<TrafficAndEventCollection, ITrafficAndEventCollection>(this.EntityContext.TrafficAndEventCollections);
+
+            this.Coils = new EntityRepository<Coil, ICoil>(this.EntityContext.Coils);
+
+            this.Geomagnetics = new EntityRepository<Geomagnetic, IGeomagnetic>(this.EntityContext.Geomagnetics);
+
+            this.RFIDs = new EntityRepository<RFID, IRFID>(this.EntityContext.RFIDs);
+
+            this.Microwaves = new EntityRepository<Microwave, IMicrowave>(this.EntityContext.Microwaves);
         }
 
         public IRepository<INavigator> Navigators
@@ -163,6 +179,172 @@ namespace ProjectDesigner.Data
             get;
             set;
         }
+
+
+        public IRepository<IElectronicPolice> ElectronicPolices
+        {
+            get;
+            set;
+        }
+
+
+        public IRepository<IVideoSurveillance> VideoSurveillances
+        {
+            get;
+            set;
+        }
+
+
+        public IRepository<ITrafficAndEventCollection> TrafficAndEventCollections
+        {
+            get;
+            set;
+        }
+
+
+        public IRepository<ICoil> Coils
+        {
+            get;
+            set;
+        }
+
+        public IRepository<IGeomagnetic> Geomagnetics
+        {
+            get;
+            set;
+        }
+
+        public IRepository<IMicrowave> Microwaves
+        {
+            get;
+            set;
+        }
+
+        public IRepository<IRFID> RFIDs
+        {
+            get;
+            set;
+        }
+    }
+
+    partial class Coil : ICoil
+    {
+        TrafficAndEventCollectionEquipmentType ITrafficAndEventCollectionEquipment.Type
+        {
+            get
+            {
+                return (TrafficAndEventCollectionEquipmentType)this.Type;
+            }
+            set
+            {
+                this.Type = (int)value;
+            }
+        }
+
+
+        EquipmentType _EquipmentType = EquipmentType.TrafficAndEventCollection;
+        public EquipmentType EquipmentType
+        {
+            get
+            {
+                return _EquipmentType;
+            }
+            set
+            {
+                _EquipmentType = value;
+            }
+        }
+
+    }
+
+    partial class Geomagnetic : IGeomagnetic
+    {
+        TrafficAndEventCollectionEquipmentType ITrafficAndEventCollectionEquipment.Type
+        {
+            get
+            {
+                return (TrafficAndEventCollectionEquipmentType)this.Type;
+            }
+            set
+            {
+                this.Type = (int)value;
+            }
+        }
+
+
+        EquipmentType _EquipmentType = EquipmentType.TrafficAndEventCollection;
+        public EquipmentType EquipmentType
+        {
+            get
+            {
+                return _EquipmentType;
+            }
+            set
+            {
+                _EquipmentType = value;
+            }
+        }
+
+    }
+
+    partial class Microwave : IMicrowave
+    {
+        TrafficAndEventCollectionEquipmentType ITrafficAndEventCollectionEquipment.Type
+        {
+            get
+            {
+                return (TrafficAndEventCollectionEquipmentType)this.Type;
+            }
+            set
+            {
+                this.Type = (int)value;
+            }
+        }
+
+
+        EquipmentType _EquipmentType = EquipmentType.TrafficAndEventCollection;
+        public EquipmentType EquipmentType
+        {
+            get
+            {
+                return _EquipmentType;
+            }
+            set
+            {
+                _EquipmentType = value;
+            }
+        }
+
+    }
+
+    partial class RFID : IRFID
+    {
+        TrafficAndEventCollectionEquipmentType ITrafficAndEventCollectionEquipment.Type
+        {
+            get
+            {
+                return (TrafficAndEventCollectionEquipmentType)this.Type;
+            }
+            set
+            {
+                this.Type = (int)value;
+            }
+        }
+
+
+        EquipmentType _EquipmentType = EquipmentType.TrafficAndEventCollection;
+        public EquipmentType EquipmentType
+        {
+            get
+            {
+                return _EquipmentType;
+            }
+            set
+            {
+                _EquipmentType = value;
+            }
+        }
+
     }
 
     partial class Navigator : INavigator
@@ -589,5 +771,252 @@ namespace ProjectDesigner.Data
         }
 
 
+        IVideoSurveillance ITrafficVideoSurveillance.VideoSurveillance
+        {
+            get
+            {
+                return this.VideoSurveillance;
+            }
+            set
+            {
+                this.VideoSurveillance = value as VideoSurveillance;
+            }
+        }
+    }
+
+    partial class VideoSurveillance : IVideoSurveillance
+    {
+
+        EquipmentType _EquipmentType = EquipmentType.TrafficVideoSurveillance;
+        public EquipmentType EquipmentType
+        {
+            get
+            {
+                return _EquipmentType;
+            }
+            set
+            {
+                _EquipmentType = value;
+            }
+        }
+
+        VideoSurveillanceType IVideoSurveillance.VideoSurveillanceType
+        {
+            get
+            {
+                return (VideoSurveillanceType)this.Type;
+            }
+            set
+            {
+                this.Type = (int)value;
+            }
+        }
+
+        TrafficAndEventCollectionEquipmentType ITrafficAndEventCollectionEquipment.Type
+        {
+            get
+            {
+                return (TrafficAndEventCollectionEquipmentType)this.Type;
+            }
+            set
+            {
+                this.Type = (int)value;
+            }
+        }
+    }
+
+    partial class ElectronicPolice : IElectronicPolice
+    {
+
+        ElectronicPoliceType IElectronicPolice.Type
+        {
+            get
+            {
+                return (ElectronicPoliceType)this.Type;
+            }
+            set
+            {
+                this.Type = (int)value;
+            }
+        }
+
+        Connection IElectronicPolice.Connection
+        {
+            get
+            {
+                return (Connection)this.Connection;
+            }
+            set
+            {
+                this.Connection = (int)value;
+            }
+        }
+
+        IFoundation IElectronicPolice.Foundation
+        {
+            get
+            {
+                return this.Foundation;
+            }
+            set
+            {
+                this.Foundation = value as Foundation;
+            }
+        }
+
+        IPillar IElectronicPolice.Pillar
+        {
+            get
+            {
+                return this.Pillar;
+            }
+            set
+            {
+                this.Pillar = value as Pillar;
+            }
+        }
+
+
+
+        EquipmentType _EquipmentType = EquipmentType.ElectronicPolice;
+        public EquipmentType EquipmentType
+        {
+            get
+            {
+                return _EquipmentType;
+            }
+            set
+            {
+                _EquipmentType = value;
+            }
+        }
+
+
+        IVideoSurveillance IElectronicPolice.VideoSurveillance
+        {
+            get
+            {
+                return this.VideoSurveillance;
+            }
+            set
+            {
+                this.VideoSurveillance = value as VideoSurveillance;
+            }
+        }
+
+    }
+
+    partial class TrafficAndEventCollection : ITrafficAndEventCollection
+    {
+        DataContext DataContext = new DataContext();
+
+        TrafficAndEventCollectionType ITrafficAndEventCollection.Type
+        {
+            get
+            {
+                return (TrafficAndEventCollectionType)this.Type;
+            }
+            set
+            {
+                this.Type = (int)value;
+            }
+        }
+
+        Connection ITrafficAndEventCollection.Connection
+        {
+            get
+            {
+                return (Connection)this.Type;
+            }
+            set
+            {
+                this.Type = (int)value;
+            }
+        }
+
+
+        IFoundation ITrafficAndEventCollection.Foundation
+        {
+            get
+            {
+                return this.Foundation;
+            }
+            set
+            {
+                this.Foundation = value as Foundation;
+            }
+        }
+
+        IPillar ITrafficAndEventCollection.Pillar
+        {
+            get
+            {
+                return this.Pillar;
+            }
+            set
+            {
+                this.Pillar = value as Pillar;
+            }
+        }
+
+
+        EquipmentType _EquipmentType = EquipmentType.ElectronicPolice;
+        public EquipmentType EquipmentType
+        {
+            get
+            {
+                return _EquipmentType;
+            }
+            set
+            {
+                _EquipmentType = value;
+            }
+        }
+
+        ITrafficAndEventCollectionEquipment _TrafficAndEventCollectionEquipment;
+        public ITrafficAndEventCollectionEquipment TrafficAndEventCollectionEquipment
+        {
+            get
+            {
+                switch (this.TrafficAndEventCollectionEquipmentType)
+                {
+                    case 0:
+                        _TrafficAndEventCollectionEquipment = DataContext.Geomagnetics.AsQuerybale
+                                                                                      .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
+                                                                                      .FirstOrDefault()
+                                                                                      as IGeomagnetic;
+                        break;
+                    case 1:
+                        _TrafficAndEventCollectionEquipment = DataContext.Coils.AsQuerybale
+                                                                                      .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
+                                                                                      .FirstOrDefault()
+                                                                                      as ICoil;
+                        break;
+                    case 2:
+                        _TrafficAndEventCollectionEquipment = DataContext.VideoSurveillances.AsQuerybale
+                                                                                      .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
+                                                                                      .FirstOrDefault()
+                                                                                      as IVideoSurveillance;
+                        break;
+                    case 3:
+                        _TrafficAndEventCollectionEquipment = DataContext.RFIDs.AsQuerybale
+                                                                                      .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
+                                                                                      .FirstOrDefault()
+                                                                                      as IRFID;
+                        break;
+                    case 4:
+                        _TrafficAndEventCollectionEquipment = DataContext.Microwaves.AsQuerybale
+                                                                                      .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
+                                                                                      .FirstOrDefault()
+                                                                                      as IMicrowave;
+                        break;
+                }
+                return _TrafficAndEventCollectionEquipment;
+            }
+            set
+            {
+                this._TrafficAndEventCollectionEquipment = value;
+            }
+        }
     }
 }

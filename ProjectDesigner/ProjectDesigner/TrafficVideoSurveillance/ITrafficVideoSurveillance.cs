@@ -18,6 +18,7 @@ namespace ProjectDesigner.TrafficVideoSurveillance
 
         IFoundation Foundation { get; set; }
         IPillar Pillar { get; set; }
+        IVideoSurveillance VideoSurveillance { get; set; }
         string IconPath { get; set; }
     }
 }

@@ -103,13 +103,19 @@
     <Content Include="Css\ToolsPanel.css" />
     <Content Include="Css\widget.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Equipment\TrafficAndEventCollectionEdit.aspx" />
+    <Content Include="Equipment\TrafficAndEventCollectionMnt.aspx" />
     <Content Include="Equipment\FoundationEdit.aspx" />
     <Content Include="Equipment\FoundationMnt.aspx" />
     <Content Include="Equipment\PillarEdit.aspx" />
     <Content Include="Equipment\PillarMnt.aspx" />
     <Content Include="Equipment\LEDModuleEdit.aspx" />
     <Content Include="Equipment\LEDModuleMnt.aspx" />
+    <Content Include="Equipment\ElectronicPoliceEdit.aspx" />
+    <Content Include="Equipment\VideoSurveillanceEdit.aspx" />
     <Content Include="Equipment\TrafficVideoSurveillanceEdit.aspx" />
+    <Content Include="Equipment\ElectronicPoliceMnt.aspx" />
+    <Content Include="Equipment\VideoSurveillanceMnt.aspx" />
     <Content Include="Equipment\TrafficVideoSurveillanceMnt.aspx" />
     <Content Include="Equipment\VMSEdit.aspx" />
     <Content Include="Equipment\VMSMnt.aspx" />
@@ -399,6 +405,7 @@
     <Content Include="Map\XiamenMap.aspx" />
     <Content Include="Popup\SelectFoundation.aspx" />
     <Content Include="Popup\SelectEquipment.aspx" />
+    <Content Include="Popup\SelectVideoSurveillance.aspx" />
     <Content Include="Popup\SelectPillar.aspx" />
     <Content Include="Popup\SelectLEDModule.aspx" />
     <Content Include="Project\ProjectEquipmentEdit.aspx" />
@@ -980,6 +987,20 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Equipment\TrafficAndEventCollectionEdit.aspx.cs">
+      <DependentUpon>TrafficAndEventCollectionEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\TrafficAndEventCollectionEdit.aspx.designer.cs">
+      <DependentUpon>TrafficAndEventCollectionEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\TrafficAndEventCollectionMnt.aspx.cs">
+      <DependentUpon>TrafficAndEventCollectionMnt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\TrafficAndEventCollectionMnt.aspx.designer.cs">
+      <DependentUpon>TrafficAndEventCollectionMnt.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Equipment\FoundationEdit.aspx.cs">
       <DependentUpon>FoundationEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1022,12 +1043,40 @@
     <Compile Include="Equipment\LEDModuleMnt.aspx.designer.cs">
       <DependentUpon>LEDModuleMnt.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Equipment\ElectronicPoliceEdit.aspx.cs">
+      <DependentUpon>ElectronicPoliceEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\ElectronicPoliceEdit.aspx.designer.cs">
+      <DependentUpon>ElectronicPoliceEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\VideoSurveillanceEdit.aspx.cs">
+      <DependentUpon>VideoSurveillanceEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\VideoSurveillanceEdit.aspx.designer.cs">
+      <DependentUpon>VideoSurveillanceEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Equipment\TrafficVideoSurveillanceEdit.aspx.cs">
       <DependentUpon>TrafficVideoSurveillanceEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Equipment\TrafficVideoSurveillanceEdit.aspx.designer.cs">
       <DependentUpon>TrafficVideoSurveillanceEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\ElectronicPoliceMnt.aspx.cs">
+      <DependentUpon>ElectronicPoliceMnt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\ElectronicPoliceMnt.aspx.designer.cs">
+      <DependentUpon>ElectronicPoliceMnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\VideoSurveillanceMnt.aspx.cs">
+      <DependentUpon>VideoSurveillanceMnt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\VideoSurveillanceMnt.aspx.designer.cs">
+      <DependentUpon>VideoSurveillanceMnt.aspx</DependentUpon>
     </Compile>
     <Compile Include="Equipment\TrafficVideoSurveillanceMnt.aspx.cs">
       <DependentUpon>TrafficVideoSurveillanceMnt.aspx</DependentUpon>
@@ -1098,6 +1147,13 @@
     </Compile>
     <Compile Include="Popup\SelectEquipment.aspx.designer.cs">
       <DependentUpon>SelectEquipment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\SelectVideoSurveillance.aspx.cs">
+      <DependentUpon>SelectVideoSurveillance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Popup\SelectVideoSurveillance.aspx.designer.cs">
+      <DependentUpon>SelectVideoSurveillance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Popup\SelectPillar.aspx.cs">
       <DependentUpon>SelectPillar.aspx</DependentUpon>

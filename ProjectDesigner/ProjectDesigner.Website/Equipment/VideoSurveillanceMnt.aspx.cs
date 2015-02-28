@@ -10,7 +10,7 @@ using EBA.Linq;
 
 namespace ProjectDesigner.Website.Equipment
 {
-    public partial class TrafficVideoSurveillanceMnt : TPageBase
+    public partial class VideoSurveillanceMnt : TPageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +31,7 @@ namespace ProjectDesigner.Website.Equipment
         /// <returns></returns>
         protected override System.Collections.IEnumerable FetchData(string tableName, string[] orderby = null)
         {
-            var list = this.EntityContext.Value.SearchTrafficVideoSurveillances();
+            var list = this.EntityContext.Value.SearchVideoSurveillances();
             if (this.txtName.Text.HasValue())
             {
                 list.Where(i => i.Name.Contains(this.txtName.Text.Trim()));
@@ -43,13 +43,9 @@ namespace ProjectDesigner.Website.Equipment
                     i.Name,
                     i.Price,
                     i.Brand,
-                    Type = i.Type.ToString(),
-                    Connection = i.Connection.ToString(),
-                    Foundation = i.Foundation == null ? "" : i.Foundation.Name,
-                    Pillar = i.Pillar == null ? "" : i.Pillar.Name,
+                    VideoSurveillanceType = i.VideoSurveillanceType.ToString(),
                     ProductType = i.ProductType,
-                    TechnicalParameters = i.TechnicalParameters,
-                    VideoSurveillance = i.VideoSurveillance.Name
+                    TechnicalParameters = i.TechnicalParameters
                 });
         }
 
@@ -61,7 +57,7 @@ namespace ProjectDesigner.Website.Equipment
         {
             foreach (var id in this.GetSelectedItems())
             {
-                this.EntityContext.Value.DeleteTrafficVideoSurveillance(id);
+                this.EntityContext.Value.DeleteVideoSurveillance(id);
             }
             this.EntityContext.Value.SubmitChanges();
             return true;
