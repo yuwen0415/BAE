@@ -103,6 +103,12 @@
     <Content Include="Css\ToolsPanel.css" />
     <Content Include="Css\widget.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Equipment\GeomagneticEdit.aspx" />
+    <Content Include="Equipment\GeomagneticMnt.aspx" />
+    <Content Include="Equipment\MicrowaveEdit.aspx" />
+    <Content Include="Equipment\MicrowaveMnt.aspx" />
+    <Content Include="Equipment\RFIDEdit.aspx" />
+    <Content Include="Equipment\RFIDMnt.aspx" />
     <Content Include="Equipment\TrafficAndEventCollectionEdit.aspx" />
     <Content Include="Equipment\TrafficAndEventCollectionMnt.aspx" />
     <Content Include="Equipment\FoundationEdit.aspx" />
@@ -112,9 +118,11 @@
     <Content Include="Equipment\LEDModuleEdit.aspx" />
     <Content Include="Equipment\LEDModuleMnt.aspx" />
     <Content Include="Equipment\ElectronicPoliceEdit.aspx" />
+    <Content Include="Equipment\CoilEdit.aspx" />
     <Content Include="Equipment\VideoSurveillanceEdit.aspx" />
     <Content Include="Equipment\TrafficVideoSurveillanceEdit.aspx" />
     <Content Include="Equipment\ElectronicPoliceMnt.aspx" />
+    <Content Include="Equipment\CoilMnt.aspx" />
     <Content Include="Equipment\VideoSurveillanceMnt.aspx" />
     <Content Include="Equipment\TrafficVideoSurveillanceMnt.aspx" />
     <Content Include="Equipment\VMSEdit.aspx" />
@@ -987,6 +995,48 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Equipment\GeomagneticEdit.aspx.cs">
+      <DependentUpon>GeomagneticEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\GeomagneticEdit.aspx.designer.cs">
+      <DependentUpon>GeomagneticEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\GeomagneticMnt.aspx.cs">
+      <DependentUpon>GeomagneticMnt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\GeomagneticMnt.aspx.designer.cs">
+      <DependentUpon>GeomagneticMnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\MicrowaveEdit.aspx.cs">
+      <DependentUpon>MicrowaveEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\MicrowaveEdit.aspx.designer.cs">
+      <DependentUpon>MicrowaveEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\MicrowaveMnt.aspx.cs">
+      <DependentUpon>MicrowaveMnt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\MicrowaveMnt.aspx.designer.cs">
+      <DependentUpon>MicrowaveMnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\RFIDEdit.aspx.cs">
+      <DependentUpon>RFIDEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\RFIDEdit.aspx.designer.cs">
+      <DependentUpon>RFIDEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\RFIDMnt.aspx.cs">
+      <DependentUpon>RFIDMnt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\RFIDMnt.aspx.designer.cs">
+      <DependentUpon>RFIDMnt.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Equipment\TrafficAndEventCollectionEdit.aspx.cs">
       <DependentUpon>TrafficAndEventCollectionEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1050,6 +1100,13 @@
     <Compile Include="Equipment\ElectronicPoliceEdit.aspx.designer.cs">
       <DependentUpon>ElectronicPoliceEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Equipment\CoilEdit.aspx.cs">
+      <DependentUpon>CoilEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\CoilEdit.aspx.designer.cs">
+      <DependentUpon>CoilEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Equipment\VideoSurveillanceEdit.aspx.cs">
       <DependentUpon>VideoSurveillanceEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1070,6 +1127,13 @@
     </Compile>
     <Compile Include="Equipment\ElectronicPoliceMnt.aspx.designer.cs">
       <DependentUpon>ElectronicPoliceMnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\CoilMnt.aspx.cs">
+      <DependentUpon>CoilMnt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\CoilMnt.aspx.designer.cs">
+      <DependentUpon>CoilMnt.aspx</DependentUpon>
     </Compile>
     <Compile Include="Equipment\VideoSurveillanceMnt.aspx.cs">
       <DependentUpon>VideoSurveillanceMnt.aspx</DependentUpon>
