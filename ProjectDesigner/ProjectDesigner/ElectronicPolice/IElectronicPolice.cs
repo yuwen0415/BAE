@@ -30,5 +30,9 @@ namespace ProjectDesigner.ElectronicPolice
         /// 电子警察设备数量
         /// </summary>
         int VideoSurveillanceNum { get; set; }
+
+        List<MaterialOfEquipment> AccessorialMaterials { get; set; }
+
+        List<MaterialOfEquipment> ConstructionMaterials { get; set; }
     }
 }

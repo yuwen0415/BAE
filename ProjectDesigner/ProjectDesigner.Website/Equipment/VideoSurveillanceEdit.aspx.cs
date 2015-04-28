@@ -124,7 +124,7 @@ namespace ProjectDesigner.Website.Equipment
                     Name = this.EditModel.Name,
                     Price = this.EditModel.Price,
                     Brand = this.EditModel.Brand,
-                    VideoSurveillanceType = this.EditModel.Type == null ? "" : this.EditModel.Type.ToString(),
+                    VideoSurveillanceType = this.EditModel.VideoSurveillanceType == null ? "" : this.EditModel.VideoSurveillanceType.ToString(),
                     ProductType = this.EditModel.ProductType,
                     TechnicalParameters = this.EditModel.TechnicalParameters
                 };

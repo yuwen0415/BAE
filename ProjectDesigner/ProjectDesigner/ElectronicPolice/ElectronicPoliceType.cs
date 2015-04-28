@@ -9,6 +9,8 @@ namespace ProjectDesigner.ElectronicPolice
     {
         COMPACTED_SOLID_LINE = 0,
         RED_LIGHT = 1,
-        ILLEGAL_PARKING = 2
+        ILLEGAL_PARKING = 2,
+        POINT2POINT_SPEED_MEASUREMENT = 3,
+        SINGLEPOINT_MEASUREMENT = 4
     }
 }

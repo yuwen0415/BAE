@@ -11,5 +11,6 @@ namespace ProjectDesigner.Project
         string Name { get; set; }
         decimal? Price { get; set; }
 
+        decimal? Taxes { get; set; }
     }
 }

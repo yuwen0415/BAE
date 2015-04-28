@@ -67,6 +67,9 @@
                     <th class="word-auto" data-field="Name" data-sorting="fixed">
                         <a href="#">设备名称</a>
                     </th>
+                    <th class="word-4" data-field="Brand" data-sorting="fixed">
+                        <a href="#">品牌</a>
+                    </th>
                     <th class="word-4" data-field="Diameter" data-sorting="fixed">
                         <a href="#">杆体直径</a>
                     </th>

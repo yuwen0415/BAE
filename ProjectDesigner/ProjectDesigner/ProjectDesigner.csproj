@@ -50,9 +50,13 @@
     <Compile Include="ElectronicPolice\IElectronicPolice.cs" />
     <Compile Include="EquipmentType.cs" />
     <Compile Include="Foundation\Size.cs" />
+    <Compile Include="Hits.cs" />
+    <Compile Include="ICenterEquipment.cs" />
     <Compile Include="IDataContext.cs" />
     <Compile Include="IEquipment.cs" />
+    <Compile Include="IMaterial.cs" />
     <Compile Include="IVideoSurveillance.cs" />
+    <Compile Include="MaterialOfEquipment.cs" />
     <Compile Include="Navigation\INavigationProvider.cs" />
     <Compile Include="Navigation\INavigator.cs" />
     <Compile Include="Navigation\NavigationTargets.cs" />

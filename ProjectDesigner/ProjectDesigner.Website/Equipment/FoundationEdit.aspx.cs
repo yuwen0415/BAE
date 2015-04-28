@@ -67,6 +67,8 @@ namespace ProjectDesigner.Website.Equipment
                 this.txtSize_X.Text = this.EditModel.Size == null ? "" : this.EditModel.Size.X.ToString();
                 this.txtSize_Y.Text = this.EditModel.Size == null ? "" : this.EditModel.Size.Y.ToString();
                 this.txtSize_Z.Text = this.EditModel.Size == null ? "" : this.EditModel.Size.Z.ToString();
+                this.txtProductType.Text = this.EditModel.ProductType;
+                this.txtTechnicalParameters.Text = this.EditModel.TechnicalParameters;
             }
         }
 
@@ -92,6 +94,8 @@ namespace ProjectDesigner.Website.Equipment
                     Z = float.Parse(this.txtSize_Z.Text)
                 };
             }
+            this.EditModel.ProductType = this.txtProductType.Text;
+            this.EditModel.TechnicalParameters = this.txtTechnicalParameters.Text;
         }
 
 

@@ -17,6 +17,8 @@ namespace ProjectDesigner.Data
 {
     public class DataContext : IDataContext
     {
+
+
         EntityContext EntityContext { get; set; }
 
         public DataContext()
@@ -27,33 +29,41 @@ namespace ProjectDesigner.Data
 
             this.VMSs = new EntityRepository<VMS, IVMS>(this.EntityContext.VMS);
 
-            this.LEDModules = new EntityRepository<LEDModule, ILEDModule>(this.EntityContext.LEDModules);
+            this.LEDModules = new EntityRepository<LEDModule, ILEDModule>(this.EntityContext.LEDModule);
 
-            this.Foundations = new EntityRepository<Foundation, IFoundation>(this.EntityContext.Foundations);
+            this.Foundations = new EntityRepository<Foundation, IFoundation>(this.EntityContext.Foundation);
 
-            this.Pillars = new EntityRepository<Pillar, IPillar>(this.EntityContext.Pillars);
+            this.Pillars = new EntityRepository<Pillar, IPillar>(this.EntityContext.Pillar);
 
             this.Files = new EntityRepository<File, IFile>(this.EntityContext.Files);
 
-            this.Projects = new EntityRepository<Project, IProject>(this.EntityContext.Projects);
+            this.Projects = new EntityRepository<Project, IProject>(this.EntityContext.Project);
 
-            this.ProjectEquipments = new EntityRepository<ProjectEquipment, IProjectEquipment>(this.EntityContext.ProjectEquipments);
+            this.ProjectEquipments = new EntityRepository<ProjectEquipment, IProjectEquipment>(this.EntityContext.ProjectEquipment);
 
-            this.VideoSurveillances = new EntityRepository<VideoSurveillance, IVideoSurveillance>(this.EntityContext.VideoSurveillances);
+            this.VideoSurveillances = new EntityRepository<VideoSurveillance, IVideoSurveillance>(this.EntityContext.VideoSurveillance);
 
-            this.TrafficVideoSurveillances = new EntityRepository<TrafficVideoSurveillance, ITrafficVideoSurveillance>(this.EntityContext.TrafficVideoSurveillances);
+            this.TrafficVideoSurveillances = new EntityRepository<TrafficVideoSurveillance, ITrafficVideoSurveillance>(this.EntityContext.TrafficVideoSurveillance);
 
             this.ElectronicPolices = new EntityRepository<ElectronicPolice, IElectronicPolice>(this.EntityContext.ElectronicPolice);
 
-            this.TrafficAndEventCollections = new EntityRepository<TrafficAndEventCollection, ITrafficAndEventCollection>(this.EntityContext.TrafficAndEventCollections);
+            this.TrafficAndEventCollections = new EntityRepository<TrafficAndEventCollection, ITrafficAndEventCollection>(this.EntityContext.TrafficAndEventCollection);
 
-            this.Coils = new EntityRepository<Coil, ICoil>(this.EntityContext.Coils);
+            this.Coils = new EntityRepository<Coil, ICoil>(this.EntityContext.Coil);
 
-            this.Geomagnetics = new EntityRepository<Geomagnetic, IGeomagnetic>(this.EntityContext.Geomagnetics);
+            this.Geomagnetics = new EntityRepository<Geomagnetic, IGeomagnetic>(this.EntityContext.Geomagnetic);
 
-            this.RFIDs = new EntityRepository<RFID, IRFID>(this.EntityContext.RFIDs);
+            this.RFIDs = new EntityRepository<RFID, IRFID>(this.EntityContext.RFID);
 
-            this.Microwaves = new EntityRepository<Microwave, IMicrowave>(this.EntityContext.Microwaves);
+            this.Microwaves = new EntityRepository<Microwave, IMicrowave>(this.EntityContext.Microwave);
+
+            this.AccessorialMaterials = new EntityRepository<AccessorialMaterial, IEquipment>(this.EntityContext.AccessorialMaterial);
+
+            this.ConstructionMaterials = new EntityRepository<ConstructionMaterial, IEquipment>(this.EntityContext.ConstructionMaterial);
+
+            this.Materials = new EntityRepository<Material, IMaterial>(this.EntityContext.Material);
+
+            this.CenterEquipments = new EntityRepository<CenterEquipment, ICenterEquipment>(this.EntityContext.CenterEquipment);
         }
 
         public IRepository<INavigator> Navigators
@@ -225,6 +235,34 @@ namespace ProjectDesigner.Data
             get;
             set;
         }
+
+
+        public IRepository<IEquipment> AccessorialMaterials
+        {
+            get;
+            set;
+        }
+
+
+        public IRepository<IEquipment> ConstructionMaterials
+        {
+            get;
+            set;
+        }
+
+
+        public IRepository<IMaterial> Materials
+        {
+            get;
+            set;
+        }
+
+
+        public IRepository<ICenterEquipment> CenterEquipments
+        {
+            get;
+            set;
+        }
     }
 
     partial class Coil : ICoil
@@ -355,7 +393,7 @@ namespace ProjectDesigner.Data
             get
             {
 
-                return new EntityCollection<Navigator, INavigator>(this.ChildNavigators);
+                return new EntityCollection<Navigator, INavigator>(this.Navigators1);
             }
         }
 
@@ -641,6 +679,56 @@ namespace ProjectDesigner.Data
                 this.EquipmentType = (int)value;
             }
         }
+
+        private ISerializer Serializer = new JsonSerializer();
+
+        List<MaterialOfEquipment> IVMS.AccessorialMaterials
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.AccessorialMaterials))
+                    return new List<MaterialOfEquipment>();
+                else
+                    return Serializer.Deserialize<List<MaterialOfEquipment>>(this.AccessorialMaterials);
+
+            }
+            set
+            {
+                this.AccessorialMaterials = Serializer.Serialize<List<MaterialOfEquipment>>(value);
+            }
+        }
+
+        List<MaterialOfEquipment> IVMS.ConstructionMaterials
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.ConstructionMaterials))
+                    return new List<MaterialOfEquipment>();
+                else
+                    return Serializer.Deserialize<List<MaterialOfEquipment>>(this.ConstructionMaterials);
+
+            }
+            set
+            {
+                this.ConstructionMaterials = Serializer.Serialize<List<MaterialOfEquipment>>(value);
+            }
+        }
+
+
+        //double? IVMS.ModuleCount
+        //{
+        //    get
+        //    {
+        //        if (!this.ModuleCount.HasValue)
+        //            return 0.0f;
+        //        else
+        //            return this.ModuleCount;
+        //    }
+        //    set
+        //    {
+        //        throw new NotImplementedException();
+        //    }
+        //}
     }
 
     partial class File : IFile
@@ -782,6 +870,40 @@ namespace ProjectDesigner.Data
                 this.VideoSurveillance = value as VideoSurveillance;
             }
         }
+        private ISerializer Serializer = new JsonSerializer();
+
+        List<MaterialOfEquipment> ITrafficVideoSurveillance.AccessorialMaterials
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.AccessorialMaterials))
+                    return new List<MaterialOfEquipment>();
+                else
+                    return Serializer.Deserialize<List<MaterialOfEquipment>>(this.AccessorialMaterials);
+
+            }
+            set
+            {
+                this.AccessorialMaterials = Serializer.Serialize<List<MaterialOfEquipment>>(value);
+            }
+        }
+
+        List<MaterialOfEquipment> ITrafficVideoSurveillance.ConstructionMaterials
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.ConstructionMaterials))
+                    return new List<MaterialOfEquipment>();
+                else
+                    return Serializer.Deserialize<List<MaterialOfEquipment>>(this.ConstructionMaterials);
+
+            }
+            set
+            {
+                this.ConstructionMaterials = Serializer.Serialize<List<MaterialOfEquipment>>(value);
+            }
+        }
+
     }
 
     partial class VideoSurveillance : IVideoSurveillance
@@ -827,7 +949,7 @@ namespace ProjectDesigner.Data
 
     partial class ElectronicPolice : IElectronicPolice
     {
-
+        private ISerializer Serializer = new JsonSerializer();
         ElectronicPoliceType IElectronicPolice.Type
         {
             get
@@ -904,6 +1026,38 @@ namespace ProjectDesigner.Data
             }
         }
 
+
+        List<MaterialOfEquipment> IElectronicPolice.AccessorialMaterials
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.AccessorialMaterials))
+                    return new List<MaterialOfEquipment>();
+                else
+                    return Serializer.Deserialize<List<MaterialOfEquipment>>(this.AccessorialMaterials);
+
+            }
+            set
+            {
+                this.AccessorialMaterials = Serializer.Serialize<List<MaterialOfEquipment>>(value);
+            }
+        }
+
+        List<MaterialOfEquipment> IElectronicPolice.ConstructionMaterials
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.ConstructionMaterials))
+                    return new List<MaterialOfEquipment>();
+                else
+                    return Serializer.Deserialize<List<MaterialOfEquipment>>(this.ConstructionMaterials);
+
+            }
+            set
+            {
+                this.ConstructionMaterials = Serializer.Serialize<List<MaterialOfEquipment>>(value);
+            }
+        }
     }
 
     partial class TrafficAndEventCollection : ITrafficAndEventCollection
@@ -926,11 +1080,11 @@ namespace ProjectDesigner.Data
         {
             get
             {
-                return (Connection)this.Type;
+                return (Connection)this.Connection;
             }
             set
             {
-                this.Type = (int)value;
+                this.Connection = (int)value;
             }
         }
 
@@ -978,45 +1132,168 @@ namespace ProjectDesigner.Data
         {
             get
             {
-                switch (this.TrafficAndEventCollectionEquipmentType)
+                if (string.IsNullOrEmpty(this.TrafficAndEventCollectionEquipmentId))
                 {
-                    case 0:
-                        _TrafficAndEventCollectionEquipment = DataContext.Geomagnetics.AsQuerybale
-                                                                                      .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
-                                                                                      .FirstOrDefault()
-                                                                                      as IGeomagnetic;
-                        break;
-                    case 1:
-                        _TrafficAndEventCollectionEquipment = DataContext.Coils.AsQuerybale
-                                                                                      .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
-                                                                                      .FirstOrDefault()
-                                                                                      as ICoil;
-                        break;
-                    case 2:
-                        _TrafficAndEventCollectionEquipment = DataContext.VideoSurveillances.AsQuerybale
-                                                                                      .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
-                                                                                      .FirstOrDefault()
-                                                                                      as IVideoSurveillance;
-                        break;
-                    case 3:
-                        _TrafficAndEventCollectionEquipment = DataContext.RFIDs.AsQuerybale
-                                                                                      .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
-                                                                                      .FirstOrDefault()
-                                                                                      as IRFID;
-                        break;
-                    case 4:
-                        _TrafficAndEventCollectionEquipment = DataContext.Microwaves.AsQuerybale
-                                                                                      .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
-                                                                                      .FirstOrDefault()
-                                                                                      as IMicrowave;
-                        break;
+                    this._TrafficAndEventCollectionEquipment = DataContext.Geomagnetics.NewEntity();
+                }
+                else
+                {
+                    switch (this.TrafficAndEventCollectionEquipmentType)
+                    {
+                        case 0:
+                            _TrafficAndEventCollectionEquipment = DataContext.Geomagnetics.AsQuerybale
+                                                                                          .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
+                                                                                          .FirstOrDefault()
+                                                                                          as IGeomagnetic;
+                            break;
+                        case 1:
+                            _TrafficAndEventCollectionEquipment = DataContext.Coils.AsQuerybale
+                                                                                          .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
+                                                                                          .FirstOrDefault()
+                                                                                          as ICoil;
+                            break;
+                        case 2:
+                            _TrafficAndEventCollectionEquipment = DataContext.VideoSurveillances.AsQuerybale
+                                                                                          .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
+                                                                                          .FirstOrDefault()
+                                                                                          as IVideoSurveillance;
+                            break;
+                        case 3:
+                            _TrafficAndEventCollectionEquipment = DataContext.RFIDs.AsQuerybale
+                                                                                          .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
+                                                                                          .FirstOrDefault()
+                                                                                          as IRFID;
+                            break;
+                        case 4:
+                            _TrafficAndEventCollectionEquipment = DataContext.Microwaves.AsQuerybale
+                                                                                          .Where(i => i.Id == this.TrafficAndEventCollectionEquipmentId)
+                                                                                          .FirstOrDefault()
+                                                                                          as IMicrowave;
+                            break;
+
+                    }
                 }
                 return _TrafficAndEventCollectionEquipment;
             }
             set
             {
                 this._TrafficAndEventCollectionEquipment = value;
+                if (value != null)
+                    this.TrafficAndEventCollectionEquipmentId = value.Id;
+
+            }
+        }
+
+        private ISerializer Serializer = new JsonSerializer();
+
+        List<MaterialOfEquipment> ITrafficAndEventCollection.AccessorialMaterials
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.AccessorialMaterials))
+                    return new List<MaterialOfEquipment>();
+                else
+                    return Serializer.Deserialize<List<MaterialOfEquipment>>(this.AccessorialMaterials);
+
+            }
+            set
+            {
+                this.AccessorialMaterials = Serializer.Serialize<List<MaterialOfEquipment>>(value);
+            }
+        }
+
+        List<MaterialOfEquipment> ITrafficAndEventCollection.ConstructionMaterials
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.ConstructionMaterials))
+                    return new List<MaterialOfEquipment>();
+                else
+                    return Serializer.Deserialize<List<MaterialOfEquipment>>(this.ConstructionMaterials);
+
+            }
+            set
+            {
+                this.ConstructionMaterials = Serializer.Serialize<List<MaterialOfEquipment>>(value);
+            }
+        }
+
+
+        TrafficAndEventCollectionEquipmentType ITrafficAndEventCollection.TrafficAndEventCollectionEquipmentType
+        {
+            get
+            {
+                return (TrafficAndEventCollectionEquipmentType)this.TrafficAndEventCollectionEquipmentType;
+            }
+            set
+            {
+                this.TrafficAndEventCollectionEquipmentType = (int)value;
             }
         }
     }
+
+    partial class AccessorialMaterial : IEquipment
+    {
+        EquipmentType _EquipmentType = EquipmentType.AccessorialMaterial;
+        public EquipmentType EquipmentType
+        {
+            get
+            {
+                return _EquipmentType;
+            }
+            set
+            {
+                _EquipmentType = value;
+            }
+        }
+    }
+
+    partial class ConstructionMaterial : IEquipment
+    {
+        EquipmentType _EquipmentType = EquipmentType.ConstructionMaterial;
+        public EquipmentType EquipmentType
+        {
+            get
+            {
+                return _EquipmentType;
+            }
+            set
+            {
+                _EquipmentType = value;
+            }
+        }
+    }
+
+    partial class Material : IMaterial
+    {
+        EquipmentType IEquipment.EquipmentType
+        {
+            get
+            {
+                return (EquipmentType)this.EquipmentType;
+            }
+            set
+            {
+                this.EquipmentType = (int)value;
+            }
+        }
+    }
+
+    partial class CenterEquipment : ICenterEquipment
+    {
+
+        EquipmentType IEquipment.EquipmentType
+        {
+            get
+            {
+                return (EquipmentType)this.EquipmentType;
+            }
+            set
+            {
+                this.EquipmentType = (int)value;
+            }
+        }
+    }
+
+
 }

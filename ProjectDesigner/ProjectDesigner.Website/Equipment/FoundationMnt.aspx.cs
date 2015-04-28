@@ -33,7 +33,7 @@ namespace ProjectDesigner.Website.Equipment
         /// <returns></returns>
         protected override System.Collections.IEnumerable FetchData(string tableName, string[] orderby = null)
         {
-            var list = this.EntityContext.Value.SearchFoundation();
+            var list = this.EntityContext.Value.SearchFoundations();
             if (this.txtName.Text.HasValue())
             {
                 list.Where(i => i.Name.Contains(this.txtName.Text.Trim()));

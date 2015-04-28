@@ -46,16 +46,10 @@
                     <a href="#">设备名称</a>
                 </th>
                 <th class="word-4" data-field="Size" data-sorting="fixed">
-                    <a href="#">尺寸</a>
+                    <a href="#">基础尺寸</a>
                 </th>
                 <th class="word-4" data-field="Price" data-sorting="fixed">
                     <a href="#">价格</a>
-                </th>
-                <th class="word-auto" data-field="Brand" data-sorting="fixed">
-                    <a href="#">品牌</a>
-                </th>
-                <th class="word-4" data-field="Standard" data-sorting="fixed">
-                    <a href="#">显示模组类型</a>
                 </th>
             </tr>
         </thead>

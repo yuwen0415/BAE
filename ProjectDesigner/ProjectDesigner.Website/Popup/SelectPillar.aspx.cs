@@ -25,7 +25,7 @@ namespace ProjectDesigner.Website.Popup
 
         protected override System.Collections.IEnumerable FetchData(string tableName, string[] orderby = null)
         {
-            var list = this.EntityContext.Value.SearchPillar();
+            var list = this.EntityContext.Value.SearchPillars();
             if (this.txtName.Text.HasValue())
             {
                 list = list.Where(i => i.Name.Contains(this.txtName.Text.Trim()));

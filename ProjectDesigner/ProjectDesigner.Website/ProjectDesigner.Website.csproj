@@ -103,6 +103,10 @@
     <Content Include="Css\ToolsPanel.css" />
     <Content Include="Css\widget.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Equipment\CenterEquipmentEdit.aspx" />
+    <Content Include="Equipment\CenterEquipmentMnt.aspx" />
+    <Content Include="Equipment\ConstructionMaterialEdit.aspx" />
+    <Content Include="Equipment\ConstructionMaterialMnt.aspx" />
     <Content Include="Equipment\GeomagneticEdit.aspx" />
     <Content Include="Equipment\GeomagneticMnt.aspx" />
     <Content Include="Equipment\MicrowaveEdit.aspx" />
@@ -119,10 +123,12 @@
     <Content Include="Equipment\LEDModuleMnt.aspx" />
     <Content Include="Equipment\ElectronicPoliceEdit.aspx" />
     <Content Include="Equipment\CoilEdit.aspx" />
+    <Content Include="Equipment\AccessorialMaterialEdit.aspx" />
     <Content Include="Equipment\VideoSurveillanceEdit.aspx" />
     <Content Include="Equipment\TrafficVideoSurveillanceEdit.aspx" />
     <Content Include="Equipment\ElectronicPoliceMnt.aspx" />
     <Content Include="Equipment\CoilMnt.aspx" />
+    <Content Include="Equipment\AccessorialMaterialMnt.aspx" />
     <Content Include="Equipment\VideoSurveillanceMnt.aspx" />
     <Content Include="Equipment\TrafficVideoSurveillanceMnt.aspx" />
     <Content Include="Equipment\VMSEdit.aspx" />
@@ -189,6 +195,14 @@
     <Content Include="images\EditPage\img_add.gif" />
     <Content Include="images\EditPage\img_del.gif" />
     <Content Include="images\EditPage\title_bg.gif" />
+    <Content Include="images\Equipment\交通流量事件采集.gif" />
+    <Content Include="images\Equipment\交通视频监控.gif" />
+    <Content Include="images\Equipment\交通视频监控1.gif" />
+    <Content Include="images\Equipment\交通诱导屏.gif" />
+    <Content Include="images\Equipment\交通诱导屏1.gif" />
+    <Content Include="images\Equipment\基础.gif" />
+    <Content Include="images\Equipment\杆件.gif" />
+    <Content Include="images\Equipment\电子警察.gif" />
     <Content Include="images\Error\error_triangle.gif" />
     <Content Include="images\FileRun\aspx.gif" />
     <Content Include="images\FileRun\audio_large.gif" />
@@ -413,9 +427,12 @@
     <Content Include="Map\XiamenMap.aspx" />
     <Content Include="Popup\SelectFoundation.aspx" />
     <Content Include="Popup\SelectEquipment.aspx" />
+    <Content Include="Popup\SelectTrafficAndEventCollectionEquipment.aspx" />
     <Content Include="Popup\SelectVideoSurveillance.aspx" />
     <Content Include="Popup\SelectPillar.aspx" />
     <Content Include="Popup\SelectLEDModule.aspx" />
+    <Content Include="Project\ProjectEditByMap.html" />
+    <Content Include="Project\ProjectEditByMap.aspx" />
     <Content Include="Project\ProjectEquipmentEdit.aspx" />
     <Content Include="Project\ProjectMnt.aspx" />
     <Content Include="Project\ProjectEdit.aspx" />
@@ -995,6 +1012,34 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Equipment\CenterEquipmentEdit.aspx.cs">
+      <DependentUpon>CenterEquipmentEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\CenterEquipmentEdit.aspx.designer.cs">
+      <DependentUpon>CenterEquipmentEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\CenterEquipmentMnt.aspx.cs">
+      <DependentUpon>CenterEquipmentMnt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\CenterEquipmentMnt.aspx.designer.cs">
+      <DependentUpon>CenterEquipmentMnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\ConstructionMaterialEdit.aspx.cs">
+      <DependentUpon>ConstructionMaterialEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\ConstructionMaterialEdit.aspx.designer.cs">
+      <DependentUpon>ConstructionMaterialEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\ConstructionMaterialMnt.aspx.cs">
+      <DependentUpon>ConstructionMaterialMnt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\ConstructionMaterialMnt.aspx.designer.cs">
+      <DependentUpon>ConstructionMaterialMnt.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Equipment\GeomagneticEdit.aspx.cs">
       <DependentUpon>GeomagneticEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1107,6 +1152,13 @@
     <Compile Include="Equipment\CoilEdit.aspx.designer.cs">
       <DependentUpon>CoilEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Equipment\AccessorialMaterialEdit.aspx.cs">
+      <DependentUpon>AccessorialMaterialEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\AccessorialMaterialEdit.aspx.designer.cs">
+      <DependentUpon>AccessorialMaterialEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Equipment\VideoSurveillanceEdit.aspx.cs">
       <DependentUpon>VideoSurveillanceEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1134,6 +1186,13 @@
     </Compile>
     <Compile Include="Equipment\CoilMnt.aspx.designer.cs">
       <DependentUpon>CoilMnt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment\AccessorialMaterialMnt.aspx.cs">
+      <DependentUpon>AccessorialMaterialMnt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipment\AccessorialMaterialMnt.aspx.designer.cs">
+      <DependentUpon>AccessorialMaterialMnt.aspx</DependentUpon>
     </Compile>
     <Compile Include="Equipment\VideoSurveillanceMnt.aspx.cs">
       <DependentUpon>VideoSurveillanceMnt.aspx</DependentUpon>
@@ -1212,6 +1271,13 @@
     <Compile Include="Popup\SelectEquipment.aspx.designer.cs">
       <DependentUpon>SelectEquipment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Popup\SelectTrafficAndEventCollectionEquipment.aspx.cs">
+      <DependentUpon>SelectTrafficAndEventCollectionEquipment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Popup\SelectTrafficAndEventCollectionEquipment.aspx.designer.cs">
+      <DependentUpon>SelectTrafficAndEventCollectionEquipment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Popup\SelectVideoSurveillance.aspx.cs">
       <DependentUpon>SelectVideoSurveillance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1232,6 +1298,13 @@
     </Compile>
     <Compile Include="Popup\SelectLEDModule.aspx.designer.cs">
       <DependentUpon>SelectLEDModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Project\ProjectEditByMap.aspx.cs">
+      <DependentUpon>ProjectEditByMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project\ProjectEditByMap.aspx.designer.cs">
+      <DependentUpon>ProjectEditByMap.aspx</DependentUpon>
     </Compile>
     <Compile Include="Project\ProjectEquipmentEdit.aspx.cs">
       <DependentUpon>ProjectEquipmentEdit.aspx</DependentUpon>

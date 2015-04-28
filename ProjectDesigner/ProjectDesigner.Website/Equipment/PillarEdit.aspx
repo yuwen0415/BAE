@@ -47,6 +47,7 @@
                             <asp:ListItem Value="0">L型杆</asp:ListItem>
                             <asp:ListItem Value="1">T型杆</asp:ListItem>
                             <asp:ListItem Value="2">龙门架</asp:ListItem>
+                            <asp:ListItem Value="3">支架</asp:ListItem>
                         </asp:DropDownList>
                 </div>
             </div>
@@ -68,6 +69,23 @@
                 <div>
                     <label>
                         立杆高度</label><asp:TextBox runat="server" ID="txtHeight" ClientIDMode="Static" Width="310px"></asp:TextBox>米
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label>
+                        品牌</label><asp:TextBox runat="server" ID="txtBrand" ClientIDMode="Static" Width="325px"></asp:TextBox>
+                </div>
+                <div>
+                    <label>
+                        型号</label><asp:TextBox ID="txtProductType" ClientIDMode="Static" runat="server" Width="325px"></asp:TextBox>
+                </div>
+            </div>
+            <div class="row span-2">
+                <div>
+                    <label class="span-2">
+                        主要技术参数</label><asp:TextBox ID="txtTechnicalParameters" TextMode="MultiLine" Rows="2" Columns="50"
+                            runat="server" Style="margin-right: 0px" Width="770px" Height="45px"></asp:TextBox>
                 </div>
             </div>
         </div>

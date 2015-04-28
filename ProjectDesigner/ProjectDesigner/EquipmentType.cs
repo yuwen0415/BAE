@@ -14,6 +14,10 @@ namespace ProjectDesigner
         Foundation = 4,
         TrafficVideoSurveillance = 5,
         ElectronicPolice = 6,
-        TrafficAndEventCollection = 7
+        TrafficAndEventCollection = 7,
+        VideoSurveillance = 8,
+        AccessorialMaterial = 9,
+        ConstructionMaterial = 10,
+        CenterEquipment = 11
     }
 }

@@ -29,6 +29,7 @@ namespace ProjectDesigner.Website.Project
             base.InitControls();
             //this.txtCode.AddValidator<RequiredValidator>("代码必须填写！");
             this.txtName.AddValidator<RequiredValidator>("名称必须填写！");
+            this.txtNum.AddValidator<RequiredValidator>("名称必须填写！");
             //this.ShowOrder.AddValidator<RequiredValidator>("显示顺序必须填写！");
         }
         protected override void OnAdd()
@@ -36,6 +37,7 @@ namespace ProjectDesigner.Website.Project
             if (!IsPostBack)
             {
                 this.EditModel = this.EntityContext.Value.ProjectEquipments.NewEntity();
+                this.EditModel.Num = 1;
             }
         }
 
@@ -62,11 +64,16 @@ namespace ProjectDesigner.Website.Project
             if (IsEditMode || IsViewMode)
             {
                 this.EditModel = this.EntityContext.Value.SearchProjectEquipment(this.SelectedId);
-
                 this.txtName.Text = this.EditModel == null ? "" : this.EditModel.Name;
-                this.txtLocation.Text = this.EditModel.Location.Longitude + "," + this.EditModel.Location.Latitude;
+                this.txtLocation.Text = this.EditModel.Location == null ? "" : this.EditModel.Location.Longitude + "," + this.EditModel.Location.Latitude;
                 this.txtPrice.Text = this.EditModel.Price == null ? "" : this.EditModel.Price.ToString();
                 this.DropEquipmentType.SelectedIndex = (int)this.EditModel.EquipmentType;
+                this.txtBrand.Text = this.EditModel.Brand;
+                this.txtNum.Text = this.EditModel.Num.ToString();
+            }
+            else
+            {
+                this.txtNum.Text = "1";
             }
         }
 
@@ -85,8 +92,17 @@ namespace ProjectDesigner.Website.Project
             this.EditModel.EquipmentType = (EquipmentType)(int.Parse(this.DropEquipmentType.Text));
             this.EditModel.Name = this.txtName.Text;
             this.EditModel.Price = this.txtPrice.Text == null ? 0.0m : decimal.Parse(this.txtPrice.Text);
-            var location = this.txtLocation.Text.Split(',');
-            this.EditModel.Location = new Location { Longitude = float.Parse(location[0]), Latitude = float.Parse(location[1]) };
+            this.EditModel.Brand = this.txtBrand.Text;
+            this.EditModel.Num = string.IsNullOrEmpty(this.txtNum.Text) ? 1 : double.Parse(this.txtNum.Text);
+            if (this.txtLocation.Text.Length > 0)
+            {
+                var location = this.txtLocation.Text.Split(',');
+                this.EditModel.Location = new Location { Longitude = float.Parse(location[0]), Latitude = float.Parse(location[1]) };
+            }
+            else
+            {
+                this.EditModel.Location = null;
+            }
         }
 
 
@@ -114,11 +130,11 @@ namespace ProjectDesigner.Website.Project
                 return new
                 {
                     Id = this.EditModel.Id,
-                    //Name = equipment == null ? string.Empty : equipment.Name,
                     Name = this.EditModel.Name,
-                    EquipmentType = this.EditModel.EquipmentType,
-                    Location = this.EditModel.Location.Longitude + "," + this.EditModel.Location.Latitude,
-                    // Price = this.EditModel.
+                    EquipmentType = this.EditModel.EquipmentType.ToString(),
+                    Location = this.EditModel.Location == null ? "" : this.EditModel.Location.Longitude + "," + this.EditModel.Location.Latitude,
+                    Num = this.EditModel.Num.ToString(),
+                    Price = this.EditModel.Price.ToString()
                 };
             }
             catch
@@ -140,7 +156,7 @@ namespace ProjectDesigner.Website.Project
                 return null;
             if (this.txtSName.Text.HasValue())
             {
-                list = list.Where(i => i.Name.Contains(this.txtName.Text.Trim()));
+                list = list.Where(i => i.Name.Contains(this.txtSName.Text.Trim()));
             }
             return list.Fetch(this.PageIndex, this.PageSize)
                 .Select(i => new
@@ -148,7 +164,7 @@ namespace ProjectDesigner.Website.Project
                     Id = i.Id,
                     Name = i.Name,
                     Price = i.Price,
-                    Brand = i.Brand
+                    Brand = i.Brand,
                 });
         }
 
@@ -163,7 +179,8 @@ namespace ProjectDesigner.Website.Project
                         //Name = equipment == null ? string.Empty : equipment.Name,
                         Name = equipment.Name,
                         EquipmentType = this.DropSEquipmentType.Text,
-                        Price = equipment.Price
+                        Price = equipment.Price,
+                        Brand = equipment.Brand
                     };
             }
             else

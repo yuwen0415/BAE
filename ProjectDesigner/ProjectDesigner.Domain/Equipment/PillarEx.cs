@@ -11,7 +11,7 @@ namespace ProjectDesigner.Domain.Equipment
 {
     public static class PillarEx
     {
-        public static IHitable<IPillar> SearchPillar(this IDataContext dataContext)
+        public static IHitable<IPillar> SearchPillars(this IDataContext dataContext)
         {
             return dataContext.Pillars
                 .AsQuerybale

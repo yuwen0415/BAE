@@ -54,6 +54,17 @@
                     <label>
                         价格</label><asp:TextBox runat="server" ID="txtPrice" ClientIDMode="Static" Width="325px"></asp:TextBox>
                 </div>
+                <div>
+                    <label>
+                        型号</label><asp:TextBox ID="txtProductType" ClientIDMode="Static" runat="server" Width="325px"></asp:TextBox>
+                </div>
+            </div>
+            <div class="row span-2">
+                <div>
+                    <label class="span-2">
+                        主要技术参数</label><asp:TextBox ID="txtTechnicalParameters" TextMode="MultiLine" Rows="2" Columns="50"
+                            runat="server" Style="margin-right: 0px" Width="770px" Height="45px"></asp:TextBox>
+                </div>
             </div>
         </div>
         <div class="buttons">

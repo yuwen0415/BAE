@@ -53,12 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Equipment\CenterEquipmentEx.cs" />
+    <Compile Include="Equipment\ConstructionMaterialEx.cs" />
     <Compile Include="Equipment\GeomagneticEx.cs" />
+    <Compile Include="Equipment\MaterialEx.cs" />
     <Compile Include="Equipment\MicrowaveEx.cs" />
     <Compile Include="Equipment\RFIDEx.cs" />
     <Compile Include="Equipment\CoilEx.cs" />
     <Compile Include="Equipment\TrafficAndEventCollectionEx.cs" />
     <Compile Include="Equipment\ElectronicPoliceEx.cs" />
+    <Compile Include="Equipment\AccessorialMaterialEx.cs" />
     <Compile Include="Equipment\VideoSurveillanceEx.cs" />
     <Compile Include="Equipment\TrafficVideoSurveillanceEx.cs" />
     <Compile Include="Equipment\FoundationEx.cs" />

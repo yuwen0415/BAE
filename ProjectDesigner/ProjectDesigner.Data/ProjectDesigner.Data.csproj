@@ -64,13 +64,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <EntityDeploy Include="EntityContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EntityContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.Config">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="EntityContext.edmx.diagram">
       <DependentUpon>EntityContext.edmx</DependentUpon>
     </None>

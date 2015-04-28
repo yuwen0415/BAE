@@ -5,9 +5,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>C:\Users\Police-yuwen\Desktop\ProjectDesigner</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\Administrator\Desktop\ProjectDesigner</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="bin/EBA.BI.dll">
+      <publishTime>09/12/2014 16:56:43</publishTime>
+    </File>
     <File Include="bin/EBA.dll">
       <publishTime>12/17/2014 08:00:44</publishTime>
     </File>
@@ -30,16 +33,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/17/2014 08:00:44</publishTime>
     </File>
     <File Include="bin/ProjectDesigner.Data.dll">
-      <publishTime>01/11/2015 17:54:43</publishTime>
+      <publishTime>04/28/2015 08:27:12</publishTime>
     </File>
     <File Include="bin/ProjectDesigner.dll">
-      <publishTime>01/09/2015 19:26:23</publishTime>
+      <publishTime>04/28/2015 08:27:11</publishTime>
     </File>
     <File Include="bin/ProjectDesigner.Domain.dll">
-      <publishTime>01/11/2015 17:54:43</publishTime>
+      <publishTime>04/28/2015 08:27:13</publishTime>
     </File>
     <File Include="bin/ProjectDesigner.Website.dll">
-      <publishTime>01/11/2015 17:54:44</publishTime>
+      <publishTime>04/28/2015 08:27:15</publishTime>
     </File>
     <File Include="bin/WebActivator.dll">
       <publishTime>12/17/2014 08:00:44</publishTime>
@@ -107,29 +110,95 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Default.aspx">
       <publishTime>12/17/2014 08:00:06</publishTime>
     </File>
+    <File Include="Equipment/AccessorialMaterialEdit.aspx">
+      <publishTime>04/23/2015 16:23:34</publishTime>
+    </File>
+    <File Include="Equipment/AccessorialMaterialMnt.aspx">
+      <publishTime>03/13/2015 15:14:12</publishTime>
+    </File>
+    <File Include="Equipment/CenterEquipmentEdit.aspx">
+      <publishTime>04/21/2015 15:06:03</publishTime>
+    </File>
+    <File Include="Equipment/CenterEquipmentMnt.aspx">
+      <publishTime>04/27/2015 15:53:48</publishTime>
+    </File>
+    <File Include="Equipment/CoilEdit.aspx">
+      <publishTime>03/04/2015 15:24:54</publishTime>
+    </File>
+    <File Include="Equipment/CoilMnt.aspx">
+      <publishTime>03/04/2015 15:20:53</publishTime>
+    </File>
+    <File Include="Equipment/ConstructionMaterialEdit.aspx">
+      <publishTime>04/16/2015 09:05:35</publishTime>
+    </File>
+    <File Include="Equipment/ConstructionMaterialMnt.aspx">
+      <publishTime>04/16/2015 09:04:50</publishTime>
+    </File>
+    <File Include="Equipment/ElectronicPoliceEdit.aspx">
+      <publishTime>04/25/2015 16:29:53</publishTime>
+    </File>
+    <File Include="Equipment/ElectronicPoliceMnt.aspx">
+      <publishTime>03/12/2015 19:31:43</publishTime>
+    </File>
     <File Include="Equipment/FoundationEdit.aspx">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>04/23/2015 17:35:36</publishTime>
     </File>
     <File Include="Equipment/FoundationMnt.aspx">
       <publishTime>12/17/2014 08:00:06</publishTime>
     </File>
+    <File Include="Equipment/GeomagneticEdit.aspx">
+      <publishTime>03/04/2015 15:41:18</publishTime>
+    </File>
+    <File Include="Equipment/GeomagneticMnt.aspx">
+      <publishTime>03/04/2015 15:40:29</publishTime>
+    </File>
     <File Include="Equipment/LEDModuleEdit.aspx">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>04/23/2015 16:34:18</publishTime>
     </File>
     <File Include="Equipment/LEDModuleMnt.aspx">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>04/23/2015 16:35:43</publishTime>
+    </File>
+    <File Include="Equipment/MicrowaveEdit.aspx">
+      <publishTime>03/04/2015 15:37:35</publishTime>
+    </File>
+    <File Include="Equipment/MicrowaveMnt.aspx">
+      <publishTime>03/04/2015 15:36:38</publishTime>
     </File>
     <File Include="Equipment/PillarEdit.aspx">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>04/27/2015 10:22:06</publishTime>
     </File>
     <File Include="Equipment/PillarMnt.aspx">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>04/16/2015 08:32:27</publishTime>
+    </File>
+    <File Include="Equipment/RFIDEdit.aspx">
+      <publishTime>03/04/2015 15:32:38</publishTime>
+    </File>
+    <File Include="Equipment/RFIDMnt.aspx">
+      <publishTime>03/04/2015 15:31:35</publishTime>
+    </File>
+    <File Include="Equipment/TrafficAndEventCollectionEdit.aspx">
+      <publishTime>04/25/2015 17:09:58</publishTime>
+    </File>
+    <File Include="Equipment/TrafficAndEventCollectionMnt.aspx">
+      <publishTime>02/27/2015 08:42:41</publishTime>
+    </File>
+    <File Include="Equipment/TrafficVideoSurveillanceEdit.aspx">
+      <publishTime>04/25/2015 17:25:08</publishTime>
+    </File>
+    <File Include="Equipment/TrafficVideoSurveillanceMnt.aspx">
+      <publishTime>03/13/2015 11:30:22</publishTime>
+    </File>
+    <File Include="Equipment/VideoSurveillanceEdit.aspx">
+      <publishTime>03/13/2015 11:30:22</publishTime>
+    </File>
+    <File Include="Equipment/VideoSurveillanceMnt.aspx">
+      <publishTime>03/13/2015 11:30:22</publishTime>
     </File>
     <File Include="Equipment/VMSEdit.aspx">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>04/25/2015 15:28:20</publishTime>
     </File>
     <File Include="Equipment/VMSMnt.aspx">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>02/25/2015 08:12:24</publishTime>
     </File>
     <File Include="FileRun.aspx">
       <publishTime>12/17/2014 08:00:06</publishTime>
@@ -239,6 +308,72 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="images/Default/pre_icon_hover.gif">
       <publishTime>12/17/2014 08:00:36</publishTime>
     </File>
+    <File Include="images/DeviceState/交调设备/0.png">
+      <publishTime>09/12/2014 14:40:41</publishTime>
+    </File>
+    <File Include="images/DeviceState/交调设备/1.png">
+      <publishTime>09/12/2014 14:40:41</publishTime>
+    </File>
+    <File Include="images/DeviceState/交调设备/不正常.bmp">
+      <publishTime>09/12/2014 14:40:41</publishTime>
+    </File>
+    <File Include="images/DeviceState/交调设备/不正常.gif">
+      <publishTime>09/12/2014 14:40:41</publishTime>
+    </File>
+    <File Include="images/DeviceState/交调设备/正常.bmp">
+      <publishTime>09/12/2014 14:40:41</publishTime>
+    </File>
+    <File Include="images/DeviceState/交调设备/正常.gif">
+      <publishTime>09/12/2014 14:40:41</publishTime>
+    </File>
+    <File Include="images/DeviceState/情报板/0.png">
+      <publishTime>09/12/2014 14:40:41</publishTime>
+    </File>
+    <File Include="images/DeviceState/情报板/1.png">
+      <publishTime>09/12/2014 14:40:42</publishTime>
+    </File>
+    <File Include="images/DeviceState/情报板/不正常.gif">
+      <publishTime>09/12/2014 14:40:42</publishTime>
+    </File>
+    <File Include="images/DeviceState/情报板/正常.gif">
+      <publishTime>09/12/2014 14:40:42</publishTime>
+    </File>
+    <File Include="images/DeviceState/气象设备/0.png">
+      <publishTime>09/12/2014 14:40:42</publishTime>
+    </File>
+    <File Include="images/DeviceState/气象设备/1.png">
+      <publishTime>09/12/2014 14:40:42</publishTime>
+    </File>
+    <File Include="images/DeviceState/气象设备/不正常.bmp">
+      <publishTime>09/12/2014 14:40:42</publishTime>
+    </File>
+    <File Include="images/DeviceState/气象设备/不正常.gif">
+      <publishTime>09/12/2014 14:40:43</publishTime>
+    </File>
+    <File Include="images/DeviceState/气象设备/正常.bmp">
+      <publishTime>09/12/2014 14:40:43</publishTime>
+    </File>
+    <File Include="images/DeviceState/气象设备/正常.gif">
+      <publishTime>09/12/2014 14:40:43</publishTime>
+    </File>
+    <File Include="images/DeviceState/视频设备/0.png">
+      <publishTime>09/12/2014 14:40:43</publishTime>
+    </File>
+    <File Include="images/DeviceState/视频设备/1.png">
+      <publishTime>09/12/2014 14:40:43</publishTime>
+    </File>
+    <File Include="images/DeviceState/视频设备/不正常.bmp">
+      <publishTime>09/12/2014 14:40:43</publishTime>
+    </File>
+    <File Include="images/DeviceState/视频设备/不正常.gif">
+      <publishTime>09/12/2014 14:40:43</publishTime>
+    </File>
+    <File Include="images/DeviceState/视频设备/正常.bmp">
+      <publishTime>09/12/2014 14:40:44</publishTime>
+    </File>
+    <File Include="images/DeviceState/视频设备/正常.gif">
+      <publishTime>09/12/2014 14:40:44</publishTime>
+    </File>
     <File Include="images/EditPage/close.gif">
       <publishTime>12/17/2014 08:00:36</publishTime>
     </File>
@@ -250,6 +385,30 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="images/EditPage/title_bg.gif">
       <publishTime>12/17/2014 08:00:36</publishTime>
+    </File>
+    <File Include="images/Equipment/交通流量事件采集.gif">
+      <publishTime>04/19/2015 20:58:24</publishTime>
+    </File>
+    <File Include="images/Equipment/交通视频监控.gif">
+      <publishTime>04/19/2015 20:44:43</publishTime>
+    </File>
+    <File Include="images/Equipment/交通视频监控1.gif">
+      <publishTime>09/12/2014 14:56:37</publishTime>
+    </File>
+    <File Include="images/Equipment/交通诱导屏.gif">
+      <publishTime>04/19/2015 20:46:40</publishTime>
+    </File>
+    <File Include="images/Equipment/交通诱导屏1.gif">
+      <publishTime>09/12/2014 14:56:34</publishTime>
+    </File>
+    <File Include="images/Equipment/基础.gif">
+      <publishTime>09/12/2014 14:56:33</publishTime>
+    </File>
+    <File Include="images/Equipment/杆件.gif">
+      <publishTime>04/19/2015 20:52:23</publishTime>
+    </File>
+    <File Include="images/Equipment/电子警察.gif">
+      <publishTime>04/19/2015 20:47:14</publishTime>
     </File>
     <File Include="images/Error/error_triangle.gif">
       <publishTime>12/17/2014 08:00:37</publishTime>
@@ -912,7 +1071,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/17/2014 08:00:42</publishTime>
     </File>
     <File Include="Index.aspx">
-      <publishTime>01/09/2015 16:27:09</publishTime>
+      <publishTime>01/11/2015 19:44:50</publishTime>
     </File>
     <File Include="Main.Master">
       <publishTime>01/09/2015 18:29:42</publishTime>
@@ -924,22 +1083,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/05/2015 18:21:39</publishTime>
     </File>
     <File Include="Popup/SelectFoundation.aspx">
-      <publishTime>01/04/2015 15:04:39</publishTime>
+      <publishTime>03/12/2015 19:29:36</publishTime>
     </File>
     <File Include="Popup/SelectLEDModule.aspx">
       <publishTime>01/04/2015 15:01:22</publishTime>
     </File>
     <File Include="Popup/SelectPillar.aspx">
-      <publishTime>01/04/2015 15:01:27</publishTime>
+      <publishTime>03/12/2015 19:26:10</publishTime>
+    </File>
+    <File Include="Popup/SelectTrafficAndEventCollectionEquipment.aspx">
+      <publishTime>04/15/2015 20:15:56</publishTime>
+    </File>
+    <File Include="Popup/SelectVideoSurveillance.aspx">
+      <publishTime>03/13/2015 11:30:23</publishTime>
+    </File>
+    <File Include="Project/map.html">
+      <publishTime>01/29/2015 07:47:35</publishTime>
     </File>
     <File Include="Project/ProjectEdit.aspx">
-      <publishTime>01/04/2015 11:37:30</publishTime>
+      <publishTime>04/21/2015 10:10:31</publishTime>
+    </File>
+    <File Include="Project/ProjectEditByMap.aspx">
+      <publishTime>04/24/2015 17:07:29</publishTime>
+    </File>
+    <File Include="Project/ProjectEditByMap.html">
+      <publishTime>04/24/2015 17:03:22</publishTime>
     </File>
     <File Include="Project/ProjectEquipmentEdit.aspx">
-      <publishTime>01/11/2015 17:34:21</publishTime>
+      <publishTime>04/27/2015 16:39:34</publishTime>
     </File>
     <File Include="Project/ProjectMnt.aspx">
-      <publishTime>12/17/2014 08:00:06</publishTime>
+      <publishTime>03/30/2015 09:45:31</publishTime>
+    </File>
+    <File Include="report_templates/project_template.xlsx">
+      <publishTime>04/27/2015 16:57:12</publishTime>
     </File>
     <File Include="Scripts/ckeditor/build-config.js">
       <publishTime>12/17/2014 08:00:11</publishTime>
@@ -2586,7 +2763,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/17/2014 08:00:23</publishTime>
     </File>
     <File Include="Scripts/sparrow.ui.grid.js">
-      <publishTime>12/17/2014 08:00:23</publishTime>
+      <publishTime>04/14/2015 10:17:53</publishTime>
     </File>
     <File Include="Scripts/sparrow.ui.inbox.js">
       <publishTime>12/17/2014 08:00:23</publishTime>
@@ -2642,8 +2819,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/underscore-min.js">
       <publishTime>12/17/2014 08:00:24</publishTime>
     </File>
+    <File Include="TempFileDownHanlder.ashx">
+      <publishTime>09/12/2014 17:23:40</publishTime>
+    </File>
     <File Include="Web.config">
-      <publishTime>01/09/2015 19:27:57</publishTime>
+      <publishTime>04/23/2015 08:15:04</publishTime>
     </File>
   </ItemGroup>
 </Project>

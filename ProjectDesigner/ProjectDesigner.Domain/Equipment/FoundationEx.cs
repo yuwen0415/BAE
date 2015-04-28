@@ -12,7 +12,7 @@ namespace ProjectDesigner.Domain.Equipment
 {
     public static class FoundationEx
     {
-        public static IHitable<IFoundation> SearchFoundation(this IDataContext dataContext)
+        public static IHitable<IFoundation> SearchFoundations(this IDataContext dataContext)
         {
             return dataContext.Foundations
                 .AsQuerybale

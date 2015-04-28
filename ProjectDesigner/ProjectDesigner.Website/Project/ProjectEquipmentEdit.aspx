@@ -40,7 +40,7 @@
                     width: 100px;
                 }
     </style>
-    <title>工程检测</title>
+    <title>工程设计</title>
 </head>
 <body>
     <%--onload="initMap();"--%>
@@ -64,10 +64,26 @@
                             设备类型</label><asp:DropDownList runat="server" ID="DropEquipmentType" ClientIDMode="Static" Width="325px">
                                 <asp:ListItem Value="0">未知</asp:ListItem>
                                 <asp:ListItem Value="1">交通诱导屏</asp:ListItem>
-                                <asp:ListItem Value="2">模组</asp:ListItem>
                                 <asp:ListItem Value="3">杆件</asp:ListItem>
                                 <asp:ListItem Value="4">基础</asp:ListItem>
+                                <asp:ListItem Value="5">交通视频监控</asp:ListItem>
+                                <asp:ListItem Value="6">电子警察</asp:ListItem>
+                                <asp:ListItem Value="7">交通流量事件采集</asp:ListItem>
+                                <asp:ListItem Value="9">设备辅材</asp:ListItem>
+                                <asp:ListItem Value="10">工程建设辅材</asp:ListItem>
+                                <asp:ListItem Value="11">中心设备</asp:ListItem>
                             </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <label>
+                            品牌</label><asp:TextBox runat="server" ID="txtBrand" ClientIDMode="Static" Width="325px"></asp:TextBox>
+                    </div>
+
+                    <div>
+                        <label>
+                            数量</label><asp:TextBox runat="server" ID="txtNum" ClientIDMode="Static" Width="325px"></asp:TextBox>
                     </div>
                 </div>
                 <div class="row">
@@ -79,7 +95,7 @@
                     <div>
                         <label>
                             设备位置</label><asp:TextBox runat="server" ID="txtLocation" ClientIDMode="Static" Width="325px"></asp:TextBox>
-                            <%--<input id="btnSelectPoint" name="" type="button" class="button_out" style="width: 40px;" runat="server" clientidmode="Static" value="获 取" />--%>
+                        <%--<input id="btnSelectPoint" name="" type="button" class="button_out" style="width: 40px;" runat="server" clientidmode="Static" value="获 取" />--%>
                     </div>
                 </div>
                 <div>
@@ -106,14 +122,20 @@
                                         <label for="txtCType">
                                             设备类型</label>
                                         <asp:DropDownList runat="server" ID="DropSEquipmentType" ClientIDMode="Static" Width="152px">
+                                            <asp:ListItem Value="0">未知</asp:ListItem>
                                             <asp:ListItem Value="1">交通诱导屏</asp:ListItem>
-                                            <asp:ListItem Value="2">模组</asp:ListItem>
                                             <asp:ListItem Value="3">杆件</asp:ListItem>
                                             <asp:ListItem Value="4">基础</asp:ListItem>
+                                            <asp:ListItem Value="5">交通视频监控</asp:ListItem>
+                                            <asp:ListItem Value="6">电子警察</asp:ListItem>
+                                            <asp:ListItem Value="7">交通流量事件采集</asp:ListItem>
+                                            <asp:ListItem Value="9">设备辅材</asp:ListItem>
+                                            <asp:ListItem Value="10">工程建设辅材</asp:ListItem>
+                                            <asp:ListItem Value="11">中心设备</asp:ListItem>
                                         </asp:DropDownList>
                                     </span>
                                     <span>
-                                        <asp:Button runat="server" ID="btnSearch" CssClass="button_out search-link" Text="查询" /></span>
+                                        <asp:Button runat="server" ID="btnSearch" CssClass="button_out search-link" ClientIDMode="Static" Text="查询" /></span>
                                 </td>
                                 <td class="middle_right"></td>
                             </tr>
@@ -132,7 +154,7 @@
 
 
                     <table border="0" cellpadding="0" cellspacing="1" class="gridview" data-multiselect="true"
-                        data-key="Id" data-autoload="true">
+                        data-key="Id" data-autoload="true" data-pagesize="3">
                         <thead>
                             <tr>
                                 <th class="word-2">
@@ -161,8 +183,7 @@
             </div>
 
             <div id="dituContent">
-
-                <iframe id="ifrPage" name="ifrPage" src="map.html" style="border: #ccc solid 1px; width: 900px; height: 325px"></iframe>
+                <iframe id="ifrPage" name="ifrPage" src="map.html" style="border: #ccc solid 1px; width: 900px; height: 330px"></iframe>
             </div>
         </div>
 
@@ -183,7 +204,14 @@
                     if (data != null) {
                         $('#txtName').val(data.Name);
                         $('#txtPrice').val(data.Price);
+                        $('#txtBrand').val(data.Brand);
                         $('#DropEquipmentType').val(data.EquipmentType);
+                        if (data.EquipmentType == "9" || data.EquipmentType == "10" || data.EquipmentType == "11") {
+                            $('#ifrPage').hide();
+                        }
+                        else {
+                            $('#ifrPage').show();
+                        }
                     }
                 }
             })

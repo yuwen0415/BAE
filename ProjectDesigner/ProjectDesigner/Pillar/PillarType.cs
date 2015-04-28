@@ -10,6 +10,7 @@ namespace ProjectDesigner.Pillar
         L_TYPE = 0,
         T_TYPE = 1,
         //龙门架
-        GANTRY = 2
+        GANTRY = 2,
+        SUPPORT= 3
     }
 }

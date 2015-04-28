@@ -20,5 +20,9 @@ namespace ProjectDesigner.TrafficVideoSurveillance
         IPillar Pillar { get; set; }
         IVideoSurveillance VideoSurveillance { get; set; }
         string IconPath { get; set; }
+
+        List<MaterialOfEquipment> AccessorialMaterials { get; set; }
+
+        List<MaterialOfEquipment> ConstructionMaterials { get; set; }
     }
 }

@@ -71,7 +71,7 @@ namespace ProjectDesigner.Website.Project
                 this.EditModel = this.EntityContext.Value.SearchProject(this.SelectedId);
                 this.txtName.Text = this.EditModel.Name;
                 this.txtPrice.Text = this.EditModel.Price.ToString();
-
+                this.txtTaxes.Text = this.EditModel.Taxes.ToString();
             }
         }
 
@@ -83,12 +83,12 @@ namespace ProjectDesigner.Website.Project
             }
             else
             {
-                var id =
                 this.EditModel = this.EntityContext.Value.Projects.NewEntity();
                 this.EditModel.Id = this.btnAdd.Attributes["data-params"].Replace("&projectId=", "");
             }
             this.EditModel.Name = this.txtName.Text;
             this.EditModel.Price = string.IsNullOrEmpty(this.txtPrice.Text) ? 0.0m : decimal.Parse(this.txtPrice.Text);
+            this.EditModel.Taxes = string.IsNullOrEmpty(this.txtTaxes.Text) ? 0.0m : decimal.Parse(this.txtTaxes.Text);
             // this.EditModel.Equipments = this.EntityContext.Value.SearchProjectEquipments(this.EditModel.Id).ToList();
         }
 
@@ -126,8 +126,10 @@ namespace ProjectDesigner.Website.Project
                 Id = i.Id,
                 Name = i.Name,
                 EquipmentType = i.EquipmentType.ToString(),
-                Location = i.Location.Longitude + "," + i.Location.Latitude,
-                Price = i.Price
+                Location = i.Location == null ? "" : i.Location.Longitude + "," + i.Location.Latitude,
+                Price = i.Price,
+                Brand = i.Brand,
+                Num = i.Num
             });
 
         }
@@ -143,14 +145,8 @@ namespace ProjectDesigner.Website.Project
                 this.FillData();
 
                 var equipments = this.EntityContext.Value.SearchProjectEquipments(this.EditModel.Id).ToList();
-                decimal? price = 0.0m;
-                var equipmentsName = "";
-                foreach (var equipment in equipments)
-                {
-                    price += equipment.Price;
-                    equipmentsName += equipment.Name + ",";
-                }
-                this.EditModel.Price = price;
+
+                this.EditModel.Price = CalculateProjectPrice(equipments);
                 this.SaveObject<IProject>();
                 this.EntityContext.Value.CommitTransaction();
 
@@ -159,7 +155,7 @@ namespace ProjectDesigner.Website.Project
                     Id = this.EditModel.Id,
                     Name = this.EditModel.Name,
                     Price = this.EditModel.Price,
-                    Equipments = equipmentsName
+                    Equipments = GetProjectEquipmentsName(equipments),
                 };
             }
             catch
@@ -173,6 +169,27 @@ namespace ProjectDesigner.Website.Project
             }
         }
 
+        private decimal? CalculateProjectPrice(List<IProjectEquipment> equipments)
+        {
+            decimal? price = 0.0m;
+            foreach (var equipment in equipments)
+            {
+                price += equipment.Price * decimal.Parse(equipment.Num.ToString());
+                // equipmentsName += equipment.Name + ",";
+            }
+            return price;
+        }
+
+        private string GetProjectEquipmentsName(List<IProjectEquipment> equipments)
+        {
+            var name = "";
+            foreach (var equipment in equipments)
+            {
+                name += equipment.Name + ",";
+            }
+            return name;
+        }
+
         public override bool DeleteRows()
         {
             foreach (var id in this.GetSelectedItems())
@@ -183,5 +200,11 @@ namespace ProjectDesigner.Website.Project
             return true;
         }
 
+        public object RefreshProjectPrice()
+        {
+            var equipments = this.EntityContext.Value.SearchProjectEquipments(this.Request.Form["ProjectId"]).ToList();
+            var taxes = string.IsNullOrEmpty(this.txtTaxes.Text) ? 0.0m : decimal.Parse(this.txtTaxes.Text);
+            return this.CalculateProjectPrice(equipments) * (1 + taxes / 100);
+        }
     }
 }

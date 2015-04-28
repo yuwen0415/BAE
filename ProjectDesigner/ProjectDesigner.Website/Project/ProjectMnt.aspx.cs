@@ -81,7 +81,7 @@ namespace ProjectDesigner.Website.Project
             var data = new ReportSource();
 
 
-            data.Tables = this.InputDocument(project);
+            data.Tables = this.EntityContext.Value.InputDocument(project);
             spreadsheet.ReportSource = data;
             spreadsheet.DataBind();
 
@@ -89,83 +89,6 @@ namespace ProjectDesigner.Website.Project
             spreadsheet.SaveAs(Server.MapPath("../report_cached/" + fileName));
 
             Response.Redirect("../TempFileDownHanlder.ashx?f=" + Server.UrlEncode(fileName));
-        }
-
-        private DataTableCollection InputDocument(IProject project)
-        {
-            var tables = new DataSet().Tables;
-            var table_Para = new DataTable("para");
-            table_Para.Columns.Add("Title");
-            table_Para.Columns.Add("Total");
-
-            var paraRow = table_Para.NewRow();
-            paraRow["Title"] = project.Name;
-            paraRow["Total"] = project.Price;
-            table_Para.Rows.Add(paraRow);
-
-            var table_Equipments = new DataTable("equipments");
-            table_Equipments.Columns.Add("RowNum");
-            table_Equipments.Columns.Add("Name");
-            table_Equipments.Columns.Add("Brand");
-            table_Equipments.Columns.Add("ProductType");
-            table_Equipments.Columns.Add("TechnicalParameters");
-            table_Equipments.Columns.Add("Unit");
-            table_Equipments.Columns.Add("Num");
-            table_Equipments.Columns.Add("Price");
-            table_Equipments.Columns.Add("SubTotal");
-
-            var equipments = this.EntityContext.Value.SearchProjectEquipments(project.Id).ToList();
-            if (equipments != null)
-            {
-                var i = 1;
-                foreach (var equipment in this.ConvertToSpreadsheetDocumentEquipment(equipments))
-                {
-                    var equipmentsRow = table_Equipments.NewRow();
-                    equipmentsRow["RowNum"] = i + "";
-                    equipmentsRow["Name"] = equipment.Name;
-                    equipmentsRow["Brand"] = equipment.Brand;
-                    equipmentsRow["ProductType"] = equipment.ProductType;
-                    equipmentsRow["TechnicalParameters"] = equipment.TechnicalParameters;
-                    equipmentsRow["Unit"] = equipment.Unit;
-                    equipmentsRow["Num"] = equipment.Num;
-                    equipmentsRow["Price"] = equipment.Price;
-                    equipmentsRow["SubTotal"] = equipment.SubTotal;
-                    table_Equipments.Rows.Add(equipmentsRow);
-                    i++;
-                }
-            }
-
-            tables.Add(table_Para);
-            tables.Add(table_Equipments);
-            return tables;
-        }
-
-        private List<SpreadsheetDocumentEquipment> ConvertToSpreadsheetDocumentEquipment(List<IProjectEquipment> equipments)
-        {
-            var spreadsheetDocumentEquipments = new List<SpreadsheetDocumentEquipment>();
-            foreach (var equipment in equipments)
-            {
-                var same = spreadsheetDocumentEquipments.Where(i => i.Name == equipment.Name).FirstOrDefault();
-                if (same == null)
-                    spreadsheetDocumentEquipments.Add(new SpreadsheetDocumentEquipment
-                    {
-                        Id = equipment.Id,
-                        Name = equipment.Name,
-                        Brand = equipment.Brand,
-                        ProductType = equipment.ProductType,
-                        TechnicalParameters = equipment.TechnicalParameters,
-                        Unit = equipment.Unit,
-                        Num = 1,
-                        Price = equipment.Price,
-                        SubTotal = equipment.Price
-                    });
-                else
-                {
-                    same.Num++;
-                    same.SubTotal = same.Num * same.Price;
-                }
-            }
-            return spreadsheetDocumentEquipments;
         }
     }
 }

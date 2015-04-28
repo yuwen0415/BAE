@@ -19,7 +19,11 @@ namespace ProjectDesigner.VMS
         IFoundation Foundation { get; set; }
         IPillar Pillar { get; set; }
         ILEDModule LEDModule { get; set; }
-        int? ModuleCount { get; set; }
+        double? ModuleCount { get; set; }
         string IconPath { get; set; }
+
+        List<MaterialOfEquipment> AccessorialMaterials { get; set; }
+
+        List<MaterialOfEquipment> ConstructionMaterials { get; set; }
     }
 }

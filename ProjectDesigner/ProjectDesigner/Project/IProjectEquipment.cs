@@ -10,5 +10,7 @@ namespace ProjectDesigner.Project
 
         Location Location { get; set; }
         string ProjectId { get; set; }
+
+        double Num { get; set; }
     }
 }

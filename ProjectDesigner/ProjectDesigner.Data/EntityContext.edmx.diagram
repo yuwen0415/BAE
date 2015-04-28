@@ -4,37 +4,41 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b7c47b3ab6364c9b92cbc3058260c76f" Name="Diagram1">
-        <EntityTypeShape EntityType="ProjectDesigner.Data.BizModule" Width="1.5" PointX="7.625" PointY="5.625" IsExpanded="false" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.File" Width="1.5" PointX="7.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.Navigator" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.VMS" Width="1.5" PointX="2.75" PointY="5" IsExpanded="false" />
+      <Diagram DiagramId="2b4def644ea643559fd6ea59e674f7b6" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="ProjectDesigner.Data.AccessorialMaterial" Width="1.5" PointX="2.5" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.BizModules" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Coil" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.ElectronicPolice" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.File" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Foundation" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Geomagnetic" Width="1.5" PointX="7.75" PointY="4.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.LEDModule" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Microwave" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Pillar" Width="1.5" PointX="6" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Project" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.RFID" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.TrafficAndEventCollection" Width="1.5" PointX="6.25" PointY="2" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.TrafficVideoSurveillance" Width="1.5" PointX="3" PointY="4.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.VideoSurveillance" Width="1.5" PointX="1.75" PointY="11.125" IsExpanded="false" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_ElectronicPolice_Foundation" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_ElectronicPolice_Pillar" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_ElectronicPolice_VideoSurveillance" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_TrafficAndEventCollection_Foundation" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_TrafficVideoSurveillance_Foundation" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_TrafficAndEventCollection_Pillar" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_TrafficVideoSurveillance_Pillar" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_TrafficVideoSurveillance_VideoSurveillance" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Navigator" Width="1.5" PointX="11.375" PointY="11.75" IsExpanded="false" />
         <AssociationConnector Association="ProjectDesigner.Data.FK_Navigators_Navigators" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.Project" Width="1.5" PointX="5.125" PointY="5" IsExpanded="false" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.Foundation" Width="1.5" PointX="1.5" PointY="6.25" IsExpanded="false" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.LEDModule" Width="1.5" PointX="2.75" PointY="4.375" IsExpanded="false" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.Pillar" Width="1.5" PointX="3.375" PointY="6.25" IsExpanded="false" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.ProjectEquipment" Width="1.5" PointX="9.375" PointY="4.75" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_Foundation1" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_LEDModule1" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_Pillar1" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.ElectronicPolice" Width="1.5" PointX="2.5" PointY="7.875" IsExpanded="false" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.TrafficVideoSurveillance" Width="1.5" PointX="2.5" PointY="8.625" IsExpanded="false" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_ElectronicPolice_Foundation" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_ElectronicPolice_Pillar" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_TrafficVideoSurveillance_Foundation" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_TrafficVideoSurveillance_Pillar" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.TrafficAndEventCollection" Width="1.5" PointX="2.5" PointY="9.375" IsExpanded="true" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_TrafficAndEventCollection_Foundation" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_TrafficAndEventCollection_Pillar" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.Coil" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.Geomagnetic" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="false" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.Microwave" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="false" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.RFID" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="ProjectDesigner.Data.VideoSurveillance" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="false" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_ElectronicPolice_VideoSurveillance" />
-        <AssociationConnector Association="ProjectDesigner.Data.FK_TrafficVideoSurveillance_VideoSurveillance" />
-        </Diagram>
+        <EntityTypeShape EntityType="ProjectDesigner.Data.ConstructionMaterial" Width="1.5" PointX="4.25" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.Material" Width="1.5" PointX="8.375" PointY="6.75" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.CenterEquipment" Width="1.5" PointX="10.375" PointY="6.75" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.VMS" Width="1.5" PointX="5" PointY="12.125" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_Foundation" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_LEDModule" />
+        <AssociationConnector Association="ProjectDesigner.Data.FK_VMS_Pillar" />
+        <EntityTypeShape EntityType="ProjectDesigner.Data.ProjectEquipment" Width="1.5" PointX="8.375" PointY="11.75" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

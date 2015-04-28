@@ -8,6 +8,7 @@ namespace ProjectDesigner.VMS
     public enum LedStandard
     {
         P6 = 0,
-        P10 = 1
+        P10 = 1,
+        P16 = 2,
     }
 }

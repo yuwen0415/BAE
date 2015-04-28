@@ -66,28 +66,22 @@
                     <th class="word-auto" data-field="Name" data-sorting="fixed">
                         <a href="#">设备名称</a>
                     </th>
-                    <th class="word-4" data-field="ProductType" data-sorting="fixed">
-                        <a href="#">型号</a>
-                    </th>
-                    <th class="word-auto" data-field="TechnicalParameters " data-sorting="fixed">
-                        <a href="#">主要技术参数</a>
-                    </th>
                     <th class="word-4" data-field="Brand" data-sorting="fixed">
                         <a href="#">品牌</a>
                     </th>
                     <th class="word-4" data-field="Price" data-sorting="fixed">
                         <a href="#">价格</a>
                     </th>
-                    <th class="word-4" data-field="Type" data-sorting="fixed">
+                    <th class="word-6" data-field="Type" data-sorting="fixed">
                         <a href="#">类型</a>
                     </th>
-                    <th class="word-4" data-field="Connection" data-sorting="fixed">
+                    <th class="word-6" data-field="Connection" data-sorting="fixed">
                         <a href="#">连接方式</a>
                     </th>
-                    <th class="word-4" data-field="Foundation" data-sorting="fixed">
+                    <th class="word-6" data-field="Foundation" data-sorting="fixed">
                         <a href="#">基础</a>
                     </th>
-                    <th class="word-4" data-field="Pillar " data-sorting="fixed">
+                    <th class="word-6" data-field="Pillar " data-sorting="fixed">
                         <a href="#">立杆</a>
                     </th>
                 </tr>

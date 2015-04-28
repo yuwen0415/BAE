@@ -29,5 +29,15 @@ namespace ProjectDesigner
         IRepository<IGeomagnetic> Geomagnetics { get; }
         IRepository<IMicrowave> Microwaves { get; }
         IRepository<IRFID> RFIDs { get; }
+        /// <summary>
+        /// 设备建设辅助材料
+        /// </summary>
+        IRepository<IEquipment> AccessorialMaterials { get; }
+        /// <summary>
+        /// 工程材料
+        /// </summary>
+        IRepository<IEquipment> ConstructionMaterials { get; }
+        IRepository<IMaterial> Materials { get; }
+        IRepository<ICenterEquipment> CenterEquipments { get; }
     }
 }

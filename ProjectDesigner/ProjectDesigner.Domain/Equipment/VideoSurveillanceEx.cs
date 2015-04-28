@@ -52,5 +52,18 @@ namespace ProjectDesigner.Domain.Equipment
             dataContext.VideoSurveillances.Add(VideoSurveillance);
             dataContext.SubmitChanges();
         }
+
+        //public static string TranslateVideoSurveillanceTypeEnumToString(VideoSurveillanceType type)
+        //{
+        //    switch ((int)type)
+        //    {
+        //        case 0:
+        //            return "球机";
+        //        case 1:
+        //            return "枪机";
+        //    }
+        //    return "球机";
+        //}
+
     }
 }

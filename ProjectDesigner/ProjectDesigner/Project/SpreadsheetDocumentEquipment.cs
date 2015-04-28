@@ -55,7 +55,7 @@ namespace ProjectDesigner.Project
             get;
         }
 
-        public int Num
+        public double Num
         {
             get;
             set;

@@ -19,18 +19,18 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_Navigators_Navigators", "Navigator", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Navigator), "Navigator1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.Navigator), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_Foundation1", "Foundation1", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Foundation), "VMS", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule1", "LEDModule1", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.LEDModule), "VMS", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_Pillar1", "Pillar1", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Pillar), "VMS", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_ElectronicPolice_Foundation", "Foundation", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Foundation), "ElectronicPolouse", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.ElectronicPolice), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_ElectronicPolice_Pillar", "Pillar", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Pillar), "ElectronicPolouse", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.ElectronicPolice), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_TrafficVideoSurveillance_Foundation", "Foundation", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Foundation), "TrafficVideoSurveillance", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.TrafficVideoSurveillance), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_TrafficVideoSurveillance_Pillar", "Pillar", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Pillar), "TrafficVideoSurveillance", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.TrafficVideoSurveillance), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_TrafficAndEventCollection_Foundation", "Foundation", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Foundation), "TrafficAndEventCollection", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.TrafficAndEventCollection), true)]
-[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_TrafficAndEventCollection_Pillar", "Pillar", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Pillar), "TrafficAndEventCollection", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.TrafficAndEventCollection), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_ElectronicPolice_Foundation", "Foundation", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Foundation), "ElectronicPolice", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.ElectronicPolice), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_ElectronicPolice_Pillar", "Pillar", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Pillar), "ElectronicPolice", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.ElectronicPolice), true)]
 [assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_ElectronicPolice_VideoSurveillance", "VideoSurveillance", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ProjectDesigner.Data.VideoSurveillance), "ElectronicPolice", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.ElectronicPolice), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_TrafficAndEventCollection_Foundation", "Foundation", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Foundation), "TrafficAndEventCollection", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.TrafficAndEventCollection), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_TrafficVideoSurveillance_Foundation", "Foundation", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Foundation), "TrafficVideoSurveillance", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.TrafficVideoSurveillance), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_TrafficAndEventCollection_Pillar", "Pillar", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Pillar), "TrafficAndEventCollection", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.TrafficAndEventCollection), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_TrafficVideoSurveillance_Pillar", "Pillar", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Pillar), "TrafficVideoSurveillance", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.TrafficVideoSurveillance), true)]
 [assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_TrafficVideoSurveillance_VideoSurveillance", "VideoSurveillance", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ProjectDesigner.Data.VideoSurveillance), "TrafficVideoSurveillance", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.TrafficVideoSurveillance), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_Navigators_Navigators", "Navigators", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Navigator), "Navigators1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.Navigator), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_Foundation", "Foundation", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Foundation), "VMS", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule", "LEDModule", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.LEDModule), "VMS", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
+[assembly: EdmRelationshipAttribute("ProjectDesigner.Data", "FK_VMS_Pillar", "Pillar", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectDesigner.Data.Pillar), "VMS", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectDesigner.Data.VMS), true)]
 
 #endregion
 
@@ -85,146 +85,50 @@ namespace ProjectDesigner.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<BizModule> BizModules
+        public ObjectSet<AccessorialMaterial> AccessorialMaterial
+        {
+            get
+            {
+                if ((_AccessorialMaterial == null))
+                {
+                    _AccessorialMaterial = base.CreateObjectSet<AccessorialMaterial>("AccessorialMaterial");
+                }
+                return _AccessorialMaterial;
+            }
+        }
+        private ObjectSet<AccessorialMaterial> _AccessorialMaterial;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<BizModules> BizModules
         {
             get
             {
                 if ((_BizModules == null))
                 {
-                    _BizModules = base.CreateObjectSet<BizModule>("BizModules");
+                    _BizModules = base.CreateObjectSet<BizModules>("BizModules");
                 }
                 return _BizModules;
             }
         }
-        private ObjectSet<BizModule> _BizModules;
+        private ObjectSet<BizModules> _BizModules;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<File> Files
+        public ObjectSet<Coil> Coil
         {
             get
             {
-                if ((_Files == null))
+                if ((_Coil == null))
                 {
-                    _Files = base.CreateObjectSet<File>("Files");
+                    _Coil = base.CreateObjectSet<Coil>("Coil");
                 }
-                return _Files;
+                return _Coil;
             }
         }
-        private ObjectSet<File> _Files;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<Navigator> Navigators
-        {
-            get
-            {
-                if ((_Navigators == null))
-                {
-                    _Navigators = base.CreateObjectSet<Navigator>("Navigators");
-                }
-                return _Navigators;
-            }
-        }
-        private ObjectSet<Navigator> _Navigators;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<VMS> VMS
-        {
-            get
-            {
-                if ((_VMS == null))
-                {
-                    _VMS = base.CreateObjectSet<VMS>("VMS");
-                }
-                return _VMS;
-            }
-        }
-        private ObjectSet<VMS> _VMS;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<Project> Projects
-        {
-            get
-            {
-                if ((_Projects == null))
-                {
-                    _Projects = base.CreateObjectSet<Project>("Projects");
-                }
-                return _Projects;
-            }
-        }
-        private ObjectSet<Project> _Projects;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<Foundation> Foundations
-        {
-            get
-            {
-                if ((_Foundations == null))
-                {
-                    _Foundations = base.CreateObjectSet<Foundation>("Foundations");
-                }
-                return _Foundations;
-            }
-        }
-        private ObjectSet<Foundation> _Foundations;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<LEDModule> LEDModules
-        {
-            get
-            {
-                if ((_LEDModules == null))
-                {
-                    _LEDModules = base.CreateObjectSet<LEDModule>("LEDModules");
-                }
-                return _LEDModules;
-            }
-        }
-        private ObjectSet<LEDModule> _LEDModules;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<Pillar> Pillars
-        {
-            get
-            {
-                if ((_Pillars == null))
-                {
-                    _Pillars = base.CreateObjectSet<Pillar>("Pillars");
-                }
-                return _Pillars;
-            }
-        }
-        private ObjectSet<Pillar> _Pillars;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<ProjectEquipment> ProjectEquipments
-        {
-            get
-            {
-                if ((_ProjectEquipments == null))
-                {
-                    _ProjectEquipments = base.CreateObjectSet<ProjectEquipment>("ProjectEquipments");
-                }
-                return _ProjectEquipments;
-            }
-        }
-        private ObjectSet<ProjectEquipment> _ProjectEquipments;
+        private ObjectSet<Coil> _Coil;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -245,189 +149,301 @@ namespace ProjectDesigner.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<TrafficVideoSurveillance> TrafficVideoSurveillances
+        public ObjectSet<File> Files
         {
             get
             {
-                if ((_TrafficVideoSurveillances == null))
+                if ((_Files == null))
                 {
-                    _TrafficVideoSurveillances = base.CreateObjectSet<TrafficVideoSurveillance>("TrafficVideoSurveillances");
+                    _Files = base.CreateObjectSet<File>("Files");
                 }
-                return _TrafficVideoSurveillances;
+                return _Files;
             }
         }
-        private ObjectSet<TrafficVideoSurveillance> _TrafficVideoSurveillances;
+        private ObjectSet<File> _Files;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<TrafficAndEventCollection> TrafficAndEventCollections
+        public ObjectSet<Foundation> Foundation
         {
             get
             {
-                if ((_TrafficAndEventCollections == null))
+                if ((_Foundation == null))
                 {
-                    _TrafficAndEventCollections = base.CreateObjectSet<TrafficAndEventCollection>("TrafficAndEventCollections");
+                    _Foundation = base.CreateObjectSet<Foundation>("Foundation");
                 }
-                return _TrafficAndEventCollections;
+                return _Foundation;
             }
         }
-        private ObjectSet<TrafficAndEventCollection> _TrafficAndEventCollections;
+        private ObjectSet<Foundation> _Foundation;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Coil> Coils
+        public ObjectSet<Geomagnetic> Geomagnetic
         {
             get
             {
-                if ((_Coils == null))
+                if ((_Geomagnetic == null))
                 {
-                    _Coils = base.CreateObjectSet<Coil>("Coils");
+                    _Geomagnetic = base.CreateObjectSet<Geomagnetic>("Geomagnetic");
                 }
-                return _Coils;
+                return _Geomagnetic;
             }
         }
-        private ObjectSet<Coil> _Coils;
+        private ObjectSet<Geomagnetic> _Geomagnetic;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Geomagnetic> Geomagnetics
+        public ObjectSet<LEDModule> LEDModule
         {
             get
             {
-                if ((_Geomagnetics == null))
+                if ((_LEDModule == null))
                 {
-                    _Geomagnetics = base.CreateObjectSet<Geomagnetic>("Geomagnetics");
+                    _LEDModule = base.CreateObjectSet<LEDModule>("LEDModule");
                 }
-                return _Geomagnetics;
+                return _LEDModule;
             }
         }
-        private ObjectSet<Geomagnetic> _Geomagnetics;
+        private ObjectSet<LEDModule> _LEDModule;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Microwave> Microwaves
+        public ObjectSet<Microwave> Microwave
         {
             get
             {
-                if ((_Microwaves == null))
+                if ((_Microwave == null))
                 {
-                    _Microwaves = base.CreateObjectSet<Microwave>("Microwaves");
+                    _Microwave = base.CreateObjectSet<Microwave>("Microwave");
                 }
-                return _Microwaves;
+                return _Microwave;
             }
         }
-        private ObjectSet<Microwave> _Microwaves;
+        private ObjectSet<Microwave> _Microwave;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<RFID> RFIDs
+        public ObjectSet<Pillar> Pillar
         {
             get
             {
-                if ((_RFIDs == null))
+                if ((_Pillar == null))
                 {
-                    _RFIDs = base.CreateObjectSet<RFID>("RFIDs");
+                    _Pillar = base.CreateObjectSet<Pillar>("Pillar");
                 }
-                return _RFIDs;
+                return _Pillar;
             }
         }
-        private ObjectSet<RFID> _RFIDs;
+        private ObjectSet<Pillar> _Pillar;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<VideoSurveillance> VideoSurveillances
+        public ObjectSet<Project> Project
         {
             get
             {
-                if ((_VideoSurveillances == null))
+                if ((_Project == null))
                 {
-                    _VideoSurveillances = base.CreateObjectSet<VideoSurveillance>("VideoSurveillances");
+                    _Project = base.CreateObjectSet<Project>("Project");
                 }
-                return _VideoSurveillances;
+                return _Project;
             }
         }
-        private ObjectSet<VideoSurveillance> _VideoSurveillances;
+        private ObjectSet<Project> _Project;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<RFID> RFID
+        {
+            get
+            {
+                if ((_RFID == null))
+                {
+                    _RFID = base.CreateObjectSet<RFID>("RFID");
+                }
+                return _RFID;
+            }
+        }
+        private ObjectSet<RFID> _RFID;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<TrafficAndEventCollection> TrafficAndEventCollection
+        {
+            get
+            {
+                if ((_TrafficAndEventCollection == null))
+                {
+                    _TrafficAndEventCollection = base.CreateObjectSet<TrafficAndEventCollection>("TrafficAndEventCollection");
+                }
+                return _TrafficAndEventCollection;
+            }
+        }
+        private ObjectSet<TrafficAndEventCollection> _TrafficAndEventCollection;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<TrafficVideoSurveillance> TrafficVideoSurveillance
+        {
+            get
+            {
+                if ((_TrafficVideoSurveillance == null))
+                {
+                    _TrafficVideoSurveillance = base.CreateObjectSet<TrafficVideoSurveillance>("TrafficVideoSurveillance");
+                }
+                return _TrafficVideoSurveillance;
+            }
+        }
+        private ObjectSet<TrafficVideoSurveillance> _TrafficVideoSurveillance;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<VideoSurveillance> VideoSurveillance
+        {
+            get
+            {
+                if ((_VideoSurveillance == null))
+                {
+                    _VideoSurveillance = base.CreateObjectSet<VideoSurveillance>("VideoSurveillance");
+                }
+                return _VideoSurveillance;
+            }
+        }
+        private ObjectSet<VideoSurveillance> _VideoSurveillance;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Navigator> Navigators
+        {
+            get
+            {
+                if ((_Navigators == null))
+                {
+                    _Navigators = base.CreateObjectSet<Navigator>("Navigators");
+                }
+                return _Navigators;
+            }
+        }
+        private ObjectSet<Navigator> _Navigators;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<ConstructionMaterial> ConstructionMaterial
+        {
+            get
+            {
+                if ((_ConstructionMaterial == null))
+                {
+                    _ConstructionMaterial = base.CreateObjectSet<ConstructionMaterial>("ConstructionMaterial");
+                }
+                return _ConstructionMaterial;
+            }
+        }
+        private ObjectSet<ConstructionMaterial> _ConstructionMaterial;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Material> Material
+        {
+            get
+            {
+                if ((_Material == null))
+                {
+                    _Material = base.CreateObjectSet<Material>("Material");
+                }
+                return _Material;
+            }
+        }
+        private ObjectSet<Material> _Material;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<CenterEquipment> CenterEquipment
+        {
+            get
+            {
+                if ((_CenterEquipment == null))
+                {
+                    _CenterEquipment = base.CreateObjectSet<CenterEquipment>("CenterEquipment");
+                }
+                return _CenterEquipment;
+            }
+        }
+        private ObjectSet<CenterEquipment> _CenterEquipment;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<VMS> VMS
+        {
+            get
+            {
+                if ((_VMS == null))
+                {
+                    _VMS = base.CreateObjectSet<VMS>("VMS");
+                }
+                return _VMS;
+            }
+        }
+        private ObjectSet<VMS> _VMS;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<ProjectEquipment> ProjectEquipment
+        {
+            get
+            {
+                if ((_ProjectEquipment == null))
+                {
+                    _ProjectEquipment = base.CreateObjectSet<ProjectEquipment>("ProjectEquipment");
+                }
+                return _ProjectEquipment;
+            }
+        }
+        private ObjectSet<ProjectEquipment> _ProjectEquipment;
 
         #endregion
 
         #region AddTo Methods
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the AccessorialMaterial EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToAccessorialMaterial(AccessorialMaterial accessorialMaterial)
+        {
+            base.AddObject("AccessorialMaterial", accessorialMaterial);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the BizModules EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToBizModules(BizModule bizModule)
+        public void AddToBizModules(BizModules bizModules)
         {
-            base.AddObject("BizModules", bizModule);
+            base.AddObject("BizModules", bizModules);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the Files EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Coil EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToFiles(File file)
+        public void AddToCoil(Coil coil)
         {
-            base.AddObject("Files", file);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Navigators EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToNavigators(Navigator navigator)
-        {
-            base.AddObject("Navigators", navigator);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the VMS EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToVMS(VMS vMS)
-        {
-            base.AddObject("VMS", vMS);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Projects EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToProjects(Project project)
-        {
-            base.AddObject("Projects", project);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Foundations EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToFoundations(Foundation foundation)
-        {
-            base.AddObject("Foundations", foundation);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the LEDModules EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToLEDModules(LEDModule lEDModule)
-        {
-            base.AddObject("LEDModules", lEDModule);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Pillars EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToPillars(Pillar pillar)
-        {
-            base.AddObject("Pillars", pillar);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the ProjectEquipments EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToProjectEquipments(ProjectEquipment projectEquipment)
-        {
-            base.AddObject("ProjectEquipments", projectEquipment);
+            base.AddObject("Coil", coil);
         }
     
         /// <summary>
@@ -439,59 +455,139 @@ namespace ProjectDesigner.Data
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the TrafficVideoSurveillances EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Files EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToTrafficVideoSurveillances(TrafficVideoSurveillance trafficVideoSurveillance)
+        public void AddToFiles(File file)
         {
-            base.AddObject("TrafficVideoSurveillances", trafficVideoSurveillance);
+            base.AddObject("Files", file);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the TrafficAndEventCollections EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Foundation EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToTrafficAndEventCollections(TrafficAndEventCollection trafficAndEventCollection)
+        public void AddToFoundation(Foundation foundation)
         {
-            base.AddObject("TrafficAndEventCollections", trafficAndEventCollection);
+            base.AddObject("Foundation", foundation);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the Coils EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Geomagnetic EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToCoils(Coil coil)
+        public void AddToGeomagnetic(Geomagnetic geomagnetic)
         {
-            base.AddObject("Coils", coil);
+            base.AddObject("Geomagnetic", geomagnetic);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the Geomagnetics EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the LEDModule EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToGeomagnetics(Geomagnetic geomagnetic)
+        public void AddToLEDModule(LEDModule lEDModule)
         {
-            base.AddObject("Geomagnetics", geomagnetic);
+            base.AddObject("LEDModule", lEDModule);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the Microwaves EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Microwave EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToMicrowaves(Microwave microwave)
+        public void AddToMicrowave(Microwave microwave)
         {
-            base.AddObject("Microwaves", microwave);
+            base.AddObject("Microwave", microwave);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the RFIDs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Pillar EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToRFIDs(RFID rFID)
+        public void AddToPillar(Pillar pillar)
         {
-            base.AddObject("RFIDs", rFID);
+            base.AddObject("Pillar", pillar);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the VideoSurveillances EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Project EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToVideoSurveillances(VideoSurveillance videoSurveillance)
+        public void AddToProject(Project project)
         {
-            base.AddObject("VideoSurveillances", videoSurveillance);
+            base.AddObject("Project", project);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the RFID EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToRFID(RFID rFID)
+        {
+            base.AddObject("RFID", rFID);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the TrafficAndEventCollection EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToTrafficAndEventCollection(TrafficAndEventCollection trafficAndEventCollection)
+        {
+            base.AddObject("TrafficAndEventCollection", trafficAndEventCollection);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the TrafficVideoSurveillance EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToTrafficVideoSurveillance(TrafficVideoSurveillance trafficVideoSurveillance)
+        {
+            base.AddObject("TrafficVideoSurveillance", trafficVideoSurveillance);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the VideoSurveillance EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToVideoSurveillance(VideoSurveillance videoSurveillance)
+        {
+            base.AddObject("VideoSurveillance", videoSurveillance);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Navigators EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToNavigators(Navigator navigator)
+        {
+            base.AddObject("Navigators", navigator);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the ConstructionMaterial EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToConstructionMaterial(ConstructionMaterial constructionMaterial)
+        {
+            base.AddObject("ConstructionMaterial", constructionMaterial);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Material EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToMaterial(Material material)
+        {
+            base.AddObject("Material", material);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the CenterEquipment EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToCenterEquipment(CenterEquipment centerEquipment)
+        {
+            base.AddObject("CenterEquipment", centerEquipment);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the VMS EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToVMS(VMS vMS)
+        {
+            base.AddObject("VMS", vMS);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the ProjectEquipment EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToProjectEquipment(ProjectEquipment projectEquipment)
+        {
+            base.AddObject("ProjectEquipment", projectEquipment);
         }
 
         #endregion
@@ -505,26 +601,277 @@ namespace ProjectDesigner.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ProjectDesigner.Data", Name="BizModule")]
+    [EdmEntityTypeAttribute(NamespaceName="ProjectDesigner.Data", Name="AccessorialMaterial")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class BizModule : EntityObject
+    public partial class AccessorialMaterial : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new BizModule object.
+        /// Create a new AccessorialMaterial object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="type">Initial value of the Type property.</param>
+        public static AccessorialMaterial CreateAccessorialMaterial(global::System.String id, global::System.Int32 type)
+        {
+            AccessorialMaterial accessorialMaterial = new AccessorialMaterial();
+            accessorialMaterial.Id = id;
+            accessorialMaterial.Type = type;
+            return accessorialMaterial;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.String _Id;
+        partial void OnIdChanging(global::System.String value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> Price
+        {
+            get
+            {
+                return _Price;
+            }
+            set
+            {
+                OnPriceChanging(value);
+                ReportPropertyChanging("Price");
+                _Price = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Price");
+                OnPriceChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _Price;
+        partial void OnPriceChanging(Nullable<global::System.Decimal> value);
+        partial void OnPriceChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Brand
+        {
+            get
+            {
+                return _Brand;
+            }
+            set
+            {
+                OnBrandChanging(value);
+                ReportPropertyChanging("Brand");
+                _Brand = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Brand");
+                OnBrandChanged();
+            }
+        }
+        private global::System.String _Brand;
+        partial void OnBrandChanging(global::System.String value);
+        partial void OnBrandChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Type
+        {
+            get
+            {
+                return _Type;
+            }
+            set
+            {
+                OnTypeChanging(value);
+                ReportPropertyChanging("Type");
+                _Type = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Type");
+                OnTypeChanged();
+            }
+        }
+        private global::System.Int32 _Type;
+        partial void OnTypeChanging(global::System.Int32 value);
+        partial void OnTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String IconPath
+        {
+            get
+            {
+                return _IconPath;
+            }
+            set
+            {
+                OnIconPathChanging(value);
+                ReportPropertyChanging("IconPath");
+                _IconPath = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("IconPath");
+                OnIconPathChanged();
+            }
+        }
+        private global::System.String _IconPath;
+        partial void OnIconPathChanging(global::System.String value);
+        partial void OnIconPathChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ProductType
+        {
+            get
+            {
+                return _ProductType;
+            }
+            set
+            {
+                OnProductTypeChanging(value);
+                ReportPropertyChanging("ProductType");
+                _ProductType = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ProductType");
+                OnProductTypeChanged();
+            }
+        }
+        private global::System.String _ProductType;
+        partial void OnProductTypeChanging(global::System.String value);
+        partial void OnProductTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TechnicalParameters
+        {
+            get
+            {
+                return _TechnicalParameters;
+            }
+            set
+            {
+                OnTechnicalParametersChanging(value);
+                ReportPropertyChanging("TechnicalParameters");
+                _TechnicalParameters = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TechnicalParameters");
+                OnTechnicalParametersChanged();
+            }
+        }
+        private global::System.String _TechnicalParameters;
+        partial void OnTechnicalParametersChanging(global::System.String value);
+        partial void OnTechnicalParametersChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Unit
+        {
+            get
+            {
+                return _Unit;
+            }
+            set
+            {
+                OnUnitChanging(value);
+                ReportPropertyChanging("Unit");
+                _Unit = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Unit");
+                OnUnitChanged();
+            }
+        }
+        private global::System.String _Unit;
+        partial void OnUnitChanging(global::System.String value);
+        partial void OnUnitChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="ProjectDesigner.Data", Name="BizModules")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class BizModules : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new BizModules object.
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="name">Initial value of the Name property.</param>
         /// <param name="isProtected">Initial value of the IsProtected property.</param>
-        public static BizModule CreateBizModule(global::System.String id, global::System.String name, global::System.Boolean isProtected)
+        public static BizModules CreateBizModules(global::System.String id, global::System.String name, global::System.Boolean isProtected)
         {
-            BizModule bizModule = new BizModule();
-            bizModule.Id = id;
-            bizModule.Name = name;
-            bizModule.IsProtected = isProtected;
-            return bizModule;
+            BizModules bizModules = new BizModules();
+            bizModules.Id = id;
+            bizModules.Name = name;
+            bizModules.IsProtected = isProtected;
+            return bizModules;
         }
 
         #endregion
@@ -629,6 +976,307 @@ namespace ProjectDesigner.Data
         private global::System.Boolean _IsProtected;
         partial void OnIsProtectedChanging(global::System.Boolean value);
         partial void OnIsProtectedChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="ProjectDesigner.Data", Name="CenterEquipment")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class CenterEquipment : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new CenterEquipment object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="type">Initial value of the Type property.</param>
+        /// <param name="equipmentType">Initial value of the EquipmentType property.</param>
+        public static CenterEquipment CreateCenterEquipment(global::System.String id, global::System.Int32 type, global::System.Int32 equipmentType)
+        {
+            CenterEquipment centerEquipment = new CenterEquipment();
+            centerEquipment.Id = id;
+            centerEquipment.Type = type;
+            centerEquipment.EquipmentType = equipmentType;
+            return centerEquipment;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.String _Id;
+        partial void OnIdChanging(global::System.String value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> Price
+        {
+            get
+            {
+                return _Price;
+            }
+            set
+            {
+                OnPriceChanging(value);
+                ReportPropertyChanging("Price");
+                _Price = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Price");
+                OnPriceChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _Price;
+        partial void OnPriceChanging(Nullable<global::System.Decimal> value);
+        partial void OnPriceChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Brand
+        {
+            get
+            {
+                return _Brand;
+            }
+            set
+            {
+                OnBrandChanging(value);
+                ReportPropertyChanging("Brand");
+                _Brand = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Brand");
+                OnBrandChanged();
+            }
+        }
+        private global::System.String _Brand;
+        partial void OnBrandChanging(global::System.String value);
+        partial void OnBrandChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Type
+        {
+            get
+            {
+                return _Type;
+            }
+            set
+            {
+                OnTypeChanging(value);
+                ReportPropertyChanging("Type");
+                _Type = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Type");
+                OnTypeChanged();
+            }
+        }
+        private global::System.Int32 _Type;
+        partial void OnTypeChanging(global::System.Int32 value);
+        partial void OnTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String IconPath
+        {
+            get
+            {
+                return _IconPath;
+            }
+            set
+            {
+                OnIconPathChanging(value);
+                ReportPropertyChanging("IconPath");
+                _IconPath = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("IconPath");
+                OnIconPathChanged();
+            }
+        }
+        private global::System.String _IconPath;
+        partial void OnIconPathChanging(global::System.String value);
+        partial void OnIconPathChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ProductType
+        {
+            get
+            {
+                return _ProductType;
+            }
+            set
+            {
+                OnProductTypeChanging(value);
+                ReportPropertyChanging("ProductType");
+                _ProductType = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ProductType");
+                OnProductTypeChanged();
+            }
+        }
+        private global::System.String _ProductType;
+        partial void OnProductTypeChanging(global::System.String value);
+        partial void OnProductTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TechnicalParameters
+        {
+            get
+            {
+                return _TechnicalParameters;
+            }
+            set
+            {
+                OnTechnicalParametersChanging(value);
+                ReportPropertyChanging("TechnicalParameters");
+                _TechnicalParameters = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TechnicalParameters");
+                OnTechnicalParametersChanged();
+            }
+        }
+        private global::System.String _TechnicalParameters;
+        partial void OnTechnicalParametersChanging(global::System.String value);
+        partial void OnTechnicalParametersChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Unit
+        {
+            get
+            {
+                return _Unit;
+            }
+            set
+            {
+                OnUnitChanging(value);
+                ReportPropertyChanging("Unit");
+                _Unit = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Unit");
+                OnUnitChanged();
+            }
+        }
+        private global::System.String _Unit;
+        partial void OnUnitChanging(global::System.String value);
+        partial void OnUnitChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Double> Num
+        {
+            get
+            {
+                return _Num;
+            }
+            set
+            {
+                OnNumChanging(value);
+                ReportPropertyChanging("Num");
+                _Num = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Num");
+                OnNumChanged();
+            }
+        }
+        private Nullable<global::System.Double> _Num;
+        partial void OnNumChanging(Nullable<global::System.Double> value);
+        partial void OnNumChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 EquipmentType
+        {
+            get
+            {
+                return _EquipmentType;
+            }
+            set
+            {
+                OnEquipmentTypeChanging(value);
+                ReportPropertyChanging("EquipmentType");
+                _EquipmentType = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EquipmentType");
+                OnEquipmentTypeChanged();
+            }
+        }
+        private global::System.Int32 _EquipmentType;
+        partial void OnEquipmentTypeChanging(global::System.Int32 value);
+        partial void OnEquipmentTypeChanged();
 
         #endregion
 
@@ -854,6 +1502,257 @@ namespace ProjectDesigner.Data
         private Nullable<global::System.Int32> _Type;
         partial void OnTypeChanging(Nullable<global::System.Int32> value);
         partial void OnTypeChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="ProjectDesigner.Data", Name="ConstructionMaterial")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ConstructionMaterial : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new ConstructionMaterial object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="type">Initial value of the Type property.</param>
+        public static ConstructionMaterial CreateConstructionMaterial(global::System.String id, global::System.Int32 type)
+        {
+            ConstructionMaterial constructionMaterial = new ConstructionMaterial();
+            constructionMaterial.Id = id;
+            constructionMaterial.Type = type;
+            return constructionMaterial;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.String _Id;
+        partial void OnIdChanging(global::System.String value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> Price
+        {
+            get
+            {
+                return _Price;
+            }
+            set
+            {
+                OnPriceChanging(value);
+                ReportPropertyChanging("Price");
+                _Price = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Price");
+                OnPriceChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _Price;
+        partial void OnPriceChanging(Nullable<global::System.Decimal> value);
+        partial void OnPriceChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Brand
+        {
+            get
+            {
+                return _Brand;
+            }
+            set
+            {
+                OnBrandChanging(value);
+                ReportPropertyChanging("Brand");
+                _Brand = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Brand");
+                OnBrandChanged();
+            }
+        }
+        private global::System.String _Brand;
+        partial void OnBrandChanging(global::System.String value);
+        partial void OnBrandChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Type
+        {
+            get
+            {
+                return _Type;
+            }
+            set
+            {
+                OnTypeChanging(value);
+                ReportPropertyChanging("Type");
+                _Type = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Type");
+                OnTypeChanged();
+            }
+        }
+        private global::System.Int32 _Type;
+        partial void OnTypeChanging(global::System.Int32 value);
+        partial void OnTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String IconPath
+        {
+            get
+            {
+                return _IconPath;
+            }
+            set
+            {
+                OnIconPathChanging(value);
+                ReportPropertyChanging("IconPath");
+                _IconPath = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("IconPath");
+                OnIconPathChanged();
+            }
+        }
+        private global::System.String _IconPath;
+        partial void OnIconPathChanging(global::System.String value);
+        partial void OnIconPathChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ProductType
+        {
+            get
+            {
+                return _ProductType;
+            }
+            set
+            {
+                OnProductTypeChanging(value);
+                ReportPropertyChanging("ProductType");
+                _ProductType = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ProductType");
+                OnProductTypeChanged();
+            }
+        }
+        private global::System.String _ProductType;
+        partial void OnProductTypeChanging(global::System.String value);
+        partial void OnProductTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TechnicalParameters
+        {
+            get
+            {
+                return _TechnicalParameters;
+            }
+            set
+            {
+                OnTechnicalParametersChanging(value);
+                ReportPropertyChanging("TechnicalParameters");
+                _TechnicalParameters = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TechnicalParameters");
+                OnTechnicalParametersChanged();
+            }
+        }
+        private global::System.String _TechnicalParameters;
+        partial void OnTechnicalParametersChanging(global::System.String value);
+        partial void OnTechnicalParametersChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Unit
+        {
+            get
+            {
+                return _Unit;
+            }
+            set
+            {
+                OnUnitChanging(value);
+                ReportPropertyChanging("Unit");
+                _Unit = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Unit");
+                OnUnitChanged();
+            }
+        }
+        private global::System.String _Unit;
+        partial void OnUnitChanging(global::System.String value);
+        partial void OnUnitChanged();
 
         #endregion
 
@@ -1231,6 +2130,54 @@ namespace ProjectDesigner.Data
         private global::System.Int32 _VideoSurveillanceNum;
         partial void OnVideoSurveillanceNumChanging(global::System.Int32 value);
         partial void OnVideoSurveillanceNumChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String AccessorialMaterials
+        {
+            get
+            {
+                return _AccessorialMaterials;
+            }
+            set
+            {
+                OnAccessorialMaterialsChanging(value);
+                ReportPropertyChanging("AccessorialMaterials");
+                _AccessorialMaterials = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("AccessorialMaterials");
+                OnAccessorialMaterialsChanged();
+            }
+        }
+        private global::System.String _AccessorialMaterials;
+        partial void OnAccessorialMaterialsChanging(global::System.String value);
+        partial void OnAccessorialMaterialsChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ConstructionMaterials
+        {
+            get
+            {
+                return _ConstructionMaterials;
+            }
+            set
+            {
+                OnConstructionMaterialsChanging(value);
+                ReportPropertyChanging("ConstructionMaterials");
+                _ConstructionMaterials = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ConstructionMaterials");
+                OnConstructionMaterialsChanged();
+            }
+        }
+        private global::System.String _ConstructionMaterials;
+        partial void OnConstructionMaterialsChanging(global::System.String value);
+        partial void OnConstructionMaterialsChanged();
 
         #endregion
 
@@ -1817,18 +2764,18 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Foundation1", "VMS")]
-        public EntityCollection<VMS> VMS
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_ElectronicPolice_Foundation", "ElectronicPolice")]
+        public EntityCollection<ElectronicPolice> ElectronicPolice
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Foundation1", "VMS");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ElectronicPolice>("ProjectDesigner.Data.FK_ElectronicPolice_Foundation", "ElectronicPolice");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Foundation1", "VMS", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ElectronicPolice>("ProjectDesigner.Data.FK_ElectronicPolice_Foundation", "ElectronicPolice", value);
                 }
             }
         }
@@ -1839,18 +2786,18 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_ElectronicPolice_Foundation", "ElectronicPolouse")]
-        public EntityCollection<ElectronicPolice> ElectronicPolice
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_TrafficAndEventCollection_Foundation", "TrafficAndEventCollection")]
+        public EntityCollection<TrafficAndEventCollection> TrafficAndEventCollection
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ElectronicPolice>("ProjectDesigner.Data.FK_ElectronicPolice_Foundation", "ElectronicPolouse");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TrafficAndEventCollection>("ProjectDesigner.Data.FK_TrafficAndEventCollection_Foundation", "TrafficAndEventCollection");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ElectronicPolice>("ProjectDesigner.Data.FK_ElectronicPolice_Foundation", "ElectronicPolouse", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TrafficAndEventCollection>("ProjectDesigner.Data.FK_TrafficAndEventCollection_Foundation", "TrafficAndEventCollection", value);
                 }
             }
         }
@@ -1862,7 +2809,7 @@ namespace ProjectDesigner.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_TrafficVideoSurveillance_Foundation", "TrafficVideoSurveillance")]
-        public EntityCollection<TrafficVideoSurveillance> TrafficVideoSurveillances
+        public EntityCollection<TrafficVideoSurveillance> TrafficVideoSurveillance
         {
             get
             {
@@ -1883,18 +2830,18 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_TrafficAndEventCollection_Foundation", "TrafficAndEventCollection")]
-        public EntityCollection<TrafficAndEventCollection> TrafficAndEventCollections
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Foundation", "VMS")]
+        public EntityCollection<VMS> VMS
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TrafficAndEventCollection>("ProjectDesigner.Data.FK_TrafficAndEventCollection_Foundation", "TrafficAndEventCollection");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Foundation", "VMS");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TrafficAndEventCollection>("ProjectDesigner.Data.FK_TrafficAndEventCollection_Foundation", "TrafficAndEventCollection", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Foundation", "VMS", value);
                 }
             }
         }
@@ -2407,24 +3354,377 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule1", "VMS")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule", "VMS")]
         public EntityCollection<VMS> VMS
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_LEDModule1", "VMS");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_LEDModule", "VMS");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_LEDModule1", "VMS", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_LEDModule", "VMS", value);
                 }
             }
         }
 
         #endregion
 
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="ProjectDesigner.Data", Name="Material")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Material : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Material object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="type">Initial value of the Type property.</param>
+        /// <param name="equipmentType">Initial value of the EquipmentType property.</param>
+        /// <param name="parentId">Initial value of the ParentId property.</param>
+        /// <param name="materialId">Initial value of the MaterialId property.</param>
+        public static Material CreateMaterial(global::System.String id, global::System.Int32 type, global::System.Int32 equipmentType, global::System.String parentId, global::System.String materialId)
+        {
+            Material material = new Material();
+            material.Id = id;
+            material.Type = type;
+            material.EquipmentType = equipmentType;
+            material.ParentId = parentId;
+            material.MaterialId = materialId;
+            return material;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.String _Id;
+        partial void OnIdChanging(global::System.String value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> Price
+        {
+            get
+            {
+                return _Price;
+            }
+            set
+            {
+                OnPriceChanging(value);
+                ReportPropertyChanging("Price");
+                _Price = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Price");
+                OnPriceChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _Price;
+        partial void OnPriceChanging(Nullable<global::System.Decimal> value);
+        partial void OnPriceChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Brand
+        {
+            get
+            {
+                return _Brand;
+            }
+            set
+            {
+                OnBrandChanging(value);
+                ReportPropertyChanging("Brand");
+                _Brand = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Brand");
+                OnBrandChanged();
+            }
+        }
+        private global::System.String _Brand;
+        partial void OnBrandChanging(global::System.String value);
+        partial void OnBrandChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Type
+        {
+            get
+            {
+                return _Type;
+            }
+            set
+            {
+                OnTypeChanging(value);
+                ReportPropertyChanging("Type");
+                _Type = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Type");
+                OnTypeChanged();
+            }
+        }
+        private global::System.Int32 _Type;
+        partial void OnTypeChanging(global::System.Int32 value);
+        partial void OnTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String IconPath
+        {
+            get
+            {
+                return _IconPath;
+            }
+            set
+            {
+                OnIconPathChanging(value);
+                ReportPropertyChanging("IconPath");
+                _IconPath = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("IconPath");
+                OnIconPathChanged();
+            }
+        }
+        private global::System.String _IconPath;
+        partial void OnIconPathChanging(global::System.String value);
+        partial void OnIconPathChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ProductType
+        {
+            get
+            {
+                return _ProductType;
+            }
+            set
+            {
+                OnProductTypeChanging(value);
+                ReportPropertyChanging("ProductType");
+                _ProductType = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ProductType");
+                OnProductTypeChanged();
+            }
+        }
+        private global::System.String _ProductType;
+        partial void OnProductTypeChanging(global::System.String value);
+        partial void OnProductTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TechnicalParameters
+        {
+            get
+            {
+                return _TechnicalParameters;
+            }
+            set
+            {
+                OnTechnicalParametersChanging(value);
+                ReportPropertyChanging("TechnicalParameters");
+                _TechnicalParameters = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TechnicalParameters");
+                OnTechnicalParametersChanged();
+            }
+        }
+        private global::System.String _TechnicalParameters;
+        partial void OnTechnicalParametersChanging(global::System.String value);
+        partial void OnTechnicalParametersChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Unit
+        {
+            get
+            {
+                return _Unit;
+            }
+            set
+            {
+                OnUnitChanging(value);
+                ReportPropertyChanging("Unit");
+                _Unit = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Unit");
+                OnUnitChanged();
+            }
+        }
+        private global::System.String _Unit;
+        partial void OnUnitChanging(global::System.String value);
+        partial void OnUnitChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Double> Num
+        {
+            get
+            {
+                return _Num;
+            }
+            set
+            {
+                OnNumChanging(value);
+                ReportPropertyChanging("Num");
+                _Num = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Num");
+                OnNumChanged();
+            }
+        }
+        private Nullable<global::System.Double> _Num;
+        partial void OnNumChanging(Nullable<global::System.Double> value);
+        partial void OnNumChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 EquipmentType
+        {
+            get
+            {
+                return _EquipmentType;
+            }
+            set
+            {
+                OnEquipmentTypeChanging(value);
+                ReportPropertyChanging("EquipmentType");
+                _EquipmentType = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EquipmentType");
+                OnEquipmentTypeChanged();
+            }
+        }
+        private global::System.Int32 _EquipmentType;
+        partial void OnEquipmentTypeChanging(global::System.Int32 value);
+        partial void OnEquipmentTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ParentId
+        {
+            get
+            {
+                return _ParentId;
+            }
+            set
+            {
+                OnParentIdChanging(value);
+                ReportPropertyChanging("ParentId");
+                _ParentId = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ParentId");
+                OnParentIdChanged();
+            }
+        }
+        private global::System.String _ParentId;
+        partial void OnParentIdChanging(global::System.String value);
+        partial void OnParentIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String MaterialId
+        {
+            get
+            {
+                return _MaterialId;
+            }
+            set
+            {
+                OnMaterialIdChanging(value);
+                ReportPropertyChanging("MaterialId");
+                _MaterialId = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("MaterialId");
+                OnMaterialIdChanged();
+            }
+        }
+        private global::System.String _MaterialId;
+        partial void OnMaterialIdChanging(global::System.String value);
+        partial void OnMaterialIdChanged();
+
+        #endregion
+
+    
     }
     
     /// <summary>
@@ -2933,18 +4233,18 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_Navigators_Navigators", "Navigator1")]
-        public EntityCollection<Navigator> ChildNavigators
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_Navigators_Navigators", "Navigators1")]
+        public EntityCollection<Navigator> Navigators1
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigator1");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigators1");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigator1", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigators1", value);
                 }
             }
         }
@@ -2955,16 +4255,16 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_Navigators_Navigators", "Navigator")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_Navigators_Navigators", "Navigators")]
         public Navigator Parent
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigator").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigators").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigator").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigators").Value = value;
             }
         }
         /// <summary>
@@ -2976,13 +4276,13 @@ namespace ProjectDesigner.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigator");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigators");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigator", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Navigator>("ProjectDesigner.Data.FK_Navigators_Navigators", "Navigators", value);
                 }
             }
         }
@@ -3318,18 +4618,18 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Pillar1", "VMS")]
-        public EntityCollection<VMS> VMS
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_ElectronicPolice_Pillar", "ElectronicPolice")]
+        public EntityCollection<ElectronicPolice> ElectronicPolice
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Pillar1", "VMS");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ElectronicPolice>("ProjectDesigner.Data.FK_ElectronicPolice_Pillar", "ElectronicPolice");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Pillar1", "VMS", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ElectronicPolice>("ProjectDesigner.Data.FK_ElectronicPolice_Pillar", "ElectronicPolice", value);
                 }
             }
         }
@@ -3340,18 +4640,18 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_ElectronicPolice_Pillar", "ElectronicPolouse")]
-        public EntityCollection<ElectronicPolice> ElectronicPolice
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_TrafficAndEventCollection_Pillar", "TrafficAndEventCollection")]
+        public EntityCollection<TrafficAndEventCollection> TrafficAndEventCollection
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ElectronicPolice>("ProjectDesigner.Data.FK_ElectronicPolice_Pillar", "ElectronicPolouse");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TrafficAndEventCollection>("ProjectDesigner.Data.FK_TrafficAndEventCollection_Pillar", "TrafficAndEventCollection");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ElectronicPolice>("ProjectDesigner.Data.FK_ElectronicPolice_Pillar", "ElectronicPolouse", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TrafficAndEventCollection>("ProjectDesigner.Data.FK_TrafficAndEventCollection_Pillar", "TrafficAndEventCollection", value);
                 }
             }
         }
@@ -3363,7 +4663,7 @@ namespace ProjectDesigner.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_TrafficVideoSurveillance_Pillar", "TrafficVideoSurveillance")]
-        public EntityCollection<TrafficVideoSurveillance> TrafficVideoSurveillances
+        public EntityCollection<TrafficVideoSurveillance> TrafficVideoSurveillance
         {
             get
             {
@@ -3384,18 +4684,18 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_TrafficAndEventCollection_Pillar", "TrafficAndEventCollection")]
-        public EntityCollection<TrafficAndEventCollection> TrafficAndEventCollections
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Pillar", "VMS")]
+        public EntityCollection<VMS> VMS
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TrafficAndEventCollection>("ProjectDesigner.Data.FK_TrafficAndEventCollection_Pillar", "TrafficAndEventCollection");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Pillar", "VMS");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TrafficAndEventCollection>("ProjectDesigner.Data.FK_TrafficAndEventCollection_Pillar", "TrafficAndEventCollection", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VMS>("ProjectDesigner.Data.FK_VMS_Pillar", "VMS", value);
                 }
             }
         }
@@ -3503,6 +4803,30 @@ namespace ProjectDesigner.Data
         private Nullable<global::System.Decimal> _Price;
         partial void OnPriceChanging(Nullable<global::System.Decimal> value);
         partial void OnPriceChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> Taxes
+        {
+            get
+            {
+                return _Taxes;
+            }
+            set
+            {
+                OnTaxesChanging(value);
+                ReportPropertyChanging("Taxes");
+                _Taxes = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Taxes");
+                OnTaxesChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _Taxes;
+        partial void OnTaxesChanging(Nullable<global::System.Decimal> value);
+        partial void OnTaxesChanged();
 
         #endregion
 
@@ -3525,12 +4849,14 @@ namespace ProjectDesigner.Data
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="equipmentType">Initial value of the EquipmentType property.</param>
         /// <param name="name">Initial value of the Name property.</param>
-        public static ProjectEquipment CreateProjectEquipment(global::System.String id, global::System.Int32 equipmentType, global::System.String name)
+        /// <param name="num">Initial value of the Num property.</param>
+        public static ProjectEquipment CreateProjectEquipment(global::System.String id, global::System.Int32 equipmentType, global::System.String name, global::System.Double num)
         {
             ProjectEquipment projectEquipment = new ProjectEquipment();
             projectEquipment.Id = id;
             projectEquipment.EquipmentType = equipmentType;
             projectEquipment.Name = name;
+            projectEquipment.Num = num;
             return projectEquipment;
         }
 
@@ -3780,6 +5106,30 @@ namespace ProjectDesigner.Data
         private global::System.String _Unit;
         partial void OnUnitChanging(global::System.String value);
         partial void OnUnitChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Double Num
+        {
+            get
+            {
+                return _Num;
+            }
+            set
+            {
+                OnNumChanging(value);
+                ReportPropertyChanging("Num");
+                _Num = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Num");
+                OnNumChanged();
+            }
+        }
+        private global::System.Double _Num;
+        partial void OnNumChanging(global::System.Double value);
+        partial void OnNumChanged();
 
         #endregion
 
@@ -4408,6 +5758,54 @@ namespace ProjectDesigner.Data
         private global::System.Int32 _TrafficAndEventCollectionEquipmentType;
         partial void OnTrafficAndEventCollectionEquipmentTypeChanging(global::System.Int32 value);
         partial void OnTrafficAndEventCollectionEquipmentTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String AccessorialMaterials
+        {
+            get
+            {
+                return _AccessorialMaterials;
+            }
+            set
+            {
+                OnAccessorialMaterialsChanging(value);
+                ReportPropertyChanging("AccessorialMaterials");
+                _AccessorialMaterials = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("AccessorialMaterials");
+                OnAccessorialMaterialsChanged();
+            }
+        }
+        private global::System.String _AccessorialMaterials;
+        partial void OnAccessorialMaterialsChanging(global::System.String value);
+        partial void OnAccessorialMaterialsChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ConstructionMaterials
+        {
+            get
+            {
+                return _ConstructionMaterials;
+            }
+            set
+            {
+                OnConstructionMaterialsChanging(value);
+                ReportPropertyChanging("ConstructionMaterials");
+                _ConstructionMaterials = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ConstructionMaterials");
+                OnConstructionMaterialsChanged();
+            }
+        }
+        private global::System.String _ConstructionMaterials;
+        partial void OnConstructionMaterialsChanging(global::System.String value);
+        partial void OnConstructionMaterialsChanged();
 
         #endregion
 
@@ -4839,6 +6237,54 @@ namespace ProjectDesigner.Data
         private global::System.String _VideoSurveillanceId;
         partial void OnVideoSurveillanceIdChanging(global::System.String value);
         partial void OnVideoSurveillanceIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String AccessorialMaterials
+        {
+            get
+            {
+                return _AccessorialMaterials;
+            }
+            set
+            {
+                OnAccessorialMaterialsChanging(value);
+                ReportPropertyChanging("AccessorialMaterials");
+                _AccessorialMaterials = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("AccessorialMaterials");
+                OnAccessorialMaterialsChanged();
+            }
+        }
+        private global::System.String _AccessorialMaterials;
+        partial void OnAccessorialMaterialsChanging(global::System.String value);
+        partial void OnAccessorialMaterialsChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ConstructionMaterials
+        {
+            get
+            {
+                return _ConstructionMaterials;
+            }
+            set
+            {
+                OnConstructionMaterialsChanging(value);
+                ReportPropertyChanging("ConstructionMaterials");
+                _ConstructionMaterials = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ConstructionMaterials");
+                OnConstructionMaterialsChanged();
+            }
+        }
+        private global::System.String _ConstructionMaterials;
+        partial void OnConstructionMaterialsChanging(global::System.String value);
+        partial void OnConstructionMaterialsChanged();
 
         #endregion
 
@@ -5293,7 +6739,7 @@ namespace ProjectDesigner.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_TrafficVideoSurveillance_VideoSurveillance", "TrafficVideoSurveillance")]
-        public EntityCollection<TrafficVideoSurveillance> TrafficVideoSurveillances
+        public EntityCollection<TrafficVideoSurveillance> TrafficVideoSurveillance
         {
             get
             {
@@ -5537,7 +6983,7 @@ namespace ProjectDesigner.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> ModuleCount
+        public Nullable<global::System.Double> ModuleCount
         {
             get
             {
@@ -5552,8 +6998,8 @@ namespace ProjectDesigner.Data
                 OnModuleCountChanged();
             }
         }
-        private Nullable<global::System.Int32> _ModuleCount;
-        partial void OnModuleCountChanging(Nullable<global::System.Int32> value);
+        private Nullable<global::System.Double> _ModuleCount;
+        partial void OnModuleCountChanging(Nullable<global::System.Double> value);
         partial void OnModuleCountChanged();
     
         /// <summary>
@@ -5747,6 +7193,54 @@ namespace ProjectDesigner.Data
         private global::System.String _Unit;
         partial void OnUnitChanging(global::System.String value);
         partial void OnUnitChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String AccessorialMaterials
+        {
+            get
+            {
+                return _AccessorialMaterials;
+            }
+            set
+            {
+                OnAccessorialMaterialsChanging(value);
+                ReportPropertyChanging("AccessorialMaterials");
+                _AccessorialMaterials = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("AccessorialMaterials");
+                OnAccessorialMaterialsChanged();
+            }
+        }
+        private global::System.String _AccessorialMaterials;
+        partial void OnAccessorialMaterialsChanging(global::System.String value);
+        partial void OnAccessorialMaterialsChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ConstructionMaterials
+        {
+            get
+            {
+                return _ConstructionMaterials;
+            }
+            set
+            {
+                OnConstructionMaterialsChanging(value);
+                ReportPropertyChanging("ConstructionMaterials");
+                _ConstructionMaterials = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ConstructionMaterials");
+                OnConstructionMaterialsChanged();
+            }
+        }
+        private global::System.String _ConstructionMaterials;
+        partial void OnConstructionMaterialsChanging(global::System.String value);
+        partial void OnConstructionMaterialsChanged();
 
         #endregion
 
@@ -5759,16 +7253,16 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Foundation1", "Foundation1")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Foundation", "Foundation")]
         public Foundation Foundation
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation1", "Foundation1").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation", "Foundation").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation1", "Foundation1").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation", "Foundation").Value = value;
             }
         }
         /// <summary>
@@ -5780,13 +7274,13 @@ namespace ProjectDesigner.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation1", "Foundation1");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation", "Foundation");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation1", "Foundation1", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Foundation>("ProjectDesigner.Data.FK_VMS_Foundation", "Foundation", value);
                 }
             }
         }
@@ -5797,16 +7291,16 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule1", "LEDModule1")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_LEDModule", "LEDModule")]
         public LEDModule LEDModule
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule1", "LEDModule1").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule", "LEDModule").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule1", "LEDModule1").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule", "LEDModule").Value = value;
             }
         }
         /// <summary>
@@ -5818,13 +7312,13 @@ namespace ProjectDesigner.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule1", "LEDModule1");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule", "LEDModule");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule1", "LEDModule1", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LEDModule>("ProjectDesigner.Data.FK_VMS_LEDModule", "LEDModule", value);
                 }
             }
         }
@@ -5835,16 +7329,16 @@ namespace ProjectDesigner.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Pillar1", "Pillar1")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectDesigner.Data", "FK_VMS_Pillar", "Pillar")]
         public Pillar Pillar
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar1", "Pillar1").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar", "Pillar").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar1", "Pillar1").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar", "Pillar").Value = value;
             }
         }
         /// <summary>
@@ -5856,13 +7350,13 @@ namespace ProjectDesigner.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar1", "Pillar1");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar", "Pillar");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar1", "Pillar1", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Pillar>("ProjectDesigner.Data.FK_VMS_Pillar", "Pillar", value);
                 }
             }
         }

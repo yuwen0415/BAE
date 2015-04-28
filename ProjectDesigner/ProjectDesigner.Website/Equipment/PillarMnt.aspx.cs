@@ -33,7 +33,7 @@ namespace ProjectDesigner.Website.Equipment
         /// <returns></returns>
         protected override System.Collections.IEnumerable FetchData(string tableName, string[] orderby = null)
         {
-            var list = this.EntityContext.Value.SearchPillar();
+            var list = this.EntityContext.Value.SearchPillars();
             if (this.txtName.Text.HasValue())
             {
                 list.Where(i => i.Name.Contains(this.txtName.Text.Trim()));
@@ -47,7 +47,8 @@ namespace ProjectDesigner.Website.Equipment
                     Type = i.Type == null ? "" : i.Type.ToString(),
                     i.Price,
                     i.Length,
-                    i.Height
+                    i.Height,
+                    i.Brand
                 });
         }
 

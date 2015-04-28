@@ -65,8 +65,10 @@ namespace ProjectDesigner.Website.Equipment
                 this.txtPrice.Text = this.EditModel.Price.ToString();
                 this.txtSizeHeight.Text = this.EditModel.Size == null ? "" : this.EditModel.Size.Length.ToString();
                 this.txtSizeWidth.Text = this.EditModel.Size == null ? "" : this.EditModel.Size.Width.ToString();
-
-                this.DropDownListStandard.SelectedValue = this.EditModel.Standard.ToString();
+                this.txtProductType.Text = this.EditModel.ProductType;
+                this.txtTechnicalParameters.Text = this.EditModel.TechnicalParameters;
+                this.txtUnit.Text = this.EditModel.Unit;
+                this.DropDownListStandard.SelectedIndex = (int)this.EditModel.Standard;
 
             }
         }
@@ -95,6 +97,10 @@ namespace ProjectDesigner.Website.Equipment
                 };
             }
             this.EditModel.Standard = (LedStandard)this.DropDownListStandard.SelectedIndex;
+
+            this.EditModel.ProductType = this.txtProductType.Text;
+            this.EditModel.TechnicalParameters = this.txtTechnicalParameters.Text;
+            this.EditModel.Unit = this.txtUnit.Text;
         }
 
 
@@ -125,7 +131,7 @@ namespace ProjectDesigner.Website.Equipment
                     Size = this.EditModel.Size == null ? "" : this.EditModel.Size.Length + "," + this.EditModel.Size.Width,
                     Price = this.EditModel.Price,
                     Brand = this.EditModel.Brand,
-                    LedStandard = this.EditModel.Standard.ToString()
+                    Standard = this.EditModel.Standard.ToString()
                 };
             }
             catch

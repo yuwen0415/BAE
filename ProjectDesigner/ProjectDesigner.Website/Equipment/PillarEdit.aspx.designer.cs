@@ -67,6 +67,33 @@ namespace ProjectDesigner.Website.Equipment {
         protected global::System.Web.UI.WebControls.TextBox txtHeight;
         
         /// <summary>
+        /// txtBrand control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBrand;
+        
+        /// <summary>
+        /// txtProductType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtProductType;
+        
+        /// <summary>
+        /// txtTechnicalParameters control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTechnicalParameters;
+        
+        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>

@@ -45,17 +45,20 @@
                 <th class="word-auto" data-field="Name" data-sorting="fixed">
                     <a href="#">设备名称</a>
                 </th>
-                <th class="word-4" data-field="Size" data-sorting="fixed">
-                    <a href="#">尺寸</a>
+                <th class="word-4" data-field="Diameter" data-sorting="fixed">
+                    <a href="#">杆体直径</a>
+                </th>
+                <th class="word-4" data-field="Length" data-sorting="fixed">
+                    <a href="#">横杆长度</a>
+                </th>
+                <th class="word-4" data-field="Height" data-sorting="fixed">
+                    <a href="#">立杆高度</a>
                 </th>
                 <th class="word-4" data-field="Price" data-sorting="fixed">
                     <a href="#">价格</a>
                 </th>
-                <th class="word-auto" data-field="Brand" data-sorting="fixed">
-                    <a href="#">品牌</a>
-                </th>
-                <th class="word-4" data-field="Standard" data-sorting="fixed">
-                    <a href="#">显示模组类型</a>
+                <th class="word-auto" data-field="Type" data-sorting="fixed">
+                    <a href="#">立杆类型</a>
                 </th>
             </tr>
         </thead>

@@ -23,6 +23,8 @@ namespace ProjectDesigner.TrafficAndEventCollection
         /// </summary>
         ITrafficAndEventCollectionEquipment TrafficAndEventCollectionEquipment { get; set; }
 
+        TrafficAndEventCollectionEquipmentType TrafficAndEventCollectionEquipmentType { get; set; }
+
         IFoundation Foundation { get; set; }
         IPillar Pillar { get; set; }
 
@@ -30,5 +32,9 @@ namespace ProjectDesigner.TrafficAndEventCollection
         /// 设备数量
         /// </summary>
         int TrafficAndEventCollectionEquipmentNum { get; set; }
+
+        List<MaterialOfEquipment> AccessorialMaterials { get; set; }
+
+        List<MaterialOfEquipment> ConstructionMaterials { get; set; }
     }
 }

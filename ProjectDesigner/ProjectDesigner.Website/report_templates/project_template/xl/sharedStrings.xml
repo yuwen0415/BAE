@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" count="209" uniqueCount="144">
+  <si>
+    <t>序号</t>
+  </si>
+  <si>
+    <t>名称</t>
+  </si>
+  <si>
+    <t>品牌</t>
+  </si>
+  <si>
+    <t>型号</t>
+  </si>
+  <si>
+    <t>主要技术参数</t>
+  </si>
+  <si>
+    <t>单位</t>
+  </si>
+  <si>
+    <t>数量</t>
+  </si>
+  <si>
+    <t>单价</t>
+  </si>
+  <si>
+    <t>小计</t>
+  </si>
+  <si>
+    <t>设备及材料</t>
+  </si>
+  <si>
+    <t>施工费用（新建）</t>
+  </si>
+  <si>
+    <t>A</t>
+  </si>
+  <si>
+    <t>以上合计:</t>
+  </si>
+  <si>
+    <t>项目名称</t>
+  </si>
+  <si>
+    <t>描述</t>
+  </si>
+  <si>
+    <t>备注</t>
+  </si>
+  <si>
+    <t>中心系统</t>
+  </si>
+  <si>
+    <t>以上合计：</t>
+  </si>
+  <si>
+    <t>~field(para.Title)~交通信息发布系统清单</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.Title)~项目</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>交通流量事件采集系统</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>交通诱导屏系统</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>交通视频监控系统</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>电子警察系统</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>其他系统</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>费用</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.VMSPrice)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.TrafficVideoSurveillanceContent)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.TrafficAndEventCollectionContent)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.ElectronicPoliceContent)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.TrafficAndEventCollectionPrice)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.ElectronicPolicePrice)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.OtherPrice)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.CenterPrice)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.TotalPrice)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>A</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>B</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>C</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>以上合计：</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.Price)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>总计(A+B)：</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.VMSContent)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>税费A*~field(para.Taxes)~%:</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.TaxesPrice)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.TrafficVideoSurveillanceContent)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.OtherContent)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.CenterContent)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~table(ElectronicPoliceEquipments)~~field(ElectronicPoliceEquipments.RowNum)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipments.Name)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipments.Brand)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipments.ProductType)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipments.TechnicalParameters)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipments.Unit)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipments.Num)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipments.Price)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipments.SubTotal)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.Title)~电子警察系统</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~table(ElectronicPoliceEquipmentsC)~~field(ElectronicPoliceEquipmentsC.RowNum)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipmentsC.Name)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipmentsC.Brand)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipmentsC.ProductType)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipmentsC.TechnicalParameters)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipmentsC.Unit)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipmentsC.Num)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipmentsC.Price)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(ElectronicPoliceEquipmentsC.SubTotal)~</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(para.ElectronicPolicePrice)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~table(VMSEquipments)~~field(VMSEquipments.RowNum)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipments.Name)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipments.Brand)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipments.ProductType)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipments.TechnicalParameters)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipments.Unit)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipments.Num)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipments.Price)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipments.SubTotal)~</t>
+  </si>
+  <si>
+    <t>~table(VMSEquipmentsC)~~field(VMSEquipmentsC.RowNum)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipmentsC.Name)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipmentsC.Brand)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipmentsC.ProductType)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipmentsC.TechnicalParameters)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipmentsC.Unit)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipmentsC.Num)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipmentsC.Price)~</t>
+  </si>
+  <si>
+    <t>~field(VMSEquipmentsC.SubTotal)~</t>
+  </si>
+  <si>
+    <t>~field(para.Title)~交通流量事件采集系统</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~table(TrafficAndEventCollectionEquipments)~~field(TrafficAndEventCollectionEquipments.RowNum)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipments.Name)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipments.Brand)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipments.ProductType)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipments.TechnicalParameters)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipments.Unit)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipments.Num)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipments.Price)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipments.SubTotal)~</t>
+  </si>
+  <si>
+    <t>~table(TrafficAndEventCollectionEquipmentsC)~~field(TrafficAndEventCollectionEquipmentsC.RowNum)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipmentsC.Name)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipmentsC.Brand)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipmentsC.ProductType)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipmentsC.TechnicalParameters)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipmentsC.Unit)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipmentsC.Num)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipmentsC.Price)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficAndEventCollectionEquipmentsC.SubTotal)~</t>
+  </si>
+  <si>
+    <t>~field(para.Title)~交通视频监控系统清单</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~table(TrafficVideoSurveillancEquipments)~~field(TrafficVideoSurveillancEquipments.RowNum)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipments.Name)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipments.Brand)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipments.ProductType)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipments.TechnicalParameters)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipments.Unit)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipments.Num)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipments.Price)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipments.SubTotal)~</t>
+  </si>
+  <si>
+    <t>~table(TrafficVideoSurveillancEquipmentsC)~~field(TrafficVideoSurveillancEquipmentsC.RowNum)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipmentsC.Name)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipmentsC.Brand)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipmentsC.ProductType)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipmentsC.TechnicalParameters)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipmentsC.Unit)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipmentsC.Num)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipmentsC.Price)~</t>
+  </si>
+  <si>
+    <t>~field(TrafficVideoSurveillancEquipmentsC.SubTotal)~</t>
+  </si>
+  <si>
+    <t>~field(para.TrafficVideoSurveillancePrice)~</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~table(OtherEquipments)~~field(OtherEquipments.RowNum)~</t>
+  </si>
+  <si>
+    <t>~field(OtherEquipments.Name)~</t>
+  </si>
+  <si>
+    <t>~field(OtherEquipments.Brand)~</t>
+  </si>
+  <si>
+    <t>~field(OtherEquipments.ProductType)~</t>
+  </si>
+  <si>
+    <t>~field(OtherEquipments.TechnicalParameters)~</t>
+  </si>
+  <si>
+    <t>~field(OtherEquipments.Unit)~</t>
+  </si>
+  <si>
+    <t>~field(OtherEquipments.Num)~</t>
+  </si>
+  <si>
+    <t>~field(OtherEquipments.Price)~</t>
+  </si>
+  <si>
+    <t>~field(OtherEquipments.SubTotal)~</t>
+  </si>
+  <si>
+    <t>~field(para.Title)~其他系统清单</t>
+    <phoneticPr fontId="12" type="noConversion"/>
+  </si>
+  <si>
+    <t>~table(CenterEquipments)~~field(CenterEquipments.RowNum)~</t>
+  </si>
+  <si>
+    <t>~field(CenterEquipments.Name)~</t>
+  </si>
+  <si>
+    <t>~field(CenterEquipments.Brand)~</t>
+  </si>
+  <si>
+    <t>~field(CenterEquipments.Unit)~</t>
+  </si>
+  <si>
+    <t>~field(CenterEquipments.Num)~</t>
+  </si>
+  <si>
+    <t>~field(CenterEquipments.Price)~</t>
+  </si>
+  <si>
+    <t>~field(CenterEquipments.SubTotal)~</t>
+  </si>
+  <si>
+    <t>~field(para.Title)~中心系统清单</t>
+    <phoneticPr fontId="14" type="noConversion"/>
+  </si>
+  <si>
+    <t>~field(CenterEquipments.ProductType)~</t>
+  </si>
+  <si>
+    <t>~field(CenterEquipments.TechnicalParameters)~</t>
+  </si>
+</sst>

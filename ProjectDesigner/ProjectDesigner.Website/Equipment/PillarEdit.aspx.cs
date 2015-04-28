@@ -66,7 +66,10 @@ namespace ProjectDesigner.Website.Equipment
                 this.txtDiameter.Text = this.EditModel.Diameter == null ? "" : this.EditModel.Diameter.ToString();
                 this.txtHeight.Text = this.EditModel.Height == null ? "" : this.EditModel.Height.ToString();
                 this.txtLength.Text = this.EditModel.Length == null ? "" : this.EditModel.Length.ToString();
-                this.DropDownListType.SelectedValue = this.EditModel.Type.ToString();
+                this.txtBrand.Text = this.EditModel.Brand;
+                this.DropDownListType.SelectedIndex = (int)this.EditModel.Type;
+                this.txtProductType.Text = this.EditModel.ProductType;
+                this.txtTechnicalParameters.Text = this.EditModel.TechnicalParameters;
             }
         }
 
@@ -89,11 +92,14 @@ namespace ProjectDesigner.Website.Equipment
 
             this.EditModel.Height = string.IsNullOrEmpty(this.txtHeight.Text) ? 0 : double.Parse(this.txtHeight.Text);
             this.EditModel.Length = string.IsNullOrEmpty(this.txtLength.Text) ? 0 : double.Parse(this.txtLength.Text);
-
+            this.EditModel.Brand = this.txtBrand.Text;
             if (this.DropDownListType.SelectedIndex == null)
                 this.EditModel.Type = null;
             else
                 this.EditModel.Type = (PillarType)this.DropDownListType.SelectedIndex;
+
+            this.EditModel.ProductType = this.txtProductType.Text;
+            this.EditModel.TechnicalParameters = this.txtTechnicalParameters.Text;
         }
 
 
@@ -125,7 +131,8 @@ namespace ProjectDesigner.Website.Equipment
                     Type = this.EditModel.Type == null ? "" : this.EditModel.Type.ToString(),
                     Diameter = this.EditModel.Diameter,
                     Height = this.EditModel.Height,
-                    Length = this.EditModel.Length
+                    Length = this.EditModel.Length,
+                    Brand = this.EditModel.Brand
                 };
             }
             catch

@@ -52,6 +52,7 @@
                         显示模组类型</label><asp:DropDownList runat="server" ID="DropDownListStandard" ClientIDMode="Static" Width="325px">
                             <asp:ListItem Value="0">P6</asp:ListItem>
                             <asp:ListItem Value="1">P10</asp:ListItem>
+                            <asp:ListItem Value="2">P16</asp:ListItem>
                         </asp:DropDownList>
                 </div>
                 <div>
@@ -64,6 +65,23 @@
                     <label>尺寸</label><asp:TextBox runat="server" ID="txtSizeWidth" ClientIDMode="Static" Width="153"></asp:TextBox>
                     x
                     <asp:TextBox runat="server" ID="txtSizeHeight" ClientIDMode="Static" Width="153" />
+                </div>
+                <div>
+                    <label>
+                        型号</label><asp:TextBox ID="txtProductType" ClientIDMode="Static" runat="server" Width="325px"></asp:TextBox>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label>
+                        单位</label><asp:TextBox ID="txtUnit" ClientIDMode="Static" runat="server" Width="325px"></asp:TextBox>
+                </div>
+            </div>
+            <div class="row span-2">
+                <div>
+                    <label class="span-2">
+                        主要技术参数</label><asp:TextBox ID="txtTechnicalParameters" TextMode="MultiLine" Rows="2" Columns="50"
+                            runat="server" Style="margin-right: 0px" Width="770px" Height="45px"></asp:TextBox>
                 </div>
             </div>
         </div>

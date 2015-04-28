@@ -43,7 +43,7 @@ namespace ProjectDesigner.Website.Equipment
                 {
                     i.Id,
                     i.Name,
-                    i.Size,
+                    Size = i.Size.Width + "x" + i.Size.Length,
                     i.Price,
                     i.Brand,
                     Type = i.Type.ToString(),

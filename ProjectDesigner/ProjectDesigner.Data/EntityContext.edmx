@@ -5,6 +5,20 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ProjectDesigner.Data.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="AccessorialMaterial">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="64" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="IconPath" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TechnicalParameters" Type="nvarchar(max)" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="BizModules">
           <Key>
             <PropertyRef Name="Id" />
@@ -13,6 +27,22 @@
           <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="IsProtected" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CenterEquipment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="64" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="IconPath" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TechnicalParameters" Type="nvarchar(max)" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="Num" Type="float" />
+          <Property Name="EquipmentType" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Coil">
           <Key>
@@ -26,6 +56,20 @@
           <Property Name="TechnicalParameters" Type="nvarchar" MaxLength="150" />
           <Property Name="Unit" Type="nvarchar" MaxLength="50" />
           <Property Name="Type" Type="int" />
+        </EntityType>
+        <EntityType Name="ConstructionMaterial">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="64" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="IconPath" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TechnicalParameters" Type="nvarchar(max)" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="ElectronicPolice">
           <Key>
@@ -45,6 +89,8 @@
           <Property Name="Unit" Type="nvarchar" MaxLength="50" />
           <Property Name="VideoSurveillanceId" Type="nvarchar" MaxLength="64" Nullable="false" />
           <Property Name="VideoSurveillanceNum" Type="int" Nullable="false" />
+          <Property Name="AccessorialMaterials" Type="nvarchar(max)" />
+          <Property Name="ConstructionMaterials" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Files">
           <Key>
@@ -100,6 +146,24 @@
           <Property Name="TechnicalParameters" Type="nvarchar" MaxLength="150" />
           <Property Name="Unit" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="64" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="IconPath" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TechnicalParameters" Type="nvarchar(max)" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="Num" Type="float" />
+          <Property Name="EquipmentType" Type="int" Nullable="false" />
+          <Property Name="ParentId" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="MaterialId" Type="nvarchar" MaxLength="64" Nullable="false" />
+        </EntityType>
         <EntityType Name="Microwave">
           <Key>
             <PropertyRef Name="Id" />
@@ -152,6 +216,7 @@
           <Property Name="Id" Type="nvarchar" MaxLength="64" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="150" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Taxes" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="ProjectEquipment">
           <Key>
@@ -167,6 +232,7 @@
           <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
           <Property Name="TechnicalParameters" Type="nvarchar" MaxLength="150" />
           <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="Num" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="RFID">
           <Key>
@@ -200,6 +266,8 @@
           <Property Name="TrafficAndEventCollectionEquipmentId" Type="nvarchar" MaxLength="64" Nullable="false" />
           <Property Name="TrafficAndEventCollectionEquipmentNum" Type="int" Nullable="false" />
           <Property Name="TrafficAndEventCollectionEquipmentType" Type="int" Nullable="false" />
+          <Property Name="AccessorialMaterials" Type="nvarchar(max)" />
+          <Property Name="ConstructionMaterials" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="TrafficVideoSurveillance">
           <Key>
@@ -218,6 +286,8 @@
           <Property Name="TechnicalParameters" Type="nvarchar" MaxLength="150" />
           <Property Name="Unit" Type="nvarchar" MaxLength="50" />
           <Property Name="VideoSurveillanceId" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="AccessorialMaterials" Type="nvarchar(max)" />
+          <Property Name="ConstructionMaterials" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="VideoSurveillance">
           <Key>
@@ -231,7 +301,7 @@
           <Property Name="Connection" Type="int" Nullable="false" />
           <Property Name="IconPath" Type="nvarchar" MaxLength="50" />
           <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
-          <Property Name="TechnicalParameters" Type="nvarchar" MaxLength="150" />
+          <Property Name="TechnicalParameters" Type="nvarchar(max)" />
           <Property Name="Unit" Type="nvarchar" MaxLength="50" />
           <Property Name="VideoSurveillanceType" Type="int" />
         </EntityType>
@@ -247,7 +317,7 @@
           <Property Name="Connection" Type="int" />
           <Property Name="Size" Type="nchar" MaxLength="50" />
           <Property Name="Weight" Type="float" />
-          <Property Name="ModuleCount" Type="int" />
+          <Property Name="ModuleCount" Type="float" />
           <Property Name="IconPath" Type="nvarchar" MaxLength="50" />
           <Property Name="LEDModuleId" Type="nvarchar" MaxLength="64" />
           <Property Name="PillarId" Type="nvarchar" MaxLength="64" />
@@ -256,6 +326,8 @@
           <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
           <Property Name="TechnicalParameters" Type="nvarchar" MaxLength="150" />
           <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccessorialMaterials" Type="nvarchar(max)" />
+          <Property Name="ConstructionMaterials" Type="nvarchar(max)" />
         </EntityType>
         <Association Name="FK_ElectronicPolice_Foundation">
           <End Role="Foundation" Type="Self.Foundation" Multiplicity="0..1" />
@@ -402,13 +474,17 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ProjectDesignerDataStoreContainer">
+          <EntitySet Name="AccessorialMaterial" EntityType="Self.AccessorialMaterial" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BizModules" EntityType="Self.BizModules" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CenterEquipment" EntityType="Self.CenterEquipment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Coil" EntityType="Self.Coil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ConstructionMaterial" EntityType="Self.ConstructionMaterial" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ElectronicPolice" EntityType="Self.ElectronicPolice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Foundation" EntityType="Self.Foundation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Geomagnetic" EntityType="Self.Geomagnetic" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LEDModule" EntityType="Self.LEDModule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Microwave" EntityType="Self.Microwave" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Navigators" EntityType="Self.Navigators" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pillar" EntityType="Self.Pillar" Schema="dbo" store:Type="Tables" />
@@ -472,94 +548,413 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProjectDesigner.Data" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="EntityContext" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="BizModules" EntityType="ProjectDesigner.Data.BizModule" />
-          <EntitySet Name="Files" EntityType="ProjectDesigner.Data.File" />
-          <EntitySet Name="Navigators" EntityType="ProjectDesigner.Data.Navigator" />
-          <EntitySet Name="VMS" EntityType="ProjectDesigner.Data.VMS" />
-          <AssociationSet Name="FK_Navigators_Navigators" Association="ProjectDesigner.Data.FK_Navigators_Navigators">
-            <End Role="Navigator" EntitySet="Navigators" />
-            <End Role="Navigator1" EntitySet="Navigators" />
-          </AssociationSet>
-          <EntitySet Name="Projects" EntityType="ProjectDesigner.Data.Project" />
-          <EntitySet Name="Foundations" EntityType="ProjectDesigner.Data.Foundation" />
-          <EntitySet Name="LEDModules" EntityType="ProjectDesigner.Data.LEDModule" />
-          <EntitySet Name="Pillars" EntityType="ProjectDesigner.Data.Pillar" />
-          <EntitySet Name="ProjectEquipments" EntityType="ProjectDesigner.Data.ProjectEquipment" />
-          <AssociationSet Name="FK_VMS_Foundation1" Association="ProjectDesigner.Data.FK_VMS_Foundation1">
-            <End Role="Foundation1" EntitySet="Foundations" />
-            <End Role="VMS" EntitySet="VMS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VMS_LEDModule1" Association="ProjectDesigner.Data.FK_VMS_LEDModule1">
-            <End Role="LEDModule1" EntitySet="LEDModules" />
-            <End Role="VMS" EntitySet="VMS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VMS_Pillar1" Association="ProjectDesigner.Data.FK_VMS_Pillar1">
-            <End Role="Pillar1" EntitySet="Pillars" />
-            <End Role="VMS" EntitySet="VMS" />
-          </AssociationSet>
-          <EntitySet Name="ElectronicPolice" EntityType="ProjectDesigner.Data.ElectronicPolice" />
-          <EntitySet Name="TrafficVideoSurveillances" EntityType="ProjectDesigner.Data.TrafficVideoSurveillance" />
-          <AssociationSet Name="FK_ElectronicPolice_Foundation" Association="ProjectDesigner.Data.FK_ElectronicPolice_Foundation">
-            <End Role="Foundation" EntitySet="Foundations" />
-            <End Role="ElectronicPolouse" EntitySet="ElectronicPolice" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ElectronicPolice_Pillar" Association="ProjectDesigner.Data.FK_ElectronicPolice_Pillar">
-            <End Role="Pillar" EntitySet="Pillars" />
-            <End Role="ElectronicPolouse" EntitySet="ElectronicPolice" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TrafficVideoSurveillance_Foundation" Association="ProjectDesigner.Data.FK_TrafficVideoSurveillance_Foundation">
-            <End Role="Foundation" EntitySet="Foundations" />
-            <End Role="TrafficVideoSurveillance" EntitySet="TrafficVideoSurveillances" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TrafficVideoSurveillance_Pillar" Association="ProjectDesigner.Data.FK_TrafficVideoSurveillance_Pillar">
-            <End Role="Pillar" EntitySet="Pillars" />
-            <End Role="TrafficVideoSurveillance" EntitySet="TrafficVideoSurveillances" />
-          </AssociationSet>
-          <EntitySet Name="TrafficAndEventCollections" EntityType="ProjectDesigner.Data.TrafficAndEventCollection" />
-          <AssociationSet Name="FK_TrafficAndEventCollection_Foundation" Association="ProjectDesigner.Data.FK_TrafficAndEventCollection_Foundation">
-            <End Role="Foundation" EntitySet="Foundations" />
-            <End Role="TrafficAndEventCollection" EntitySet="TrafficAndEventCollections" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TrafficAndEventCollection_Pillar" Association="ProjectDesigner.Data.FK_TrafficAndEventCollection_Pillar">
-            <End Role="Pillar" EntitySet="Pillars" />
-            <End Role="TrafficAndEventCollection" EntitySet="TrafficAndEventCollections" />
-          </AssociationSet>
-          <EntitySet Name="Coils" EntityType="ProjectDesigner.Data.Coil" />
-          <EntitySet Name="Geomagnetics" EntityType="ProjectDesigner.Data.Geomagnetic" />
-          <EntitySet Name="Microwaves" EntityType="ProjectDesigner.Data.Microwave" />
-          <EntitySet Name="RFIDs" EntityType="ProjectDesigner.Data.RFID" />
-          <EntitySet Name="VideoSurveillances" EntityType="ProjectDesigner.Data.VideoSurveillance" />
-          <AssociationSet Name="FK_ElectronicPolice_VideoSurveillance" Association="ProjectDesigner.Data.FK_ElectronicPolice_VideoSurveillance">
-            <End Role="VideoSurveillance" EntitySet="VideoSurveillances" />
-            <End Role="ElectronicPolice" EntitySet="ElectronicPolice" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TrafficVideoSurveillance_VideoSurveillance" Association="ProjectDesigner.Data.FK_TrafficVideoSurveillance_VideoSurveillance">
-            <End Role="VideoSurveillance" EntitySet="VideoSurveillances" />
-            <End Role="TrafficVideoSurveillance" EntitySet="TrafficVideoSurveillances" />
-          </AssociationSet>
-          </EntityContainer>
-        <EntityType Name="BizModule">
+        <EntityType Name="AccessorialMaterial">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="IconPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BizModules">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="IsProtected" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Coil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ElectronicPolice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Connection" Type="Int32" Nullable="false" />
+          <Property Name="IconPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PillarId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="FoundationId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VideoSurveillanceId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VideoSurveillanceNum" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Foundation" Relationship="Self.FK_ElectronicPolice_Foundation" FromRole="ElectronicPolice" ToRole="Foundation" />
+          <NavigationProperty Name="Pillar" Relationship="Self.FK_ElectronicPolice_Pillar" FromRole="ElectronicPolice" ToRole="Pillar" />
+          <NavigationProperty Name="VideoSurveillance" Relationship="Self.FK_ElectronicPolice_VideoSurveillance" FromRole="ElectronicPolice" ToRole="VideoSurveillance" />
+          <Property Name="AccessorialMaterials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ConstructionMaterials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="File">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Extension" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="FileName" Type="String" Nullable="false" MaxLength="170" FixedLength="false" Unicode="true" />
+          <Property Name="FileName" Type="String" MaxLength="170" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Tags" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="UploadedTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Foundation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EquipmentType" Type="Int32" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ElectronicPolice" Relationship="Self.FK_ElectronicPolice_Foundation" FromRole="Foundation" ToRole="ElectronicPolice" />
+          <NavigationProperty Name="TrafficAndEventCollection" Relationship="Self.FK_TrafficAndEventCollection_Foundation" FromRole="Foundation" ToRole="TrafficAndEventCollection" />
+          <NavigationProperty Name="TrafficVideoSurveillance" Relationship="Self.FK_TrafficVideoSurveillance_Foundation" FromRole="Foundation" ToRole="TrafficVideoSurveillance" />
+          <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_Foundation" FromRole="Foundation" ToRole="VMS" />
+        </EntityType>
+        <EntityType Name="Geomagnetic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LEDModule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Standard" Type="Int32" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EquipmentType" Type="Int32" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_LEDModule" FromRole="LEDModule" ToRole="VMS" />
+        </EntityType>
+        <EntityType Name="Microwave">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Pillar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="Height" Type="Double" />
+          <Property Name="Diameter" Type="Double" />
+          <Property Name="Length" Type="Double" />
+          <Property Name="EquipmentType" Type="Int32" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ElectronicPolice" Relationship="Self.FK_ElectronicPolice_Pillar" FromRole="Pillar" ToRole="ElectronicPolice" />
+          <NavigationProperty Name="TrafficAndEventCollection" Relationship="Self.FK_TrafficAndEventCollection_Pillar" FromRole="Pillar" ToRole="TrafficAndEventCollection" />
+          <NavigationProperty Name="TrafficVideoSurveillance" Relationship="Self.FK_TrafficVideoSurveillance_Pillar" FromRole="Pillar" ToRole="TrafficVideoSurveillance" />
+          <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_Pillar" FromRole="Pillar" ToRole="VMS" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Taxes" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="RFID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TrafficAndEventCollection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Connection" Type="Int32" Nullable="false" />
+          <Property Name="IconPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PillarId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="FoundationId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TrafficAndEventCollectionEquipmentId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TrafficAndEventCollectionEquipmentNum" Type="Int32" Nullable="false" />
+          <Property Name="TrafficAndEventCollectionEquipmentType" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Foundation" Relationship="Self.FK_TrafficAndEventCollection_Foundation" FromRole="TrafficAndEventCollection" ToRole="Foundation" />
+          <NavigationProperty Name="Pillar" Relationship="Self.FK_TrafficAndEventCollection_Pillar" FromRole="TrafficAndEventCollection" ToRole="Pillar" />
+          <Property Name="AccessorialMaterials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ConstructionMaterials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TrafficVideoSurveillance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Connection" Type="Int32" Nullable="false" />
+          <Property Name="IconPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PillarId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="FoundationId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VideoSurveillanceId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Foundation" Relationship="Self.FK_TrafficVideoSurveillance_Foundation" FromRole="TrafficVideoSurveillance" ToRole="Foundation" />
+          <NavigationProperty Name="Pillar" Relationship="Self.FK_TrafficVideoSurveillance_Pillar" FromRole="TrafficVideoSurveillance" ToRole="Pillar" />
+          <NavigationProperty Name="VideoSurveillance" Relationship="Self.FK_TrafficVideoSurveillance_VideoSurveillance" FromRole="TrafficVideoSurveillance" ToRole="VideoSurveillance" />
+          <Property Name="AccessorialMaterials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ConstructionMaterials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VideoSurveillance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Connection" Type="Int32" Nullable="false" />
+          <Property Name="IconPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VideoSurveillanceType" Type="Int32" />
+          <NavigationProperty Name="ElectronicPolice" Relationship="Self.FK_ElectronicPolice_VideoSurveillance" FromRole="VideoSurveillance" ToRole="ElectronicPolice" />
+          <NavigationProperty Name="TrafficVideoSurveillance" Relationship="Self.FK_TrafficVideoSurveillance_VideoSurveillance" FromRole="VideoSurveillance" ToRole="TrafficVideoSurveillance" />
+        </EntityType>
+        <Association Name="FK_ElectronicPolice_Foundation">
+          <End Role="Foundation" Type="Self.Foundation" Multiplicity="0..1" />
+          <End Role="ElectronicPolice" Type="Self.ElectronicPolice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Foundation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ElectronicPolice">
+              <PropertyRef Name="FoundationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElectronicPolice_Pillar">
+          <End Role="Pillar" Type="Self.Pillar" Multiplicity="0..1" />
+          <End Role="ElectronicPolice" Type="Self.ElectronicPolice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pillar">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ElectronicPolice">
+              <PropertyRef Name="PillarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElectronicPolice_VideoSurveillance">
+          <End Role="VideoSurveillance" Type="Self.VideoSurveillance" Multiplicity="1" />
+          <End Role="ElectronicPolice" Type="Self.ElectronicPolice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VideoSurveillance">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ElectronicPolice">
+              <PropertyRef Name="VideoSurveillanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrafficAndEventCollection_Foundation">
+          <End Role="Foundation" Type="Self.Foundation" Multiplicity="0..1" />
+          <End Role="TrafficAndEventCollection" Type="Self.TrafficAndEventCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Foundation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TrafficAndEventCollection">
+              <PropertyRef Name="FoundationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrafficVideoSurveillance_Foundation">
+          <End Role="Foundation" Type="Self.Foundation" Multiplicity="0..1" />
+          <End Role="TrafficVideoSurveillance" Type="Self.TrafficVideoSurveillance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Foundation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TrafficVideoSurveillance">
+              <PropertyRef Name="FoundationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrafficAndEventCollection_Pillar">
+          <End Role="Pillar" Type="Self.Pillar" Multiplicity="0..1" />
+          <End Role="TrafficAndEventCollection" Type="Self.TrafficAndEventCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pillar">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TrafficAndEventCollection">
+              <PropertyRef Name="PillarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrafficVideoSurveillance_Pillar">
+          <End Role="Pillar" Type="Self.Pillar" Multiplicity="0..1" />
+          <End Role="TrafficVideoSurveillance" Type="Self.TrafficVideoSurveillance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pillar">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TrafficVideoSurveillance">
+              <PropertyRef Name="PillarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrafficVideoSurveillance_VideoSurveillance">
+          <End Role="VideoSurveillance" Type="Self.VideoSurveillance" Multiplicity="1" />
+          <End Role="TrafficVideoSurveillance" Type="Self.TrafficVideoSurveillance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VideoSurveillance">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TrafficVideoSurveillance">
+              <PropertyRef Name="VideoSurveillanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EntityContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AccessorialMaterial" EntityType="Self.AccessorialMaterial" />
+          <EntitySet Name="BizModules" EntityType="Self.BizModules" />
+          <EntitySet Name="Coil" EntityType="Self.Coil" />
+          <EntitySet Name="ElectronicPolice" EntityType="Self.ElectronicPolice" />
+          <EntitySet Name="Files" EntityType="ProjectDesigner.Data.File" />
+          <EntitySet Name="Foundation" EntityType="Self.Foundation" />
+          <EntitySet Name="Geomagnetic" EntityType="Self.Geomagnetic" />
+          <EntitySet Name="LEDModule" EntityType="Self.LEDModule" />
+          <EntitySet Name="Microwave" EntityType="Self.Microwave" />
+          <EntitySet Name="Pillar" EntityType="Self.Pillar" />
+          <EntitySet Name="Project" EntityType="Self.Project" />
+          <EntitySet Name="RFID" EntityType="Self.RFID" />
+          <EntitySet Name="TrafficAndEventCollection" EntityType="Self.TrafficAndEventCollection" />
+          <EntitySet Name="TrafficVideoSurveillance" EntityType="Self.TrafficVideoSurveillance" />
+          <EntitySet Name="VideoSurveillance" EntityType="Self.VideoSurveillance" />
+          <AssociationSet Name="FK_ElectronicPolice_Foundation" Association="Self.FK_ElectronicPolice_Foundation">
+            <End Role="Foundation" EntitySet="Foundation" />
+            <End Role="ElectronicPolice" EntitySet="ElectronicPolice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElectronicPolice_Pillar" Association="Self.FK_ElectronicPolice_Pillar">
+            <End Role="Pillar" EntitySet="Pillar" />
+            <End Role="ElectronicPolice" EntitySet="ElectronicPolice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElectronicPolice_VideoSurveillance" Association="Self.FK_ElectronicPolice_VideoSurveillance">
+            <End Role="VideoSurveillance" EntitySet="VideoSurveillance" />
+            <End Role="ElectronicPolice" EntitySet="ElectronicPolice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrafficAndEventCollection_Foundation" Association="Self.FK_TrafficAndEventCollection_Foundation">
+            <End Role="Foundation" EntitySet="Foundation" />
+            <End Role="TrafficAndEventCollection" EntitySet="TrafficAndEventCollection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrafficVideoSurveillance_Foundation" Association="Self.FK_TrafficVideoSurveillance_Foundation">
+            <End Role="Foundation" EntitySet="Foundation" />
+            <End Role="TrafficVideoSurveillance" EntitySet="TrafficVideoSurveillance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrafficAndEventCollection_Pillar" Association="Self.FK_TrafficAndEventCollection_Pillar">
+            <End Role="Pillar" EntitySet="Pillar" />
+            <End Role="TrafficAndEventCollection" EntitySet="TrafficAndEventCollection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrafficVideoSurveillance_Pillar" Association="Self.FK_TrafficVideoSurveillance_Pillar">
+            <End Role="Pillar" EntitySet="Pillar" />
+            <End Role="TrafficVideoSurveillance" EntitySet="TrafficVideoSurveillance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrafficVideoSurveillance_VideoSurveillance" Association="Self.FK_TrafficVideoSurveillance_VideoSurveillance">
+            <End Role="VideoSurveillance" EntitySet="VideoSurveillance" />
+            <End Role="TrafficVideoSurveillance" EntitySet="TrafficVideoSurveillance" />
+          </AssociationSet>
+          <EntitySet Name="Navigators" EntityType="ProjectDesigner.Data.Navigator" />
+          <AssociationSet Name="FK_Navigators_Navigators" Association="ProjectDesigner.Data.FK_Navigators_Navigators">
+            <End Role="Navigators" EntitySet="Navigators" />
+            <End Role="Navigators1" EntitySet="Navigators" />
+          </AssociationSet>
+          <EntitySet Name="ConstructionMaterial" EntityType="ProjectDesigner.Data.ConstructionMaterial" />
+          <EntitySet Name="Material" EntityType="ProjectDesigner.Data.Material" />
+          <EntitySet Name="CenterEquipment" EntityType="ProjectDesigner.Data.CenterEquipment" />
+          <EntitySet Name="VMS" EntityType="ProjectDesigner.Data.VMS" />
+          <AssociationSet Name="FK_VMS_Foundation" Association="ProjectDesigner.Data.FK_VMS_Foundation">
+            <End Role="Foundation" EntitySet="Foundation" />
+            <End Role="VMS" EntitySet="VMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VMS_LEDModule" Association="ProjectDesigner.Data.FK_VMS_LEDModule">
+            <End Role="LEDModule" EntitySet="LEDModule" />
+            <End Role="VMS" EntitySet="VMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VMS_Pillar" Association="ProjectDesigner.Data.FK_VMS_Pillar">
+            <End Role="Pillar" EntitySet="Pillar" />
+            <End Role="VMS" EntitySet="VMS" />
+          </AssociationSet>
+          <EntitySet Name="ProjectEquipment" EntityType="ProjectDesigner.Data.ProjectEquipment" />
+        </EntityContainer>
         <EntityType Name="Navigator">
           <Key>
             <PropertyRef Name="Id" />
@@ -574,8 +969,68 @@
           <Property Name="Parameters" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="SortIndex" Type="Int32" Nullable="false" />
           <Property Name="IconFile" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ChildNavigators" Relationship="ProjectDesigner.Data.FK_Navigators_Navigators" FromRole="Navigator" ToRole="Navigator1" />
-          <NavigationProperty Name="Parent" Relationship="ProjectDesigner.Data.FK_Navigators_Navigators" FromRole="Navigator1" ToRole="Navigator" />
+          <NavigationProperty Name="Navigators1" Relationship="ProjectDesigner.Data.FK_Navigators_Navigators" FromRole="Navigators" ToRole="Navigators1" />
+          <NavigationProperty Name="Parent" Relationship="ProjectDesigner.Data.FK_Navigators_Navigators" FromRole="Navigators1" ToRole="Navigators" />
+        </EntityType>
+        <Association Name="FK_Navigators_Navigators">
+          <End Type="ProjectDesigner.Data.Navigator" Role="Navigators" Multiplicity="0..1" />
+          <End Type="ProjectDesigner.Data.Navigator" Role="Navigators1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Navigators">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Navigators1">
+              <PropertyRef Name="Parent_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ConstructionMaterial">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="IconPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="IconPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Num" Type="Double" />
+          <Property Name="EquipmentType" Type="Int32" Nullable="false" />
+          <Property Name="ParentId" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialId" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CenterEquipment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="IconPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Num" Type="Double" />
+          <Property Name="EquipmentType" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="VMS">
           <Key>
@@ -589,94 +1044,57 @@
           <Property Name="Connection" Type="Int32" />
           <Property Name="Size" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="Weight" Type="Double" />
-          <Property Name="ModuleCount" Type="Int32" />
+          <Property Name="ModuleCount" Type="Double" />
           <Property Name="IconPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LEDModuleId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="PillarId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="FoundationId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="EquipmentType" Type="Int32" />
-          <NavigationProperty Name="Foundation" Relationship="ProjectDesigner.Data.FK_VMS_Foundation1" FromRole="VMS" ToRole="Foundation1" />
-          <NavigationProperty Name="LEDModule" Relationship="ProjectDesigner.Data.FK_VMS_LEDModule1" FromRole="VMS" ToRole="LEDModule1" />
-          <NavigationProperty Name="Pillar" Relationship="ProjectDesigner.Data.FK_VMS_Pillar1" FromRole="VMS" ToRole="Pillar1" />
           <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Unit" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccessorialMaterials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ConstructionMaterials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Foundation" Relationship="ProjectDesigner.Data.FK_VMS_Foundation" FromRole="VMS" ToRole="Foundation" />
+          <NavigationProperty Name="LEDModule" Relationship="ProjectDesigner.Data.FK_VMS_LEDModule" FromRole="VMS" ToRole="LEDModule" />
+          <NavigationProperty Name="Pillar" Relationship="ProjectDesigner.Data.FK_VMS_Pillar" FromRole="VMS" ToRole="Pillar" />
         </EntityType>
-        <Association Name="FK_Navigators_Navigators">
-          <End Type="ProjectDesigner.Data.Navigator" Role="Navigator" Multiplicity="0..1" />
-          <End Type="ProjectDesigner.Data.Navigator" Role="Navigator1" Multiplicity="*" />
+        <Association Name="FK_VMS_Foundation">
+          <End Type="ProjectDesigner.Data.Foundation" Role="Foundation" Multiplicity="0..1" />
+          <End Type="ProjectDesigner.Data.VMS" Role="VMS" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Navigator">
+            <Principal Role="Foundation">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Navigator1">
-              <PropertyRef Name="Parent_Id" />
+            <Dependent Role="VMS">
+              <PropertyRef Name="FoundationId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Project">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-        </EntityType>
-        <EntityType Name="Foundation">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="EquipmentType" Type="Int32" />
-          <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_Foundation1" FromRole="Foundation1" ToRole="VMS" />
-          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ElectronicPolice" Relationship="ProjectDesigner.Data.FK_ElectronicPolice_Foundation" FromRole="Foundation" ToRole="ElectronicPolouse" />
-          <NavigationProperty Name="TrafficVideoSurveillances" Relationship="ProjectDesigner.Data.FK_TrafficVideoSurveillance_Foundation" FromRole="Foundation" ToRole="TrafficVideoSurveillance" />
-          <NavigationProperty Name="TrafficAndEventCollections" Relationship="ProjectDesigner.Data.FK_TrafficAndEventCollection_Foundation" FromRole="Foundation" ToRole="TrafficAndEventCollection" />
-        </EntityType>
-        <EntityType Name="LEDModule">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Standard" Type="Int32" />
-          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="EquipmentType" Type="Int32" />
-          <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_LEDModule1" FromRole="LEDModule1" ToRole="VMS" />
-          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Pillar">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Type" Type="Int32" />
-          <Property Name="Height" Type="Double" />
-          <Property Name="Diameter" Type="Double" />
-          <Property Name="Length" Type="Double" />
-          <Property Name="EquipmentType" Type="Int32" />
-          <NavigationProperty Name="VMS" Relationship="ProjectDesigner.Data.FK_VMS_Pillar1" FromRole="Pillar1" ToRole="VMS" />
-          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Unit" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="ElectronicPolice" Relationship="ProjectDesigner.Data.FK_ElectronicPolice_Pillar" FromRole="Pillar" ToRole="ElectronicPolouse" />
-          <NavigationProperty Name="TrafficVideoSurveillances" Relationship="ProjectDesigner.Data.FK_TrafficVideoSurveillance_Pillar" FromRole="Pillar" ToRole="TrafficVideoSurveillance" />
-          <NavigationProperty Name="TrafficAndEventCollections" Relationship="ProjectDesigner.Data.FK_TrafficAndEventCollection_Pillar" FromRole="Pillar" ToRole="TrafficAndEventCollection" />
-        </EntityType>
+        <Association Name="FK_VMS_LEDModule">
+          <End Type="ProjectDesigner.Data.LEDModule" Role="LEDModule" Multiplicity="0..1" />
+          <End Type="ProjectDesigner.Data.VMS" Role="VMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LEDModule">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VMS">
+              <PropertyRef Name="LEDModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VMS_Pillar">
+          <End Type="ProjectDesigner.Data.Pillar" Role="Pillar" Multiplicity="0..1" />
+          <End Type="ProjectDesigner.Data.VMS" Role="VMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pillar">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VMS">
+              <PropertyRef Name="PillarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="ProjectEquipment">
           <Key>
             <PropertyRef Name="Id" />
@@ -691,403 +1109,346 @@
           <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Num" Type="Double" Nullable="false" />
         </EntityType>
-        <Association Name="FK_VMS_Foundation1">
-          <End Type="ProjectDesigner.Data.Foundation" Role="Foundation1" Multiplicity="0..1" />
-          <End Type="ProjectDesigner.Data.VMS" Role="VMS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Foundation1">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="VMS">
-              <PropertyRef Name="FoundationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_VMS_LEDModule1">
-          <End Type="ProjectDesigner.Data.LEDModule" Role="LEDModule1" Multiplicity="0..1" />
-          <End Type="ProjectDesigner.Data.VMS" Role="VMS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LEDModule1">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="VMS">
-              <PropertyRef Name="LEDModuleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_VMS_Pillar1">
-          <End Type="ProjectDesigner.Data.Pillar" Role="Pillar1" Multiplicity="0..1" />
-          <End Type="ProjectDesigner.Data.VMS" Role="VMS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pillar1">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="VMS">
-              <PropertyRef Name="PillarId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="ElectronicPolice">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Type" Type="Int32" Nullable="false" />
-          <Property Name="Connection" Type="Int32" Nullable="false" />
-          <Property Name="IconPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PillarId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="FoundationId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="VideoSurveillanceId" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="VideoSurveillanceNum" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Foundation" Relationship="ProjectDesigner.Data.FK_ElectronicPolice_Foundation" FromRole="ElectronicPolouse" ToRole="Foundation" />
-          <NavigationProperty Name="Pillar" Relationship="ProjectDesigner.Data.FK_ElectronicPolice_Pillar" FromRole="ElectronicPolouse" ToRole="Pillar" />
-          <NavigationProperty Name="VideoSurveillance" Relationship="ProjectDesigner.Data.FK_ElectronicPolice_VideoSurveillance" FromRole="ElectronicPolice" ToRole="VideoSurveillance" />
-        </EntityType>
-        <EntityType Name="TrafficVideoSurveillance">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Type" Type="Int32" Nullable="false" />
-          <Property Name="Connection" Type="Int32" Nullable="false" />
-          <Property Name="IconPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PillarId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="FoundationId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="VideoSurveillanceId" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Foundation" Relationship="ProjectDesigner.Data.FK_TrafficVideoSurveillance_Foundation" FromRole="TrafficVideoSurveillance" ToRole="Foundation" />
-          <NavigationProperty Name="Pillar" Relationship="ProjectDesigner.Data.FK_TrafficVideoSurveillance_Pillar" FromRole="TrafficVideoSurveillance" ToRole="Pillar" />
-          <NavigationProperty Name="VideoSurveillance" Relationship="ProjectDesigner.Data.FK_TrafficVideoSurveillance_VideoSurveillance" FromRole="TrafficVideoSurveillance" ToRole="VideoSurveillance" />
-        </EntityType>
-        <Association Name="FK_ElectronicPolice_Foundation">
-          <End Type="ProjectDesigner.Data.Foundation" Role="Foundation" Multiplicity="0..1" />
-          <End Type="ProjectDesigner.Data.ElectronicPolice" Role="ElectronicPolouse" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Foundation">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ElectronicPolouse">
-              <PropertyRef Name="FoundationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ElectronicPolice_Pillar">
-          <End Type="ProjectDesigner.Data.Pillar" Role="Pillar" Multiplicity="0..1" />
-          <End Type="ProjectDesigner.Data.ElectronicPolice" Role="ElectronicPolouse" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pillar">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ElectronicPolouse">
-              <PropertyRef Name="PillarId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TrafficVideoSurveillance_Foundation">
-          <End Type="ProjectDesigner.Data.Foundation" Role="Foundation" Multiplicity="0..1" />
-          <End Type="ProjectDesigner.Data.TrafficVideoSurveillance" Role="TrafficVideoSurveillance" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Foundation">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TrafficVideoSurveillance">
-              <PropertyRef Name="FoundationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TrafficVideoSurveillance_Pillar">
-          <End Type="ProjectDesigner.Data.Pillar" Role="Pillar" Multiplicity="0..1" />
-          <End Type="ProjectDesigner.Data.TrafficVideoSurveillance" Role="TrafficVideoSurveillance" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pillar">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TrafficVideoSurveillance">
-              <PropertyRef Name="PillarId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="TrafficAndEventCollection">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Type" Type="Int32" Nullable="false" />
-          <Property Name="Connection" Type="Int32" Nullable="false" />
-          <Property Name="IconPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PillarId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="FoundationId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TrafficAndEventCollectionEquipmentId" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="TrafficAndEventCollectionEquipmentNum" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Foundation" Relationship="ProjectDesigner.Data.FK_TrafficAndEventCollection_Foundation" FromRole="TrafficAndEventCollection" ToRole="Foundation" />
-          <NavigationProperty Name="Pillar" Relationship="ProjectDesigner.Data.FK_TrafficAndEventCollection_Pillar" FromRole="TrafficAndEventCollection" ToRole="Pillar" />
-          <Property Name="TrafficAndEventCollectionEquipmentType" Type="Int32" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_TrafficAndEventCollection_Foundation">
-          <End Type="ProjectDesigner.Data.Foundation" Role="Foundation" Multiplicity="0..1" />
-          <End Type="ProjectDesigner.Data.TrafficAndEventCollection" Role="TrafficAndEventCollection" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Foundation">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TrafficAndEventCollection">
-              <PropertyRef Name="FoundationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TrafficAndEventCollection_Pillar">
-          <End Type="ProjectDesigner.Data.Pillar" Role="Pillar" Multiplicity="0..1" />
-          <End Type="ProjectDesigner.Data.TrafficAndEventCollection" Role="TrafficAndEventCollection" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pillar">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TrafficAndEventCollection">
-              <PropertyRef Name="PillarId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Coil">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Type" Type="Int32" />
-        </EntityType>
-        <EntityType Name="Geomagnetic">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Type" Type="Int32" />
-        </EntityType>
-        <EntityType Name="Microwave">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Type" Type="Int32" />
-        </EntityType>
-        <EntityType Name="RFID">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Type" Type="Int32" />
-        </EntityType>
-        <EntityType Name="VideoSurveillance">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Type" Type="Int32" Nullable="false" />
-          <Property Name="Connection" Type="Int32" Nullable="false" />
-          <Property Name="IconPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TechnicalParameters" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="VideoSurveillanceType" Type="Int32" />
-          <NavigationProperty Name="ElectronicPolice" Relationship="ProjectDesigner.Data.FK_ElectronicPolice_VideoSurveillance" FromRole="VideoSurveillance" ToRole="ElectronicPolice" />
-          <NavigationProperty Name="TrafficVideoSurveillances" Relationship="ProjectDesigner.Data.FK_TrafficVideoSurveillance_VideoSurveillance" FromRole="VideoSurveillance" ToRole="TrafficVideoSurveillance" />
-        </EntityType>
-        <Association Name="FK_ElectronicPolice_VideoSurveillance">
-          <End Type="ProjectDesigner.Data.VideoSurveillance" Role="VideoSurveillance" Multiplicity="1" />
-          <End Type="ProjectDesigner.Data.ElectronicPolice" Role="ElectronicPolice" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="VideoSurveillance">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ElectronicPolice">
-              <PropertyRef Name="VideoSurveillanceId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TrafficVideoSurveillance_VideoSurveillance">
-          <End Type="ProjectDesigner.Data.VideoSurveillance" Role="VideoSurveillance" Multiplicity="1" />
-          <End Type="ProjectDesigner.Data.TrafficVideoSurveillance" Role="TrafficVideoSurveillance" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="VideoSurveillance">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TrafficVideoSurveillance">
-              <PropertyRef Name="VideoSurveillanceId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        </Schema>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ProjectDesignerDataStoreContainer" CdmEntityContainer="EntityContext">
-    <EntitySetMapping Name="BizModules">
-      <EntityTypeMapping TypeName="IsTypeOf(ProjectDesigner.Data.BizModule)">
-        <MappingFragment StoreEntitySet="BizModules">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="IsProtected" ColumnName="IsProtected" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Files">
-      <EntityTypeMapping TypeName="IsTypeOf(ProjectDesigner.Data.File)">
-        <MappingFragment StoreEntitySet="Files">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Extension" ColumnName="Extension" />
-          <ScalarProperty Name="FileName" ColumnName="FileName" />
-          <ScalarProperty Name="Tags" ColumnName="Tags" />
-          <ScalarProperty Name="UploadedTime" ColumnName="UploadedTime" />
-          <ScalarProperty Name="Remark" ColumnName="Remark" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Navigators">
-      <EntityTypeMapping TypeName="IsTypeOf(ProjectDesigner.Data.Navigator)">
-        <MappingFragment StoreEntitySet="Navigators">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Parent_Id" ColumnName="Parent_Id" />
-          <ScalarProperty Name="LayoutName" ColumnName="LayoutName" />
-          <ScalarProperty Name="WebLink" ColumnName="WebLink" />
-          <ScalarProperty Name="WinLink" ColumnName="WinLink" />
-          <ScalarProperty Name="WapLink" ColumnName="WapLink" />
-          <ScalarProperty Name="Parameters" ColumnName="Parameters" />
-          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
-          <ScalarProperty Name="IconFile" ColumnName="IconFile" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="VMS">
-      <EntityTypeMapping TypeName="IsTypeOf(ProjectDesigner.Data.VMS)">
-        <MappingFragment StoreEntitySet="VMS">
-          <ScalarProperty Name="Unit" ColumnName="Unit" />
-                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
-                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProjectDesignerDataStoreContainer" CdmEntityContainer="EntityContext">
+          <EntitySetMapping Name="AccessorialMaterial">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.AccessorialMaterial">
+              <MappingFragment StoreEntitySet="AccessorialMaterial">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Brand" ColumnName="Brand" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="Connection" ColumnName="Connection" />
-          <ScalarProperty Name="Size" ColumnName="Size" />
-          <ScalarProperty Name="Weight" ColumnName="Weight" />
-          <ScalarProperty Name="ModuleCount" ColumnName="ModuleCount" />
-          <ScalarProperty Name="IconPath" ColumnName="IconPath" />
-          <ScalarProperty Name="LEDModuleId" ColumnName="LEDModuleId" />
-          <ScalarProperty Name="PillarId" ColumnName="PillarId" />
-          <ScalarProperty Name="FoundationId" ColumnName="FoundationId" />
-          <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-          <EntitySetMapping Name="Projects">
-            <EntityTypeMapping TypeName="ProjectDesigner.Data.Project">
-              <MappingFragment StoreEntitySet="Project">
-                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Foundations">
+          <EntitySetMapping Name="BizModules">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.BizModules">
+              <MappingFragment StoreEntitySet="BizModules">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsProtected" ColumnName="IsProtected" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coil">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.Coil">
+              <MappingFragment StoreEntitySet="Coil">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElectronicPolice">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.ElectronicPolice">
+              <MappingFragment StoreEntitySet="ElectronicPolice">
+                <ScalarProperty Name="ConstructionMaterials" ColumnName="ConstructionMaterials" />
+                <ScalarProperty Name="AccessorialMaterials" ColumnName="AccessorialMaterials" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Connection" ColumnName="Connection" />
+                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+                <ScalarProperty Name="PillarId" ColumnName="PillarId" />
+                <ScalarProperty Name="FoundationId" ColumnName="FoundationId" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="VideoSurveillanceId" ColumnName="VideoSurveillanceId" />
+                <ScalarProperty Name="VideoSurveillanceNum" ColumnName="VideoSurveillanceNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Files">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.File">
+              <MappingFragment StoreEntitySet="Files">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Tags" ColumnName="Tags" />
+                <ScalarProperty Name="UploadedTime" ColumnName="UploadedTime" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Foundation">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.Foundation">
               <MappingFragment StoreEntitySet="Foundation">
-                <ScalarProperty Name="Unit" ColumnName="Unit" />
-                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
-                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
-                <ScalarProperty Name="Brand" ColumnName="Brand" />
-                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="LEDModules">
+          <EntitySetMapping Name="Geomagnetic">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.Geomagnetic">
+              <MappingFragment StoreEntitySet="Geomagnetic">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LEDModule">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.LEDModule">
               <MappingFragment StoreEntitySet="LEDModule">
-                <ScalarProperty Name="Unit" ColumnName="Unit" />
-                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
-                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
-                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="Brand" ColumnName="Brand" />
-                <ScalarProperty Name="Standard" ColumnName="Standard" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Standard" ColumnName="Standard" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Pillars">
+          <EntitySetMapping Name="Microwave">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.Microwave">
+              <MappingFragment StoreEntitySet="Microwave">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pillar">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.Pillar">
               <MappingFragment StoreEntitySet="Pillar">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Diameter" ColumnName="Diameter" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.Project">
+              <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="Taxes" ColumnName="Taxes" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RFID">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.RFID">
+              <MappingFragment StoreEntitySet="RFID">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrafficAndEventCollection">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.TrafficAndEventCollection">
+              <MappingFragment StoreEntitySet="TrafficAndEventCollection">
+                <ScalarProperty Name="ConstructionMaterials" ColumnName="ConstructionMaterials" />
+                <ScalarProperty Name="AccessorialMaterials" ColumnName="AccessorialMaterials" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Connection" ColumnName="Connection" />
+                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+                <ScalarProperty Name="PillarId" ColumnName="PillarId" />
+                <ScalarProperty Name="FoundationId" ColumnName="FoundationId" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="TrafficAndEventCollectionEquipmentId" ColumnName="TrafficAndEventCollectionEquipmentId" />
+                <ScalarProperty Name="TrafficAndEventCollectionEquipmentNum" ColumnName="TrafficAndEventCollectionEquipmentNum" />
+                <ScalarProperty Name="TrafficAndEventCollectionEquipmentType" ColumnName="TrafficAndEventCollectionEquipmentType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrafficVideoSurveillance">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.TrafficVideoSurveillance">
+              <MappingFragment StoreEntitySet="TrafficVideoSurveillance">
+                <ScalarProperty Name="ConstructionMaterials" ColumnName="ConstructionMaterials" />
+                <ScalarProperty Name="AccessorialMaterials" ColumnName="AccessorialMaterials" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Connection" ColumnName="Connection" />
+                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+                <ScalarProperty Name="PillarId" ColumnName="PillarId" />
+                <ScalarProperty Name="FoundationId" ColumnName="FoundationId" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="VideoSurveillanceId" ColumnName="VideoSurveillanceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VideoSurveillance">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.VideoSurveillance">
+              <MappingFragment StoreEntitySet="VideoSurveillance">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Connection" ColumnName="Connection" />
+                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="VideoSurveillanceType" ColumnName="VideoSurveillanceType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Navigators">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.Navigator">
+              <MappingFragment StoreEntitySet="Navigators">
+                <ScalarProperty Name="IconFile" ColumnName="IconFile" />
+                <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+                <ScalarProperty Name="Parameters" ColumnName="Parameters" />
+                <ScalarProperty Name="WapLink" ColumnName="WapLink" />
+                <ScalarProperty Name="WinLink" ColumnName="WinLink" />
+                <ScalarProperty Name="WebLink" ColumnName="WebLink" />
+                <ScalarProperty Name="LayoutName" ColumnName="LayoutName" />
+                <ScalarProperty Name="Parent_Id" ColumnName="Parent_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConstructionMaterial">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.ConstructionMaterial">
+              <MappingFragment StoreEntitySet="ConstructionMaterial">
                 <ScalarProperty Name="Unit" ColumnName="Unit" />
                 <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
                 <ScalarProperty Name="ProductType" ColumnName="ProductType" />
-                <ScalarProperty Name="Brand" ColumnName="Brand" />
-                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
-                <ScalarProperty Name="Length" ColumnName="Length" />
-                <ScalarProperty Name="Diameter" ColumnName="Diameter" />
-                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ProjectEquipments">
+          <EntitySetMapping Name="Material">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.Material">
+              <MappingFragment StoreEntitySet="Material">
+                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="Num" ColumnName="Num" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CenterEquipment">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.CenterEquipment">
+              <MappingFragment StoreEntitySet="CenterEquipment">
+                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="Num" ColumnName="Num" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VMS">
+            <EntityTypeMapping TypeName="ProjectDesigner.Data.VMS">
+              <MappingFragment StoreEntitySet="VMS">
+                <ScalarProperty Name="ConstructionMaterials" ColumnName="ConstructionMaterials" />
+                <ScalarProperty Name="AccessorialMaterials" ColumnName="AccessorialMaterials" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="FoundationId" ColumnName="FoundationId" />
+                <ScalarProperty Name="PillarId" ColumnName="PillarId" />
+                <ScalarProperty Name="LEDModuleId" ColumnName="LEDModuleId" />
+                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+                <ScalarProperty Name="ModuleCount" ColumnName="ModuleCount" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Connection" ColumnName="Connection" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectEquipment">
             <EntityTypeMapping TypeName="ProjectDesigner.Data.ProjectEquipment">
               <MappingFragment StoreEntitySet="ProjectEquipment">
+                <ScalarProperty Name="Num" ColumnName="Num" />
                 <ScalarProperty Name="Unit" ColumnName="Unit" />
                 <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
                 <ScalarProperty Name="ProductType" ColumnName="ProductType" />
@@ -1101,141 +1462,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ElectronicPolice">
-            <EntityTypeMapping TypeName="ProjectDesigner.Data.ElectronicPolice">
-              <MappingFragment StoreEntitySet="ElectronicPolice">
-                <ScalarProperty Name="VideoSurveillanceNum" ColumnName="VideoSurveillanceNum" />
-                <ScalarProperty Name="VideoSurveillanceId" ColumnName="VideoSurveillanceId" />
-                <ScalarProperty Name="Unit" ColumnName="Unit" />
-                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
-                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
-                <ScalarProperty Name="FoundationId" ColumnName="FoundationId" />
-                <ScalarProperty Name="PillarId" ColumnName="PillarId" />
-                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
-                <ScalarProperty Name="Connection" ColumnName="Connection" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Brand" ColumnName="Brand" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TrafficVideoSurveillances">
-            <EntityTypeMapping TypeName="ProjectDesigner.Data.TrafficVideoSurveillance">
-              <MappingFragment StoreEntitySet="TrafficVideoSurveillance">
-                <ScalarProperty Name="VideoSurveillanceId" ColumnName="VideoSurveillanceId" />
-                <ScalarProperty Name="Unit" ColumnName="Unit" />
-                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
-                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
-                <ScalarProperty Name="FoundationId" ColumnName="FoundationId" />
-                <ScalarProperty Name="PillarId" ColumnName="PillarId" />
-                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
-                <ScalarProperty Name="Connection" ColumnName="Connection" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Brand" ColumnName="Brand" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TrafficAndEventCollections">
-            <EntityTypeMapping TypeName="ProjectDesigner.Data.TrafficAndEventCollection">
-              <MappingFragment StoreEntitySet="TrafficAndEventCollection">
-                <ScalarProperty Name="TrafficAndEventCollectionEquipmentType" ColumnName="TrafficAndEventCollectionEquipmentType" />
-                <ScalarProperty Name="TrafficAndEventCollectionEquipmentNum" ColumnName="TrafficAndEventCollectionEquipmentNum" />
-                <ScalarProperty Name="TrafficAndEventCollectionEquipmentId" ColumnName="TrafficAndEventCollectionEquipmentId" />
-                <ScalarProperty Name="Unit" ColumnName="Unit" />
-                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
-                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
-                <ScalarProperty Name="FoundationId" ColumnName="FoundationId" />
-                <ScalarProperty Name="PillarId" ColumnName="PillarId" />
-                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
-                <ScalarProperty Name="Connection" ColumnName="Connection" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Brand" ColumnName="Brand" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Coils">
-            <EntityTypeMapping TypeName="ProjectDesigner.Data.Coil">
-              <MappingFragment StoreEntitySet="Coil">
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Unit" ColumnName="Unit" />
-                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
-                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
-                <ScalarProperty Name="Brand" ColumnName="Brand" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Geomagnetics">
-            <EntityTypeMapping TypeName="ProjectDesigner.Data.Geomagnetic">
-              <MappingFragment StoreEntitySet="Geomagnetic">
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Unit" ColumnName="Unit" />
-                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
-                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
-                <ScalarProperty Name="Brand" ColumnName="Brand" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Microwaves">
-            <EntityTypeMapping TypeName="ProjectDesigner.Data.Microwave">
-              <MappingFragment StoreEntitySet="Microwave">
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Unit" ColumnName="Unit" />
-                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
-                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
-                <ScalarProperty Name="Brand" ColumnName="Brand" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RFIDs">
-            <EntityTypeMapping TypeName="ProjectDesigner.Data.RFID">
-              <MappingFragment StoreEntitySet="RFID">
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Unit" ColumnName="Unit" />
-                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
-                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
-                <ScalarProperty Name="Brand" ColumnName="Brand" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="VideoSurveillances">
-            <EntityTypeMapping TypeName="ProjectDesigner.Data.VideoSurveillance">
-              <MappingFragment StoreEntitySet="VideoSurveillance">
-                <ScalarProperty Name="VideoSurveillanceType" ColumnName="VideoSurveillanceType" />
-                <ScalarProperty Name="Unit" ColumnName="Unit" />
-                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
-                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
-                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
-                <ScalarProperty Name="Connection" ColumnName="Connection" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Brand" ColumnName="Brand" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-  </EntityContainerMapping>
-</Mapping></edmx:Mappings>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
@@ -1247,9 +1476,9 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
       </DesignerInfoPropertySet>
     </Options>

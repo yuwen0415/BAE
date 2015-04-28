@@ -63,7 +63,7 @@
                     <th class="word-2">
                         <a href="#">序号</a>
                     </th>
-                    <th class="word-auto" data-field="Name" data-sorting="fixed">
+                    <th class="word-16" data-field="Name" data-sorting="fixed">
                         <a href="#">项目名称</a>
                     </th>
                     <th class="word-4" data-field="Price" data-sorting="fixed">

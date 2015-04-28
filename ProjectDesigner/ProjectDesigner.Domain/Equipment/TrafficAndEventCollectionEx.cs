@@ -29,6 +29,67 @@ namespace ProjectDesigner.Domain.Equipment
                 .FirstOrDefault();
         }
 
+        public static ITrafficAndEventCollectionEquipment SearchTrafficAndEventCollectionEquipment(this IDataContext dataContext, string equipmentname)
+        {
+            if (string.IsNullOrEmpty(equipmentname))
+                return null;
+            var trafficAndEventCollectionEquipments = new List<ITrafficAndEventCollectionEquipment>();
+            trafficAndEventCollectionEquipments.AddRange(dataContext.Coils.AsQuerybale.ToList());
+            trafficAndEventCollectionEquipments.AddRange(dataContext.Geomagnetics.AsQuerybale.ToList());
+            trafficAndEventCollectionEquipments.AddRange(dataContext.Microwaves.AsQuerybale.ToList());
+            trafficAndEventCollectionEquipments.AddRange(dataContext.RFIDs.AsQuerybale.ToList());
+            trafficAndEventCollectionEquipments.AddRange(dataContext.VideoSurveillances.AsQuerybale.ToList());
+            var test = trafficAndEventCollectionEquipments.Where(i => i.Name == equipmentname).FirstOrDefault();
+            return test;
+        }
+
+        public static List<ITrafficAndEventCollectionEquipment> SearchTrafficAndEventCollectionEquipments(this IDataContext dataContext)
+        {
+            var trafficAndEventCollectionEquipments = new List<ITrafficAndEventCollectionEquipment>();
+            trafficAndEventCollectionEquipments.AddRange(dataContext.Coils.AsQuerybale.ToList());
+            trafficAndEventCollectionEquipments.AddRange(dataContext.Geomagnetics.AsQuerybale.ToList());
+            trafficAndEventCollectionEquipments.AddRange(dataContext.Microwaves.AsQuerybale.ToList());
+            trafficAndEventCollectionEquipments.AddRange(dataContext.RFIDs.AsQuerybale.ToList());
+            trafficAndEventCollectionEquipments.AddRange(dataContext.VideoSurveillances.AsQuerybale.ToList());
+            return trafficAndEventCollectionEquipments;
+        }
+
+        public static IHitable<ITrafficAndEventCollectionEquipment> SearchTrafficAndEventCollectionEquipments(this IDataContext dataContext, TrafficAndEventCollectionEquipmentType equipmentType)
+        {
+
+            switch (equipmentType)
+            {
+                case TrafficAndEventCollectionEquipmentType.GEOMAGNETIC:
+                    return dataContext.Geomagnetics
+                                      .AsQuerybale
+                                      .OrderBy(i => i.Name)
+                                      .AsHitable<ITrafficAndEventCollectionEquipment>();
+                case TrafficAndEventCollectionEquipmentType.COIL:
+                    return dataContext.Coils
+                                      .AsQuerybale
+                                      .OrderBy(i => i.Name)
+                                      .AsHitable<ITrafficAndEventCollectionEquipment>();
+                case TrafficAndEventCollectionEquipmentType.VIDEO_SURVEILLANCE:
+                    return dataContext.VideoSurveillances
+                                      .AsQuerybale
+                                      .OrderBy(i => i.Name)
+                                      .AsHitable<ITrafficAndEventCollectionEquipment>();
+                case TrafficAndEventCollectionEquipmentType.RFID:
+                    return dataContext.RFIDs
+                                      .AsQuerybale
+                                      .OrderBy(i => i.Name)
+                                      .AsHitable<ITrafficAndEventCollectionEquipment>();
+                case TrafficAndEventCollectionEquipmentType.MICROWAVE:
+                    return dataContext.Microwaves
+                                      .AsQuerybale
+                                      .OrderBy(i => i.Name)
+                                      .AsHitable<ITrafficAndEventCollectionEquipment>();
+                default:
+                    return null;
+            }
+
+        }
+
         public static void DeleteTrafficAndEventCollection(this IDataContext dataContext, string id)
         {
             var trafficAndEventCollection = dataContext.SearchTrafficAndEventCollection(id);
