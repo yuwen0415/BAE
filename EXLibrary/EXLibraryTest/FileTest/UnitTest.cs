@@ -25,6 +25,7 @@ namespace EXLibraryTest
             //var wordFile = new WordDocumentFile(new FileInfo(@"C:\Users\dell-yuwen\Desktop\WPF绑定.docx"));
             //var wordFileMnt = new WordDocumentFileManagement<WordDocumentFile>(wordFile);
             //wordFileMnt.Show();
+
         }
 
 

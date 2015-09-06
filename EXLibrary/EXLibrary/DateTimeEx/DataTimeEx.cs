@@ -50,5 +50,14 @@ namespace EXLibrary.DateTimeEx
         {
             return (time.GetDayofMoth() == time.Day) ? true : false;
         }
+
+        public static DateTime Format(string timeStr)
+        {
+            //if (timeStr.Contains("年"))
+            //{
+
+            //}
+            return DateTime.Parse(timeStr);
+        }
     }
 }
