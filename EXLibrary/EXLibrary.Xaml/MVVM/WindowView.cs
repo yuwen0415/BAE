@@ -47,6 +47,21 @@ namespace EXLibrary.Xaml.MVVM
             }
         }
 
+        public double Left
+        {
+            get
+            {
+                return Window.Left;
+            }
+        }
+
+        public double Top
+        {
+            get
+            {
+                return Window.Top;
+            }
+        }
 
         public WindowView(Window window)
         {
