@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using EXLibrary.OpenSceneGraph;
 
 namespace ITSViewer.Views
 {
@@ -56,5 +57,45 @@ namespace ITSViewer.Views
             }
         }
 
+        private TravelManipulatorCalculate TravelManipulatorCalculate = new TravelManipulatorCalculate();
+
+
+        private void Border_KeyDown(object sender, KeyEventArgs e)
+        {
+            var viewModel = this.DataContext as ViewerWindowModel;
+            if (viewModel != null && viewModel.ViewerPlayed)
+            {
+                TravelManipulatorCalculate.Rotation = viewModel.OsgViewerAdapter.GetRotation();
+                switch (e.Key)
+                {
+                    case Key.W:
+                        viewModel.OsgViewerAdapter.ChangePosition(TravelManipulatorCalculate.Forward());
+                        break;
+                    case Key.S:
+                        viewModel.OsgViewerAdapter.ChangePosition(TravelManipulatorCalculate.Back());
+                        break;
+                    case Key.A:
+                        viewModel.OsgViewerAdapter.ChangePosition(TravelManipulatorCalculate.Left());
+                        break;
+                    case Key.D:
+                        viewModel.OsgViewerAdapter.ChangePosition(TravelManipulatorCalculate.Right());
+                        break;
+                    case Key.Q:
+                        viewModel.OsgViewerAdapter.ChangePosition(TravelManipulatorCalculate.Down());
+                        break;
+                    case Key.E:
+                        viewModel.OsgViewerAdapter.ChangePosition(TravelManipulatorCalculate.Up());
+                        break;
+                    case Key.Left:
+                        viewModel.OsgViewerAdapter.ChangeRotation(TravelManipulatorCalculate.TurnLeft());
+                        break;
+                    case Key.Right:
+                        viewModel.OsgViewerAdapter.ChangeRotation(TravelManipulatorCalculate.TurnRight());
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EXLibrary.OpenSceneGraph;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -33,9 +34,12 @@ namespace ITSViewer.Domain
 
         public void LoadScene(string scenefile)
         {
+            //var test = EXLibrary.OpenSceneGraph.ITSViewer.Test(1, 2);
+            // System.Windows.Forms.MessageBox.Show(test.ToString());
             EXLibrary.OpenSceneGraph.ITSViewer.Initialize((this.OsgViewerControl as WindowsFormsHost).Child.Handle);
-            EXLibrary.OpenSceneGraph.ITSViewer.LoadScene("cow.osg");
+            EXLibrary.OpenSceneGraph.ITSViewer.LoadScene(scenefile);
         }
+
 
         public void PlayOsgViewer()
         {
@@ -45,7 +49,27 @@ namespace ITSViewer.Domain
         public void StopOsgViewer()
         {
             EXLibrary.OpenSceneGraph.ITSViewer.Stop();
-            ((this.OsgViewerControl as WindowsFormsHost).Child as PictureBox).Image = new Bitmap("images/bak4.jpg");
+            //((this.OsgViewerControl as WindowsFormsHost).Child as PictureBox).Image = new Bitmap("images/bak4.jpg");
+        }
+
+        public void ChangePosition(Vec3d deltePosition)
+        {
+            EXLibrary.OpenSceneGraph.ITSViewer.ChangePosition(deltePosition.X, deltePosition.Y, deltePosition.Z);
+        }
+
+        public void ChangeRotation(Vec3d delteRotation)
+        {
+            EXLibrary.OpenSceneGraph.ITSViewer.ChangeRotation(delteRotation.X, delteRotation.Y, delteRotation.Z);
+        }
+
+        public Vec3d GetRotation()
+        {
+            return new Vec3d(EXLibrary.OpenSceneGraph.ITSViewer.GetRotationX(), EXLibrary.OpenSceneGraph.ITSViewer.GetRotationY(), EXLibrary.OpenSceneGraph.ITSViewer.GetRotationZ());
+        }
+
+        public void ChangeScenceModel(string modelfile)
+        {
+            EXLibrary.OpenSceneGraph.ITSViewer.ChangeScenceModel(modelfile);
         }
     }
 }

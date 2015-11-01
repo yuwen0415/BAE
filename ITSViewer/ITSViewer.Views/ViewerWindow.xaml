@@ -1,16 +1,39 @@
 ﻿<Window x:Class="ITSViewer.Views.ViewerWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Height="768" Width="1024"  WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Title="智能交通三维视景系统" Loaded="Window_Loaded">
+        Height="668" Width="800"  WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Title="智能交通三维视景系统" Loaded="Window_Loaded">
     <!--Icon="Images/login.png"-->
+
+    <!--<Window.InputBindings>
+        <KeyBinding Modifiers="Control" Key="W" Command="{StaticResource Forward}"  />
+    </Window.InputBindings>
+    <Window.Resources>
+        <RoutedUICommand x:Key="Forward"   Text="Forward"/>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource Forward}"                   
+                     Executed="ForwardAction"/>
+    </Window.CommandBindings>-->
     <DockPanel>
         <StackPanel Orientation="Vertical">
             <StackPanel  Orientation="Horizontal">
-                <Button Content="加载视景" Command="{Binding PlayViewer}" Margin="10,6,0,7" Width="60"></Button>
+                <!--<Button Content="加载视景" Command="{Binding PlayViewer}" Margin="10,6,0,7" Width="60"></Button>
                 <Button Content="停止视景" Command="{Binding StopViewer}" Margin="10,6,0,7" Width="60"></Button>
+                <Button Content="更换模型" Command="{Binding ChangeModel}" Margin="10,6,0,7" Width="60"></Button>-->
+                <Menu x:Name="Viewer" Margin="10,6,0,7" Width="60" Height="20">
+                    <MenuItem Header="视景控制">
+                        <MenuItem Header="加载视景" Command="{Binding PlayViewer}" />
+                        <MenuItem Header="停止视景" Command="{Binding StopViewer}"/>
+                    </MenuItem>
+                </Menu>
+                <Menu x:Name="Model" Margin="10,6,0,7" Width="60" Height="20">
+                    <MenuItem Header="模型控制">
+                        <MenuItem Header="更换模型" Command="{Binding ChangeModel}"/>
+                    </MenuItem>
+                </Menu>
             </StackPanel>
             <StackPanel>
-                <Border  BorderBrush="#FFFFFF"  BorderThickness="1" Background="#ECE9D8" Height="701">
+                <Border  BorderBrush="#FFFFFF"  BorderThickness="1" Background="#ECE9D8" Height="601" KeyDown="Border_KeyDown">
                     <DockPanel Name="OsgViewer" LastChildFill="true">
                         <!--<ContentControl Name="InVideo1" Template="{StaticResource RealTimeVideo}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>-->
                     </DockPanel>

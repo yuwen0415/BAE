@@ -55,8 +55,16 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EBA, Version=0.3.0.32700, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EBA.0.3.21\lib\Net40\EBA.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EXLibrary">
       <HintPath>..\..\EXLibrary\lib\EXLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="EXLibrary.OpenSceneGraph, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\EXLibrary\lib\EXLibrary.OpenSceneGraph.dll</HintPath>
     </Reference>
     <Reference Include="EXLibrary.Xaml">
       <HintPath>..\..\EXLibrary\lib\EXLibrary.Xaml.dll</HintPath>
@@ -90,7 +98,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.IO">
       <HintPath>..\packages\Microsoft.Bcl.1.1.7\lib\net40\System.IO.dll</HintPath>
     </Reference>
@@ -113,6 +124,9 @@
     <Reference Include="System.Runtime">
       <HintPath>..\packages\Microsoft.Bcl.1.1.7\lib\net40\System.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Threading.Tasks">
       <HintPath>..\packages\Microsoft.Bcl.1.1.7\lib\net40\System.Threading.Tasks.dll</HintPath>
     </Reference>
@@ -129,6 +143,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewerMntWindow.xaml.cs">
+      <DependentUpon>ViewerMntWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewerMntWindowModel.cs" />
     <Compile Include="ViewerWindowModel.cs" />
     <Compile Include="ViewerWindow.xaml.cs">
       <DependentUpon>ViewerWindow.xaml</DependentUpon>
@@ -163,6 +181,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ViewerMntWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
