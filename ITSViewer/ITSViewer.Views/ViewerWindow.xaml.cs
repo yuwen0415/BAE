@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using EXLibrary.OpenSceneGraph;
+using EXLibrary.Xaml.MVVM;
 
 namespace ITSViewer.Views
 {
@@ -23,6 +24,7 @@ namespace ITSViewer.Views
         {
             InitializeComponent();
             this.Closed += ViewerWindow_Closed;
+
         }
 
         private void ViewerWindow_Closed(object sender, EventArgs e)
@@ -47,7 +49,9 @@ namespace ITSViewer.Views
                             var viewModel = this.DataContext as ViewerWindowModel;
                             if (viewModel != null)
                             {
-                                this.OsgViewer.Children.Add(viewModel.OsgViewerAdapter.OsgViewerControl);
+                                var control = viewModel.OsgViewerAdapter.OsgViewerControl;
+                                this.OsgViewer.Children.Add(control);
+
                             }
 
                             this._ViewModelIsInitialized = true;
@@ -55,6 +59,18 @@ namespace ITSViewer.Views
                     }
                 }));
             }
+        }
+
+        private void Control_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var viewerModel = this.DataContext as ViewerWindowModel;
+
+            MessageBox.Show("put ship");
+            var position = e.GetPosition(this.OsgViewer);
+            MessageBox.Show(position.X.ToString() + ","+position.Y.ToString());
+            viewerModel.ViewerMntWindow.View.Show();
+            viewerModel.OsgViewerAdapter.DynamicPositionChangeModel((float)position.X, (float)position.Y, "ferry02.ive");
+            this.Border.ReleaseMouseCapture();
         }
 
         private TravelManipulatorCalculate TravelManipulatorCalculate = new TravelManipulatorCalculate();

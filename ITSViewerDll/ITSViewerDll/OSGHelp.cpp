@@ -30,6 +30,7 @@ void cOSG::InitOSG(std::string modelname)
 	InitManipulators();
 	InitSceneGraph();
 	InitCameraConfig();
+
 	//InitSkyDome();
 }
 

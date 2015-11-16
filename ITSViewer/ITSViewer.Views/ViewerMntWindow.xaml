@@ -5,9 +5,13 @@
 
     <DockPanel>
         <StackPanel Orientation="Vertical">
-            <StackPanel Height="135">
-                <GroupBox x:Name="groupBox" Header="摄像机控制" Width="316" Margin="0,0,0,510">
+            <StackPanel Height="170">
+                <GroupBox x:Name="groupBox1" Header="摄像机控制" Width="316" Margin="0,0,0,510">
                     <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                        <StackPanel Orientation="Horizontal"  Height="36">
+                            <Button Content="漫游模式" Command="{Binding Wander}"  Margin="40,3,0,3" Width="70"/>
+                            <Button Content="本船模式" Command="{Binding FollowShip}"  Margin="80,3,0,3" Width="70"/>
+                        </StackPanel>
                         <StackPanel Orientation="Horizontal"  Height="36">
                             <Button Content="▽" Command="{Binding Drop}"  Margin="75,3,0,3" Width="30"/>
                             <Button Content="▲" Command="{Binding Forward}"  Margin="30,3,0,3" Width="30"/>
@@ -23,12 +27,18 @@
                     </StackPanel>
                 </GroupBox>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="文件名:"></Label>
-                <TextBox Text= "{Binding FileName}" Width="170"/>
-                <Button Content="..." Command="{Binding OpenFileDialog}" Margin="0,0,3,3" Width="35" />
-                    <Button  Content="更 换" Command="{Binding ChangeModel}" Margin="10,0,3,3" Width="45"></Button>
+            <StackPanel>
+                <GroupBox x:Name="groupBox2" Header="地形文件更换">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="文件名:"></Label>
+                        <TextBox Text= "{Binding TerrainFileName}" Width="165"/>
+                        <Button Content="..." Command="{Binding OpenTerrainFileDialog}" Margin="0,0,3,0" Width="20" />
+                        <Button  Content="更 换" Command="{Binding ChangeTerrainModel}" Margin="25,0,3,0" Width="40" />
+                    </StackPanel>
+                </GroupBox>
             </StackPanel>
+            <StackPanel/>
+
         </StackPanel>
     </DockPanel>
 

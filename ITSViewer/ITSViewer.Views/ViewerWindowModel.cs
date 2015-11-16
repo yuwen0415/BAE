@@ -18,9 +18,9 @@ namespace ITSViewer.Views
 {
     public class ViewerWindowModel : ViewModelBase
     {
-        ViewerMntWindowModel ViewerMntWindow
+        public ViewerMntWindowModel ViewerMntWindow
         {
-            get; set;
+            get; private set;
         }
 
         bool _ViewerPlayed;
@@ -113,6 +113,24 @@ namespace ITSViewer.Views
                 return _ChangeModel;
             }
         }
+
+        ReactiveCommand _ChangeShipModel;
+        public ReactiveCommand ChangeShipModel
+        {
+            get
+            {
+                if (_ChangeShipModel == null)
+                {
+                    _ChangeShipModel = new ReactiveCommand(this.WhenAny(x => x.ViewerPlayed, x => x.Value == true));
+                    _ChangeShipModel.Subscribe(i =>
+                    {
+                        ((this.View as WindowView).Window as ViewerWindow).Border.CaptureMouse();
+                    });
+                }
+                return _ChangeShipModel;
+            }
+        }
+
 
         private OsgViewerAdapter _OsgViewerAdapter;
         public OsgViewerAdapter OsgViewerAdapter

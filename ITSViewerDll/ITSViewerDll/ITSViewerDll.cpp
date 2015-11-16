@@ -72,6 +72,11 @@ void ChangeScenceModel(char modelfile[])
 	m_osg->controlHandler->ChangeScenceModel(modelfile);
 }
 
+void DynamicPositionChangeModel(float screenX, float screenY, char modelfile[])
+{
+	m_osg->controlHandler->DynamicPositionChangeModel(screenX, screenY, modelfile);
+}
+
 
 int Test(int a, int b)
 {

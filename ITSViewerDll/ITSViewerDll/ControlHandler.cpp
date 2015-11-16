@@ -1,4 +1,5 @@
 #include "ControlHandler.h"
+#include "TravelManipulator.h"
 
 ControlHandler::ControlHandler(osgViewer::Viewer *vw)
 {
@@ -24,6 +25,31 @@ void ControlHandler::ChangeScenceModel(char modelfile[])
 	}
 }
 
+void ControlHandler::DynamicPositionChangeModel(float screenX, float screenY, char modelfile[])
+{
+	//osgUtil::LineSegmentIntersector::Intersections inters;
+	//if (m_Viewer->computeIntersections(screenX, screenY, inters))
+	//{
+	//	osgUtil::LineSegmentIntersector::Intersections::iterator iter = inters.begin();
+
+
+	//	osg::Vec3d modelPosition = osg::Vec3d(iter->getWorldIntersectPoint().x(), iter->getWorldIntersectPoint().y(), 0.0f);
+	//	osg::ref_ptr<osg::MatrixTransform> modelMt = new osg::MatrixTransform();
+	//	modelMt->setMatrix(osg::Matrix::translate(modelPosition));
+	//	modelMt->addChild(osgDB::readNodeFile(modelfile));
+	//	//modelMt->setUpdateCallback(new ShipMovingCallback);
+
+	//	modelMt->setName("ship_1");
+	//	m_Viewer->getSceneData()->asGroup()->addChild(modelMt);
+
+	//	//dynamic_cast<TravelManipulator*>(m_Viewer->getCameraManipulator())->setPosition(modelPosition);
+	//}
+	osg::ref_ptr<osg::MatrixTransform> modelMt = new osg::MatrixTransform();
+	modelMt->setMatrix(osg::Matrix::translate(osg::Vec3d(0,0,0)));//dynamic_cast<TravelManipulator*>(m_Viewer->getCameraManipulator())->getPosition())
+	modelMt->addChild(osgDB::readNodeFile(modelfile));
+	modelMt->setName("ship_1");
+	m_Viewer->getSceneData()->asGroup()->addChild(modelMt);
+}
 
 bool ControlHandler::handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
 {

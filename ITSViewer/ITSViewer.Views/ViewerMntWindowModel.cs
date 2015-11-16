@@ -3,9 +3,11 @@ using ITSViewer.Domain;
 using ReactiveUI;
 using ReactiveUI.Xaml;
 using System;
+using System.Windows;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using EXLibrary.Xaml.MVVM;
 
 namespace ITSViewer.Views
 {
@@ -130,58 +132,118 @@ namespace ITSViewer.Views
             }
         }
 
-        private string _FileName = "cow.osgt";
-        public string FileName
+        private string _TerrainFileName = "cow.osgt";
+        public string TerrainFileName
         {
             get
             {
-                return this._FileName;
+                return this._TerrainFileName;
             }
             set
             {
-                this.RaiseAndSetIfChanged(ref _FileName, value);
+                this.RaiseAndSetIfChanged(ref _TerrainFileName, value);
             }
         }
-        
 
-        ReactiveCommand _ChangeModel;
-        public ReactiveCommand ChangeModel
+
+        ReactiveCommand _ChangeTerrainModel;
+        public ReactiveCommand ChangeTerrainModel
         {
             get
             {
-                if (_ChangeModel == null)
+                if (_ChangeTerrainModel == null)
                 {
-                    _ChangeModel = new ReactiveCommand();
-                    _ChangeModel.Subscribe(i =>
+                    _ChangeTerrainModel = new ReactiveCommand();
+                    _ChangeTerrainModel.Subscribe(i =>
                     {
 
-                        OsgViewerAdapter.ChangeScenceModel(FileName);
+                        OsgViewerAdapter.ChangeScenceModel(TerrainFileName);
 
                     });
                 }
-                return _ChangeModel;
+                return _ChangeTerrainModel;
             }
         }
 
-        ReactiveCommand _OpenFileDialog;
-        public ReactiveCommand OpenFileDialog
+        ReactiveCommand _OpenTerrainFileDialog;
+        public ReactiveCommand OpenTerrainFileDialog
         {
             get
             {
-                if (_OpenFileDialog == null)
+                if (_OpenTerrainFileDialog == null)
                 {
-                    _OpenFileDialog = new ReactiveCommand();
-                    _OpenFileDialog.Subscribe(i =>
+                    _OpenTerrainFileDialog = new ReactiveCommand();
+                    _OpenTerrainFileDialog.Subscribe(i =>
                     {
                         var openFileDialog = new Microsoft.Win32.OpenFileDialog();
                         var result = openFileDialog.ShowDialog();
                         if (result == true)
                         {
-                            FileName = openFileDialog.FileName;
+                            TerrainFileName = openFileDialog.FileName;
                         }
                     });
                 }
-                return _OpenFileDialog;
+                return _OpenTerrainFileDialog;
+            }
+        }
+
+
+        bool _IsWander = false;
+        public bool IsWander
+        {
+            get
+            {
+                return _IsWander;
+            }
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _IsWander, value);
+            }
+        }
+
+        ReactiveCommand _Wander;
+        public ReactiveCommand Wander
+        {
+            get
+            {
+                if (this._Wander == null)
+                {
+                    _Wander = new ReactiveCommand(this.WhenAny(x => x.IsWander, x => x.Value == false));
+                    _Wander.Subscribe(i =>
+                    {
+                        this.IsWander = true;
+                        this.IsFollow = false;
+                    });
+                }
+                return this._Wander;
+            }
+        }
+
+        bool _IsFollow = false;
+        public bool IsFollow
+        {
+            get { return _IsFollow; }
+            set
+            {
+                this.RaiseAndSetIfChanged(ref this._IsFollow, value);
+            }
+        }
+
+        ReactiveCommand _FollowShip;
+        public ReactiveCommand FollowShip
+        {
+            get
+            {
+                if (this._FollowShip == null)
+                {
+                    this._FollowShip = new ReactiveCommand(this.WhenAny(x => x.IsWander, y => y.IsFollow, (x, y) => x.Value == true && y.Value == false));
+                    this._FollowShip.Subscribe(i =>
+                    {
+                        this.IsWander = false;
+                        this.IsFollow = true;
+                    });
+                }
+                return this._FollowShip;
             }
         }
     }

@@ -17,9 +17,6 @@
     <DockPanel>
         <StackPanel Orientation="Vertical">
             <StackPanel  Orientation="Horizontal">
-                <!--<Button Content="加载视景" Command="{Binding PlayViewer}" Margin="10,6,0,7" Width="60"></Button>
-                <Button Content="停止视景" Command="{Binding StopViewer}" Margin="10,6,0,7" Width="60"></Button>
-                <Button Content="更换模型" Command="{Binding ChangeModel}" Margin="10,6,0,7" Width="60"></Button>-->
                 <Menu x:Name="Viewer" Margin="10,6,0,7" Width="60" Height="20">
                     <MenuItem Header="视景控制">
                         <MenuItem Header="加载视景" Command="{Binding PlayViewer}" />
@@ -29,13 +26,13 @@
                 <Menu x:Name="Model" Margin="10,6,0,7" Width="60" Height="20">
                     <MenuItem Header="模型控制">
                         <MenuItem Header="更换模型" Command="{Binding ChangeModel}"/>
+                        <MenuItem Header="添加本船" Command="{Binding ChangeShipModel}"/>
                     </MenuItem>
                 </Menu>
             </StackPanel>
             <StackPanel>
-                <Border  BorderBrush="#FFFFFF"  BorderThickness="1" Background="#ECE9D8" Height="601" KeyDown="Border_KeyDown">
+                <Border Name="Border" BorderBrush="#FFFFFF"  BorderThickness="1" Background="#ECE9D8" Height="601" KeyDown="Border_KeyDown" MouseDown="Control_MouseDown">
                     <DockPanel Name="OsgViewer" LastChildFill="true">
-                        <!--<ContentControl Name="InVideo1" Template="{StaticResource RealTimeVideo}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>-->
                     </DockPanel>
                 </Border>
             </StackPanel>
