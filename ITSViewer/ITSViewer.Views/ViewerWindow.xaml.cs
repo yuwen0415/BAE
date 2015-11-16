@@ -69,7 +69,7 @@ namespace ITSViewer.Views
             var position = e.GetPosition(this.OsgViewer);
             MessageBox.Show(position.X.ToString() + ","+position.Y.ToString());
             viewerModel.ViewerMntWindow.View.Show();
-            viewerModel.OsgViewerAdapter.DynamicPositionChangeModel((float)position.X, (float)position.Y, "ferry02.ive");
+            viewerModel.OsgViewerAdapter.DynamicPositionChangeModel(-(float)position.X, -(float)position.Y, "ferry02.ive");
             this.Border.ReleaseMouseCapture();
         }
 
