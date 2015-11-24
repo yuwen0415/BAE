@@ -21,6 +21,9 @@
                     <MenuItem Header="视景控制">
                         <MenuItem Header="加载视景" Command="{Binding PlayViewer}" />
                         <MenuItem Header="停止视景" Command="{Binding StopViewer}"/>
+                        <Separator />
+                        <MenuItem Header="漫游模式" Command="{Binding Wander}" />
+                        <MenuItem Header="本船模式" Command="{Binding FollowShip}"/>
                     </MenuItem>
                 </Menu>
                 <Menu x:Name="Model" Margin="10,6,0,7" Width="60" Height="20">

@@ -51,7 +51,8 @@ namespace ITSViewer.Views
                         OsgViewerAdapter.LoadScene(@"resources\island\islands.ive");//"cow.osgt"///xiamen.ive
                         OsgViewerAdapter.PlayOsgViewer();
                         ViewerMntWindow = new ViewerMntWindowModel(this.OsgViewerAdapter);
-
+                        ViewerMntWindow.ViewerModeText = "漫游模式";
+                        this.IsWander = true;
                         Container.Default.GetExport<IWindowManager>().Show(ViewerMntWindow);
                         (ViewerMntWindow.View as WindowView).Window.Left = this.View.Left + 800;
                         (ViewerMntWindow.View as WindowView).Window.Top = this.View.Top;
@@ -124,12 +125,77 @@ namespace ITSViewer.Views
                     _ChangeShipModel = new ReactiveCommand(this.WhenAny(x => x.ViewerPlayed, x => x.Value == true));
                     _ChangeShipModel.Subscribe(i =>
                     {
-                        ((this.View as WindowView).Window as ViewerWindow).Border.CaptureMouse();
+                        //((this.View as WindowView).Window as ViewerWindow).Border.CaptureMouse();
+                        OsgViewerAdapter.DynamicPositionChangeModelByViewer("ferry02.ive");
+                        ViewerMntWindow.ViewerModeText = "本船模式";
                     });
                 }
                 return _ChangeShipModel;
             }
         }
+
+
+        bool _IsWander = false;
+        public bool IsWander
+        {
+            get
+            {
+                return _IsWander;
+            }
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _IsWander, value);
+            }
+        }
+
+        ReactiveCommand _Wander;
+        public ReactiveCommand Wander
+        {
+            get
+            {
+                if (this._Wander == null)
+                {
+                    _Wander = new ReactiveCommand(this.WhenAny(x => x.IsWander, y => y.ViewerPlayed, (x, y) => x.Value == false && y.Value == true));
+                    _Wander.Subscribe(i =>
+                    {
+                        this.IsWander = true;
+                        this.IsFollow = false;
+                        ViewerMntWindow.ViewerModeText = "漫游模式";
+                    });
+                }
+                return this._Wander;
+            }
+        }
+
+        bool _IsFollow = false;
+        public bool IsFollow
+        {
+            get { return _IsFollow; }
+            set
+            {
+                this.RaiseAndSetIfChanged(ref this._IsFollow, value);
+            }
+        }
+
+        ReactiveCommand _FollowShip;
+        public ReactiveCommand FollowShip
+        {
+            get
+            {
+                if (this._FollowShip == null)
+                {
+                    this._FollowShip = new ReactiveCommand(this.WhenAny(x => x.IsWander, y => y.IsFollow, (x, y) => x.Value == true && y.Value == false));
+                    this._FollowShip.Subscribe(i =>
+                    {
+                        this.IsWander = false;
+                        this.IsFollow = true;
+                    });
+                }
+                return this._FollowShip;
+            }
+        }
+
+
 
 
         private OsgViewerAdapter _OsgViewerAdapter;

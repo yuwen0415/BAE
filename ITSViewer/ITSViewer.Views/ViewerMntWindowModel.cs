@@ -145,6 +145,19 @@ namespace ITSViewer.Views
             }
         }
 
+        string _ViewerModeText;
+        public string ViewerModeText
+        {
+            get
+            {
+                return this._ViewerModeText;
+            }
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _ViewerModeText, value);
+            }
+        }
+
 
         ReactiveCommand _ChangeTerrainModel;
         public ReactiveCommand ChangeTerrainModel
@@ -187,64 +200,5 @@ namespace ITSViewer.Views
             }
         }
 
-
-        bool _IsWander = false;
-        public bool IsWander
-        {
-            get
-            {
-                return _IsWander;
-            }
-            set
-            {
-                this.RaiseAndSetIfChanged(ref _IsWander, value);
-            }
-        }
-
-        ReactiveCommand _Wander;
-        public ReactiveCommand Wander
-        {
-            get
-            {
-                if (this._Wander == null)
-                {
-                    _Wander = new ReactiveCommand(this.WhenAny(x => x.IsWander, x => x.Value == false));
-                    _Wander.Subscribe(i =>
-                    {
-                        this.IsWander = true;
-                        this.IsFollow = false;
-                    });
-                }
-                return this._Wander;
-            }
-        }
-
-        bool _IsFollow = false;
-        public bool IsFollow
-        {
-            get { return _IsFollow; }
-            set
-            {
-                this.RaiseAndSetIfChanged(ref this._IsFollow, value);
-            }
-        }
-
-        ReactiveCommand _FollowShip;
-        public ReactiveCommand FollowShip
-        {
-            get
-            {
-                if (this._FollowShip == null)
-                {
-                    this._FollowShip = new ReactiveCommand(this.WhenAny(x => x.IsWander, y => y.IsFollow, (x, y) => x.Value == true && y.Value == false));
-                    this._FollowShip.Subscribe(i =>
-                    {
-                        this.IsWander = false;
-                        this.IsFollow = true;
-                    });
-                }
-                return this._FollowShip;
-            }
-        }
     }
 }

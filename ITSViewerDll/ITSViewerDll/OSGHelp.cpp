@@ -60,13 +60,29 @@ void cOSG::InitSceneGraph(void)
 
 	transform->setMatrix(osg::Matrixf::translate(osg::Vec3(0.0f, 0.0f, 0.0f)));
 
-	// Load the Model from the model name
-	mModel = osgDB::readNodeFile(m_ModelName);
-	if (!mModel) return;
-
-
-	transform->addChild(mModel);
+	transform->addChild(osgDB::readNodeFile(m_ModelName));
 	transform->setName("node");
+	// Optimize the model
+	osgUtil::Optimizer optimizer;
+	optimizer.optimize(transform.get());
+	optimizer.reset();
+
+	// Add the model to the scene
+	mRoot->addChild(transform.get());
+
+}
+
+void cOSG::AddShip(void)
+{
+
+	// Init the main Root Node/Group
+
+	osg::ref_ptr<osg::MatrixTransform> transform = new osg::MatrixTransform();
+
+	transform->setMatrix(osg::Matrixf::translate(osg::Vec3(0.0f, 0.0f, 0.0f)));
+
+	transform->addChild(osgDB::readNodeFile("ferry02.ive"));
+	transform->setName("ship_1");
 	// Optimize the model
 	osgUtil::Optimizer optimizer;
 	optimizer.optimize(transform.get());
@@ -134,6 +150,7 @@ void cOSG::InitCameraConfig(void)
 	mViewer->setCameraManipulator(travelManipulator.get());
 
 	AddOcean();
+	AddShip();
 
 	//mViewer->setLightingMode(osg::View::NO_LIGHT);
 	osg::ref_ptr<osg::StateSet> globalStateset = mViewer->getCamera()->getStateSet();
@@ -228,7 +245,7 @@ osg::Vec4f intColor(unsigned int r, unsigned int g, unsigned int b, unsigned int
 
 void cOSG::AddOcean()
 {
-	osg::ref_ptr<osgOcean::FFTOceanSurface> oceanface = new osgOcean::FFTOceanSurface(64, 256, 17, osg::Vec2f(1.0f, 1.0f), 8.0f, 10000.0f, 1e-8, true, 2.5f, 10.0f, 256); //0.35f, 
+	osg::ref_ptr<osgOcean::FFTOceanSurface> oceanface = new osgOcean::FFTOceanSurface(64, 1024, 17, osg::Vec2f(1.0f, 1.0f), 8.0f, 10000.0f, 1e-8, true, 2.5f, 10.0f, 256); //0.35f, 
 	mOceanscene = new osgOcean::OceanScene(oceanface.get());//此类中的构造函数时的变量为oceanTechnique类，FFTOceanSurface是它的子类，所以可以直接用
 	mOceanscene->setName("oceanscene");
 
@@ -248,10 +265,10 @@ void cOSG::AddOcean()
 
 
 	osg::ref_ptr<osg::TextureCubeMap> cubemap = loadCubeMapTexture();
-	osg::ref_ptr<SkyDome> skydome = new SkyDome(1900.0f, 32, 32, cubemap.get(), mViewer);
+	osg::ref_ptr<SkyDome> skydome = new SkyDome(10240.0f, 32, 32, cubemap.get(), mViewer);
 
 	//**设置海洋柱体大小
-	osg::ref_ptr<Cylinder> _oceanCylinder = new Cylinder(19000.f, 400.8f, 32, false, true);
+	osg::ref_ptr<Cylinder> _oceanCylinder = new Cylinder(10240.0f, 400.8f, 32, false, true);
 	_oceanCylinder->setColor(intColor(27, 57, 109));
 	_oceanCylinder->getOrCreateStateSet()->setMode(GL_LIGHTING, osg::StateAttribute::OFF);
 	_oceanCylinder->getOrCreateStateSet()->setMode(GL_FOG, osg::StateAttribute::OFF);

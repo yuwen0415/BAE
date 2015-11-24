@@ -10,6 +10,7 @@ public:
 
 	void ChangeScenceModel(char modelfile[]);
 	void DynamicPositionChangeModel(float screenX, float screenY, char modelfile[]);
+	void DynamicPositionChangeModel(char modelfile[]);
 
 private:
 	osg::ref_ptr<osgViewer::Viewer> m_Viewer;

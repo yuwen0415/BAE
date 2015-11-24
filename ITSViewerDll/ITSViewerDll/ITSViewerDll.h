@@ -25,6 +25,7 @@ extern "C"
 
 	_declspec(dllexport) void ChangeScenceModel(char modelfile[]);
 	_declspec(dllexport) void DynamicPositionChangeModel(float screenX,float screenY,char modelfile[]);
+	_declspec(dllexport) void DynamicPositionChangeModelByViewer(char modelfile[]);
 
 	_declspec(dllexport) int Test(int a, int b);
 

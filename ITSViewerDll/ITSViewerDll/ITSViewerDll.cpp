@@ -77,6 +77,11 @@ void DynamicPositionChangeModel(float screenX, float screenY, char modelfile[])
 	m_osg->controlHandler->DynamicPositionChangeModel(screenX, screenY, modelfile);
 }
 
+void DynamicPositionChangeModelByViewer(char modelfile[])
+{
+	m_osg->controlHandler->DynamicPositionChangeModel(modelfile);
+}
+
 
 int Test(int a, int b)
 {

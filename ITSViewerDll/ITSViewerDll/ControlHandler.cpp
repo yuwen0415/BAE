@@ -1,10 +1,10 @@
 #include "ControlHandler.h"
 #include "TravelManipulator.h"
+#include <osgUtil/Optimizer>
 
 ControlHandler::ControlHandler(osgViewer::Viewer *vw)
 {
 	m_Viewer = vw;
-
 }
 
 ControlHandler::~ControlHandler(void)
@@ -18,9 +18,8 @@ void ControlHandler::ChangeScenceModel(char modelfile[])
 		if (m_Viewer->getSceneData()->asGroup()->getChild(i)->getName() == "node")
 		{
 			osg::Node *node = dynamic_cast<osg::MatrixTransform *>(m_Viewer->getSceneData()->asGroup()->getChild(i))->getChild(0);
-			dynamic_cast<osg::MatrixTransform *>(m_Viewer->getSceneData()->asGroup()->getChild(i))->removeChild(node);
-			//dynamic_cast<osg::MatrixTransform *>(m_Viewer->getSceneData()->asGroup()->getChild(i))->setMatrix(osg::Matrixf::translate(osg::Vec3(-3814.0f, -18817.0f, 0.0f)));
-			dynamic_cast<osg::MatrixTransform *>(m_Viewer->getSceneData()->asGroup()->getChild(i))->addChild(osgDB::readNodeFile(modelfile));
+			dynamic_cast<osg::MatrixTransform *>(m_Viewer->getSceneData()->asGroup()->getChild(i))->replaceChild(node, osgDB::readNodeFile(modelfile));
+			return;
 		}
 	}
 }
@@ -43,17 +42,42 @@ void ControlHandler::DynamicPositionChangeModel(float screenX, float screenY, ch
 		modelMt->setName("ship_1");
 		m_Viewer->getSceneData()->asGroup()->addChild(modelMt);
 
+		
 		//dynamic_cast<TravelManipulator*>(m_Viewer->getCameraManipulator())->setPosition(modelPosition);
 	}
-	//if (m_Viewer != NULL)
-	//{
-	//	osg::ref_ptr<osg::MatrixTransform> modelMt = new osg::MatrixTransform();
+}
 
-	//	modelMt->setMatrix(osg::Matrixf::translate(dynamic_cast<TravelManipulator*>(m_Viewer->getCameraManipulator())->getPosition()));
-	//	modelMt->addChild(osgDB::readNodeFile(modelfile));
-	//	modelMt->setName("ship_1");
-	//	m_Viewer->getSceneData()->asGroup()->addChild(modelMt);
-	//}
+void ControlHandler::DynamicPositionChangeModel(char modelfile[])
+{
+	if (m_Viewer != NULL)
+	{
+		osg::MatrixTransform* modelMt = new osg::MatrixTransform();
+		osg::Vec3f viewerPosition = dynamic_cast<TravelManipulator*>(m_Viewer->getCameraManipulator())->getMatrix().getTrans();
+
+		for (unsigned int i = 0; i < m_Viewer->getSceneData()->asGroup()->getNumChildren(); i++)
+		{
+			if (m_Viewer->getSceneData()->asGroup()->getChild(i)->getName() == "ship_1")
+			{
+				osg::Node *node = dynamic_cast<osg::MatrixTransform *>(m_Viewer->getSceneData()->asGroup()->getChild(i))->getChild(0);
+				dynamic_cast<osg::MatrixTransform *>(m_Viewer->getSceneData()->asGroup()->getChild(i))->setMatrix(osg::Matrixf::translate(osg::Vec3f(viewerPosition.x(), viewerPosition.y(), 0.0f)));
+				dynamic_cast<osg::MatrixTransform *>(m_Viewer->getSceneData()->asGroup()->getChild(i))->replaceChild(node,osgDB::readNodeFile(modelfile));
+				return;
+			}
+		}
+
+		//modelMt->setMatrix(osg::Matrixf::translate(osg::Vec3f(viewerPosition.x(), viewerPosition.y(), 0.0f)));
+		////modelMt->setUpdateCallback(new ShipMovingCallback);
+
+		//modelMt->addChild(osgDB::readNodeFile(modelfile));
+		//modelMt->setName("ship_1");
+		//osgUtil::Optimizer optimizer;
+		//optimizer.optimize(modelMt);
+		//optimizer.reset();
+
+		//m_Viewer->getSceneData()->asGroup()->addChild(modelMt);
+
+		//dynamic_cast<TravelManipulator*>(m_Viewer->getCameraManipulator())->setPosition(modelPosition);
+	}
 }
 
 bool ControlHandler::handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)

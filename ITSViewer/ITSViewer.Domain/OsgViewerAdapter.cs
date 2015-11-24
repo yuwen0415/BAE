@@ -76,5 +76,10 @@ namespace ITSViewer.Domain
         {
             EXLibrary.OpenSceneGraph.ITSViewer.DynamicPositionChangeModel(screenX, screenY, modelfile);
         }
+
+        public void DynamicPositionChangeModelByViewer(string modelfile)
+        {
+            EXLibrary.OpenSceneGraph.ITSViewer.DynamicPositionChangeModelByViewer(modelfile);
+        }
     }
 }

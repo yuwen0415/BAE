@@ -48,12 +48,12 @@ private:
 	HWND m_hWnd;
 	osg::ref_ptr<osgViewer::Viewer> mViewer;
 	osg::ref_ptr<osg::Group> mRoot;
-	osg::ref_ptr<osg::Node> mModel;
 	osg::ref_ptr<osgGA::TrackballManipulator> trackball;
 	osg::ref_ptr<osgOcean::OceanScene> mOceanscene;
 
 	void InitSkyDome();
 	void AddOcean();
+	void AddShip();
 	
 };
 

@@ -68,9 +68,11 @@ namespace ITSViewer.Views
             MessageBox.Show("put ship");
             var position = e.GetPosition(this.OsgViewer);
             MessageBox.Show(position.X.ToString() + ","+position.Y.ToString());
-            viewerModel.ViewerMntWindow.View.Show();
+            //viewerModel.ViewerMntWindow.View.Show();
             viewerModel.OsgViewerAdapter.DynamicPositionChangeModel(-(float)position.X, -(float)position.Y, "ferry02.ive");
             this.Border.ReleaseMouseCapture();
+            //viewerModel.IsFollow = true;
+            //viewerModel.IsWander = false;
         }
 
         private TravelManipulatorCalculate TravelManipulatorCalculate = new TravelManipulatorCalculate();

@@ -42,6 +42,9 @@ namespace EXLibrary.OpenSceneGraph
         public static extern void DynamicPositionChangeModel(float screenX, float screenY, string modelfile);
 
         [DllImport("ITSViewerDll.dll")]
+        public static extern void DynamicPositionChangeModelByViewer(string modelfile);
+
+        [DllImport("ITSViewerDll.dll")]
         public static extern int Test(Int16 a, Int16 b);
     }
 }
