@@ -27,6 +27,14 @@ extern "C"
 	_declspec(dllexport) void DynamicPositionChangeModel(float screenX,float screenY,char modelfile[]);
 	_declspec(dllexport) void DynamicPositionChangeModelByViewer(char modelfile[]);
 
+	_declspec(dllexport) void SetFollowShip();
+	_declspec(dllexport) void SetWander();
+
+	_declspec(dllexport) void ShipVecSpeedUp();
+	_declspec(dllexport) void ShipAngleVecSpeedUp();
+	_declspec(dllexport) void ReduceShipVec();
+	_declspec(dllexport) void ReduceShipAngleVec();
+
 	_declspec(dllexport) int Test(int a, int b);
 
 

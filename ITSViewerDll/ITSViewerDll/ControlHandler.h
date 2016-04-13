@@ -1,5 +1,6 @@
 #pragma once
 #include "Common.h"
+#include "ShipTravelManipulator.h"
 
 class ControlHandler : public osgGA::GUIEventHandler
 {
@@ -12,6 +13,19 @@ public:
 	void DynamicPositionChangeModel(float screenX, float screenY, char modelfile[]);
 	void DynamicPositionChangeModel(char modelfile[]);
 
+	void SetCameraFollowShip();
+	void SetCameraWander();
+
+	void ShipVecSpeedUp();
+	void ShipAngleVecSpeedUp();
+	void ReduceShipVec();
+	void ReduceShipAngleVec();
+
 private:
 	osg::ref_ptr<osgViewer::Viewer> m_Viewer;
+	bool m_isFollowShip = false;
+
+	ShipTravelManipulator* ShipTM;
+
+	void CameraFollowShipMove();
 };

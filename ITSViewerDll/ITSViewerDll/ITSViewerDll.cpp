@@ -82,6 +82,35 @@ void DynamicPositionChangeModelByViewer(char modelfile[])
 	m_osg->controlHandler->DynamicPositionChangeModel(modelfile);
 }
 
+void SetFollowShip()
+{
+	m_osg->controlHandler->SetCameraFollowShip();
+	m_osg->travelManipulator->setWander(false);
+}
+
+void SetWander()
+{
+	m_osg->controlHandler->SetCameraWander();
+	m_osg->travelManipulator->setWander(true);
+}
+
+void ShipVecSpeedUp()
+{
+	m_osg->controlHandler->ShipVecSpeedUp();
+}
+void ShipAngleVecSpeedUp()
+{
+	m_osg->controlHandler->ShipAngleVecSpeedUp();
+}
+void ReduceShipVec()
+{
+	m_osg->controlHandler->ReduceShipVec();
+}
+void ReduceShipAngleVec()
+{
+	m_osg->controlHandler->ReduceShipAngleVec();
+}
+
 
 int Test(int a, int b)
 {

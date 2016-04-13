@@ -43,6 +43,24 @@ namespace EXLibrary.OpenSceneGraph
 
         [DllImport("ITSViewerDll.dll")]
         public static extern void DynamicPositionChangeModelByViewer(string modelfile);
+        
+        [DllImport("ITSViewerDll.dll")]
+        public static extern void SetFollowShip();
+
+        [DllImport("ITSViewerDll.dll")]
+        public static extern void SetWander();
+
+        [DllImport("ITSViewerDll.dll")]
+        public static extern void ShipVecSpeedUp();
+
+        [DllImport("ITSViewerDll.dll")]
+        public static extern void ShipAngleVecSpeedUp();
+
+        [DllImport("ITSViewerDll.dll")]
+        public static extern void ReduceShipVec();
+
+        [DllImport("ITSViewerDll.dll")]
+        public static extern void ReduceShipAngleVec();
 
         [DllImport("ITSViewerDll.dll")]
         public static extern int Test(Int16 a, Int16 b);

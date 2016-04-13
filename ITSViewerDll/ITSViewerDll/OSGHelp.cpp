@@ -45,7 +45,7 @@ void cOSG::InitManipulators(void)
 	//// Init the switcher to the first manipulator (in this case the only manipulator)
 	//keyswitchManipulator->selectMatrixManipulator(0);  // Zero based index Value
 
-	travelManipulator = new TravelManipulator();
+	travelManipulator = new TravelManipulator(mViewer);
 	travelManipulator->setWander(true);
 }
 

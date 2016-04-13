@@ -81,5 +81,32 @@ namespace ITSViewer.Domain
         {
             EXLibrary.OpenSceneGraph.ITSViewer.DynamicPositionChangeModelByViewer(modelfile);
         }
+
+        public void SetFollowShip()
+        {
+            EXLibrary.OpenSceneGraph.ITSViewer.SetFollowShip();
+        }
+
+        public void SetWander()
+        {
+            EXLibrary.OpenSceneGraph.ITSViewer.SetWander();
+        }
+
+        public void ShipVecSpeedUp()
+        {
+            EXLibrary.OpenSceneGraph.ITSViewer.ShipVecSpeedUp();
+        }
+        public void ShipAngleVecSpeedUp()
+        {
+            EXLibrary.OpenSceneGraph.ITSViewer.ShipAngleVecSpeedUp();
+        }
+        public void ReduceShipVec()
+        {
+            EXLibrary.OpenSceneGraph.ITSViewer.ReduceShipVec();
+        }
+        public void ReduceShipAngleVec()
+        {
+            EXLibrary.OpenSceneGraph.ITSViewer.ReduceShipAngleVec();
+        }
     }
 }

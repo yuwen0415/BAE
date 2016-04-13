@@ -14,7 +14,7 @@ class TravelManipulator :
 	public osgGA::CameraManipulator
 {
 public:
-	TravelManipulator(void);
+	TravelManipulator(osg::ref_ptr< osgViewer::Viewer> viewer);
 	~TravelManipulator(void);
 
 public:
@@ -38,10 +38,14 @@ public:
 	int getStep();
 	//设置到某点
 	void setPosition(osg::Vec3d &position);
+	//设置旋转到某个角度
+	void setRotation(osg::Vec3d &rotation);
+
 	//得到当前坐标
 	osg::Vec3d getPosition();
 	//得到当前旋转的角度坐标
 	osg::Vec3d getRotation();
+
 
 
 	void setWander(bool wander)
@@ -66,5 +70,6 @@ private:
 	bool m_bleftdown;
 	//是否漫游
 	bool m_isWander;
+	osg::ref_ptr<osgViewer::Viewer> m_Viewer;
 };
 

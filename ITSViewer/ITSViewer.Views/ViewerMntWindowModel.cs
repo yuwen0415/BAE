@@ -13,6 +13,18 @@ namespace ITSViewer.Views
 {
     public class ViewerMntWindowModel : ViewModelBase
     {
+        bool _IsWander = true;
+        public bool IsWander
+        {
+            get
+            {
+                return this._IsWander;
+            }
+            set
+            {
+                this.RaiseAndSetIfChanged(ref this._IsWander, value);
+            }
+        }
         private OsgViewerAdapter OsgViewerAdapter
         {
             get; set;
@@ -31,7 +43,7 @@ namespace ITSViewer.Views
             {
                 if (_Rise == null)
                 {
-                    _Rise = new ReactiveCommand();
+                    _Rise = new ReactiveCommand(this.WhenAny(x => x.IsWander, x => x.Value == true));
                     _Rise.Subscribe(i =>
                     {
                         TravelManipulatorCalculate.Rotation = OsgViewerAdapter.GetRotation();
@@ -52,8 +64,13 @@ namespace ITSViewer.Views
                     _Forward = new ReactiveCommand();
                     _Forward.Subscribe(i =>
                         {
-                            TravelManipulatorCalculate.Rotation = OsgViewerAdapter.GetRotation();
-                            OsgViewerAdapter.ChangePosition(TravelManipulatorCalculate.Forward());
+                            if (IsWander)
+                            {
+                                TravelManipulatorCalculate.Rotation = OsgViewerAdapter.GetRotation();
+                                OsgViewerAdapter.ChangePosition(TravelManipulatorCalculate.Forward());
+                            }
+                            else
+                                OsgViewerAdapter.ShipVecSpeedUp();
                         });
                 }
                 return _Forward;
@@ -67,7 +84,7 @@ namespace ITSViewer.Views
             {
                 if (_Drop == null)
                 {
-                    _Drop = new ReactiveCommand();
+                    _Drop = new ReactiveCommand(this.WhenAny(x => x.IsWander, x => x.Value == true));
                     _Drop.Subscribe(i =>
                     {
                         TravelManipulatorCalculate.Rotation = OsgViewerAdapter.GetRotation();
@@ -88,8 +105,13 @@ namespace ITSViewer.Views
                     _TurnLeft = new ReactiveCommand();
                     _TurnLeft.Subscribe(i =>
                     {
-                        TravelManipulatorCalculate.Rotation = OsgViewerAdapter.GetRotation();
-                        OsgViewerAdapter.ChangeRotation(TravelManipulatorCalculate.TurnLeft());
+                        if (IsWander)
+                        {
+                            TravelManipulatorCalculate.Rotation = OsgViewerAdapter.GetRotation();
+                            OsgViewerAdapter.ChangeRotation(TravelManipulatorCalculate.TurnLeft());
+                        }
+                        else
+                            OsgViewerAdapter.ShipAngleVecSpeedUp();
                     });
                 }
                 return _TurnLeft;
@@ -106,8 +128,13 @@ namespace ITSViewer.Views
                     _TurnRight = new ReactiveCommand();
                     _TurnRight.Subscribe(i =>
                     {
-                        TravelManipulatorCalculate.Rotation = OsgViewerAdapter.GetRotation();
-                        OsgViewerAdapter.ChangeRotation(TravelManipulatorCalculate.TurnRight());
+                        if (IsWander)
+                        {
+                            TravelManipulatorCalculate.Rotation = OsgViewerAdapter.GetRotation();
+                            OsgViewerAdapter.ChangeRotation(TravelManipulatorCalculate.TurnRight());
+                        }
+                        else
+                            OsgViewerAdapter.ReduceShipAngleVec();
                     });
                 }
                 return _TurnRight;
@@ -124,8 +151,13 @@ namespace ITSViewer.Views
                     _Back = new ReactiveCommand();
                     _Back.Subscribe(i =>
                     {
-                        TravelManipulatorCalculate.Rotation = OsgViewerAdapter.GetRotation();
-                        OsgViewerAdapter.ChangePosition(TravelManipulatorCalculate.Back());
+                        if (this.IsWander)
+                        {
+                            TravelManipulatorCalculate.Rotation = OsgViewerAdapter.GetRotation();
+                            OsgViewerAdapter.ChangePosition(TravelManipulatorCalculate.Back());
+                        }
+                        else
+                            OsgViewerAdapter.ReduceShipVec();
                     });
                 }
                 return _Back;

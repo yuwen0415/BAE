@@ -128,6 +128,10 @@ namespace ITSViewer.Views
                         //((this.View as WindowView).Window as ViewerWindow).Border.CaptureMouse();
                         OsgViewerAdapter.DynamicPositionChangeModelByViewer("ferry02.ive");
                         ViewerMntWindow.ViewerModeText = "本船模式";
+                        this.IsWander = false;
+                        this.IsFollow = true;
+                        OsgViewerAdapter.SetFollowShip();
+                        ViewerMntWindow.IsWander = false;
                     });
                 }
                 return _ChangeShipModel;
@@ -161,6 +165,8 @@ namespace ITSViewer.Views
                         this.IsWander = true;
                         this.IsFollow = false;
                         ViewerMntWindow.ViewerModeText = "漫游模式";
+                        OsgViewerAdapter.SetWander();
+                        ViewerMntWindow.IsWander = true;
                     });
                 }
                 return this._Wander;
@@ -189,6 +195,8 @@ namespace ITSViewer.Views
                     {
                         this.IsWander = false;
                         this.IsFollow = true;
+                        OsgViewerAdapter.SetFollowShip();
+                        ViewerMntWindow.IsWander = false;
                     });
                 }
                 return this._FollowShip;

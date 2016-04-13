@@ -16,7 +16,7 @@ float ButtonMode::m_fogDensity = 0.0f;
 float ButtonMode::m_darkfactor = 1.0f;
 int ButtonMode::m_shipframe = 0;
 
-TravelManipulator::TravelManipulator(void)
+TravelManipulator::TravelManipulator(osg::ref_ptr<osgViewer::Viewer> viewer)
 {
 	m_vPosition = osg::Vec3(0, -40, 0);
 	m_vRotation = osg::Vec3(osg::PI_2, 0, 0);
@@ -26,6 +26,7 @@ TravelManipulator::TravelManipulator(void)
 	m_ileftX = 0;
 	m_ileftY = 0;
 	m_isWander = true;
+	m_Viewer = viewer;
 }
 
 TravelManipulator::~TravelManipulator(void)
@@ -84,86 +85,94 @@ osg::Matrixd TravelManipulator::getMatrix() const
 
 bool TravelManipulator::handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& us)
 {
-	if (ButtonMode::m_cameraFollow)
-	{
-		switch (ea.getEventType())
-		{
-		case osgGA::GUIEventAdapter::FRAME:
-		{
-			m_vPosition = osg::Vec3d(ButtonMode::m_shipPosition.x(), ButtonMode::m_shipPosition.y(), 10.0f);
-			m_vRotation[2] = ButtonMode::m_shipRotation[2];
-			//if (ButtonMode::m_shipframe == 10)
-			//{					
-			if (ButtonMode::m_shipVec != 0.0f)
-			{
-				m_vRotation[2] += ButtonMode::m_shipAngleVec;
-			}
-			m_vPosition += osg::Vec3d(ButtonMode::m_shipVec*cosf(osg::PI_2 + ButtonMode::m_shipRotation[2]), ButtonMode::m_shipVec*sinf(osg::PI_2 + ButtonMode::m_shipRotation[2]), 0.0f);
-			//}
+	//if (!m_isWander)
+	//{
+	//	switch (ea.getEventType())
+	//	{
+	//	case osgGA::GUIEventAdapter::FRAME:
+	//	{
+	//		osg::MatrixTransform * m_shipMT = new osg::MatrixTransform();
+	//		for (unsigned int i = 0; i < m_Viewer->getSceneData()->asGroup()->getNumChildren(); i++)
+	//		{
+	//			if (m_Viewer->getSceneData()->asGroup()->getChild(i)->getName() == "ship_1")
+	//			{
+	//				m_shipMT = dynamic_cast<osg::MatrixTransform *>(m_Viewer->getSceneData()->asGroup()->getChild(i));
+	//				break;
+	//			}
+	//		}
+	//		if (m_shipMT != NULL)
+	//		{
+	//			osg::Vec3f shipPosition = m_shipMT->getMatrix().getTrans();
+	//			m_vPosition = osg::Vec3d(shipPosition.x(), shipPosition.y(), 10.0f);
+	//			m_vRotation[2] = m_shipMT->getMatrix().getRotate().z();
+	//		}
+	//		//if (ButtonMode::m_shipframe == 10)
+	//		//{					
+	//		//m_vPosition += osg::Vec3d(ButtonMode::m_shipVec*cosf(osg::PI_2 + ButtonMode::m_shipRotation[2]), ButtonMode::m_shipVec*sinf(osg::PI_2 + ButtonMode::m_shipRotation[2]), 0.0f);
+	//		//}
 
-		}
-		//			std::cout<<"2  "<<m_vRotation[2]<<std::endl;
-		break;
-		}
-	}
+	//	}
+	//	break;
+	//	}
+	//}
 
 	if (m_isWander)
 	{
 		switch (ea.getEventType())
 		{
-		//case osgGA::GUIEventAdapter::KEYDOWN:
-		//{
-		//	if (ea.getKey() == 'w' || ea.getKey() == 'W' || ea.getKey() == osgGA::GUIEventAdapter::KEY_Up)
-		//	{
-		//		ChangePosition(osg::Vec3d(m_iSpeed*cosf(osg::PI_2 + m_vRotation[2]), m_iSpeed*sinf(osg::PI_2 + m_vRotation[2]), 0));
-		//		//std::cout<<m_vPosition.x()<<"  "<<m_vPosition.y()<<std::endl;
-		//		return true;
-		//	}
-		//	else if (ea.getKey() == 's' || ea.getKey() == 'S' || ea.getKey() == osgGA::GUIEventAdapter::KEY_Down)
-		//	{
-		//		ChangePosition(osg::Vec3d(-m_iSpeed*cosf(osg::PI_2 + m_vRotation[2]), -m_iSpeed*sinf(osg::PI_2 + m_vRotation[2]), 0));
-		//		return true;
-		//	}
-		//	else if (ea.getKey() == 'a' || ea.getKey() == 'A')
-		//	{
-		//		ChangePosition(osg::Vec3d(-m_iSpeed*sinf(osg::PI_2 + m_vRotation[2]), m_iSpeed*cosf(osg::PI_2 + m_vRotation[2]), 0));
-		//		return true;
-		//	}
-		//	else if (ea.getKey() == 'd' || ea.getKey() == 'D')
-		//	{
-		//		ChangePosition(osg::Vec3d(m_iSpeed*sinf(osg::PI_2 + m_vRotation[2]), -m_iSpeed*cosf(osg::PI_2 + m_vRotation[2]), 0));
-		//		return true;
-		//	}
-		//	else if (ea.getKey() == osgGA::GUIEventAdapter::KEY_Left)
-		//	{
-		//		m_vRotation[2] += 0.2;
-		//		return true;
-		//	}
-		//	else if (ea.getKey() == osgGA::GUIEventAdapter::KEY_Right)
-		//	{
-		//		m_vRotation[2] -= 0.2;
-		//		return true;
-		//	}
-		//	else if (ea.getKey() == 'q' || ea.getKey() == 'Q')
-		//	{
-		//		ChangePosition(osg::Vec3d(0, 0, -1));
-		//		return true;
-		//	}
-		//	else if (ea.getKey() == 'e' || ea.getKey() == 'E')
-		//	{
-		//		ChangePosition(osg::Vec3d(0, 0, 1));
-		//		return true;
-		//	}
-		//	//**按Tab键实现摄像机90度旋转
-		//	else if (ea.getKey() == osgGA::GUIEventAdapter::KEY_Tab)
-		//	{
-		//		m_vRotation[0] -= osg::PI_2;
-		//		return true;
-		//	}
-		//}
-		//break;
+			//case osgGA::GUIEventAdapter::KEYDOWN:
+			//{
+			//	if (ea.getKey() == 'w' || ea.getKey() == 'W' || ea.getKey() == osgGA::GUIEventAdapter::KEY_Up)
+			//	{
+			//		ChangePosition(osg::Vec3d(m_iSpeed*cosf(osg::PI_2 + m_vRotation[2]), m_iSpeed*sinf(osg::PI_2 + m_vRotation[2]), 0));
+			//		//std::cout<<m_vPosition.x()<<"  "<<m_vPosition.y()<<std::endl;
+			//		return true;
+			//	}
+			//	else if (ea.getKey() == 's' || ea.getKey() == 'S' || ea.getKey() == osgGA::GUIEventAdapter::KEY_Down)
+			//	{
+			//		ChangePosition(osg::Vec3d(-m_iSpeed*cosf(osg::PI_2 + m_vRotation[2]), -m_iSpeed*sinf(osg::PI_2 + m_vRotation[2]), 0));
+			//		return true;
+			//	}
+			//	else if (ea.getKey() == 'a' || ea.getKey() == 'A')
+			//	{
+			//		ChangePosition(osg::Vec3d(-m_iSpeed*sinf(osg::PI_2 + m_vRotation[2]), m_iSpeed*cosf(osg::PI_2 + m_vRotation[2]), 0));
+			//		return true;
+			//	}
+			//	else if (ea.getKey() == 'd' || ea.getKey() == 'D')
+			//	{
+			//		ChangePosition(osg::Vec3d(m_iSpeed*sinf(osg::PI_2 + m_vRotation[2]), -m_iSpeed*cosf(osg::PI_2 + m_vRotation[2]), 0));
+			//		return true;
+			//	}
+			//	else if (ea.getKey() == osgGA::GUIEventAdapter::KEY_Left)
+			//	{
+			//		m_vRotation[2] += 0.2;
+			//		return true;
+			//	}
+			//	else if (ea.getKey() == osgGA::GUIEventAdapter::KEY_Right)
+			//	{
+			//		m_vRotation[2] -= 0.2;
+			//		return true;
+			//	}
+			//	else if (ea.getKey() == 'q' || ea.getKey() == 'Q')
+			//	{
+			//		ChangePosition(osg::Vec3d(0, 0, -1));
+			//		return true;
+			//	}
+			//	else if (ea.getKey() == 'e' || ea.getKey() == 'E')
+			//	{
+			//		ChangePosition(osg::Vec3d(0, 0, 1));
+			//		return true;
+			//	}
+			//	//**按Tab键实现摄像机90度旋转
+			//	else if (ea.getKey() == osgGA::GUIEventAdapter::KEY_Tab)
+			//	{
+			//		m_vRotation[0] -= osg::PI_2;
+			//		return true;
+			//	}
+			//}
+			//break;
 
-		//鼠标滑动
+			//鼠标滑动
 		case osgGA::GUIEventAdapter::PUSH:
 		{
 			if (ea.getButton() == osgGA::GUIEventAdapter::LEFT_MOUSE_BUTTON)
@@ -226,6 +235,12 @@ void TravelManipulator::setPosition(osg::Vec3d &position)
 {
 	m_vPosition = position;
 }
+
+void TravelManipulator::setRotation(osg::Vec3d &rotation)
+{
+	m_vRotation = rotation;
+}
+
 //得到当前坐标
 osg::Vec3d TravelManipulator::getPosition()
 {

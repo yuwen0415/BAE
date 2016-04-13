@@ -160,6 +160,7 @@
     <ClInclude Include="ITSViewerDll.h" />
     <ClInclude Include="OSGHelp.h" />
     <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="ShipTravelManipulator.h" />
     <ClInclude Include="SkyDome.h" />
     <ClInclude Include="SphereSegment.h" />
     <ClInclude Include="TravelManipulator.h" />
@@ -170,6 +171,7 @@
     <ClCompile Include="ITSViewerDll.cpp" />
     <ClCompile Include="OSGHelp.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="ShipTravelManipulator.cpp" />
     <ClCompile Include="SkyDome.cpp" />
     <ClCompile Include="SphereSegment.cpp" />
     <ClCompile Include="TravelManipulator.cpp" />
